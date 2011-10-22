@@ -2,4 +2,9 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Back', shoppings_path %>
+<% if current_admin %>
+  <%= link_to 'Back', admins_index_path %>
+<%else%>    
+  <%= link_to 'Back', shoppings_path %>
+<% end %>
+

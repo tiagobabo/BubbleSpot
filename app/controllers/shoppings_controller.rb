@@ -84,7 +84,7 @@ class ShoppingsController < ApplicationController
       @shopping.destroy
 
       respond_to do |format|
-        format.html { redirect_to shoppings_url }
+        format.html { redirect_to admins_index_url }
         format.json { head :ok }
       end
     end
