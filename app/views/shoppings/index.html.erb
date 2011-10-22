@@ -1,35 +1,3 @@
-<h1>Listing shoppings</h1>
-
-<table>
-  <tr>
-    <th>Nome</th>
-    <th>Telefone</th>
-    <th>Localizacao</th>
-    <th>Email</th>
-    <th>Descricao</th>
-    <th>Coordenadas</th>
-    <th>Imagem</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @shoppings.each do |shopping| %>
-  <tr>
-    <td><%= shopping.nome %></td>
-    <td><%= shopping.telefone %></td>
-    <td><%= shopping.localizacao %></td>
-    <td><%= shopping.email %></td>
-    <td><%= shopping.descricao %></td>
-    <td><%= shopping.coordenadas %></td>
-    <td><%= shopping.imagem %></td>
-    <td><%= link_to 'Show', shopping %></td>
-    <td><%= link_to 'Edit', edit_shopping_path(shopping) %></td>
-    <td><%= link_to 'Destroy', shopping, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
+<%=render "shared/shopping_list" %>
 
 <%= link_to 'New Shopping', new_shopping_path %>
