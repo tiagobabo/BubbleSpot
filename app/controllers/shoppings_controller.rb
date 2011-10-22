@@ -24,11 +24,16 @@ class ShoppingsController < ApplicationController
   # GET /shoppings/new
   # GET /shoppings/new.json
   def new
-    @shopping = Shopping.new
+    
+    if current_admin == nil
+      redirect_to root_url, :notice => "Tem de fazer login!"
+    else
+      @shopping = Shopping.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render :json => @shopping }
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render :json => @shopping }
+      end
     end
   end
 
