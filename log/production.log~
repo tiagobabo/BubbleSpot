@@ -1,0 +1,158 @@
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (116.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (58.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateShoppings (20111022145511)
+  [1m[35m (0.6ms)[0m  CREATE TABLE "shoppings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "telefone" varchar(255), "localizacao" varchar(255), "email" varchar(255), "descricao" varchar(255), "coordenadas" varchar(255), "imagem" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111022145511')[0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("shoppings")
+
+
+Started GET "/shoppings" for 127.0.0.1 at Sat Oct 22 15:57:36 +0100 2011
+  Processing by ShoppingsController#index as HTML
+  [1m[36mShopping Load (0.2ms)[0m  [1mSELECT "shoppings".* FROM "shoppings" [0m
+Rendered shoppings/index.html.erb within layouts/application (3.7ms)
+Compiled application.css  (3ms)  (pid 4052)
+Compiled scaffolds.css  (88ms)  (pid 4052)
+Compiled shoppings.css  (2ms)  (pid 4052)
+Compiled application.js  (6ms)  (pid 4052)
+Compiled jquery.js  (20ms)  (pid 4052)
+Compiled jquery_ujs.js  (9ms)  (pid 4052)
+Compiled shoppings.js  (114ms)  (pid 4052)
+Completed 200 OK in 395ms (Views: 393.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Sat Oct 22 15:57:37 +0100 2011
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Sat Oct 22 15:57:37 +0100 2011
+Served asset /scaffolds.css - 200 OK (4ms)
+
+
+Started GET "/assets/shoppings.css?body=1" for 127.0.0.1 at Sat Oct 22 15:57:37 +0100 2011
+Served asset /shoppings.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Sat Oct 22 15:57:37 +0100 2011
+Served asset /jquery.js - 200 OK (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Sat Oct 22 15:57:37 +0100 2011
+Served asset /jquery_ujs.js - 200 OK (7ms)
+
+
+Started GET "/assets/shoppings.js?body=1" for 127.0.0.1 at Sat Oct 22 15:57:37 +0100 2011
+Served asset /shoppings.js - 200 OK (5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Sat Oct 22 15:57:37 +0100 2011
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/shoppings" for 127.0.0.1 at Sat Oct 22 16:22:17 +0100 2011
+  Processing by ShoppingsController#index as HTML
+  [1m[35mShopping Load (0.2ms)[0m  SELECT "shoppings".* FROM "shoppings" 
+Rendered shoppings/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Sat Oct 22 16:22:17 +0100 2011
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Sat Oct 22 16:22:18 +0100 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/shoppings.css?body=1" for 127.0.0.1 at Sat Oct 22 16:22:18 +0100 2011
+Served asset /shoppings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Sat Oct 22 16:22:18 +0100 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Sat Oct 22 16:22:18 +0100 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/shoppings.js?body=1" for 127.0.0.1 at Sat Oct 22 16:22:18 +0100 2011
+Served asset /shoppings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Sat Oct 22 16:22:18 +0100 2011
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/shoppings" for 127.0.0.1 at Sat Oct 22 16:47:07 +0100 2011
+  Processing by ShoppingsController#index as HTML
+  [1m[36mShopping Load (0.2ms)[0m  [1mSELECT "shoppings".* FROM "shoppings" [0m
+Rendered shoppings/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 76ms (Views: 74.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Sat Oct 22 16:47:07 +0100 2011
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Sat Oct 22 16:47:07 +0100 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/shoppings.css?body=1" for 127.0.0.1 at Sat Oct 22 16:47:07 +0100 2011
+Served asset /shoppings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Sat Oct 22 16:47:07 +0100 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Sat Oct 22 16:47:07 +0100 2011
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Sat Oct 22 16:47:07 +0100 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/shoppings.js?body=1" for 127.0.0.1 at Sat Oct 22 16:47:07 +0100 2011
+Served asset /shoppings.js - 304 Not Modified (0ms)
+
+
+Started GET "/shoppings" for 127.0.0.1 at Sat Oct 22 16:47:30 +0100 2011
+  Processing by ShoppingsController#index as HTML
+  [1m[35mShopping Load (0.1ms)[0m  SELECT "shoppings".* FROM "shoppings" 
+Rendered shoppings/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Sat Oct 22 16:47:30 +0100 2011
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/shoppings.css?body=1" for 127.0.0.1 at Sat Oct 22 16:47:30 +0100 2011
+Served asset /shoppings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Sat Oct 22 16:47:30 +0100 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Sat Oct 22 16:47:30 +0100 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Sat Oct 22 16:47:30 +0100 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/shoppings.js?body=1" for 127.0.0.1 at Sat Oct 22 16:47:30 +0100 2011
+Served asset /shoppings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Sat Oct 22 16:47:30 +0100 2011
+Served asset /application.js - 304 Not Modified (0ms)

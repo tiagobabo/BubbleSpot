@@ -6,7 +6,7 @@ gem 'rails', '3.1.1'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 group :production, :staging do
-  gem "pg"
+  gem 'pg'
 end
 
 group :development, :test do
