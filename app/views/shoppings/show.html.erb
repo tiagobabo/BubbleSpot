@@ -36,5 +36,7 @@
 </p>
 
 
-<%= link_to 'Edit', edit_shopping_path(@shopping) %> |
+<% if current_admin %><%= link_to 'Edit', edit_shopping_path(@shopping) %> | <%= link_to 'Back', admins_path %>
+<%else%>  
 <%= link_to 'Back', shoppings_path %>
+<% end %>

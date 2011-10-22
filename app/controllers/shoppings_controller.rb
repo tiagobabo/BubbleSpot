@@ -1,6 +1,11 @@
 class ShoppingsController < ApplicationController
   # GET /shoppings
   # GET /shoppings.json
+  
+  before_filter :require_login
+  skip_before_filter :require_login, :only => [:index, :show]
+
+  
   def index
     @shoppings = Shopping.all
 
@@ -20,26 +25,23 @@ class ShoppingsController < ApplicationController
       format.json { render :json => @shopping }
     end
   end
-
+  
   # GET /shoppings/new
   # GET /shoppings/new.json
-  def new
+  def new  
     
-    if current_admin == nil
-      redirect_to root_url, :notice => "Tem de fazer login!"
-    else
       @shopping = Shopping.new
 
       respond_to do |format|
         format.html # new.html.erb
         format.json { render :json => @shopping }
       end
-    end
+      
   end
 
   # GET /shoppings/1/edit
   def edit
-    @shopping = Shopping.find(params[:id])
+      @shopping = Shopping.find(params[:id])
   end
 
   # POST /shoppings
@@ -61,6 +63,7 @@ class ShoppingsController < ApplicationController
   # PUT /shoppings/1
   # PUT /shoppings/1.json
   def update
+    
     @shopping = Shopping.find(params[:id])
 
     respond_to do |format|
@@ -77,12 +80,12 @@ class ShoppingsController < ApplicationController
   # DELETE /shoppings/1
   # DELETE /shoppings/1.json
   def destroy
-    @shopping = Shopping.find(params[:id])
-    @shopping.destroy
+      @shopping = Shopping.find(params[:id])
+      @shopping.destroy
 
-    respond_to do |format|
-      format.html { redirect_to shoppings_url }
-      format.json { head :ok }
+      respond_to do |format|
+        format.html { redirect_to shoppings_url }
+        format.json { head :ok }
+      end
     end
-  end
 end

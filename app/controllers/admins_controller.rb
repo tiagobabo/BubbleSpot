@@ -1,4 +1,7 @@
 class AdminsController < ApplicationController
+  
+  before_filter :require_login
+  
  def new
   @admin = Admin.new
   end

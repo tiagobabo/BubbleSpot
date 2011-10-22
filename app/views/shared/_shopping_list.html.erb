@@ -24,8 +24,10 @@
     <td><%= shopping.coordenadas %></td>
     <td><%= shopping.imagem %></td>
     <td><%= link_to 'Show', shopping %></td>
-    <td><%= link_to 'Edit', edit_shopping_path(shopping) %></td>
-    <td><%= link_to 'Destroy', shopping, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% if current_admin %>
+      <td><%= link_to 'Edit', edit_shopping_path(shopping) %></td>
+      <td><%= link_to 'Destroy', shopping, :confirm => 'Are you sure?', :method => :delete %></td>
+    <%end%>
   </tr>
 <% end %>
 </table>
