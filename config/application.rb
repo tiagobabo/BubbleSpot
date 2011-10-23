@@ -46,5 +46,6 @@ module BubbleSpot
     config.assets.version = '1.0'
 
     config.autoload_paths << "#{Rails.root}/lib"
+    config.autoload_paths << "#{Rails.root}/models"
   end
 end
