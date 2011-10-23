@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
   
   def new
+    if session[:admin_id] != nil
+      redirect_to admins_index_url
+    end
   end
 
   def create
