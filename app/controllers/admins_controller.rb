@@ -8,6 +8,9 @@ class AdminsController < ApplicationController
  def new
   @admin = Admin.new
   end
+  
+  def shoppings
+  end
 
   def create
     @admin = Admin.new(params[:admin])
