@@ -1,6 +1,9 @@
 class AdminsController < ApplicationController
   
   #before_filter :require_login
+  #este before_filter acaba por não ser necessário
+  #visto que no index já temos a verificação
+  #e para já dá jeito que seja possível fazer sign_up
   
  def new
   @admin = Admin.new
