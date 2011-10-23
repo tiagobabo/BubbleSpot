@@ -36,7 +36,6 @@
 </p>
 
 
-<% if current_admin %><%= link_to 'Editar', edit_shopping_path(@shopping) %> | <%= link_to 'Voltar', admins_index_path %>
-<%else%>  
-<%= link_to 'Voltar', shoppings_path %>
-<% end %>
+<% if current_admin %><%= link_to 'Editar', edit_shopping_path(@shopping) %>
+  <% end %>
+

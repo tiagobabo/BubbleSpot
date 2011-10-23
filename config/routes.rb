@@ -6,15 +6,15 @@ BubbleSpot::Application.routes.draw do
   get "admin/sign_up" => "admins#new", :as => "sign_up"
   get "admin/index" => "admins#index", :as => "admins_index"
   get "admin/shoppings" => "admins#shoppings", :as => "admins_shoppings"
+  get "search/shoppings/:query" => "search#shoppings", :as => "search_shoppings" 
+  get "search/shoppings/" => "search#shoppings", :as => "search_shoppings"  
   
   
   root :to => "shoppings#index" 
   
   resources :admins
   resources :sessions
-  
-  # resources :sessions
-
+  resources :search
   resources :shoppings
 
  

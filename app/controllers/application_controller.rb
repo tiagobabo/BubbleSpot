@@ -6,7 +6,11 @@ class ApplicationController < ActionController::Base
   private
 
   def current_admin
-    @current_admin ||= Admin.find(session[:admin_id]) if session[:admin_id]
+    if Admin.count > 0
+      @current_admin ||= Admin.find(session[:admin_id]) if session[:admin_id]
+    else
+      @current_admin = nil
+    end
   end
   
   def require_login

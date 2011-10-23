@@ -2,9 +2,9 @@
 
 <%= render 'form' %>
 
-<% if current_admin %>
-  <%= link_to 'Voltar', admins_index_path %>
-<%else%>    
-  <%= link_to 'Voltar', shoppings_path %>
-<% end %>
+
+<%= link_to 'Voltar', :back %>
+
+
+
 
