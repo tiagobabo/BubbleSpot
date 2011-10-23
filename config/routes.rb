@@ -7,7 +7,6 @@ BubbleSpot::Application.routes.draw do
   get "admin/index" => "admins#index", :as => "admins_index"
   get "admin/shoppings" => "admins#shoppings", :as => "admins_shoppings"
   
-  
   root :to => "shoppings#index" 
   
   resources :admins
