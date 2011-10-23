@@ -5,7 +5,7 @@ class AdminsController < ApplicationController
   #visto que no index já temos a verificação
   #e para já dá jeito que seja possível fazer sign_up
   
-  def shopping
+  def shoppings
     @shoppings = Shopping.all
   end
   
