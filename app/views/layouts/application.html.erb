@@ -9,8 +9,8 @@
 <body>
 
 <% if current_admin %>
-<div id="admin_nav">
-    Logged in as <%= current_admin.email %>.
+<div align="right" id="admin_nav">
+    Logged in como <%= current_admin.email %>.
     <%= link_to "Log out", log_out_path %>
 </div>
 <% end %>

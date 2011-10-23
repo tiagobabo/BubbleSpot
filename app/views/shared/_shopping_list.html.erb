@@ -1,4 +1,6 @@
-<h1>Listing shoppings</h1>
+<h1>Shoppings</h1>
+
+<% if @shoppings.size > 0 %>
 
 <table>
   <tr>
@@ -23,13 +25,19 @@
     <td><%= shopping.descricao %></td>
     <td><%= shopping.coordenadas %></td>
     <td><%= shopping.imagem %></td>
-    <td><%= link_to 'Show', shopping %></td>
+    <td><%= link_to 'Mostrar', shopping %></td>
     <% if current_admin %>
-      <td><%= link_to 'Edit', edit_shopping_path(shopping) %></td>
-      <td><%= link_to 'Destroy', shopping, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to 'Editar', edit_shopping_path(shopping) %></td>
+      <td><%= link_to 'Apagar', shopping, :confirm => 'Tem a certeza?', :method => :delete %></td>
     <%end%>
   </tr>
 <% end %>
 </table>
+
+<%else %>
+
+  <h3> Não existem shoppings.. </h3>
+
+<%end %>
 
 <br />
