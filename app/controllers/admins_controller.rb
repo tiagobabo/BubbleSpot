@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
   
-  before_filter :require_login
+  #before_filter :require_login
   
  def new
   @admin = Admin.new
