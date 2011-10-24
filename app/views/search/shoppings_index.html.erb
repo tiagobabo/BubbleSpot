@@ -2,7 +2,9 @@
 
 <%= form_tag search_shoppings_url, :method => :get do %>
 <p>
+    <%= select_tag(:pesquisa, options_for_select(SearchController::TERMOS)) %>
     <%= text_field_tag :query %>
+  
   </p>
   <p class="button"><%= submit_tag "Pesquisar" %></p>
 <% end %>
