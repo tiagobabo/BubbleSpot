@@ -8,5 +8,5 @@ class Shopping < ActiveRecord::Base
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, :message => "inválido."
   
   geocoded_by :localizacao
-  after_validation :geocode, :if => :localizacao_changed?
+  after_validation :geocode
 end
