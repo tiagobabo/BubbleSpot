@@ -1,3 +1,5 @@
+ # -*- coding: utf-8 -*-
+
 class SearchController < ApplicationController
 
   TERMOS = [['Nome',0], ['Localização',1], ['Email',2]]
