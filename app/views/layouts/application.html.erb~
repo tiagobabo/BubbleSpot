@@ -8,7 +8,6 @@
 </head>
 <body>
 
-
 <% if current_admin %>
 <div align="right" id="admin_nav">
     Logged in como <%= current_admin.email %>.
