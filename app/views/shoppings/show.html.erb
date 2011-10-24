@@ -26,13 +26,17 @@
 </p>
 
 <p>
-  <b>Coordenadas:</b>
-  <%= @shopping.coordenadas %>
+  <b>Latitude:</b>
+  <%= @shopping.latitude %>
 </p>
 
 <p>
-  <b>Imagem:</b>
-  <%= @shopping.imagem %>
+  <b>Longitude:</b>
+  <%= @shopping.longitude %>
+</p>
+
+<p>
+  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&maptype=satellite&sensor=false&zoom=16&markers=#{@shopping.latitude}%2C#{@shopping.longitude}" %>
 </p>
 
 

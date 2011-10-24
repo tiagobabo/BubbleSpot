@@ -15,7 +15,7 @@ group :development, :test do
 end 
 
 
-
+gem 'geocoder'
 gem 'json'
 
 gem "bcrypt-ruby", :require => "bcrypt"

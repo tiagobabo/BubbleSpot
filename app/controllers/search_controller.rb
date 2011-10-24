@@ -13,10 +13,10 @@ class SearchController < ApplicationController
         search = params[:query].downcase + "%"
         @shoppings = Shopping.where("nome like ?", search)        
       elsif params[:pesquisa] == "1"
-        search = params[:query].downcase + "%"
+        search = "%" + params[:query].downcase + "%"
         @shoppings = Shopping.where("localizacao like ?", search)
       elsif params[:pesquisa] == "2"
-        search = params[:query].downcase + "%"
+        search = "%" + params[:query].downcase + "%"
         @shoppings = Shopping.where("email like ?", search)        
       end
   
