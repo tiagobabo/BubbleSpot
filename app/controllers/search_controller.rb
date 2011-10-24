@@ -26,9 +26,9 @@ class SearchController < ApplicationController
         format.json { render :json => @shoppings }
       end
   
-    elsif params[:latitude].present? && params[:longitude].present?
+    elsif params[:latitude].present? && params[:longitude].present? && params[:radius].present?
       coordenadas = [Float(params[:latitude]), Float(params[:longitude])]
-      @shoppings = Shopping.near(coordenadas, Geocoder::Calculations::to_miles(20), :order => :distance)
+      @shoppings = Shopping.near(coordenadas, Geocoder::Calculations::to_miles(Integer(params[:radius])), :order => :distance)
       respond_to do |format|
         format.json { render :json => @shoppings }
       end
