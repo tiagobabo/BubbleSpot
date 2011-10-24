@@ -7,7 +7,7 @@ class SearchController < ApplicationController
   def shoppings   
     
     
-    if params[:query]
+    if params[:query].present?
       
       if params[:pesquisa] == "0"
         search = params[:query].downcase + "%"
@@ -17,7 +17,8 @@ class SearchController < ApplicationController
         @shoppings = Shopping.where("localizacao like ?", search)
       elsif params[:pesquisa] == "2"
         search = "%" + params[:query].downcase + "%"
-        @shoppings = Shopping.where("email like ?", search)        
+        @shoppings = Shopping.where("email like ?", search)   
+      
       end
   
       respond_to do |format|
@@ -25,6 +26,12 @@ class SearchController < ApplicationController
         format.json { render :json => @shoppings }
       end
   
+    elsif params[:latitude].present? && params[:longitude].present?
+      coordenadas = [Float(params[:latitude]), Float(params[:longitude])]
+      @shoppings = Shopping.near(coordenadas, Geocoder::Calculations::to_miles(20), :order => :distance)
+      respond_to do |format|
+        format.json { render :json => @shoppings }
+      end
     else
       render "shoppings_index"
     end
