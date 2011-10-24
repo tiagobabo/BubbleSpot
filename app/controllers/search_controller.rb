@@ -2,7 +2,7 @@
 
 class SearchController < ApplicationController
 
-  TERMOS = [['Nome',0], ['Localização',1], ['Email',2]]
+  TERMOS = [['Nome',0], ['Localização',1]]
   
   def shoppings   
     
@@ -11,14 +11,11 @@ class SearchController < ApplicationController
       
       if params[:pesquisa] == "0"
         search = params[:query].downcase + "%"
-        @shoppings = Shopping.where("nome like ?", search)        
+        @shoppings = Shopping.where("lower(nome) like ?", search)        
       elsif params[:pesquisa] == "1"
         search = "%" + params[:query].downcase + "%"
-        @shoppings = Shopping.where("localizacao like ?", search)
-      elsif params[:pesquisa] == "2"
-        search = "%" + params[:query].downcase + "%"
-        @shoppings = Shopping.where("email like ?", search)   
-      
+        @shoppings = Shopping.where("lower(localizacao) like ?", search)
+    
       end
   
       respond_to do |format|
