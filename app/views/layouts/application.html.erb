@@ -14,9 +14,13 @@
     Logged in como <%= current_admin.email %>.
     <%= link_to "Log out", log_out_path %>
 </div>
+<% else %>
+<div align="right" id="admin_nav">
+    <%= link_to "Log out", log_out_path %>
+</div>
 <% end %>
 <div align="right" id="search_nav">
-    <%= link_to "Pesquisar", search_index_path %>
+    <%= link_to "Área de Administração", admins_index_path %>
 </div>
 
 
