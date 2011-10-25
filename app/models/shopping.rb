@@ -2,6 +2,8 @@
 
 class Shopping < ActiveRecord::Base
   
+  has_many :lojas, :dependent => :destroy
+  
   validates_presence_of :nome, :telefone, :localizacao, :email, :descricao, :imagem
   validates_uniqueness_of :nome
   validates_numericality_of :telefone, :only_integer => true, :count => 9, :message => "só pode ter dígitos."

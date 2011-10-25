@@ -1,0 +1,21 @@
+<h1>Items in <%= @shopping.nome %></h1>
+
+<table>
+  <tr>
+    <th>Item name</th>
+  </tr>
+
+<% for loja in @lojas %>
+  <tr>
+    <td><%= loja.nome %></td>
+    <td><%= link_to 'Show', shopping_loja_path(@shopping, loja) %></td>
+    <td><%= link_to 'Edit', edit_shopping_loja_path(@shopping, loja) %></td>
+    <td><%= link_to 'Destroy', shopping_loja_path(@shopping, loja), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New loja', new_shopping_loja_path(@shopping) %>
+<%= link_to 'Back to Order', @shopping %>

@@ -1,5 +1,13 @@
 BubbleSpot::Application.routes.draw do
 
+  get "lojas/index"
+
+  get "lojas/show"
+
+  get "lojas/new"
+
+  get "lojas/edit"
+
   get "admin/log_out" => "sessions#destroy", :as => "log_out"
   get "admin/log_in" => "sessions#new", :as => "log_in"
   get "admin" => "sessions#new"
@@ -17,7 +25,11 @@ BubbleSpot::Application.routes.draw do
   resources :admins
   resources :sessions
   resources :search
-  resources :shoppings
+  
+  resources :shoppings do
+    resources :lojas
+  end
+  
 
  
 end
