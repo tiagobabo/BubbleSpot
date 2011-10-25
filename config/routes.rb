@@ -8,6 +8,9 @@ BubbleSpot::Application.routes.draw do
   get "admin/shoppings" => "admins#shoppings", :as => "admins_shoppings"
   get "search/shoppings/:query" => "search#shoppings", :as => "search_shoppings" 
   get "search/shoppings/" => "search#shoppings", :as => "search_shoppings"  
+  get "admin/shoppings/new" => "shoppings#new", :as => "new_shopping"
+  get "admin/shoppings/edit/:id" => "shoppings#edit", :as => "edit_shopping"
+  
   
   root :to => "shoppings#index" 
   

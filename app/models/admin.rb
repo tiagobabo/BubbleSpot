@@ -1,3 +1,5 @@
+ # -*- coding: utf-8 -*-
+
 class Admin < ActiveRecord::Base
   
   attr_accessible :email, :password, :password_confirmation
@@ -9,6 +11,8 @@ class Admin < ActiveRecord::Base
   validates_presence_of :password, :on => :create
   validates_presence_of :email
   validates_uniqueness_of :email
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, :message => "inválido."
+  validates :password, :length => {:is => 6, :message => "tem de conter mais de 6 caracteres."}
   
   
   
