@@ -23,7 +23,6 @@ class LojasController < ApplicationController
   def new
     @shopping = Shopping.find(params[:shopping_id])
 
-
     # Associate an loja object with shopping 1
     @loja = @shopping.lojas.build
   end
