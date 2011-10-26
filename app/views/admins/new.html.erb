@@ -1,6 +1,14 @@
-<h1>Sign Up</h1>
-
-<%= form_for @admin do |f| %>
+<section>
+		 <div class="row">
+      <div class="twelve columns"> 
+        <div class="underline"><span class="text"><h1>Sign Up</h1></span></div>      
+		 	</div>
+		 </div>
+     <p></p>
+    
+    <div class="row">
+<div class="twelve columns">
+ <%= form_for @admin do |f| %>
   <% if @admin.errors.any? %>
     <div class="error_messages">
       <h2>Form is invalid</h2>
@@ -12,17 +20,25 @@
     </div>
   <% end %>
   <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
+    <%= f.label :email %>
+    <%= f.text_field :email, :class => "medium input-text" %>
+  </p><br />
   <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </p>
+    <%= f.label :password %>
+    <%= f.password_field :password, :class => "medium input-text" %>
+  </p><br />
   <p>
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, :class => "medium input-text" %>
   </p>
-  <p class="button"><%= f.submit %></p>
+  <p><%= f.submit :class => "nice small radius blue button"%></p>
 <% end %>
+</div>
+</div>
+</section>
+
+
+
+
+
 
