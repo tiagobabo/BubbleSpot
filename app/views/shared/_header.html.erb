@@ -1,3 +1,20 @@
-<div align="center">
-  <h1> <%= link_to "BubbleSpot", root_url  %></h1>
-</div>
+<div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <%= link_to "BubbleSpot", root_url, :class => "brand" %>
+          <ul class="nav">
+           
+            <li class="<%= controller.controller_path == 'shoppings' ? 'active' : '' %>"> <%= link_to "Shoppings", shoppings_url %></li>
+            <li class="<%= controller.controller_path == 'search' ? 'active' : '' %>"> <%= link_to "Pesquisa", search_index_url %></li>
+          </ul>
+          <ul class="nav secondary-nav">
+            <% if current_admin %>
+            <li><%= link_to "Log out", log_out_path %></li>
+            <li><%= link_to current_admin.email, admins_index_path %></li>
+            <% else %>
+            <li><%= link_to "Log in", log_out_path %></li>
+            <% end %>      
+          </ul>
+        </div>
+      </div>
+    </div>

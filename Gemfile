@@ -14,7 +14,7 @@ group :development, :test do
   gem 'therubyracer'
 end 
 
-
+gem "zurb-foundation"
 gem 'geocoder'
 gem 'json'
 

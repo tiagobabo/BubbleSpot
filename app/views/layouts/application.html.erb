@@ -5,11 +5,12 @@
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
 
 
-<% if current_admin %>
+<!--<% if current_admin %>
 <div align="right" id="admin_nav">
     Logged in como <%= current_admin.email %>.
     <%= link_to "Log out", log_out_path %>
@@ -17,7 +18,7 @@
 <% end %>
 <div align="right" id="search_nav">
     <%= link_to "Área de Administração", admins_index_path %>
-</div>
+</div>-->
 
 
 <%= render "shared/header" %>

@@ -1,41 +1,22 @@
-<h1>Shoppings</h1>
-
 <% if @shoppings != nil && @shoppings.count > 0 %>
-
-<table>
-  <tr>
-    <th>Nome</th>
-    <th>Telefone</th>
-    <th>Localizacao</th>
-    <th>Email</th>
-    <th>Descricao</th>
-    <th>Latitude</th>
-    <th>Longitude</th>
-    <th>Imagem</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+  <section>
+		 <div class="row">
+      <div class="twelve columns"> 
+        <div class="underline"><span class="text"><h1>Shoppings</h1></span></div> 
+            
+		 	</div>
+		 </div>
+    
 <% @shoppings.each do |shopping| %>
-  <tr>
-    <td><%= shopping.nome %></td>
-    <td><%= shopping.telefone %></td>
-    <td><%= shopping.localizacao %></td>
-    <td><%= shopping.email %></td>
-    <td><%= shopping.descricao %></td>
-    <td><%= shopping.latitude %></td>
-    <td><%= shopping.longitude %></td>
-    <td><%= shopping.imagem %></td>
-    <td><%= link_to 'Mostrar', shopping %></td>
-    <% if current_admin %>
-      <td><%= link_to 'Editar', edit_shopping_path(shopping) %></td>
-      <td><%= link_to 'Apagar', shopping, :confirm => 'Tem a certeza?', :method => :delete %></td>
-    <%end%>
-  </tr>
-<% end %>
-</table>
 
+<%= cycle("</div><div class='row'>","","").html_safe %>
+<div class="four columns">
+  <%= link_to image_tag(shopping.imagem), shopping %>
+  <p></p>
+</div>
+<% end %>
+</div>
+</section>
 <%else %>
 
   <h4> Não existem shoppings.. </h4>
