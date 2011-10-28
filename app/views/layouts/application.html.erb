@@ -9,7 +9,7 @@
 </head>
 <body>
 
-
+<div id="conteudo">
 <!--<% if current_admin %>
 <div align="right" id="admin_nav">
     Logged in como <%= current_admin.email %>.
@@ -18,11 +18,10 @@
 <% end %>
 <div align="right" id="search_nav">
     <%= link_to "Área de Administração", admins_index_path %>
-</div>-->
-
+  </div>-->
 
 <%= render "shared/header" %>
-
+<div class="clearheader"></div>
 <section>
 		 <div class="row">
       <div class="twelve columns"> 
@@ -34,6 +33,8 @@
   </section>
 
 <%= yield %>
+<div class="clearfooter"></div>
+</div>
 
 <%= render "shared/footer" %>
 

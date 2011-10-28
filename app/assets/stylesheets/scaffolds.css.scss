@@ -1,9 +1,29 @@
+html, body {
+height: 100%;
+}
+
+#conteudo {
+min-height: 100%;
+margin-bottom: -80px;
+position: relative;
+}
+
+.clearheader {
+height: 80px;
+clear: both;
+}
+
+.clearfooter {
+height: 120px;
+clear: both;
+}
+
 .footer {
   background-color: #eee;
   text-shadow: 0 1px 0 #fff;
   border-top: 1px solid #e5e5e5;
-  position:absolute;
-  bottom:0;
+  height: 79px;
+  position: relative;
   width:100%;
   -webkit-box-shadow: inset 0 5px 15px rgba(0,0,0,.025);
   -moz-box-shadow: inset 0 5px 15px rgba(0,0,0,.025);
@@ -26,11 +46,6 @@
 {
   color:transparent;
   background-color:transparent;
-}
-
-body{
-padding-top:80px;
-padding-bottom:80px;
 }
 
 .underline {

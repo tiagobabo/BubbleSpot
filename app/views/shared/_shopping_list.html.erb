@@ -9,7 +9,7 @@
     
 <% @shoppings.each do |shopping| %>
 
-<%= cycle("</div><div class='row'>","","").html_safe %>
+<%= cycle("<div class='row'>","","").html_safe %>
 <div class="four columns">
   <%= link_to image_tag(shopping.imagem), shopping %>
   <p></p>
@@ -28,7 +28,3 @@
 
 
 <%end %>
-
-
-
-<br />
