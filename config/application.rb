@@ -47,5 +47,8 @@ module BubbleSpot
 
     config.autoload_paths << "#{Rails.root}/lib"
     config.autoload_paths << "#{Rails.root}/models"
+
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| "#{html_tag} <small class='error'> #{[instance.error_message].flatten.first}</small>".html_safe }
+    
   end
 end

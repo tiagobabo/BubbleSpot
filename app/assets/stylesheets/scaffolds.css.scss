@@ -38,8 +38,12 @@ clear: both;
   float: right;
 }
 
-#flash {
+#flash_notice {
   color:green;
+}
+
+#flash_alert {
+  color:red;
 }
 
 .custom a:hover

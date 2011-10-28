@@ -3,44 +3,34 @@
     <div class="row">
 <div class="twelve columns">
 <%= form_for(@shopping) do |f| %>
-  <% if @shopping.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@shopping.errors.count, "erros") %> proibem que o shopping seja adicionado:</h2>
 
-      <ul>
-      <% @shopping.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
-    <%= f.label :nome %>
+    Nome
     <%= f.text_field :nome, :class => "large input-text" %>
   </div>
   <div class="field">
-    <%= f.label :telefone %>
+    Telefone
     <%= f.text_field :telefone, :class => "large input-text" %>
   </div>
   <div class="field">
-    <%= f.label :localizacao %>
+    Localização
     <%= f.text_field :localizacao, :class => "large input-text" %>
   </div>
   <div class="field">
-    <%= f.label :email %>
+    E-mail
     <%= f.text_field :email, :class => "large input-text" %>
   </div>
   <div class="field">
-    <%= f.label :descricao %>
+    Descrição
     <%= f.text_area :descricao, :rows => 6, :class => "large input-text" %>
   </div>
   <div class="field">
-    <%= f.label :imagem %>
+    Link para a imagem:
     <%= f.text_field :imagem, :class => "large input-text" %>
   </div>
   <div class="actions">
-  <%= f.submit :class => "nice small radius blue button" %>
+    <%= f.submit "Confirmar", :class => "nice small radius blue button" %>
   </div>
 <% end %>
 

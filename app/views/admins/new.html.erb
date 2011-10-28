@@ -1,34 +1,25 @@
 <section>
 		 <div class="row">
       <div class="twelve columns"> 
-        <div class="underline"><span class="text"><h1>Sign Up</h1></span></div>      
+        <div class="underline"><span class="text"><h1>Registo</h1></span></div>      
 		 	</div>
 		 </div>
      <p></p>
     <div class="row">
 <div class="twelve columns">
  <%= form_for @admin do |f| %>
-  <% if @admin.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% for message in @admin.errors.full_messages %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  
-    <%= f.label :email %>
+
+    E-mail
     <%= f.text_field :email, :class => "medium input-text" %>
     
-    <%= f.label :password %>
+    Password
     <%= f.password_field :password, :class => "medium input-text" %>
   
-    <%= f.label :password_confirmation %>
+    Password
     <%= f.password_field :password_confirmation, :class => "medium input-text" %>
+    
    <p></p>
-  <%= f.submit :class => "nice small radius blue button"%>
+  <%= f.submit "Registar", :class => "nice small radius blue button"%>
 <% end %>
 </div>
 </div>

@@ -1,3 +1,5 @@
+ # -*- coding: utf-8 -*-
+
 class SessionsController < ApplicationController
   
   def new
@@ -12,7 +14,7 @@ class SessionsController < ApplicationController
       session[:admin_id] = admin.id
       redirect_to admins_index_url
     else
-      flash.now.alert = "Invalid email or password"
+      flash.now.alert = "E-mail ou password inválido!"
       render "new"
     end
   end
