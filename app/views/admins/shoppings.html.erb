@@ -1,15 +1,41 @@
-<%=render "shared/shopping_list" %>
 
-
-
-<section>
-		 <div class="row">
+<section>  
+  <div class ="row">
+    <div class = "twelve columns">
+      <div class="underline"><span class="text"><h1>Gestão de Shoppings</h1></span></div> 
+    </div>
+  </did>
+  <div class ="row">
+    <div class = "twelve columns">
+    <table>
+   <tr>
+     <th>Nome</th>
+     <th>Telefone</th>
+     <th>Localizacao</th>
+     <th>Email</th>
+     <th></th>
+     <th></th>
+     <th></th>
+   </tr>
+ 
+ <% @shoppings.each do |shopping| %>
+   <tr>
+     <td><%= shopping.nome %></td>
+     <td><%= shopping.telefone %></td>
+     <td><%= truncate shopping.localizacao, :length => 50%></td>
+     <td><%= shopping.email %></td>
+     <td><%= link_to 'Mostrar', shopping %></td>
+     <td><%= link_to 'Editar', edit_shopping_path(shopping) %></td>
+     <td><%= link_to 'Apagar', shopping, :confirm => 'Are you sure?', :method => :delete %></td>
+   </tr>
+ <% end %>
+ </table>
+    </div>
+  </div>
+    <div class="row">
       <div class="twelve columns"> 
             <%= link_to 'Adicionar Shopping', new_shopping_path, :class => "nice small radius blue button"  %>
-            <br><br>
-            <%= link_to 'Voltar', admins_index_path, :class => "nice small radius blue button"  %>
 		 	</div>
-		 </div>
-    
+    </div>
 </section>
 

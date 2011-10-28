@@ -5,7 +5,7 @@
 <%= form_for(@shopping) do |f| %>
   <% if @shopping.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@shopping.errors.count, "error") %> prohibited this shopping from being saved:</h2>
+      <h2><%= pluralize(@shopping.errors.count, "erros") %> proibem que o shopping seja adicionado:</h2>
 
       <ul>
       <% @shopping.errors.full_messages.each do |msg| %>
@@ -17,35 +17,27 @@
 
   <div class="field">
     <%= f.label :nome %>
-    <%= f.text_field :nome, :class => "medium input-text" %>
+    <%= f.text_field :nome, :class => "large input-text" %>
   </div>
   <div class="field">
     <%= f.label :telefone %>
-    <%= f.text_field :telefone, :class => "medium input-text" %>
+    <%= f.text_field :telefone, :class => "large input-text" %>
   </div>
   <div class="field">
     <%= f.label :localizacao %>
-    <%= f.text_field :localizacao, :class => "medium input-text" %>
+    <%= f.text_field :localizacao, :class => "large input-text" %>
   </div>
   <div class="field">
     <%= f.label :email %>
-    <%= f.text_field :email, :class => "medium input-text" %>
+    <%= f.text_field :email, :class => "large input-text" %>
   </div>
   <div class="field">
     <%= f.label :descricao %>
-    <%= f.text_area :descricao, :rows => 6, :class => "medium input-text" %>
-  </div>
-  <div class="field">
-    <%= f.label :latitude %>
-    <%= f.text_field :latitude, :class => "medium input-text" %>
-  </div>
-   <div class="field">
-    <%= f.label :longitude %>
-    <%= f.text_field :longitude, :class => "medium input-text" %>
+    <%= f.text_area :descricao, :rows => 6, :class => "large input-text" %>
   </div>
   <div class="field">
     <%= f.label :imagem %>
-    <%= f.text_field :imagem, :class => "medium input-text" %>
+    <%= f.text_field :imagem, :class => "large input-text" %>
   </div>
   <div class="actions">
   <%= f.submit :class => "nice small radius blue button" %>

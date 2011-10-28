@@ -53,7 +53,7 @@ class ShoppingsController < ApplicationController
 
     respond_to do |format|
       if @shopping.save
-        format.html { redirect_to @shopping, :notice => 'Shopping was successfully created.' }
+        format.html { redirect_to @shopping, :notice => 'O Shopping foi criado com sucesso.' }
         format.json { render :json => @shopping, :status => :created, :location => @shopping }
       else
         format.html { render :action => "new" }
@@ -70,7 +70,7 @@ class ShoppingsController < ApplicationController
 
     respond_to do |format|
       if @shopping.update_attributes(params[:shopping])
-        format.html { redirect_to @shopping, :notice => 'Shopping was successfully updated.' }
+        format.html { redirect_to @shopping, :notice => 'O Shopping foi actualizado com sucesso.' }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }

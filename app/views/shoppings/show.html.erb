@@ -1,6 +1,5 @@
-
-
 <section>
+  
   <div class="row">
     <div class ="twelve columns">
        <div class="underline"><span class="text"><h1><%= @shopping.nome %></h1></span></div> 
@@ -50,11 +49,11 @@
   <p></p>
   
   <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&maptype=satellite&sensor=false&zoom=16&markers=#{@shopping.latitude}%2C#{@shopping.longitude}" %>
+  <div align ="left">
+  <% if current_admin %><%= link_to 'Editar', edit_shopping_path(@shopping), :class => "nice small radius blue button" %><% end %> 
+  </div>
 </p>
 
 </div>
-<% if current_admin %><%= link_to 'Editar', edit_shopping_path(@shopping), :class => "nice small radius blue button" %>
-  <% end %>  
 </div>
 </section>
-<p id="notice"><%= notice %></p>
