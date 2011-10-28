@@ -1,9 +1,12 @@
 .footer {
   background-color: #eee;
-  min-width: 940px;
-  padding: 5px 0;
+  
+  
   text-shadow: 0 1px 0 #fff;
   border-top: 1px solid #e5e5e5;
+  position:absolute;
+  bottom:0;
+  width:100%;
   -webkit-box-shadow: inset 0 5px 15px rgba(0,0,0,.025);
   -moz-box-shadow: inset 0 5px 15px rgba(0,0,0,.025);
   box-shadow: inset 0 5px 15px rgba(0,0,0,.025);
@@ -29,6 +32,7 @@
 
 body{
 padding-top:80px;
+padding-bottom:80px;
 }
 
 .underline {
