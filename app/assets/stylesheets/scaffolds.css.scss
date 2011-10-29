@@ -14,15 +14,16 @@ clear: both;
 }
 
 .clearfooter {
-height: 120px;
+height: 100px;
 clear: both;
 }
 
 .footer {
+  padding-top: 15px;
   background-color: #eee;
   text-shadow: 0 1px 0 #fff;
   border-top: 1px solid #e5e5e5;
-  height: 79px;
+  height: 70px;
   position: relative;
   width:100%;
   -webkit-box-shadow: inset 0 5px 15px rgba(0,0,0,.025);
