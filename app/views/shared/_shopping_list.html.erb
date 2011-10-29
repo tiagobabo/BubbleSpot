@@ -2,14 +2,12 @@
   <section>
 		 <div class="row">
       <div class="twelve columns"> 
-        <div class="underline"><span class="text"><h1>Shoppings</h1></span></div> 
-            
-		 	</div>
-		 </div>
+        <div class="underline"><span class="text"><h1>Shoppings</h1></span></div>   
+          </div>
     
 <% @shoppings.each do |shopping| %>
 
-<%= cycle("<div class='row'>","","").html_safe %>
+<%= cycle("</div><div class='row'>","","").html_safe %>
 <div class="four columns">
   <%= link_to image_tag(shopping.imagem), shopping %>
   <p></p>
