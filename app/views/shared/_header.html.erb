@@ -15,17 +15,19 @@
             <li><%= link_to "Log in", log_in_path %></li>
             <% end %>      
           </ul>
-          <div class="twelve columns">
-          <ul class="nav">
+          
+        </div>
+        <div class="container hide-on-desktops" >
+        <div class="twelve columns">
+          <ul >
             <% if current_admin %>
-            <li><%= link_to "Log out", log_out_path %></li>
-            <li><%= link_to current_admin.email, admins_index_path %></li>
+            <li><%= link_to "Log out", log_out_path, :class => "admin" %></li>
+            <li><%= link_to current_admin.email, admins_index_path, :class => "admin" %></li>
             <% else %>
-            <li><%= link_to "Log in", log_in_path %></li>
+            <li><%= link_to "Log in", log_in_path, :class => "admin" %></li>
             <% end %>      
           </ul>   
 		 	</div>
-        </div>
-        
+		 	</div>
       </div>
     </div>
