@@ -7,27 +7,27 @@
             <li class="<%= controller.controller_path == 'shoppings' ? 'active' : '' %>"> <%= link_to "Shoppings", shoppings_url %></li>
             <li class="<%= controller.controller_path == 'search' ? 'active' : '' %>"> <%= link_to "Pesquisa", search_index_url %></li>          
           </ul>          
-          <ul class="nav secondary-nav">
+          <ul class="nav secondary-nav hide-on-phones">
             <% if current_admin %>
             <li><%= link_to "Log out", log_out_path %></li>
             <li><%= link_to current_admin.email, admins_index_path %></li>
             <% else %>
             <li><%= link_to "Log in", log_in_path %></li>
             <% end %>      
-          </ul>
-          
-        </div>
-        <div class="container hide-on-desktops" >
-        <div class="twelve columns">
-          <ul >
-            <% if current_admin %>
-            <li><%= link_to "Log out", log_out_path, :class => "admin" %></li>
-            <li><%= link_to current_admin.email, admins_index_path, :class => "admin" %></li>
-            <% else %>
-            <li><%= link_to "Log in", log_in_path, :class => "admin" %></li>
-            <% end %>      
           </ul>   
+        </div>
+        
+        <div class="container hide-on-desktops" >
+          <div class="twelve columns">
+            <ul >
+              <% if current_admin %>
+              <li><%= link_to "Log out", log_out_path %></li>
+              <li><%= link_to current_admin.email, admins_index_path %></li>
+              <% else %>
+              <li><%= link_to "Log in", log_in_path %></li>
+              <% end %>      
+            </ul>   
+		 	   </div>
 		 	</div>
-		 	</div>
-      </div>
     </div>
+</div>
