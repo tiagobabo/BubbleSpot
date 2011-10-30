@@ -6,6 +6,8 @@
            
             <li class="<%= controller.controller_path == 'shoppings' ? 'active' : '' %>"> <%= link_to "Shoppings", shoppings_url %></li>
             <li class="<%= controller.controller_path == 'search' ? 'active' : '' %>"> <%= link_to "Pesquisa", search_index_url %></li>
+            <li class="<%= controller.controller_path == 'search' ? 'active' : '' %>"> <%= link_to "Admin", search_index_url %></li>
+            <li class="<%= controller.controller_path == 'search' ? 'active' : '' %>"> <%= link_to "Logout", search_index_url %></li>
           </ul>
           <ul class="nav secondary-nav">
             <% if current_admin %>
