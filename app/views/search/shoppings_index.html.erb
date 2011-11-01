@@ -9,8 +9,9 @@
     <div class="row">
 <div class="twelve columns">
  <%= form_tag search_shoppings_url, {:method => :get, :class => "custom"} do %>
-    <%= select_tag(:pesquisa, options_for_select(SearchController::TERMOS)) %>
     <%= text_field_tag :query , "", :class => "medium input-text"%>   
+    <p></p>
+    <%= select_tag(:pesquisa, options_for_select(SearchController::TERMOS)) %>
     <p></p>
   <%= submit_tag "Pesquisar", :class => "nice small radius blue button" %>
 <% end %>
