@@ -1,15 +1,15 @@
 <section>
-		 <div class="row">
-      <div class="twelve columns"> 
-        <div class="underline"><span class="text"><h1>Pesquisa de Shoppings</h1></span></div> 
+<div class="row">
+      <div class="twelve columns">
+        <div class="underline"><span class="text"><h1>Pesquisa de Shoppings</h1></span></div>
             
-		 	</div>
-		 </div>
+</div>
+</div>
      <p></p>
     <div class="row">
 <div class="twelve columns">
  <%= form_tag search_shoppings_url, {:method => :get, :class => "custom"} do %>
-    <%= text_field_tag :query , "", :class => "medium input-text"%>   
+    <%= text_field_tag :query , "", :class => "medium input-text"%>
     <p></p>
     <%= select_tag(:pesquisa, options_for_select(SearchController::TERMOS)) %>
     <p></p>
@@ -19,3 +19,5 @@
 </div>
 </div>
 </section>
+
+

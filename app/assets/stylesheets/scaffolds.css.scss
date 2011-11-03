@@ -361,3 +361,44 @@ color:#000000;
   margin-left: 240px;
 }
 
+
+form.custom div.custom.dropdown a.current{
+   width: 48px;
+}
+
+form.custom div.custom.dropdown a.selector{
+  left: 93px;
+}
+
+form.custom div.custom.dropdown element{
+  width: 988px;
+}
+
+#dialog-modal ul{
+  width: 100px;
+}
+
+.ui-widget-header {
+    background: none;
+    border: none;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    padding: 0em 0em 0em 0em;
+}
+
+#cover {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 10;
+display: none;
+background-color: #000000;
+opacity: .7;
+filter:progid:DXImageTransform.Microsoft.BasicImage(opacity=.7);
+}
+
+  
+  

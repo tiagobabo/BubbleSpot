@@ -2,10 +2,17 @@
 <html>
 <head>
   <title>BubbleSpot</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
+ <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/black-tie/jquery-ui.css", "application" %>
+
+ <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js", "application", "popup.js", "jqueryui.js" %>
+
+ <%= javascript_include_tag "jquery.rails.js" %>
+
+  
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  
 </head>
 <body>
 

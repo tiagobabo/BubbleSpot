@@ -1,14 +1,34 @@
+
 <section>
-		 <div class="row">
-      <div class="twelve columns"> 
-        <div class="underline"><span class="text"><h1>Pesquisa</h1></span></div> 
+  <div id="cover"></div>
+    <div id="dialog-modal2" title="">
+      <div class="underline"><span class="text"><h4>Pesquisa de Shoppings</h4></span></div>
+       <p></p>
+	 <%= form_tag search_shoppings_url, {:method => :get, :class => "custom"} do %>
+    <%= text_field_tag :query , "", :class => "medium input-text"%>
+    <p></p>
+    <%= select_tag(:pesquisa, options_for_select(SearchController::TERMOS)) %>
+    
+   
+ 
+    <p></p>
+  <%= submit_tag "Pesquisar", :class => "nice small radius blue button" %>
+<% end %>
+
+</div>
+
+
+<div class="row">
+      <div class="twelve columns">
+        <div class="underline"><span class="text"><h1>Pesquisa</h1></span></div>
             
-		 	</div>
-		 </div>
+</div>
+</div>
    
     <div class="row">
 <div class="four columns">
-  <%= link_to image_tag("shoppings.jpg"), search_shoppings_url %>
+ <img id="opener" class="hide-on-mobile" src="assets/shoppings.jpg">
+  <%= link_to image_tag("shoppings.jpg"), search_shoppings_url, :class=>"hide-on-desktops" %>
   <p></p>
 </div>
 <div class="four columns">
@@ -22,3 +42,7 @@
 
 </div>
 </section>
+
+
+
+
