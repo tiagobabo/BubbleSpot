@@ -14,39 +14,39 @@
      <div class="underline"><h5>TELEFONE</h5></div> 
     
     <h4><%= @shopping.telefone %></h4>
-  </p>
+    
   
   <p>
      <div class="underline"><h5>MORADA</h5></div> 
     <h4><%= @shopping.localizacao %></h4>
-  </p>
+    
   
   <p>
     <div class="underline"><h5>E-MAIL</h5></div> 
     
     <h4><%= @shopping.email %></h4>
-  </p>
+    
   
   <p>
     <div class="underline"><h5>DESCRIÇÃO</h5></div> 
     
     <h4><%= @shopping.descricao %></h4>
-  </p>
+    
   
   <p>
     <div class="underline"><h5>LATITUDE</h5></div> 
     
     <h4><%= @shopping.latitude %></h4>
-  </p>
+    
   
   <p>
     <div class="underline"><h5>LONGITUDE</h5></div> 
     <h4><%= @shopping.longitude %></h4>
-  </p>
+    
 </div>
   <div class="six columns">
 <p>
-  <p></p>
+  <p>
   
   <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&maptype=satellite&sensor=false&zoom=16&markers=#{@shopping.latitude}%2C#{@shopping.longitude}" %>
   <div align ="left">
