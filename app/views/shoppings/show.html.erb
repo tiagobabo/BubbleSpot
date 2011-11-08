@@ -45,14 +45,13 @@
     
 </div>
   <div class="six columns">
-  </p> 
   
-  <br/>
+  <p><p>
   <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&maptype=satellite&sensor=false&zoom=16&markers=#{@shopping.latitude}%2C#{@shopping.longitude}" %>
-  <div align ="left">
+  <div>
   <% if current_admin %><%= link_to 'Editar', edit_shopping_path(@shopping), :class => "nice small radius blue button" %><% end %> 
   </div>
-  
+</p>  
 
 </div>
 </div>
