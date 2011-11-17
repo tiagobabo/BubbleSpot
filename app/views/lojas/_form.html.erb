@@ -1,0 +1,45 @@
+<section>
+
+    <div class="row">
+<div class="twelve columns">
+<%= form_for([@shopping, @loja]) do |f| %>
+
+  <div class="field">
+    Nome
+    <%= f.text_field :nome, :class => "large input-text" %>
+  </div>
+  
+  <div class="field">
+    Piso
+    <%= f.text_field :piso, :class => "large input-text" %>
+  </div>
+  
+  <div class="field">
+    Número
+    <%= f.text_field :numero, :class => "large input-text" %>
+  </div>
+  
+  <div class="field">
+    Telefone
+    <%= f.text_field :telefone, :class => "large input-text" %>
+  </div>
+  
+  <div class="field">
+    Detalhes
+    <%= f.text_area :detalhes, :class => "large input-text" %>
+  </div>
+  
+   <div class="field">
+    Link para a Imagem
+    <%= f.text_field :imagem, :class => "large input-text" %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Confirmar", :class => "nice small radius blue button" %>
+  </div>
+<% end %>
+
+</div>
+</div>
+</section>
+

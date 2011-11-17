@@ -1,10 +1,54 @@
-<h1>Loja in <%= @shopping.nome %></h1>
+<section>
+  
+  <div class="row">
+    <div class ="twelve columns">
+    <div class="underline"><h1>Loja do <%= @shopping.nome %></h1></div> 
+      
+    </div>
+  </div>  
+<div class="row">
+  
+  <div class="six columns">
+  
+  <p>
+     <div class="underline"><h5>LOJA</h5></div> 
+     <h4><%= @loja.nome %></h4>
+  </p>  
+  
+  <p>
+     <div class="underline"><h5>Piso</h5></div> 
+     <h4><%= @loja.piso %></h4>
+  </p>  
+  
+  <p>
+     <div class="underline"><h5>Número</h5></div> 
+     <h4><%= @loja.numero %></h4>
+  </p>  
+  
+  <p>
+     <div class="underline"><h5>Telefone</h5></div> 
+     <h4><%= @loja.telefone %></h4>
+  </p>  
+  
+  <p>
+     <div class="underline"><h5>Detalhes</h5></div> 
+     <h4><%= @loja.detalhes %></h4>
+  </p>
+  
 
-<p>
-  <b>Loja name:</b>
-  <%= @loja.nome %>
-</p>
+<%= link_to 'Voltar', shopping_lojas_path(@shopping) ,  :class => "nice small radius blue button" %>
+  
+</div>
+
+  <div class="six columns">
+  
+  <p></p> 
+  <%= image_tag(@loja.imagem)%>
+  
+
+</div>
 
 
-<%= link_to 'Edit', edit_shopping_loja_path(@shopping, @loja) %> |
-<%= link_to 'Back', shopping_lojas_path(@shopping) %>
+</section>
+
+
