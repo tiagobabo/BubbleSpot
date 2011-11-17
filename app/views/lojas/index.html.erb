@@ -1,21 +1,35 @@
-<h1>Items in <%= @shopping.nome %></h1>
+<% if @lojas != nil && @lojas.count > 0 %>
+  <section>
+		 <div class="row">
+      <div class="twelve columns"> 
+        <div class="underline"><h1>Lojas do <%= @shopping.nome %></h1></div>   
+          </div>
+    
+<% @lojas.each do |loja| %>
 
-<table>
-  <tr>
-    <th>Item name</th>
-  </tr>
-
-<% for loja in @lojas %>
-  <tr>
-    <td><%= loja.nome %></td>
-    <td><%= link_to 'Show', shopping_loja_path(@shopping, loja) %></td>
-    <td><%= link_to 'Edit', edit_shopping_loja_path(@shopping, loja) %></td>
-    <td><%= link_to 'Destroy', shopping_loja_path(@shopping, loja), :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<%= cycle("</div><div class='row'>","","").html_safe %>
+<div class="four columns">
+  <%= link_to image_tag(loja.imagem), shopping_loja_path(@shopping, loja) %>
+  <p></p>
+</div>
 <% end %>
-</table>
+  <div class = "six columns">
+    <%= link_to 'Voltar ao Shopping', @shopping,  :class => "nice small radius blue button"  %>
+    </div>
+</div>
+</section>
+<%else %>
+<section>
+		 <div class="row">
+      <div class="twelve columns"> 
+        <div class="underline"><h2>Não existem lojas..</h2></div> 
+      </div>
+		 </div>
+     <div class = "six columns">
+        <%= link_to 'Voltar ao Shopping', @shopping,  :class => "nice small radius blue button"  %>
+    </div>
+</section>
 
-<br />
 
-<%= link_to 'New loja', new_shopping_loja_path(@shopping) %>
-<%= link_to 'Back to Shopping', @shopping %>
+<%end %>
+
