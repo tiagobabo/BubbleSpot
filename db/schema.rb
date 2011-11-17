@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111025170412) do
+ActiveRecord::Schema.define(:version => 20111115155935) do
 
   create_table "admins", :force => true do |t|
     t.string   "email"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20111025170412) do
     t.integer  "shopping_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "tags"
   end
 
   add_index "lojas", ["shopping_id"], :name => "index_lojas_on_shopping_id"

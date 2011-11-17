@@ -3,6 +3,7 @@
 class SearchController < ApplicationController
 
   TERMOS = [['Nome',0], ['Localização',1]]
+  TERMOS_LOJAS = [['Nome',0], ['Áreas de negócio',1]]
   
   def shoppings   
     
@@ -33,5 +34,25 @@ class SearchController < ApplicationController
       render "shoppings_index"
     end
   end
+  
+  def lojas 
+    
+     if params[:query].present?
+      
+      if params[:pesquisa] == "0"
+        search = params[:query].downcase + "%"
+        @lojas = Loja.where("lower(nome) like ?", search)        
+      elsif params[:pesquisa] == "1"
+        search = "%" + params[:query].downcase + "%"
+        @lojas = Loja.where("lower(tags) like ?", search)
+      end
+    
+    end
+      respond_to do |format|
+        format.html # lojas.html.erb
+        format.json { render :json => @lojas }
+      end
+  end
+    
   
 end

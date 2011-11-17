@@ -4,10 +4,14 @@ class LojasController < ApplicationController
   def index
     # For URL like /shoppings/1/lojas
     # Get the shopping with id=1
-    @shopping = Shopping.find(params[:shopping_id])
+    @shopping = Shopping.find(params[:id])
 
     # Access all lojas for that shopping
     @lojas = @shopping.lojas
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @lojas }
+    end
   end
 
   # GET /shoppings/1/lojas/2
@@ -17,6 +21,10 @@ class LojasController < ApplicationController
     # For URL like /shoppings/1/lojas/2
     # Find an loja in shoppings 1 that has id=2
     @loja = @shopping.lojas.find(params[:id])
+     respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @loja }
+    end
   end
 
   # GET /shoppings/1/lojas/new
@@ -25,6 +33,7 @@ class LojasController < ApplicationController
 
     # Associate an loja object with shopping 1
     @loja = @shopping.lojas.build
+    
   end
 
   # POST /shoppings/1/lojas
