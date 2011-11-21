@@ -44,11 +44,13 @@ class LojasController < ApplicationController
     # Populate an loja associate with shopping 1 with form data
     # Shopping will be associated with the loja
     @loja = @shopping.lojas.build(params[:loja])
-    if @loja.save
-      # Save the loja successfully
-      redirect_to shopping_loja_url(@shopping, @loja)
-    else
-      render :action => "new"
+    respond_to do |format|
+      if @loja.save
+        # Save the loja successfully
+        format.html { redirect_to admins_lojas_url(@shopping) , :notice => 'A loja foi criada com sucesso.' }
+      else
+        format.html { render :action => "new" }
+      end
     end
   end
 
@@ -65,11 +67,15 @@ class LojasController < ApplicationController
   def update
     @shopping = Shopping.find(params[:shopping_id])
     @loja = Loja.find(params[:id])
-    if @loja.update_attributes(params[:loja])
-      # Save the loja successfully
-      redirect_to shopping_loja_url(@shopping, @loja)
-    else
-      render :action => "edit"
+    
+    
+    respond_to do |format|
+      if @loja.update_attributes(params[:loja])
+        # Save the loja successfully
+        format.html { redirect_to admins_lojas_url(@shopping) , :notice => 'A loja foi atualizada com sucesso.' }
+      else
+        format.html {render :action => "edit" }
+      end
     end
   end
 
@@ -80,7 +86,7 @@ class LojasController < ApplicationController
     @loja.destroy
 
     respond_to do |format|
-      format.html { redirect_to shopping_lojas_path(@shopping) }
+      format.html { redirect_to admins_lojas_url(@shopping) , :notice => 'A loja foi eliminada com sucesso.' }
       format.xml  { head :ok }
     end
   end

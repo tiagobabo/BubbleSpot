@@ -1,35 +1,46 @@
+ <section>  
+  <div class ="row">
+    <div class = "twelve columns">
+      <div class="underline"><h1>Gestão de Lojas do Shopping ...</h1></div> 
+    </div>
+  </div>
+   
 <% if @lojas != nil && @lojas.count > 0 %>
-  <section>
-		 <div class="row">
-      <div class="twelve columns"> 
-        <div class="underline"><h1>Lojas do <%= @shopping.nome %></h1></div>   
-          </div>
-    
-<% @lojas.each do |loja| %>
-
-<%= cycle("</div><div class='row'>","","").html_safe %>
-<div class="four columns">
-  <%= link_to image_tag(loja.imagem), shopping_loja_path(@shopping, loja) %>
-  <p></p>
-</div>
-<% end %>
-  <div class = "six columns">
-    <%= link_to 'Voltar ao Shopping', @shopping,  :class => "nice small radius blue button"  %>
+   <div class ="row">
+    <div class = "twelve columns">
+    <table>
+   <tr>
+     <th>Nome</th>
+     <th>Telefone</th>
+     <th>Detalhes</th>
+     <th>Tags</th>
+     <th></th>
+     <th></th>
+     <th></th>
+   </tr>
+ 
+ <% @lojas.each do |loja| %>
+   <tr>
+     <td><%= loja.nome %></td>
+     <td><%= loja.telefone %></td>
+     <td><%= truncate loja.detalhes, :length => 50 %></td>
+     <td><%= loja.tags %></td>
+     <td><%= link_to 'Mostrar', shopping_loja_path(@shopping, loja) %></td>
+     <td><%= link_to 'Editar', edit_shopping_loja_path(@shopping, loja) %></td>
+     <td><%= link_to 'Apagar', shopping_loja_path(@shopping, loja), :confirm => 'Tem a certeza?', :method => :delete %></td>
+   </tr>
+ <% end %>
+ </table>
     </div>
-</div>
+  </div>
+  
 </section>
-<%else %>
-<section>
-		 <div class="row">
-      <div class="twelve columns"> 
-        <div class="underline"><h2>Não existem lojas..</h2></div> 
-      </div>
-		 </div>
-     <div class = "six columns">
-        <%= link_to 'Voltar ao Shopping', @shopping,  :class => "nice small radius blue button"  %>
-    </div>
-</section>
-
 
 <%end %>
-
+<section>
+    <div class="row">
+      <div class="twelve columns"> 
+            <%= link_to 'Adicionar Loja', new_shopping_loja_path(@shopping), :class => "nice small radius blue button"  %>
+		 	</div>
+    </div>
+  </section>

@@ -1,13 +1,5 @@
 BubbleSpot::Application.routes.draw do
 
-  get "lojas/index"
-
-  get "lojas/show"
-
-  get "lojas/new"
-
-  get "lojas/edit"
-
   get "admin/log_out" => "sessions#destroy", :as => "log_out"
   get "admin/log_in" => "sessions#new", :as => "log_in"
   get "admin" => "sessions#new"
@@ -22,9 +14,6 @@ BubbleSpot::Application.routes.draw do
   get "shoppings/:id/lojas" => "lojas#index", :as => "lojas_shopping_index"
   get "admin/shoppings/:id/lojas" => "admins#lojas", :as => "admins_lojas"
 
-
-  
-  
   root :to => "shoppings#index" 
   
   resources :admins

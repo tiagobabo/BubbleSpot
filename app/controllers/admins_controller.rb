@@ -9,6 +9,11 @@ class AdminsController < ApplicationController
     @shoppings = Shopping.all
   end
   
+   def lojas
+    @shopping = Shopping.find(params[:id])
+    @lojas = @shopping.lojas.all
+  end
+  
  def new
   @admin = Admin.new
 end
