@@ -1,5 +1,15 @@
 class LojasController < ApplicationController
  
+
+# GET /lojas.json
+
+def all
+  @lojas = Loja.all
+  respond_to do |format|
+    format.json { render :json => @lojas }
+  end
+end
+
 # GET /shoppings/1/lojas
   def index
     # For URL like /shoppings/1/lojas
@@ -21,7 +31,9 @@ class LojasController < ApplicationController
     # For URL like /shoppings/1/lojas/2
     # Find an loja in shoppings 1 that has id=2
     @loja = @shopping.lojas.find(params[:id])
-     respond_to do |format|
+    @loja[:shopping_nome] = @shopping.nome
+    
+    respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @loja }
     end
