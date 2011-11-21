@@ -1,0 +1,21 @@
+Script started on Mon 21 Nov 2011 03:27:19 PM WET
+]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ cd ..git pull[3Pcd ..[Kcd ..git pullcd BubbleSpot[K[K[K[K[K[K[K[K[K[K[K[K[Kgit clone git@github.com:heldersantosmoreira/driver--assistant-jadex.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [23Prmdr driver-assistant-jadex/
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit clone git@github.com:heldersantosmoreira/driver--assistant-jadex.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit pull[3Pcd ..[K./commit "adicionado nome do shopping às lojas"
+[master 8dcf0fb] adicionado nome do shopping às lojas
+ 2 files changed, 14 insertions(+), 1 deletions(-)
+ create mode 100644 "adicionado nome do shopping \303\240s lojas"
+Counting objects: 13, done.
+Delta compression using up to 2 threads.
+Compressing objects:  14% (1/7)   Compressing objects:  28% (2/7)   Compressing objects:  42% (3/7)   Compressing objects:  57% (4/7)   Compressing objects:  71% (5/7)   Compressing objects:  85% (6/7)   Compressing objects: 100% (7/7)   Compressing objects: 100% (7/7), done.
+Writing objects:  14% (1/7)   Writing objects:  28% (2/7)   Writing objects:  42% (3/7)   Writing objects:  57% (4/7)   Writing objects:  71% (5/7)   Writing objects:  85% (6/7)   Writing objects: 100% (7/7)   Writing objects: 100% (7/7), 765 bytes, done.
+Total 7 (delta 6), reused 0 (delta 0)
+To git@github.com:tiagobabo/BubbleSpot.git
+   0766992..8dcf0fb  master -> master
+fatal: 'heroku' does not appear to be a git repository
+fatal: The remote end hung up unexpectedly
+No app specified.
+Run this command from an app folder or specify which app to use with --app <app name>
+]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ git add re[K[K[K[Kd remote heroku git@heroku.com:bubblespot.git [A
+fatal: pathspec 'remote' did not match any files
+]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ git add remote heroku git@heroku.com:bubblespot.git [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cradd remote heroku git@heroku.com:bubblespot.gitt[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[Ceadd remote heroku git@heroku.com:bubblespot.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[Cmadd remote heroku git@heroku.com:bubblespot.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[Coadd remote heroku git@heroku.com:bubblespot.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[C[Ctadd remote heroku git@heroku.com:bubblespot.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[C[C[Ceadd remote heroku git@heroku.com:bubblespot.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[C[C[C[C add remote heroku git@heroku.com:bubblespot.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[C[C[C[C[C[Cadd remote heroku git@heroku.com:bubblespot.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[C[C[C[C[C[Cdadd remote heroku git@heroku.com:bubblespot.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[C[C[C[C[C[C[Cdadd remote heroku git@heroku.com:bubblespot.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[C[C[C[C[C[C[
