@@ -46,10 +46,15 @@ class SearchController < ApplicationController
         search = "%" + params[:query].downcase + "%"
         @lojas = Loja.where("lower(tags) like ?", search)
       end
+      
+      @lojas.each do |loja|
+        @shopping = Shopping.find(loja[:shopping_id])
+        loja[:shopping_nome] = @shopping.nome 
+      end
     
     end
       respond_to do |format|
-        format.html # lojas.html.erb
+        format.html  # lojas.html.erb
         format.json { render :json => @lojas }
       end
   end
