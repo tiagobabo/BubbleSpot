@@ -1,0 +1,35 @@
+<% if @lojas != nil && @lojas.count > 0 %>
+  <section>
+		 <div class="row">
+      <div class="twelve columns"> 
+        <div class="underline"><h1>Lojas do <%= @shopping.nome %></h1></div>   
+          </div>
+    
+<% @lojas.each do |loja| %>
+
+<%= cycle("</div><div class='row'>","","").html_safe %>
+<div class="four columns">
+  <%= link_to image_tag(loja.imagem), shopping_loja_path(@shopping, loja) %>
+  <p></p>
+</div>
+<% end %>
+  <div class = "six columns">
+    <%= link_to 'Voltar ao Shopping', @shopping,  :class => "nice small radius blue button"  %>
+    </div>
+</div>
+</section>
+<%else %>
+<section>
+		 <div class="row">
+      <div class="twelve columns"> 
+        <div class="underline"><h2>Não existem lojas..</h2></div> 
+      </div>
+		 </div>
+     <div class = "six columns">
+        <%= link_to 'Voltar ao Shopping', @shopping,  :class => "nice small radius blue button"  %>
+    </div>
+</section>
+
+
+<%end %>
+

@@ -2,18 +2,13 @@
   
   <div class="row">
     <div class ="twelve columns">
-    <div class="underline"><h1>Loja do <%= @shopping.nome %></h1></div> 
+    <div class="underline"><h1><%= @loja.nome %></h1></div> 
       
     </div>
   </div>  
 <div class="row">
   
   <div class="six columns">
-  
-  <p>
-     <div class="underline"><h5>LOJA</h5></div> 
-     <h4><%= @loja.nome %></h4>
-  </p>  
   
   <p>
      <div class="underline"><h5>Piso</h5></div> 
@@ -33,6 +28,11 @@
   <p>
      <div class="underline"><h5>Detalhes</h5></div> 
      <h4><%= @loja.detalhes %></h4>
+  </p>
+  
+  <p>
+     <div class="underline"><h5>Áreas de Negócio</h5></div> 
+     <h4><%= @loja.tags %></h4>
   </p>
   
 

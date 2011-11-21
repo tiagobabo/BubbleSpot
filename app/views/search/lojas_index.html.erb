@@ -1,0 +1,21 @@
+<section>
+<div class="row">
+      <div class="twelve columns">
+        <div class="underline"><h1>Pesquisa de Lojas</h1></div>
+            
+</div>
+</div>
+     <p></p>
+    <div class="row">
+<div class="twelve columns">
+ <%= form_tag search_lojas_url, {:method => :get, :class => "custom"} do %>
+    <%= text_field_tag :query , "", :class => "medium input-text"%>
+    <p></p>
+    <%= select_tag(:pesquisa, options_for_select(SearchController::TERMOS_LOJAS)) %>
+    <p></p>
+  <%= submit_tag "Pesquisar", :class => "nice small radius blue button" %>
+<% end %>
+  
+</div>
+</div>
+</section>

@@ -26,16 +26,23 @@
   
   <div class="field">
     Detalhes
-    <%= f.text_area :detalhes, :class => "large input-text" %>
+    <%= f.text_area :detalhes, :rows => 6, :class => "large input-text" %>
   </div>
   
-   <div class="field">
+  <div class="field">
     Link para a Imagem
     <%= f.text_field :imagem, :class => "large input-text" %>
   </div>
   
+     <div class="field">
+    Áreas de Negócio
+    <%= f.text_field :tags, :class => "large input-text"%>
+    <small>Inserir áreas separadas por espaço </small><p></p>
+  </div>
+  
   <div class="actions">
-    <%= f.submit "Confirmar", :class => "nice small radius blue button" %>
+    <%= f.submit "Confirmar", :class => "nice small radius blue button",  :placeholder => "Insira as Tags separadas por espaço"
+ %>
   </div>
 <% end %>
 
