@@ -18,6 +18,7 @@ end
 
     # Access all lojas for that shopping
     @lojas = @shopping.lojas
+    @loja[:shopping_nome] = @shopping.nome
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @lojas }
