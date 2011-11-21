@@ -5,6 +5,10 @@ class LojasController < ApplicationController
 
 def all
   @lojas = Loja.all
+  @lojas.each do |loja|
+    @shopping = Shopping.find(loja[:shopping_id])
+    loja[:shopping_nome] = @shopping.nome 
+  end
   respond_to do |format|
     format.json { render :json => @lojas }
   end

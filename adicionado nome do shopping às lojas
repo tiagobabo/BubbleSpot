@@ -172,4 +172,42 @@ To git@heroku.com:bubblespot.git
 [32m2011-11-21T15:36:03+00:00 heroku[router]:[0m GET bubblespot.heroku.com/shoppings/3/lojas dyno=web.1 queue=0 wait=0ms service=350ms status=200 bytes=2782
 [36m2011-11-21T15:36:04+00:00 app[web.1]:[0m cache: [GET /assets/application-40d791f8f6aedbb408cd01bb8fc88985.js] miss
 [36m2011-11-21T15:36:04+00:00 app[web.1]:[0m cache: [GET /assets/application-07f47d0f1beb6a961db9f49183018879.css] miss
-[32m2011-11-21T15:36:04+00:00 heroku[router]:[0m 
+[32m2011-11-21T15:36:04+00:00 heroku[router]:[0m GET bubblespot.heroku.com/assets/application-40d791f8f6aedbb408cd01bb8fc88985.js dyno=web.1 queue=0 wait=0ms service=30ms status=200 bytes=313744
+[32m2011-11-21T15:36:08+00:00 heroku[router]:[0m GET bubblespot.heroku.com/assets/foundation/misc/button-gloss-7047c0bab823262ba21b8c11a647387d.png dyno=web.1 queue=0 wait=0ms service=6ms status=200 bytes=120
+[36m2011-11-21T15:36:09+00:00 app[web.1]:[0m 
+[36m2011-11-21T15:36:09+00:00 app[web.1]:[0m 
+[36m2011-11-21T15:36:09+00:00 app[web.1]:[0m Started GET "/shoppings/3/lojas.json" for 193.136.33.133 at 2011-11-21 07:36:09 -0800
+[36m2011-11-21T15:36:09+00:00 app[web.1]:[0m   Processing by LojasController#index as JSON
+[36m2011-11-21T15:36:09+00:00 app[web.1]:[0m   Parameters: {"id"=>"3"}
+[36m2011-11-21T15:36:09+00:00 app[web.1]:[0m Completed 200 OK in 39ms (Views: 11.7ms | ActiveRecord: 20.2ms)
+[36m2011-11-21T15:36:09+00:00 app[web.1]:[0m cache: [GET /shoppings/3/lojas.json] miss
+[32m2011-11-21T15:36:09+00:00 heroku[router]:[0m GET bubblespot.heroku.com/shoppings/3/lojas.json dyno=web.1 queue=0 wait=0ms service=48ms status=200 bytes=293
+[33m2011-11-21T15:36:48+00:00 heroku[rake.4]:[0m State changed from created to starting
+[33m2011-11-21T15:36:54+00:00 app[rake.4]:[0m Awaiting client
+[33m2011-11-21T15:36:54+00:00 app[rake.4]:[0m Starting process with command `bundle exec rake db:migrate`
+[33m2011-11-21T15:36:54+00:00 heroku[rake.4]:[0m State changed from starting to up
+[33m2011-11-21T15:36:58+00:00 heroku[rake.4]:[0m Process exited
+[33m2011-11-21T15:36:59+00:00 heroku[rake.4]:[0m State changed from up to complete
+]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ heroku logsrake db:migrate./commit "adicionado nome do shopping às lojas"
+[master c8a0028] adicionado nome do shopping às lojas
+ 2 files changed, 139 insertions(+), 1 deletions(-)
+Counting objects: 11, done.
+Delta compression using up to 2 threads.
+Compressing objects:  16% (1/6)   Compressing objects:  33% (2/6)   Compressing objects:  50% (3/6)   Compressing objects:  66% (4/6)   Compressing objects:  83% (5/6)   Compressing objects: 100% (6/6)   Compressing objects: 100% (6/6), done.
+Writing objects:  16% (1/6)   Writing objects:  33% (2/6)   Writing objects:  50% (3/6)   Writing objects:  66% (4/6)   Writing objects:  83% (5/6)   Writing objects: 100% (6/6)   Writing objects: 100% (6/6), 3.47 KiB, done.
+Total 6 (delta 4), reused 0 (delta 0)
+^C
+]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ ./commit "adicionado nome do shopping às lojas"
+[master 0060381] adicionado nome do shopping às lojas
+ 1 files changed, 5 insertions(+), 1 deletions(-)
+Counting objects: 9, done.
+Delta compression using up to 2 threads.
+Compressing objects:  20% (1/5)   Compressing objects:  40% (2/5)   Compressing objects:  60% (3/5)   Compressing objects:  80% (4/5)   Compressing objects: 100% (5/5)   Compressing objects: 100% (5/5), done.
+Writing objects:  20% (1/5)   Writing objects:  40% (2/5)   Writing objects:  60% (3/5)   Writing objects:  80% (4/5)   Writing objects: 100% (5/5)   Writing objects: 100% (5/5), 474 bytes, done.
+Total 5 (delta 4), reused 0 (delta 0)
+To git@github.com:tiagobabo/BubbleSpot.git
+   c8a0028..0060381  master -> master
+Counting objects: 16, done.
+Delta compression using up to 2 threads.
+Compressing objects:   9% (1/11)   Compressing objects:  18% (2/11)   Compressing objects:  27% (3/11)   Compressing objects:  36% (4/11)   Compressing objects:  45% (5/11)   Compressing objects:  54% (6/11)   Compressing objects:  63% (7/11)   Compressing objects:  72% (8/11)   Compressing objects:  81% (9/11)   Compressing objects:  90% (10/11)   Compressing objects: 100% (11/11)   Compressing objects: 100% (11/11), done.
+Writing objects:   9% (1/11)   Writing objects:  18% (2/11)   Writing objects:  27% (3/11)   Writing objects:  36% (4/11)   Writing objects:  45% (5/11)   Writing objects:  54% (6/11)   Writing objects:  63% (7/11)   Writing objects:  72% (8/11)   Writ
