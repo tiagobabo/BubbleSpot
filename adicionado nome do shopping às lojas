@@ -1,213 +1,0 @@
-Script started on Mon 21 Nov 2011 03:27:19 PM WET
-]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ cd ..git pull[3Pcd ..[Kcd ..git pullcd BubbleSpot[K[K[K[K[K[K[K[K[K[K[K[K[Kgit clone git@github.com:heldersantosmoreira/driver--assistant-jadex.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [23Prmdr driver-assistant-jadex/
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit clone git@github.com:heldersantosmoreira/driver--assistant-jadex.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit pull[3Pcd ..[K./commit "adicionado nome do shopping às lojas"
-[master 8dcf0fb] adicionado nome do shopping às lojas
- 2 files changed, 14 insertions(+), 1 deletions(-)
- create mode 100644 "adicionado nome do shopping \303\240s lojas"
-Counting objects: 13, done.
-Delta compression using up to 2 threads.
-Compressing objects:  14% (1/7)   Compressing objects:  28% (2/7)   Compressing objects:  42% (3/7)   Compressing objects:  57% (4/7)   Compressing objects:  71% (5/7)   Compressing objects:  85% (6/7)   Compressing objects: 100% (7/7)   Compressing objects: 100% (7/7), done.
-Writing objects:  14% (1/7)   Writing objects:  28% (2/7)   Writing objects:  42% (3/7)   Writing objects:  57% (4/7)   Writing objects:  71% (5/7)   Writing objects:  85% (6/7)   Writing objects: 100% (7/7)   Writing objects: 100% (7/7), 765 bytes, done.
-Total 7 (delta 6), reused 0 (delta 0)
-To git@github.com:tiagobabo/BubbleSpot.git
-   0766992..8dcf0fb  master -> master
-fatal: 'heroku' does not appear to be a git repository
-fatal: The remote end hung up unexpectedly
-No app specified.
-Run this command from an app folder or specify which app to use with --app <app name>
-]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ git add re[K[K[K[Kd remote heroku git@heroku.com:bubblespot.git [A
-fatal: pathspec 'remote' did not match any files
-]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ git add remote heroku git@heroku.com:bubblespot.git [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cradd remote heroku git@heroku.com:bubblespot.gitt[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[Ceadd remote heroku git@heroku.com:bubblespot.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[Cmadd remote heroku git@heroku.com:bubblespot.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[Coadd remote heroku git@heroku.com:bubblespot.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[C[Ctadd remote heroku git@heroku.com:bubblespot.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[C[C[Ceadd remote heroku git@heroku.com:bubblespot.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[C[C[C[C add remote heroku git@heroku.com:bubblespot.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[C[C[C[C[C[Cadd remote heroku git@heroku.com:bubblespot.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[C[C[C[C[C[Cdadd remote heroku git@heroku.com:bubblespot.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[C[C[C[C[C[C[Cdadd remote heroku git@heroku.com:bubblespot.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[C[C[C[C[C[C[C[Cdd remote heroku git@heroku.com:bubble[1Pspot.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C remote heroku git@heroku.com:bubbles[1Ppot.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C remote heroku git@heroku.com:bubblesp[1Pot.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[C[C[C[C[C[C[C[Cremote heroku git@heroku.com:bubblespo[1Pt.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[C[C[C[C[C[C[C[Cemote heroku git@heroku.com:bubblespot[1P.git[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[C[C[C[C[C[C[C[Cmote heroku git@heroku.com:bubblespot.[1Pgit[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[C[C[C[C[C[C[C[Cote heroku git@heroku.com:bubblespot.g[1Pit[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[C[C[C[C[C[C[C[Cte heroku git@heroku.com:bubblespot.gi[1Pt[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[C[C[C[C[C[C[C[Ce heroku git@heroku.com:bubblespot.git[K[A]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C heroku git@heroku.com:bubblespot.git [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-
-]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ git remote add heroku git@heroku.com:bubblespot.git [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cadd remote
-[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4P./commit "adicionado nome do shopping às lojas"
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-[master 0443a5b] adicionado nome do shopping às lojas
- 1 files changed, 21 insertions(+), 0 deletions(-)
-Counting objects: 5, done.
-Delta compression using up to 2 threads.
-Compressing objects:  33% (1/3)   Compressing objects:  66% (2/3)   Compressing objects: 100% (3/3)   Compressing objects: 100% (3/3), done.
-Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 1.06 KiB, done.
-Total 3 (delta 1), reused 0 (delta 0)
-To git@github.com:tiagobabo/BubbleSpot.git
-   8dcf0fb..0443a5b  master -> master
-Counting objects: 33, done.
-Delta compression using up to 2 threads.
-Compressing objects:   4% (1/23)   Compressing objects:   8% (2/23)   Compressing objects:  13% (3/23)   Compressing objects:  17% (4/23)   Compressing objects:  21% (5/23)   Compressing objects:  26% (6/23)   Compressing objects:  30% (7/23)   Compressing objects:  34% (8/23)   Compressing objects:  39% (9/23)   Compressing objects:  43% (10/23)   Compressing objects:  47% (11/23)   Compressing objects:  52% (12/23)   Compressing objects:  56% (13/23)   Compressing objects:  60% (14/23)   Compressing objects:  65% (15/23)   Compressing objects:  69% (16/23)   Compressing objects:  73% (17/23)   Compressing objects:  78% (18/23)   Compressing objects:  82% (19/23)   Compressing objects:  86% (20/23)   Compressing objects:  91% (21/23)   Compressing objects:  95% (22/23)   Compressing objects: 100% (23/23)   Compressing objects: 100% (23/23), done.
-Writing objects:   4% (1/23)   Writing objects:   8% (2/23)   Writing objects:  13% (3/23)   Writing objects:  17% (4/23)   Writing objects:  21% (5/23)   Writing objects:  26% (6/23)   Writing objects:  30% (7/23)   Writing objects:  34% (8/23)   Writing objects:  39% (9/23)   Writing objects:  43% (10/23)   Writing objects:  47% (11/23)   Writing objects:  52% (12/23)   Writing objects:  56% (13/23)   Writing objects:  60% (14/23)   Writing objects:  65% (15/23)   Writing objects:  69% (16/23)   Writing objects:  73% (17/23)   Writing objects:  78% (18/23)   Writing objects:  82% (19/23)   Writing objects:  86% (20/23)   Writing objects:  91% (21/23)   Writing objects:  95% (22/23)   Writing objects: 100% (23/23)   Writing objects: 100% (23/23), 4.23 KiB, done.
-Total 23 (delta 15), reused 0 (delta 0)
-
------> Heroku receiving push
------> Ruby/Rails app detected
------> Configure Rails 3 to disable x-sendfile
-       Installing rails3_disable_x_sendfile... done
------> Configure Rails to log to stdout
-       Installing rails_log_stdout... done
------> Gemfile detected, running Bundler version 1.0.7
-       All dependencies are satisfied
------> Compiled slug size is 7.5MB
------> Launching... done, v76
-       http://bubblespot.heroku.com deployed to Heroku
-
-To git@heroku.com:bubblespot.git
-   756e373..0443a5b  master -> master
-]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ git add -A -v
-add 'adicionado nome do shopping às lojas'
-]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ git add -A -v./commit "adicionado nome do shopping às lojas"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit remote add heroku git@heroku.com:bubblespot.git [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4P./commit "adicionado nome do shopping às lojas"
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-[master 262e7a0] adicionado nome do shopping às lojas
- 1 files changed, 18 insertions(+), 1 deletions(-)
-Counting objects: 5, done.
-Delta compression using up to 2 threads.
-Compressing objects:  33% (1/3)   Compressing objects:  66% (2/3)   Compressing objects: 100% (3/3)   Compressing objects: 100% (3/3), done.
-Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 1.46 KiB, done.
-Total 3 (delta 1), reused 0 (delta 0)
-To git@github.com:tiagobabo/BubbleSpot.git
-   0443a5b..262e7a0  master -> master
-Counting objects: 5, done.
-Delta compression using up to 2 threads.
-Compressing objects:  33% (1/3)   Compressing objects:  66% (2/3)   Compressing objects: 100% (3/3)   Compressing objects: 100% (3/3), done.
-Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 1.46 KiB, done.
-Total 3 (delta 1), reused 0 (delta 0)
-
------> Heroku receiving push
------> Ruby/Rails app detected
------> Configure Rails 3 to disable x-sendfile
-       Installing rails3_disable_x_sendfile... done
------> Configure Rails to log to stdout
-       Installing rails_log_stdout... done
------> Gemfile detected, running Bundler version 1.0.7
-       All dependencies are satisfied
------> Compiled slug size is 7.5MB
------> Launching... done, v77
-       http://bubblespot.heroku.com deployed to Heroku
-
-To git@heroku.com:bubblespot.git
-   0443a5b..262e7a0  master -> master
-]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ heroku rake db:migrate
-]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ heroku rake db:migrate./commit "adicionado nome do shopping às lojas"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[25Pheroku rake db:migrate[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Klogs
-[36m2011-11-21T15:32:32+00:00 app[web.1]:[0m cache: [GET /shoppings/1/lojas?format=json] miss
-[36m2011-11-21T15:32:32+00:00 app[web.1]:[0m 
-[36m2011-11-21T15:32:32+00:00 app[web.1]:[0m 
-[36m2011-11-21T15:32:32+00:00 app[web.1]:[0m Started GET "/shoppings/3" for 193.136.33.133 at 2011-11-21 07:32:32 -0800
-[36m2011-11-21T15:32:32+00:00 app[web.1]:[0m   Parameters: {"id"=>"3"}
-[36m2011-11-21T15:32:32+00:00 app[web.1]:[0m   Processing by ShoppingsController#show as HTML
-[36m2011-11-21T15:32:32+00:00 app[web.1]:[0m Rendered shoppings/show.html.erb within layouts/application (4.6ms)
-[36m2011-11-21T15:32:32+00:00 app[web.1]:[0m Rendered shared/_header.html.erb (0.8ms)
-[36m2011-11-21T15:32:32+00:00 app[web.1]:[0m Rendered shared/_footer.html.erb (0.0ms)
-[36m2011-11-21T15:32:32+00:00 app[web.1]:[0m Completed 200 OK in 12ms (Views: 7.6ms | ActiveRecord: 3.1ms)
-[36m2011-11-21T15:32:32+00:00 app[web.1]:[0m cache: [GET /shoppings/3] miss
-[33m2011-11-21T15:32:32+00:00 heroku[nginx]:[0m 193.136.33.133 - - [21/Nov/2011:07:32:32 -0800] "GET /shoppings/3 HTTP/1.1" 200 1559 "http://bubblespot.heroku.com/" "Mozilla/5.0 (X11; Linux i686; rv:7.0.1) Gecko/20100101 Firefox/7.0.1" bubblespot.heroku.com
-[33m2011-11-21T15:32:32+00:00 heroku[nginx]:[0m 193.136.33.133 - - [21/Nov/2011:07:32:32 -0800] "GET /assets/foundation/misc/button-gloss-7047c0bab823262ba21b8c11a647387d.png HTTP/1.1" 200 120 "http://bubblespot.heroku.com/assets/application-07f47d0f1beb6a961db9f49183018879.css" "Mozilla/5.0 (X11; Linux i686; rv:7.0.1) Gecko/20100101 Firefox/7.0.1" bubblespot.heroku.com
-[36m2011-11-21T15:32:35+00:00 app[web.1]:[0m 
-[36m2011-11-21T15:32:35+00:00 app[web.1]:[0m 
-[36m2011-11-21T15:32:35+00:00 app[web.1]:[0m Started GET "/shoppings/3/lojas" for 193.136.33.133 at 2011-11-21 07:32:35 -0800
-[32m2011-11-21T15:32:35+00:00 heroku[router]:[0m GET bubblespot.heroku.com/shoppings/3/lojas dyno=web.1 queue=0 wait=1ms service=50ms status=200 bytes=2782
-[33m2011-11-21T15:32:35+00:00 heroku[nginx]:[0m 193.136.33.133 - - [21/Nov/2011:07:32:35 -0800] "GET /shoppings/3/lojas HTTP/1.1" 200 1217 "http://bubblespot.heroku.com/shoppings/3" "Mozilla/5.0 (X11; Linux i686; rv:7.0.1) Gecko/20100101 Firefox/7.0.1" bubblespot.heroku.com
-[36m2011-11-21T15:32:35+00:00 app[web.1]:[0m Rendered lojas/index.html.erb within layouts/application (30.2ms)
-[36m2011-11-21T15:32:35+00:00 app[web.1]:[0m Rendered shared/_header.html.erb (0.9ms)
-[36m2011-11-21T15:32:46+00:00 app[web.1]:[0m 
-[36m2011-11-21T15:32:46+00:00 app[web.1]:[0m 
-[36m2011-11-21T15:32:46+00:00 app[web.1]:[0m Started GET "/shoppings/3/lojas?format=json" for 193.136.33.133 at 2011-11-21 07:32:46 -0800
-[36m2011-11-21T15:32:46+00:00 app[web.1]:[0m   Parameters: {"id"=>"3"}
-[36m2011-11-21T15:32:46+00:00 app[web.1]:[0m   Processing by LojasController#index as JSON
-[36m2011-11-21T15:32:46+00:00 app[web.1]:[0m Completed 200 OK in 7ms (Views: 2.7ms | ActiveRecord: 3.8ms)
-[36m2011-11-21T15:32:46+00:00 app[web.1]:[0m cache: [GET /shoppings/3/lojas?format=json] miss
-[32m2011-11-21T15:32:46+00:00 heroku[router]:[0m GET bubblespot.heroku.com/shoppings/3/lojas dyno=web.1 queue=0 wait=0ms service=13ms status=200 bytes=293
-[36m2011-11-21T15:32:48+00:00 app[web.1]:[0m 
-[35m[0m
-[36m:48+00:00 app[web.1]:[0m 
-[36m2011-11-21T15:32:48+00:00 app[web.1]:[0m Started GET "/shoppings/3/lojas?format=json" for 193.136.33.133 at 2011-11-21 07:32:48 -0800
-[36m2011-11-21T15:32:48+00:00 app[web.1]:[0m   Processing by LojasController#index as JSON
-[36m2011-11-21T15:32:48+00:00 app[web.1]:[0m   Parameters: {"id"=>"3"}
-[36m2011-11-21T15:32:48+00:00 app[web.1]:[0m cache: [GET /shoppings/3/lojas?format=json] miss
-[36m2011-11-21T15:32:48+00:00 app[web.1]:[0m Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 3.8ms)
-[32m2011-11-21T15:32:48+00:00 heroku[router]:[0m GET bubblespot.heroku.com/shoppings/3/lojas dyno=web.1 queue=0 wait=0ms service=13ms status=200 bytes=293
-[36m2011-11-21T15:33:17+00:00 app[web.1]:[0m 
-[36m2011-11-21T15:33:17+00:00 app[web.1]:[0m 
-[36m2011-11-21T15:33:17+00:00 app[web.1]:[0m Started GET "/shoppings/3/lojas.json" for 193.136.33.133 at 2011-11-21 07:33:17 -0800
-[36m2011-11-21T15:33:17+00:00 app[web.1]:[0m   Processing by LojasController#index as JSON
-[36m2011-11-21T15:33:17+00:00 app[web.1]:[0m   Parameters: {"id"=>"3"}
-[36m2011-11-21T15:33:17+00:00 app[web.1]:[0m Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 3.2ms)
-[36m2011-11-21T15:33:17+00:00 app[web.1]:[0m cache: [GET /shoppings/3/lojas.json] miss
-[32m2011-11-21T15:33:17+00:00 heroku[router]:[0m GET bubblespot.heroku.com/shoppings/3/lojas.json dyno=web.1 queue=0 wait=0ms service=12ms status=200 bytes=293
-[36m2011-11-21T15:34:04+00:00 app[web.1]:[0m 
-[36m2011-11-21T15:34:04+00:00 app[web.1]:[0m 
-[36m2011-11-21T15:34:04+00:00 app[web.1]:[0m Started GET "/shoppings/3/lojas?format=json" for 193.136.33.133 at 2011-11-21 07:34:04 -0800
-[36m2011-11-21T15:34:04+00:00 app[web.1]:[0m   Processing by LojasController#index as JSON
-[36m2011-11-21T15:34:04+00:00 app[web.1]:[0m   Parameters: {"id"=>"3"}
-[36m2011-11-21T15:34:04+00:00 app[web.1]:[0m Completed 200 OK in 71ms (Views: 36.7ms | ActiveRecord: 33.5ms)
-[36m2011-11-21T15:34:04+00:00 app[web.1]:[0m cache: [GET /shoppings/3/lojas?format=json] miss
-[32m2011-11-21T15:34:04+00:00 heroku[router]:[0m GET bubblespot.heroku.com/shoppings/3/lojas dyno=web.1 queue=0 wait=6ms service=84ms status=200 bytes=293
-[31m2011-11-21T15:35:31+00:00 heroku[slugc]:[0m Slug compilation started
-[36m2011-11-21T15:35:48+00:00 heroku[api]:[0m Release v77 created by tiago.babo@gmail.com
-[36m2011-11-21T15:35:48+00:00 heroku[api]:[0m Deploy 262e7a0 by tiago.babo@gmail.com
-[36m2011-11-21T15:35:48+00:00 heroku[web.1]:[0m State changed from up to bouncing
-[36m2011-11-21T15:35:48+00:00 heroku[web.1]:[0m State changed from bouncing to created
-[36m2011-11-21T15:35:48+00:00 heroku[web.1]:[0m State changed from created to starting
-[31m2011-11-21T15:35:49+00:00 heroku[slugc]:[0m Slug compilation finished
-[36m2011-11-21T15:35:51+00:00 heroku[web.1]:[0m Starting process with command `thin -p 3809 -e production -R /home/heroku_rack/heroku.ru start`
-[36m2011-11-21T15:35:51+00:00 heroku[web.1]:[0m Stopping process with SIGTERM
-[36m2011-11-21T15:35:51+00:00 app[web.1]:[0m >> Stopping ...
-[36m2011-11-21T15:35:51+00:00 heroku[web.1]:[0m Process exited
-[33m2011-11-21T15:35:52+00:00 heroku[rake.3]:[0m State changed from created to starting
-[33m2011-11-21T15:35:56+00:00 app[rake.3]:[0m Awaiting client
-[33m2011-11-21T15:35:56+00:00 app[rake.3]:[0m Starting process with command `bundle exec rake db:migrate`
-[33m2011-11-21T15:35:56+00:00 heroku[rake.3]:[0m State changed from starting to up
-[36m2011-11-21T15:35:57+00:00 app[web.1]:[0m >> Thin web server (v1.2.6 codename Crazy Delicious)
-[36m2011-11-21T15:35:57+00:00 app[web.1]:[0m >> Maximum connections set to 1024
-[36m2011-11-21T15:35:57+00:00 app[web.1]:[0m >> Listening on 0.0.0.0:3809, CTRL+C to stop
-[36m2011-11-21T15:35:58+00:00 heroku[web.1]:[0m State changed from starting to up
-[36m2011-11-21T15:36:03+00:00 app[web.1]:[0m 
-[36m2011-11-21T15:36:03+00:00 app[web.1]:[0m 
-[36m2011-11-21T15:36:03+00:00 app[web.1]:[0m Started GET "/shoppings/3/lojas" for 193.136.33.133 at 2011-11-21 07:36:03 -0800
-[36m2011-11-21T15:36:03+00:00 app[web.1]:[0m   Processing by LojasController#index as HTML
-[36m2011-11-21T15:36:03+00:00 app[web.1]:[0m   Parameters: {"id"=>"3"}
-[36m2011-11-21T15:36:03+00:00 app[web.1]:[0m Rendered lojas/index.html.erb within layouts/application (83.8ms)
-[36m2011-11-21T15:36:03+00:00 app[web.1]:[0m Rendered shared/_header.html.erb (1.8ms)
-[36m2011-11-21T15:36:03+00:00 app[web.1]:[0m Completed 200 OK in 297ms (Views: 155.8ms | ActiveRecord: 81.3ms)
-[36m2011-11-21T15:36:03+00:00 app[web.1]:[0m Rendered shared/_footer.html.erb (0.2ms)
-[36m2011-11-21T15:36:03+00:00 app[web.1]:[0m cache: [GET /shoppings/3/lojas] miss
-[32m2011-11-21T15:36:03+00:00 heroku[router]:[0m GET bubblespot.heroku.com/shoppings/3/lojas dyno=web.1 queue=0 wait=0ms service=350ms status=200 bytes=2782
-[36m2011-11-21T15:36:04+00:00 app[web.1]:[0m cache: [GET /assets/application-40d791f8f6aedbb408cd01bb8fc88985.js] miss
-[36m2011-11-21T15:36:04+00:00 app[web.1]:[0m cache: [GET /assets/application-07f47d0f1beb6a961db9f49183018879.css] miss
-[32m2011-11-21T15:36:04+00:00 heroku[router]:[0m GET bubblespot.heroku.com/assets/application-40d791f8f6aedbb408cd01bb8fc88985.js dyno=web.1 queue=0 wait=0ms service=30ms status=200 bytes=313744
-[32m2011-11-21T15:36:08+00:00 heroku[router]:[0m GET bubblespot.heroku.com/assets/foundation/misc/button-gloss-7047c0bab823262ba21b8c11a647387d.png dyno=web.1 queue=0 wait=0ms service=6ms status=200 bytes=120
-[36m2011-11-21T15:36:09+00:00 app[web.1]:[0m 
-[36m2011-11-21T15:36:09+00:00 app[web.1]:[0m 
-[36m2011-11-21T15:36:09+00:00 app[web.1]:[0m Started GET "/shoppings/3/lojas.json" for 193.136.33.133 at 2011-11-21 07:36:09 -0800
-[36m2011-11-21T15:36:09+00:00 app[web.1]:[0m   Processing by LojasController#index as JSON
-[36m2011-11-21T15:36:09+00:00 app[web.1]:[0m   Parameters: {"id"=>"3"}
-[36m2011-11-21T15:36:09+00:00 app[web.1]:[0m Completed 200 OK in 39ms (Views: 11.7ms | ActiveRecord: 20.2ms)
-[36m2011-11-21T15:36:09+00:00 app[web.1]:[0m cache: [GET /shoppings/3/lojas.json] miss
-[32m2011-11-21T15:36:09+00:00 heroku[router]:[0m GET bubblespot.heroku.com/shoppings/3/lojas.json dyno=web.1 queue=0 wait=0ms service=48ms status=200 bytes=293
-[33m2011-11-21T15:36:48+00:00 heroku[rake.4]:[0m State changed from created to starting
-[33m2011-11-21T15:36:54+00:00 app[rake.4]:[0m Awaiting client
-[33m2011-11-21T15:36:54+00:00 app[rake.4]:[0m Starting process with command `bundle exec rake db:migrate`
-[33m2011-11-21T15:36:54+00:00 heroku[rake.4]:[0m State changed from starting to up
-[33m2011-11-21T15:36:58+00:00 heroku[rake.4]:[0m Process exited
-[33m2011-11-21T15:36:59+00:00 heroku[rake.4]:[0m State changed from up to complete
-]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ heroku logsrake db:migrate./commit "adicionado nome do shopping às lojas"
-[master c8a0028] adicionado nome do shopping às lojas
- 2 files changed, 139 insertions(+), 1 deletions(-)
-Counting objects: 11, done.
-Delta compression using up to 2 threads.
-Compressing objects:  16% (1/6)   Compressing objects:  33% (2/6)   Compressing objects:  50% (3/6)   Compressing objects:  66% (4/6)   Compressing objects:  83% (5/6)   Compressing objects: 100% (6/6)   Compressing objects: 100% (6/6), done.
-Writing objects:  16% (1/6)   Writing objects:  33% (2/6)   Writing objects:  50% (3/6)   Writing objects:  66% (4/6)   Writing objects:  83% (5/6)   Writing objects: 100% (6/6)   Writing objects: 100% (6/6), 3.47 KiB, done.
-Total 6 (delta 4), reused 0 (delta 0)
-^C
-]0;tiago@tiago-HP: ~/BubbleSpottiago@tiago-HP:~/BubbleSpot$ ./commit "adicionado nome do shopping às lojas"
-[master 0060381] adicionado nome do shopping às lojas
- 1 files changed, 5 insertions(+), 1 deletions(-)
-Counting objects: 9, done.
-Delta compression using up to 2 threads.
-Compressing objects:  20% (1/5)   Compressing objects:  40% (2/5)   Compressing objects:  60% (3/5)   Compressing objects:  80% (4/5)   Compressing objects: 100% (5/5)   Compressing objects: 100% (5/5), done.
-Writing objects:  20% (1/5)   Writing objects:  40% (2/5)   Writing objects:  60% (3/5)   Writing objects:  80% (4/5)   Writing objects: 100% (5/5)   Writing objects: 100% (5/5), 474 bytes, done.
-Total 5 (delta 4), reused 0 (delta 0)
-To git@github.com:tiagobabo/BubbleSpot.git
-   c8a0028..0060381  master -> master
-Counting objects: 16, done.
-Delta compression using up to 2 threads.
-Compressing objects:   9% (1/11)   Compressing objects:  18% (2/11)   Compressing objects:  27% (3/11)   Compressing objects:  36% (4/11)   Compressing objects:  45% (5/11)   Compressing objects:  54% (6/11)   Compressing objects:  63% (7/11)   Compressing objects:  72% (8/11)   Compressing objects:  81% (9/11)   Compressing objects:  90% (10/11)   Compressing objects: 100% (11/11)   Compressing objects: 100% (11/11), done.
-Writing objects:   9% (1/11)   Writing objects:  18% (2/11)   Writing objects:  27% (3/11)   Writing objects:  36% (4/11)   Writing objects:  45% (5/11)   Writing objects:  54% (6/11)   Writing objects:  63% (7/11)   Writing objects:  72% (8/11)   Writ
