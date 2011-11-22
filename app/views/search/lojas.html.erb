@@ -1,26 +1,36 @@
-<section>
+<% if @lojas != nil && @lojas.count > 0 %>
+  <section>
 		 <div class="row">
       <div class="twelve columns"> 
-         <div class="underline"><h1>Resultados</h1></div>   
-
-		 	</div>
-		 </div>
-<% if @lojas != nil && @lojas.count > 0 %>
-
+        <div class="underline"><h1>Resultados</h1></div>   
+          </div>
+    
 <% @lojas.each do |loja| %>
-   <div class ="row">
-    <div class = "twelve columns">
-        <div class="underline"><h1>Lojas do <%= loja.shopping_nome %></h1></div> 
-         	</div>
-		 </div>
+<div class="row">
+      <div class="twelve columns">
+      <div class="underline"><h1>Lojas do <%= loja.shopping_nome%></h1></div>
+            
+</div>
+</div>
+
 <%= cycle("</div><div class='row'>","","").html_safe %>
 <div class="four columns">
   <%= link_to image_tag(loja.imagem), shopping_loja_path(@shopping, loja) %>
   <p></p>
 </div>
-
+<% end %>
 </div>
 </section>
- <% end %>
-<%end %>
+<%else %>
+<section>
+		 <div class="row">
+      <div class="twelve columns"> 
+           <div class="underline"><h1>Resultados</h1></div> 
+        <div class="underline"><h2>Não foram encontradas lojas..</h2></div> 
+      </div>
+		 </div>
 </section>
+
+
+<%end %>
+
