@@ -3,13 +3,17 @@
 		 <div class="row">
       <div class="twelve columns"> 
         <div class="underline"><h1>Lojas do <%= @shopping.nome %></h1></div>   
+        <p></p>
           </div>
     
 <% @lojas.each do |loja| %>
 
 <%= cycle("</div><div class='row'>","","").html_safe %>
 <div class="four columns">
+   <center>
   <%= link_to image_tag(loja.imagem), shopping_loja_path(@shopping, loja) %>
+    <p></p>
+  <%= loja.nome%></center>
   <p></p>
 </div>
 <% end %>

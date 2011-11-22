@@ -57,6 +57,9 @@ class SearchController < ApplicationController
         format.html  # lojas.html.erb
         format.json { render :json => @lojas }
       end
+    else
+      render "lojas_index"
+    end
   end
     
   
