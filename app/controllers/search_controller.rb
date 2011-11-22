@@ -51,12 +51,14 @@ class SearchController < ApplicationController
         @shopping = Shopping.find(loja[:shopping_id])
         loja[:shopping_nome] = @shopping.nome 
       end
-    
-    end
-      respond_to do |format|
-        format.html  # lojas.html.erb
+    respond_to do |format|
+        format.html # lojas.html.erb
         format.json { render :json => @lojas }
       end
+    else 
+      render "lojas_index"
+    end
+    
   end
     
   
