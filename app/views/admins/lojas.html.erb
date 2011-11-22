@@ -11,6 +11,8 @@
     <table>
    <tr>
      <th>Nome</th>
+     <th>Piso</th>
+     <th>Número</th>
      <th>Telefone</th>
      <th>Detalhes</th>
      <th>Áreas de Negócio</th>
@@ -22,6 +24,8 @@
  <% @lojas.each do |loja| %>
    <tr>
      <td><%= loja.nome %></td>
+     <td><%= loja.piso %></td>
+     <td><%= loja.numero %></td>
      <td><%= loja.telefone %></td>
      <td><%= truncate loja.detalhes, :length => 50 %></td>
      <td><%= loja.tags %></td>
