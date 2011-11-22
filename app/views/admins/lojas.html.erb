@@ -1,7 +1,7 @@
  <section>  
   <div class ="row">
     <div class = "twelve columns">
-      <div class="underline"><h1>Gestão de Lojas do Shopping ...</h1></div> 
+    <div class="underline"><h1>Gestão de Lojas do <%= @shopping.nome %></h1></div> 
     </div>
   </div>
    
@@ -13,7 +13,7 @@
      <th>Nome</th>
      <th>Telefone</th>
      <th>Detalhes</th>
-     <th>Tags</th>
+     <th>Áreas de Negócio</th>
      <th></th>
      <th></th>
      <th></th>
@@ -29,17 +29,15 @@
      <td><%= link_to 'Editar', edit_shopping_loja_path(@shopping, loja) %></td>
      <td><%= link_to 'Apagar', shopping_loja_path(@shopping, loja), :confirm => 'Tem a certeza?', :method => :delete %></td>
    </tr>
+   <% end %>
    </table>
   
     </div>
   </div>
- <% end %>
 
-  
-</section>
 
 <%end %>
-<section>
+
     <div class="row">
       <div class="twelve columns"> 
             <%= link_to 'Adicionar Loja', new_shopping_loja_path(@shopping), :class => "nice small radius blue button"  %>
