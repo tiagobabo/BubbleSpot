@@ -1,3 +1,5 @@
+ # -*- coding: utf-8 -*-
+
 class Loja < ActiveRecord::Base
   belongs_to :shopping
   
