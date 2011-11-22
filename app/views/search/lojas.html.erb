@@ -1,31 +1,26 @@
 <section>
 		 <div class="row">
       <div class="twelve columns"> 
-         <div class="underline"><h1>Resultados</h1></div>      
+         <div class="underline"><h1>Resultados</h1></div>   
+
 		 	</div>
 		 </div>
 <% if @lojas != nil && @lojas.count > 0 %>
+
+<% @lojas.each do |loja| %>
    <div class ="row">
     <div class = "twelve columns">
-    <table>
-   <tr>
-     <th>Nome</th>
-     <th>Telefone</th>
-     <th>Detalhes</th>
-     <th>Tags</th>
-   </tr>
- 
- <% @lojas.each do |loja| %>
-   <tr>
-     <td><%= loja.nome %></td>
-     <td><%= loja.telefone %></td>
-     <td><%= truncate loja.detalhes, :length => 50 %></td>
-     <td><%= loja.tags %></td>
-   </tr>
-   </table>
-  
-    </div>
-  </div>
+        <div class="underline"><h1>Lojas do <%= loja.shopping_nome %></h1></div> 
+         	</div>
+		 </div>
+<%= cycle("</div><div class='row'>","","").html_safe %>
+<div class="four columns">
+  <%= link_to image_tag(loja.imagem), shopping_loja_path(@shopping, loja) %>
+  <p></p>
+</div>
+
+</div>
+</section>
  <% end %>
 <%end %>
 </section>
