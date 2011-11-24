@@ -21,7 +21,7 @@ end
     @shopping = Shopping.find(params[:id])
 
     # Access all lojas for that shopping
-    @lojas = @shopping.lojas
+    @lojas = @shopping.lojas.paginate(:per_page => 10, :page => params[:page])
     
     @lojas.each do |loja|
      loja[:shopping_nome] = @shopping.nome

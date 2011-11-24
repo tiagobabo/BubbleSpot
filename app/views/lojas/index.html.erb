@@ -12,12 +12,17 @@
 <div class="four columns">
    <center>
   <%= link_to image_tag(loja.imagem), shopping_loja_path(@shopping, loja) %>
-    <p></p>
-  <%= loja.nome%></center>
+    <p><%= loja.nome%></p>
+  </center>
   <p></p>
 </div>
 <% end %>
 
+</div>
+<div class="row">
+<div class="twelve columns">
+<%= will_paginate @loja, :prev_label => "←Anterior", :next_label => "Próximo→"%>
+</div>
 </div>
 </section>
 <%else %>
