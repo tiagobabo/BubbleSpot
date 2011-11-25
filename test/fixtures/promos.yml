@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  detalhes: MyText
+  precoi: 9.99
+  precof: 9.99
+  desconto: 9.99
+  imagem: MyString
+  loja: 
+  dataf: 2011-11-25 15:11:52
+  produto: MyString
+
+two:
+  detalhes: MyText
+  precoi: 9.99
+  precof: 9.99
+  desconto: 9.99
+  imagem: MyString
+  loja: 
+  dataf: 2011-11-25 15:11:52
+  produto: MyString

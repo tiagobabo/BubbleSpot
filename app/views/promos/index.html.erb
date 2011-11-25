@@ -1,0 +1,20 @@
+<h1>Items in <%= @loja.nome %></h1>
+
+<table>
+  <tr>
+    <th>Item name</th>
+  </tr>
+
+<% for item in @promos %>
+  <tr>
+    <td><%= item.detalhes %></td>
+    <td><%= link_to 'Show', shopping_loja_promo_path(@shopping, @loja, item) %></td>
+  <td><%= link_to 'Edit', edit_shopping_loja_promo_path(@shopping, @loja, item) %></td>
+  <td><%= link_to 'Destroy', shopping_loja_promo_path(@shopping, @loja, item), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New item', new_shopping_loja_promo_path(@loja) %>
