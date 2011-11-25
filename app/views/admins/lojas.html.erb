@@ -30,7 +30,7 @@
      <td><%= truncate loja.detalhes, :length => 50 %></td>
      <td><%= loja.tags %></td>
      <td><%= link_to 'Mostrar', shopping_loja_path(@shopping, loja) %></td>
-     <td><%= link_to 'Editar', edit_shopping_loja_path(@shopping, loja) %></td>
+     <td><%= link_to 'Editar', edit_loja_path(@shopping, loja) %></td>
      <td><%= link_to 'Apagar', shopping_loja_path(@shopping, loja), :confirm => 'Tem a certeza?', :method => :delete %></td>
    </tr>
    <% end %>
@@ -44,7 +44,7 @@
 
     <div class="row">
       <div class="twelve columns"> 
-            <%= link_to 'Adicionar Loja', new_shopping_loja_path(@shopping), :class => "nice small radius blue button"  %>
+            <%= link_to 'Adicionar Loja', new_loja_path(@shopping), :class => "nice small radius blue button"  %>
 		 	</div>
     </div>
   </section>
