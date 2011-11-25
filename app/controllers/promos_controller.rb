@@ -8,6 +8,11 @@ class PromosController < ApplicationController
 
     # Access all promos for that loja
     @promos = @loja.promos
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @promos }
+    end
   end
 
   # GET /lojas/1/promos/2
