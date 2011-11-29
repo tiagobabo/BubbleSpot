@@ -1,7 +1,24 @@
 class PromosController < ApplicationController
   
   before_filter :require_login
-  skip_before_filter :require_login, :only => [:index, :show]
+  skip_before_filter :require_login, :only => [:allByShopping, :index, :show]
+  
+  
+  
+  def allByShopping
+    @promos = []
+    @shopping = Shopping.find(params[:shopping_id])
+    @lojas = @shopping.lojas
+    @lojas.each do |loja|
+      @promos += loja.promos
+    end
+      
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @promos }
+    end
+    
+  end
   
   # GET /lojas/1/promos
   def index
