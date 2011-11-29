@@ -18,6 +18,7 @@
      <th>Data Fim</th>
      <th></th>
      <th></th>
+     <th></th>
    </tr>
  
  <% @promos.each do |promo| %>
@@ -29,6 +30,8 @@
      <td><%= promo.desconto %></td>
      <td><%= promo.dataf %></td>
      <td><%= link_to 'Mostrar', shopping_loja_promo_path(@shopping, @loja, promo) %></td>
+     <td><%= link_to 'Editar', edit_shopping_loja_promo_path(@shopping, @loja, promo) %></td>
+     <td><%= link_to 'Apagar', shopping_loja_promo_path(@shopping, @loja, promo), :confirm => 'Tem a certeza?', :method => :delete %></td>
      
   
    </tr>

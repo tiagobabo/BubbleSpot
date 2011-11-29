@@ -1,20 +1,36 @@
-<h1>Items in <%= @loja.nome %></h1>
 
-<table>
-  <tr>
-    <th>Item name</th>
-  </tr>
+<% if @promos != nil && @promos.count > 0 %>
+  <section>
+		 <div class="row">
+      <div class="twelve columns"> 
+        <div class="underline"><h1>Promoções da loja <%= @loja.nome %></h1></div>   
+        <p></p>
+          </div>
+    
+<% @promos.each do |promo| %>
 
-<% for item in @promos %>
-  <tr>
-    <td><%= item.detalhes %></td>
-    <td><%= link_to 'Show', shopping_loja_promo_path(@shopping, @loja, item) %></td>
-  <td><%= link_to 'Edit', edit_shopping_loja_promo_path(@shopping, @loja, item) %></td>
-  <td><%= link_to 'Destroy', shopping_loja_promo_path(@shopping, @loja, item), :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<%= cycle("</div><div class='row'>","","").html_safe %>
+<div class="four columns">
+   <center>
+  <%= link_to image_tag(promo.imagem), shopping_loja_promo_path(@shopping, @loja, promo) %>
+    <p><%= promo.produto%></p>
+  </center>
+  <p></p>
+</div>
 <% end %>
-</table>
 
-<br />
 
-<%= link_to 'New item', new_shopping_loja_promo_path(@shopping, @loja) %>
+</section>
+<%else %>
+<section>
+		 <div class="row">
+      <div class="twelve columns"> 
+        <div class="underline"><h2>Não existem promoções..</h2></div> 
+      </div>
+		 </div>
+
+</section>
+
+
+<%end %>
+

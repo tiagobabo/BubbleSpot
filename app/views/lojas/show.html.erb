@@ -49,7 +49,7 @@
   <p></p> 
   <%= image_tag(@loja.imagem)%>
     <div>
-    
+     <%= link_to 'Promoções', shopping_loja_promos_path(@shopping, @loja), :class => "nice small radius blue button" %>
   <% if current_admin %><%= link_to 'Editar', edit_loja_path(@shopping, @loja), :class => "nice small radius blue button" %><% end %> 
   </div>
   
