@@ -1,0 +1,37 @@
+<section>  
+  <div class ="row">
+    <div class = "twelve columns">
+      <div class="underline"><h1>Promoções da loja</h1></div> 
+    </div>
+  </div>
+  
+ 
+  <div class ="row">
+    <div class = "twelve columns">
+    <table>
+   <tr>
+     <th>Nome</th>
+     <th>Telefone</th>
+     <th>Localização</th>
+     <th>Email</th>
+     <th></th>
+     <th></th>
+     <th></th>
+     <th></th>
+   </tr>
+ 
+ <% @promos.each do |promo| %>
+   <tr>
+     <td><%= promo.detalhes %></td>
+  
+   </tr>
+   <% end %>
+ </table>
+    </div>
+  </div>
+    <div class="row">
+      <div class="twelve columns"> 
+           
+		 	</div>
+    </div>
+</section>
