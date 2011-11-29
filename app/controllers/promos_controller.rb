@@ -64,11 +64,14 @@ class PromosController < ApplicationController
     # Populate an promo associate with loja 1 with form data
     # loja will be associated with the promo
     @promo = @loja.promos.build(params[:promo])
+    
+    respond_to do |format|
     if @promo.save
       # Save the promo successfully
-      redirect_to shopping_loja_promo_url(@shopping, @loja, @promo)
+      format.html { redirect_to admins_promos_path(@shopping, @loja), :notice => 'A promoção foi criada com sucesso.' }
     else
-      render :action => "new"
+      format.html { render :action => "new" }
+    end
     end
   end
 
@@ -87,11 +90,14 @@ class PromosController < ApplicationController
     @shopping = Shopping.find(params[:shopping_id])
     @loja = @shopping.lojas.find(params[:loja_id])
     @promo = Promo.find(params[:id])
+    
+    respond_to do |format|
     if @promo.update_attributes(params[:promo])
       # Save the promo successfully
-      redirect_to shopping_loja_promo_url(@shopping, @loja, @promo)
+      format.html { redirect_to admins_promos_path(@shopping, @loja), :notice => 'A promoção foi atualizada com sucesso.' }
     else
-      render :action => "edit"
+       format.html {render :action => "edit" }
+    end
     end
   end
 
@@ -103,7 +109,7 @@ class PromosController < ApplicationController
     @promo.destroy
 
     respond_to do |format|
-      format.html { redirect_to shopping_loja_promos_path(@shopping, @loja) }
+      format.html { redirect_to admins_promos_path(@shopping, @loja), :notice => 'A promoção foi eliminada com sucesso.' }
       format.xml  { head :ok }
     end
   end
