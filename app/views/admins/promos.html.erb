@@ -1,7 +1,11 @@
 <section>  
   <div class ="row">
     <div class = "twelve columns">
+<<<<<<< HEAD
       <div class="underline"><h1>Promoções da loja <%= @loja.nome%> </h1></div> 
+=======
+      <div class="underline"><h1>Promoções da loja</h1></div> 
+>>>>>>> a2a4a83034428ac0d74f502230199d56d5777bf2
     </div>
   </div>
   
@@ -9,7 +13,7 @@
   <div class ="row">
     <div class = "twelve columns">
     <table>
-   <tr>
+      <tr>
      <th>Produto</th>
      <th>Detalhes</th>
      <th>Preço Inicial</th>
@@ -22,7 +26,7 @@
    </tr>
  
  <% @promos.each do |promo| %>
-   <tr>
+<tr>
      <td><%= promo.produto %></td>
      <td><%= truncate promo.detalhes, :length => 50 %></td>
      <td><%= promo.precoi %></td>
@@ -42,6 +46,7 @@
     <div class="row">
       <div class="twelve columns"> 
            <%= link_to 'Adicionar Promoção', new_shopping_loja_promo_path(@shopping, @loja), :class => "nice small radius blue button" %>
+
 		 	</div>
     </div>
 </section>
