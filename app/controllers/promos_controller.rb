@@ -64,14 +64,11 @@ class PromosController < ApplicationController
     # Populate an promo associate with loja 1 with form data
     # loja will be associated with the promo
     @promo = @loja.promos.build(params[:promo])
-    
-    respond_to do |format|
     if @promo.save
       # Save the promo successfully
-      format.html { redirect_to admins_promos_path(@shopping, @loja), :notice => 'A promoção foi criada com sucesso.' }
+      redirect_to admins_promos_path(@shopping, @loja), :notice => 'A promoção foi criada com sucesso..'
     else
-      format.html { render :action => "new" }
-    end
+      render :action => "new"
     end
   end
 
@@ -94,9 +91,9 @@ class PromosController < ApplicationController
     respond_to do |format|
     if @promo.update_attributes(params[:promo])
       # Save the promo successfully
-      format.html { redirect_to admins_promos_path(@shopping, @loja), :notice => 'A promoção foi atualizada com sucesso.' }
+      redirect_to admins_promos_path(@shopping, @loja), :notice => 'A promoção foi atualizada com sucesso.'
     else
-       format.html {render :action => "edit" }
+      render :action => "edit"
     end
     end
   end
