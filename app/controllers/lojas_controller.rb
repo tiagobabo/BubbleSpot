@@ -3,6 +3,9 @@ class LojasController < ApplicationController
 
 # GET /lojas.json
 
+  before_filter :require_login
+  skip_before_filter :require_login, :only => [:all, :index, :show]
+
 def all
   @lojas = Loja.all
   @lojas.each do |loja|

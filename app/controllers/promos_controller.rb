@@ -1,4 +1,8 @@
 class PromosController < ApplicationController
+  
+  before_filter :require_login
+  skip_before_filter :require_login, :only => [:index, :show]
+  
   # GET /lojas/1/promos
   def index
     # For URL like /lojas/1/promos
