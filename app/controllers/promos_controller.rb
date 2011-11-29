@@ -1,3 +1,5 @@
+ # -*- coding: utf-8 -*-
+
 class PromosController < ApplicationController
   
   before_filter :require_login
@@ -64,11 +66,14 @@ class PromosController < ApplicationController
     # Populate an promo associate with loja 1 with form data
     # loja will be associated with the promo
     @promo = @loja.promos.build(params[:promo])
+    
+    respond_to do |format|
     if @promo.save
       # Save the promo successfully
-      redirect_to admins_promos_path(@shopping, @loja), :notice => 'A promoção foi criada com sucesso..'
+      format.html { redirect_to admins_promos_path(@shopping, @loja), :notice => 'A promoção foi criada com sucesso.' }
     else
-      render :action => "new"
+      format.html { render :action => "new" }
+    end
     end
   end
 
@@ -91,9 +96,9 @@ class PromosController < ApplicationController
     respond_to do |format|
     if @promo.update_attributes(params[:promo])
       # Save the promo successfully
-      redirect_to admins_promos_path(@shopping, @loja), :notice => 'A promoção foi atualizada com sucesso.'
+      format.html { redirect_to admins_promos_path(@shopping, @loja), :notice => 'A promoção foi atualizada com sucesso.' }
     else
-      render :action => "edit"
+       format.html {render :action => "edit" }
     end
     end
   end
