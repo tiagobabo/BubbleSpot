@@ -12,4 +12,5 @@ class Shopping < ActiveRecord::Base
   
   geocoded_by :localizacao
   after_validation :geocode
+  
 end

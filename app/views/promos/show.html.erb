@@ -1,9 +1,60 @@
-<h1>Item in <%= @loja.nome %></h1>
+<section>
+  
+  <div class="row">
+    <div class ="twelve columns">
+       <div class="underline"><h1>Promoção da loja <%= @loja.nome %></h1></div> 
+      
+    </div>
+  </div>  
+<div class="row">
+  
+  <div class="six columns">
+  
+  <p>
+     <div class="underline"><h5>PRODUTO</h5></div> 
+    
+    <h4><%= @promo.produto %></h4>
+  </p>  
+  
+  <p>
+     <div class="underline"><h5>DETALHES</h5></div> 
+    <h4><%= @promo.detalhes %></h4>
+  </p>  
+  
+  <p>
+    <div class="underline"><h5>PREÇO INICIAL</h5></div> 
+    
+    <h4><%= @promo.precoi %></h4>
+  </p>  
+  
+  <p>
+    <div class="underline"><h5>PREÇO FINAL</h5></div> 
+    
+    <h4><%= @promo.precof %></h4>
+  </p>  
+  
+  <p>
+    <div class="underline"><h5>DESCONTO</h5></div> 
+    
+    <h4><%= @promo.desconto %></h4>
+  </p>  
+  
+  <p>
+    <div class="underline"><h5>DATA FIM</h5></div> 
+    <h4><%= @promo.dataf %></h4>
+  </p>  
+</div>
+  <div class="six columns">
+  
+  <p></p> 
+  <%= image_tag(@promo.imagem)%>
+  <div>
+    
+  
+  <% if current_admin %><%= link_to 'Editar', edit_shopping_loja_promo_path(@shopping, @loja, @promo), :class => "nice small radius blue button" %><% end %> 
+  </div>
 
-<p>
-  <b>Item name:</b>
-  <%= @promo.detalhes %>
-</p>
 
-
-<%= link_to 'Edit', edit_shopping_loja_promo_path(@shopping, @loja, @promo) %> |
+</div>
+</div>
+</section>
