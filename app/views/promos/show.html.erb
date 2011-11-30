@@ -39,6 +39,12 @@
     <h4><%= @promo.desconto %> %</h4>
   </p>  
   
+  
+  <p> 
+    <div class="underline"><h5>DATA FIM</h5></div> 
+    <h4><%= @promo.dataf.to_formatted_s(:db)  %></h4>
+  </p> 
+  
   <p>
     <div class="underline"><h5>ACABA DAQUI A:</h5></div> 
     <div id="year"><%= @promo.dataf.year %></div>
@@ -47,8 +53,7 @@
     <div id="hour"><%= @promo.dataf.hour %></div>
     <div id="minutes"><%= @promo.dataf.min %></div>
     <div id="defaultCountdown"></div>
-    <h4><%= @promo.dataf.to_formatted_s(:db)  %></h4>
-  </p>  
+  </p>
 </div>
   <div class="six columns">
   

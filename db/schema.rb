@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111125151152) do
+ActiveRecord::Schema.define(:version => 20111130121816) do
 
   create_table "admins", :force => true do |t|
     t.string   "email"
@@ -19,6 +19,19 @@ ActiveRecord::Schema.define(:version => 20111125151152) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "filmes", :force => true do |t|
+    t.string   "nome"
+    t.integer  "shopping_id"
+    t.string   "detalhes"
+    t.string   "horarios"
+    t.string   "imagem"
+    t.string   "trailer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "filmes", ["shopping_id"], :name => "index_filmes_on_shopping_id"
 
   create_table "lojas", :force => true do |t|
     t.string   "nome"

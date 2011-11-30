@@ -1,6 +1,5 @@
 BubbleSpot::Application.routes.draw do
 
-  
   get "admin/log_out" => "sessions#destroy", :as => "log_out"
   get "admin/log_in" => "sessions#new", :as => "log_in"
   get "admin" => "sessions#new"
@@ -19,6 +18,8 @@ BubbleSpot::Application.routes.draw do
   get "lojas" => "lojas#all", :as => "lojas_all"
   get "shoppings/:shopping_id/promos" => "promos#allByShopping"
   get "admin/shoppings/:id/lojas/:lojas_id" => "admins#promos", :as => "admins_promos"
+  get "shoppings/:id/filmes" => "filmes#index", :as => "filmes_shopping_index"
+  get "admin/shoppings/:id/filmes" => "admins#filmes", :as => "admins_filmes"
 
   root :to => "shoppings#index" 
   
@@ -27,6 +28,7 @@ BubbleSpot::Application.routes.draw do
   resources :search
   
   resources :shoppings do
+    resources :filmes
     resources :lojas do
       resources :promos
     end

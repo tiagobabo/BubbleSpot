@@ -3,6 +3,7 @@
 class Shopping < ActiveRecord::Base
   
   has_many :lojas, :dependent => :destroy
+  has_many :filmes, :dependent => :destroy
   
   validates_presence_of :nome, :telefone, :localizacao, :email, :descricao, :imagem, :message => "O campo tem de ser preenchido"
   validates_uniqueness_of :nome, :message => "Já existe um shopping com esse nome"
