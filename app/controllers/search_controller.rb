@@ -60,7 +60,7 @@ class SearchController < ApplicationController
     
   end
   
-  def promosShopping 
+  def shopping_promos 
     
     if params[:query].present?
         search = "%" + params[:query].downcase + "%"
