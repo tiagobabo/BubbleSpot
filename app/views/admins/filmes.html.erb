@@ -1,0 +1,43 @@
+ <section>  
+  <div class ="row">
+    <div class = "twelve columns">
+    <div class="underline"><h1>Gestão de Filmes do <%= @shopping.nome %></h1></div> 
+    </div>
+  </div>
+   
+<% if @filmes != nil && @filmes.count > 0 %>
+   <div class ="row">
+    <div class = "twelve columns">
+    <table>
+   <tr>
+     <th>Nome</th>
+     <th></th>
+     <th></th>
+     <th></th>
+
+   </tr>
+ 
+ <% @filmes.each do |filme| %>
+   <tr>
+     <td><%= filme.nome %></td>
+     <td><%= link_to 'Mostrar', shopping_filme_path(@shopping, filme) %></td>
+     <td><%= link_to 'Editar', edit_filme_path(@shopping, filme) %></td>
+     <td><%= link_to 'Apagar', shopping_filme_path(@shopping, filme), :confirm => 'Tem a certeza?', :method => :delete %></td>
+
+
+   </tr>
+   <% end %>
+   </table>
+  
+    </div>
+  </div>
+
+
+<%end %>
+
+    <div class="row">
+      <div class="twelve columns"> 
+            <%= link_to 'Adicionar Filme', new_filme_path(@shopping), :class => "nice small radius blue button"  %>
+		 	</div>
+    </div>
+  </section>
