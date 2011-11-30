@@ -6,6 +6,6 @@ $(function () {
   $('#hour').hide();
   $('#minutes').hide();
   
-	austDay = new Date($('#year').html(), $('#month').html(), $('#day').html(), $('#hour').html(), $('#minutes').html());
+	austDay = new Date($('#year').html(), $('#month').html() - 1 , $('#day').html(), $('#hour').html(), $('#minutes').html());
 	$('#defaultCountdown').countdown({until: austDay});
 });

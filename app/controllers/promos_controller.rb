@@ -12,7 +12,11 @@ class PromosController < ApplicationController
     @shopping = Shopping.find(params[:shopping_id])
     @lojas = @shopping.lojas
     @lojas.each do |loja|
-      @promos += loja.promos
+      @promos_aux = loja.promos
+      @promos_aux.each do |promo|
+        promo[:loja_nome] = loja.nome
+      end
+      @promos += @promos_aux
     end
       
     respond_to do |format|
@@ -31,6 +35,10 @@ class PromosController < ApplicationController
 
     # Access all promos for that loja
     @promos = @loja.promos
+    
+    @promos.each do |promo|
+      promo[:loja_nome] = @loja.nome
+    end
     
     respond_to do |format|
       format.html # index.html.erb
