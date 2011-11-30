@@ -40,20 +40,24 @@
   </p>  
   
   <p>
-    <div class="underline"><h5>DATA FIM</h5></div> 
-    <h4><%= @promo.dataf %></h4>
+    <div class="underline"><h5>ACABA DAQUI A:</h5></div> 
+    <div id="year"><%= @promo.dataf.year %></div>
+    <div id="month"><%= @promo.dataf.month %></div>
+    <div id="day"><%= @promo.dataf.day %></div>
+    <div id="hour"><%= @promo.dataf.hour %></div>
+    <div id="minutes"><%= @promo.dataf.min %></div>
+    <div id="defaultCountdown"></div>
+    <h4><%= @promo.dataf.to_formatted_s(:db)  %></h4>
   </p>  
 </div>
   <div class="six columns">
   
   <p></p> 
   <%= image_tag(@promo.imagem)%>
-  <div>
-    
   
+  <div>
   <% if current_admin %><%= link_to 'Editar', edit_shopping_loja_promo_path(@shopping, @loja, @promo), :class => "nice small radius blue button" %><% end %> 
   </div>
-
 
 </div>
 </div>
