@@ -1,0 +1,22 @@
+<section>
+
+    <div class="row">
+<div class="twelve columns">
+<%= form_for([@shopping, @evento]) do |f| %>
+
+  <div class="field">
+    Nome
+    <%= f.text_field :nome, :class => "large input-text" %>
+  </div>
+  
+  
+  
+  <div class="actions">
+    <%= f.submit "Confirmar", :class => "nice small radius blue button" %>
+  </div>
+<% end %>
+
+</div>
+</div>
+</section>
+

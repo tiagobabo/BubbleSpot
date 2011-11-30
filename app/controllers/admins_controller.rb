@@ -25,6 +25,11 @@ class AdminsController < ApplicationController
     @filmes = @shopping.filmes.all
   end
   
+   def eventos
+    @shopping = Shopping.find(params[:id])
+    @eventos = @shopping.eventos.all
+  end
+  
  def new
   @admin = Admin.new
 end
