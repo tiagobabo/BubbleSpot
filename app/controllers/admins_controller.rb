@@ -15,7 +15,7 @@ class AdminsController < ApplicationController
   end
   
   def promos
-    @shopping = Shopping.find(params[:id])
+    @shopping = Shopping.find(params[:shopping_id])
     @loja = @shopping.lojas.find(params[:lojas_id])
     @promos = @loja.promos.all
   end
