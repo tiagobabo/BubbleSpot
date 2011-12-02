@@ -48,17 +48,72 @@
   
   <p></p> 
   <%= image_tag(@loja.imagem)%>
-    <div>
+  
 
-     <%= link_to 'Promoções', shopping_loja_promos_path(@shopping, @loja), :class => "nice small radius blue button" %>
+  </div>
+</section>
+
+
+<section>
+    <div class="row">
+      <div class="twelve columns">
+    <% if @new_promos != nil && @new_promos.count > 0 %>
+      <p>
+         <div class="underline"><h5>Novas Promoções</h5></div> 
+
+      </p>  
+      <p>
+        <% @new_promos.each do |promo| %>
+
+        <%= cycle("</div><div class='row'>","","").html_safe %>
+        <div class="four columns">
+        <center>
+        <%= link_to image_tag(promo.imagem), shopping_loja_promo_path(@shopping, @loja, promo) %>
+        <p><%= promo.produto%></p>
+        </center>
+       <p></p>
+        </div>
+        <% end %>
+        <% end %>
+      </p> 
+  
+    <p>
+    </div>
+    </div>
+     <div class="row">
+      <div class="twelve columns">
+        <% if @last_promos != nil && @last_promos.count > 0 %>
+     <div class="underline"><h5>Promoções a Acabar</h5></div> 
+
+     </p>  
+    
+   <p>
+    <% @last_promos.each do |last_promo| %>
+
+    <%= cycle("</div><div class='row'>","","").html_safe %>
+    <div class="four columns">
+    <center>
+    <%= link_to image_tag(last_promo.imagem), shopping_loja_promo_path(@shopping, @loja, last_promo) %>
+    <p>Termina a <%= last_promo.dataf%></p>
+    </center>
+   <p></p>
+    </div>
+    <% end %>
+    <% end %>
+    </p> 
+    <p>
+      
+      
+      <div>
+
+     <%= link_to 'Todas as Promoções', shopping_loja_promos_path(@shopping, @loja), :class => "nice small radius blue button" %>
 
   <% if current_admin %><%= link_to 'Editar', edit_loja_path(@shopping, @loja), :class => "nice small radius blue button" %><% end %> 
   </div>
-  
-
 </div>
-
-
+</p>
+  
+</div>
 </section>
 
 
