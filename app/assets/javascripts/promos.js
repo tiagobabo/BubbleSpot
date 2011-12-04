@@ -17,9 +17,11 @@ $(function () {
   
   function calculoInicial2(){
    if($( "#inicial").val().length == 0 && $( "#desconto").val().length > 0 && $( "#final").val().length > 0 ){
-            $( "#inicial").val($( "#final" ).val() / ( 1- ($( "#desconto" ).val()/100)));  
+        var resultado = $( "#final" ).val() / ( 1- ($( "#desconto" ).val()/100));
+        $( "#inicial").val(Math.round(resultado).toFixed(2));  
       }
       else if( $( "#inicial").val().length > 0 && $( "#final").val().length > 0){
+
          var resultado = ((1-($( "#final" ).val()/$( "#inicial" ).val()))*100);
      
         if(resultado < 0){
@@ -28,7 +30,7 @@ $(function () {
             $( "#desconto" ).val("");
         }
         else{
-            $( "#desconto" ).val(resultado);
+           $( "#desconto" ).val(Math.round(resultado).toFixed(1));
         }
     }
   }
@@ -43,7 +45,8 @@ $(function () {
     }
     else{
       if($( "#inicial").val().length == 0 && $( "#desconto").val().length > 0 && $( "#final").val().length > 0 ){
-            $( "#inicial").val($( "#final" ).val() / ( 1- ($( "#desconto" ).val()/100)));  
+        var resultado = $( "#final" ).val() / ( 1- ($( "#desconto" ).val()/100));
+        $( "#inicial").val(Math.round(resultado).toFixed(2));  
       }
       else if( $( "#inicial").val().length > 0 && $( "#desconto").val().length > 0){
         var resultado = ($( "#inicial" ).val()-($( "#inicial" ).val()*$( "#desconto" ).val()/100));
@@ -54,7 +57,7 @@ $(function () {
             $( "#desconto" ).val("");
         }
         else{
-            $( "#final" ).val(resultado);
+            $( "#final" ).val(Math.round(resultado).toFixed(2));
         }
 
       }
@@ -68,7 +71,7 @@ $(function () {
             $( "#desconto" ).val("");
         }
         else{
-            $( "#desconto" ).val(resultado);
+            $( "#desconto" ).val(Math.round(resultado).toFixed(1));
         }
 
       }
