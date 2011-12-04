@@ -9,7 +9,24 @@ $(function () {
 	austDay = new Date($('#year').html(), $('#month').html() - 1 , $('#day').html(), $('#hour').html(), $('#minutes').html());
 	$('#defaultCountdown').countdown({until: austDay});
   
-  $( "#datepicker" ).datepicker();
+  $( "#datepicker" ).datetimepicker({
+    closeText: 'Ok',
+    currentText: 'Hoje',
+    timeText: 'Horas',
+	  hourText: 'Horas',
+	  minuteText: 'Minutos',
+    monthNames: ['Janeiro','Fevereiro','Маrço','Abril','Maio','Junho',
+	'Julho','Agosto','Setembro','Оutubro','Novembro','Dezembro'],
+    dayNamesMin: ['D','S','T','Q','Q','S','S'],
+    dateFormat: 'yy-mm-dd'
+  });
+  
+  $( "#normalizar" ).submit(function() {
+    $( "#inicial").val(Math.round($( "#inicial").val()).toFixed(2));
+    $( "#final").val(Math.round($( "#final").val()).toFixed(2));
+    $( "#desconto").val(Math.round($( "#desconto").val()).toFixed(1));
+  
+  });
   
   $( "#inicial" ).change(calculoInicial);
   $( "#desconto" ).change(calculoInicial);
@@ -75,6 +92,7 @@ $(function () {
         }
 
       }
+
   }
   }
 });
