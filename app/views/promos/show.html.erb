@@ -15,6 +15,7 @@
     <h4><%= @promo.detalhes %></h4>
   </p>  
   
+  <% if @promo.precoi != nil && @promo.precof != nil %>
   <p>
     <div class="underline"><h5>PREÇO INICIAL</h5></div> 
     
@@ -26,7 +27,7 @@
     
     <h4><%= @promo.precof %> €</h4>
   </p>  
-  
+ <% end %>
   <p>
     <div class="underline"><h5>DESCONTO</h5></div> 
     
