@@ -130,8 +130,8 @@ class SearchController < ApplicationController
   def lojas_by_shopping
     @shopping = Shopping.find(params[:shopping_id])
     @lojas = @shopping.lojas
-    @loj = [['Todas', -1]]
-    options = @lojas.collect{|x| "#{x.id},#{x.nome}"} 
+    options = [-1,'Todas']
+    options += @lojas.collect{|x| "#{x.id},#{x.nome}"}
     render :text => "#{options.join(",")}" 
     
   end
