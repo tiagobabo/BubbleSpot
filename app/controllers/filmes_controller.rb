@@ -87,7 +87,7 @@ end
   # PUT /shoppings/1/filmes/2
   def update
     @shopping = Shopping.find(params[:shopping_id])
-    @filme = filme.find(params[:id])
+    @filme = Filme.find(params[:id])
     
     
     respond_to do |format|
@@ -103,7 +103,7 @@ end
   # DELETE /shoppings/1/filmes/2
   def destroy
     @shopping = Shopping.find(params[:shopping_id])
-    @filme = filme.find(params[:id])
+    @filme = Filme.find(params[:id])
     @filme.destroy
 
     respond_to do |format|
