@@ -62,7 +62,7 @@ class SearchController < ApplicationController
   
    def promos
     
-      if params[:loja].present?
+      if params[:loja].present? && params[:loja] != "-1"
         search = "%" + params[:query].downcase + "%"
         @shopping = Shopping.find(params[:shopping])
         @loja = @shopping.lojas.find(params[:loja])
@@ -72,7 +72,7 @@ class SearchController < ApplicationController
             promo[:loja_nome] = @loja.nome
         end
         @promos += @promos_aux
-      elsif params[:shopping].present?
+      elsif params[:shopping].present? && params[:shopping] != "-1"
         search = "%" + params[:query].downcase + "%"
         @shopping = Shopping.find(params[:shopping])
         @lojas = @shopping.lojas
