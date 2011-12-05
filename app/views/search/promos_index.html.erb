@@ -13,7 +13,7 @@
     <%= text_field_tag "query" , "", :class => "medium input-text"%>
     <p> Shopping: </p>
   
-  <%= select_tag (:shopping, options_for_select(@shops),  :onchange => 'update_lojas(this.value)' ) %>
+  <%= select_tag :shopping, options_for_select(@shops), :onchange => 'update_lojas(this.value)'  %>
    
   
     <p>Loja: </p>
