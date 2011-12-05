@@ -60,11 +60,21 @@ class SearchController < ApplicationController
     
   end
   
-  def shopping_promos 
+   def promos
     
-    if params[:query].present?
+      if params[:loja].present?
         search = "%" + params[:query].downcase + "%"
-        @shopping = Shopping.find(params[:shopping_id])
+        @shopping = Shopping.find(params[:shopping])
+        @loja = @shopping.lojas.find(params[:loja])
+        @promos = []
+        @promos_aux = @loja.promos.where("lower(produto) like ? or lower(detalhes) like ?", search, search) 
+        @promos_aux.each do |promo|
+            promo[:loja_nome] = @loja.nome
+        end
+        @promos += @promos_aux
+      elsif params[:shopping].present?
+        search = "%" + params[:query].downcase + "%"
+        @shopping = Shopping.find(params[:shopping])
         @lojas = @shopping.lojas
         @promos = []
         @promos_aux = []
@@ -75,17 +85,7 @@ class SearchController < ApplicationController
           end
           @promos += @promos_aux
         end
-      end
-    respond_to do |format|
-        format.html # lojas.html.erb
-        format.json { render :json => @promos }
-      end
-      
-  end
-  
-   def promos
-    
-    if params[:query].present?
+     elsif params[:query].present?
         search = "%" + params[:query].downcase + "%"
         @shoppings = Shopping.all
         @shoppings.each do |shopping|
@@ -101,13 +101,15 @@ class SearchController < ApplicationController
             @promos += @promos_aux
           end
         end
+    else
+        @shoppings = Shopping.all
+        @lojas = Loja.all
+        render "promos_index"
     end
     respond_to do |format|
-        format.html # lojas.html.erb
+        format.html 
         format.json { render :json => @promos }
-      end
-      
+    end
   end
     
-  
 end
