@@ -25,6 +25,8 @@
     Desconto
     <%= f.text_field :desconto, :class => "large input-text", :id=>"desconto" %>
   </div>
+    <div id="hour"><%= @promo.dataf.hour %></div>
+    <div id="minutes"><%= @promo.dataf.min %></div>
     <div class="field">
     Data Fim
     <%= f.text_field :dataf, :class => "large input-text", :id=>"datepicker" %>
