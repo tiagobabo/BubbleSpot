@@ -127,5 +127,14 @@ class SearchController < ApplicationController
         format.json { render :json => @promos }
     end
   end
+  
+  def lojas_by_shopping
+    @shopping = Shopping.find(params[:shopping_id])
+    @lojas = @shopping.lojas
+    @loj = [['Todas', -1]]
+    options = @lojas.collect{|x| "#{x.id},#{x.nome}"} 
+    render :text => "#{options.join(",")}" 
+    
+  end
     
 end

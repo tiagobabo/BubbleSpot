@@ -100,12 +100,29 @@ $(function () {
   }
   }
   
-  $('#lojas').hide();
-  
-  $("#shoppings").change(function() {
-    alert('teste');
-    });
 
-  
-  
 });
+
+function update_lojas(shopping_id) {
+  
+    var js_var = "<%= @lojas %>";
+    if(shopping_id != -1)
+    {
+      $('#loja').empty();
+        $.get("lojas_by_shopping?shopping_id=" + shopping_id, function(data) {
+        
+        var array = data.split(',');
+
+        for (i=0;i<array.length;i+=2)
+        {
+          $('#loja').append(
+            $('<option></option>').html(array[i]).html(array[i+1])
+          );
+        }
+       
+      });
+
+    $('#loja').attr('disabled', 'false');
+
+    }
+}  
