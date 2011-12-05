@@ -1,5 +1,11 @@
 	$(function() {
 		 	
+    $( "#dialog-modal3" ).dialog({
+        autoOpen: false,
+	  		modal: true,
+        beforeClose: function(event, ui) { $("#cover").hide(); }
+		  });
+      
     $( "#dialog-modal2" ).dialog({
         autoOpen: false,
 	  		modal: true,

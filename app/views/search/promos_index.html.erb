@@ -1,0 +1,24 @@
+<section>
+<div class="row">
+      <div class="twelve columns">
+        <div class="underline"><h1>Pesquisa de Promoções</h1></div>
+            
+</div>
+</div>
+     <p></p>
+    <div class="row">
+<div class="twelve columns">
+ <%= form_tag search_promos_url, {:method => :get, :class => "custom"} do %>
+    <%= text_field_tag :query , "", :class => "medium input-text"%>
+    <p></p>
+  <%= select_tag(:shopping, options_for_select(@shops)) %>
+
+    <p></p>
+      <%= select_tag(:loja, options_for_select(@loj)) %>
+    <p></p>
+  <%= submit_tag "Pesquisar", :class => "nice small radius blue button" %>
+<% end %>
+  
+</div>
+</div>
+</section>

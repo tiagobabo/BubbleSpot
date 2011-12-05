@@ -105,19 +105,22 @@ class SearchController < ApplicationController
         @shops = [['Todos', -1]]
         @shoppings = Shopping.all
         @shoppings.each do |shopping|
-          @shops += [shopping.nome, shopping.id]
+          @shops += [[shopping.nome, shopping.id]]
         end
 
         @loj = [['Todas', -1]]
         @lojas = Loja.all
         @lojas.each do |loja|
-          @loj += [loja.nome, loja.id]
+          @loj += [[loja.nome, loja.id]]
         end
         
-        render "promos_index"
-    end
+      end
     respond_to do |format|
-        format.html 
+      if params[:query].present?
+        format.html
+      else
+        format.html {render "promos_index"}
+      end  
         format.json { render :json => @promos }
     end
   end

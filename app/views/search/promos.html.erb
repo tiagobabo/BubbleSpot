@@ -1,0 +1,34 @@
+<% if @promos != nil && @promos.count > 0 %>
+  <section>
+		 <div class="row">
+      <div class="twelve columns"> 
+        <div class="underline"><h1>Resultados</h1></div>   
+          </div>
+    
+<% @promos.each do |promo| %>
+
+
+<%= cycle("</div><div class='row'>","","").html_safe %>
+<div class="four columns">
+   <center>
+  <%= link_to image_tag(promo.imagem), shopping_loja_promo_path(@shopping, @loja, promo) %>
+    <p><%= promo.produto%></p>
+  </center>
+  <p></p>
+</div>
+<% end %>
+</div>
+
+<%else %>
+
+		 <div class="row">
+      <div class="twelve columns"> 
+           <div class="underline"><h1>Resultados</h1></div> 
+        <div class="underline"><h2>Não foram encontradas promoções..</h2></div> 
+      </div>
+		 </div>
+</section>
+
+
+<%end %>
+
