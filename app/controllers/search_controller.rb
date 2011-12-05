@@ -90,9 +90,9 @@ class SearchController < ApplicationController
      elsif params[:query].present?
         search = "%" + params[:query].downcase + "%"
         @shoppings = Shopping.all
+        @promos = []
         @shoppings.each do |shopping|
           @lojas = shopping.lojas
-          @promos = []
           @promos_aux = []
           @lojas.each do |loja|
             @promos_aux = loja.promos.where("lower(produto) like ? or lower(detalhes) like ?", search, search) 
@@ -116,15 +116,14 @@ class SearchController < ApplicationController
         @lojas.each do |loja|
           @loj += [[loja.nome, loja.id]]
         end
-        
     end
     respond_to do |format|
       if params[:query].present?
         format.html
+        format.json { render :json => @promos }
       else
         format.html {render "promos_index"}
       end  
-        format.json { render :json => @promos }
     end
   end
   
