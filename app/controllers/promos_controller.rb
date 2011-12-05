@@ -3,7 +3,7 @@
 class PromosController < ApplicationController
   
   before_filter :require_login
-  skip_before_filter :require_login, :only => [:allByShopping, :index, :show]
+  skip_before_filter :require_login, :only => [:all, :allByShopping, :index, :show]
   
   
   def all
