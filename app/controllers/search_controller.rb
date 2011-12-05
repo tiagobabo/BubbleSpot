@@ -70,6 +70,7 @@ class SearchController < ApplicationController
         @promos_aux = @loja.promos.where("lower(produto) like ? or lower(detalhes) like ?", search, search) 
         @promos_aux.each do |promo|
             promo[:loja_nome] = @loja.nome
+            promo[:shopping_id] = @shopping.id
         end
         @promos += @promos_aux
       elsif params[:shopping].present? && params[:shopping] != "-1"
@@ -82,6 +83,7 @@ class SearchController < ApplicationController
           @promos_aux = loja.promos.where("lower(produto) like ? or lower(detalhes) like ?", search, search) 
           @promos_aux.each do |promo|
             promo[:loja_nome] = loja.nome
+            promo[:shopping_id] = @shopping.id
           end
           @promos += @promos_aux
         end
@@ -97,6 +99,7 @@ class SearchController < ApplicationController
             @promos_aux.each do |promo|
               promo[:loja_nome] = loja.nome
               promo[:shopping_nome] = shopping.nome
+              promo[:shopping_id] = shopping.id
             end
             @promos += @promos_aux
           end
@@ -114,7 +117,7 @@ class SearchController < ApplicationController
           @loj += [[loja.nome, loja.id]]
         end
         
-      end
+    end
     respond_to do |format|
       if params[:query].present?
         format.html
