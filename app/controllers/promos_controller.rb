@@ -6,6 +6,21 @@ class PromosController < ApplicationController
   skip_before_filter :require_login, :only => [:allByShopping, :index, :show]
   
   
+  def all
+  @promos = Promo.all
+  @promos.each do |promo|
+    @loja = Loja.find(promo[:loja_id])
+    promo[:loja_nome] = @loja.nome
+    
+    @shopping = Shopping.find(@loja.shopping_id)
+    promo[:shopping_nome] = @shopping.nome
+    
+  end
+  respond_to do |format|
+    format.json { render :json => @promos }
+  end
+end
+  
   
   def allByShopping
     @promos = []
