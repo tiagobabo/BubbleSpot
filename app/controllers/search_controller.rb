@@ -5,6 +5,20 @@ class SearchController < ApplicationController
   TERMOS = [['Nome',0], ['Localização',1]]
   TERMOS_LOJAS = [['Nome',0], ['Áreas de negócio',1]]
   
+  def index
+    @shops = [['Todos', -1]]
+    @shoppings = Shopping.all
+    @shoppings.each do |shopping|
+      @shops += [[shopping.nome, shopping.id]]
+    end
+
+    @loj = [['Todas', -1]]
+    @lojas = Loja.all
+    @lojas.each do |loja|
+      @loj += [[loja.nome, loja.id]]
+    end
+  end
+  
   def shoppings   
     
     if params[:query].present?

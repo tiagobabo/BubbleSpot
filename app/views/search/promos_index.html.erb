@@ -10,7 +10,7 @@
 <div class="twelve columns">
   <%= form_tag search_promos_url, {:method => :get} do %>
 
-    <%= text_field_tag "query" , "", :class => "medium input-text"%>
+    <%= text_field_tag :query , "", :class => "medium input-text"%>
     <p> Shopping: </p>
   
   <%= select_tag :shopping, options_for_select(@shops), :onchange => 'update_lojas(this.value)'  %>
@@ -18,7 +18,7 @@
   
     <p>Loja: </p>
         
-    <%= select_tag("loja", options_for_select(@loj), :disabled => true) %>
+    <%= select_tag(:loja, options_for_select(@loj), :disabled => true) %>
     
   <p></p>
   <%= submit_tag "Pesquisar", :class => "nice small radius blue button" %>
