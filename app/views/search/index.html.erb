@@ -27,6 +27,27 @@
     <% end %>
     </div>
     </div>
+    
+      <div id="cover">
+    <div id="dialog-modal3" title="">
+      <div class="underline"><h4>Pesquisa de Promoções</h4></div>
+       <p></p>
+      <%= form_tag search_promos_url, {:method => :get} do %>
+
+      <%= text_field_tag "query" , "", :class => "medium input-text"%>
+    <p> Shopping: </p>
+    
+    <%= select_tag :shopping, options_for_select(@shops), :onchange => 'update_lojas(this.value)'  %>
+    
+    <p>Loja: </p>
+        
+     <%= select_tag("loja", options_for_select(@loj), :disabled => true) %>
+    
+  <p></p>
+    <%= submit_tag "Pesquisar", :class => "nice small radius blue button" %>
+    <% end %>
+    </div>
+    </div>
 
 
 <div class="row">
@@ -48,7 +69,8 @@
   <p></p>
 </div>
 <div class="four columns">
-  <%= link_to image_tag("http://placehold.it/400x600"),search_promos_url %>
+  <img id="opener3" class="hide-on-phones" src="http://placehold.it/400x600">
+  <%= link_to image_tag("http://placehold.it/400x600"),search_promos_url, :class=>"hide-on-desktops" %>
   <p></p>
 </div>
 
