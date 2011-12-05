@@ -10,11 +10,13 @@
 <div class="twelve columns">
  <%= form_tag search_promos_url, {:method => :get, :class => "custom"} do %>
     <%= text_field_tag :query , "", :class => "medium input-text"%>
-    <p></p>
+    <p> Shopping: </p>
+ 
   <%= select_tag(:shopping, options_for_select(@shops)) %>
 
-    <p></p>
-      <%= select_tag(:loja, options_for_select(@loj)) %>
+    <p>Loja: </p>
+        
+    <%= select_tag(:loja, options_for_select(@loj)) %>
     <p></p>
   <%= submit_tag "Pesquisar", :class => "nice small radius blue button" %>
 <% end %>
