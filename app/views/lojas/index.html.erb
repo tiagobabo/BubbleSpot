@@ -1,19 +1,26 @@
 <% if @lojas != nil && @lojas.count > 0 %>
   <section>
 		 <div class="row">
-      <div class="twelve columns"> 
+      <div class="eleven columns"> 
         <div class="underline"><h1>Lojas do <%= @shopping.nome %></h1></div>   
         <p></p>
           </div>
-    
+          <div class="one"> 
+          </div>
+          <div class="row display">
+<div class="four columns offset-by-eight">  <input type="text" class="filter" name="liveFilter" />   <p></p></div>
+        <p></p>
+</div>
+   
 <% @lojas.each do |loja| %>
 
 <%= cycle("</div><div class='row'>","","").html_safe %>
 <div class="four columns">
-   <center>
-  <%= link_to image_tag(loja.imagem), shopping_loja_path(@shopping, loja) %>
-    <p><%= loja.nome%></p>
-  </center>
+    <ul id="filter_me">
+            <center>
+            <li><%= link_to image_tag(loja.imagem), shopping_loja_path(@shopping, loja) %>
+              <p> <%= loja.nome%></p></li>
+              <ul>
   <p></p>
 </div>
 <% end %>
