@@ -102,7 +102,7 @@ class SearchController < ApplicationController
           end
           @promos += @promos_aux
         end
-      end
+        
      elsif params[:query].present?
         search = "%" + params[:query].downcase + "%"
         @shoppings = Shopping.all
@@ -120,6 +120,7 @@ class SearchController < ApplicationController
             @promos += @promos_aux
           end
         end
+      end
       else
         @shops = [['Todos', -1]]
         @shoppings = Shopping.all
