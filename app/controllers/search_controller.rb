@@ -104,7 +104,7 @@ class SearchController < ApplicationController
             @promos += @promos_aux
           end
         end
-    else
+      else
         @shops = [['Todos', -1]]
         @shoppings = Shopping.all
         @shoppings.each do |shopping|

@@ -11,13 +11,18 @@
  <%= form_tag search_promos_url, {:method => :get, :class => "custom"} do %>
     <%= text_field_tag :query , "", :class => "medium input-text"%>
     <p> Shopping: </p>
- 
-  <%= select_tag(:shopping, options_for_select(@shops)) %>
-
+  
+  <div id ="shoppings">
+    <%= select_tag(:shopping, options_for_select(@shops), :id => "shoppings") %>
+  </div>
+  
+  
+  <div id ="lojas">
     <p>Loja: </p>
         
     <%= select_tag(:loja, options_for_select(@loj)) %>
-    <p></p>
+  </div>
+  <p></p>
   <%= submit_tag "Pesquisar", :class => "nice small radius blue button" %>
 <% end %>
   

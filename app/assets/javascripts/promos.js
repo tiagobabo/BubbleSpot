@@ -99,4 +99,13 @@ $(function () {
 
   }
   }
+  
+  $('#lojas').hide();
+  
+  $("#shoppings").change(function() {
+    alert('teste');
+    });
+
+  
+  
 });
