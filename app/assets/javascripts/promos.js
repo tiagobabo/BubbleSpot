@@ -22,7 +22,7 @@ $(function () {
     monthNames: ['Janeiro','Fevereiro','Маrço','Abril','Maio','Junho',
 	'Julho','Agosto','Setembro','Оutubro','Novembro','Dezembro'],
     dayNamesMin: ['D','S','T','Q','Q','S','S'],
-    dateFormat: 'yy-mm-dd'
+    dateFormat: 'dd-mm-yy'
   });
   
   $( "#normalizar" ).submit(function() {
