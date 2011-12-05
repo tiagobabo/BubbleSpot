@@ -102,8 +102,18 @@ class SearchController < ApplicationController
           end
         end
     else
+        @shops = [['Todos', -1]]
         @shoppings = Shopping.all
+        @shoppings.each do |shopping|
+          @shops += [shopping.nome, shopping.id]
+        end
+
+        @loj = [['Todas', -1]]
         @lojas = Loja.all
+        @lojas.each do |loja|
+          @loj += [loja.nome, loja.id]
+        end
+        
         render "promos_index"
     end
     respond_to do |format|
