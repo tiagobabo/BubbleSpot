@@ -108,7 +108,7 @@ function update_lojas(shopping_id) {
     var js_var = "<%= @lojas %>";
     if(shopping_id != -1)
     {
-      $('#loja').empty();
+        $('#loja').empty();
         $.get("lojas_by_shopping?shopping_id=" + shopping_id, function(data) {
         
         var array = data.split(',');
@@ -116,13 +116,22 @@ function update_lojas(shopping_id) {
         for (i=0;i<array.length;i+=2)
         {
           $('#loja').append(
-            $('<option></option>').html(array[i]).html(array[i+1])
+            $('<option></option>').val(array[i]).html(array[i+1])
           );
         }
        
-      });
+        });
 
-    $('#loja').attr('disabled', 'false');
+      $('#loja').removeAttr("disabled");
 
     }
+  else
+  {
+    $('#loja').attr('disabled', 'disabled');
+    $('#loja').empty();
+    $('#loja').append(
+            $('<option></option>').html("-1").html("Todas")
+          );
+  }
+  
 }  
