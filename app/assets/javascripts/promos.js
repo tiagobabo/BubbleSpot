@@ -8,8 +8,12 @@ $(function () {
   
 	austDay = new Date($('#year').html(), $('#month').html() - 1 , $('#day').html(), $('#hour').html(), $('#minutes').html());
 	$('#defaultCountdown').countdown({until: austDay});
-  
+
+
+
   $( "#datepicker" ).datetimepicker({
+   hour:  $('#hour').html(),
+    minute: $('#minutes').html(),
     closeText: 'Ok',
     currentText: 'Hoje',
     timeText: 'Horas',
