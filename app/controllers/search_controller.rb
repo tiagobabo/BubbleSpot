@@ -86,6 +86,7 @@ class SearchController < ApplicationController
         @promos_aux.each do |promo|
             promo[:loja_nome] = @loja.nome
             promo[:shopping_id] = @shopping.id
+            promo[:shopping_nome] = @shopping.nome
         end
         @promos += @promos_aux
       elsif params[:shopping].present? && params[:shopping] != "-1"
@@ -99,6 +100,7 @@ class SearchController < ApplicationController
           @promos_aux.each do |promo|
             promo[:loja_nome] = loja.nome
             promo[:shopping_id] = @shopping.id
+            promo[:shopping_nome] = @shopping.nome
           end
           @promos += @promos_aux
         end

@@ -37,6 +37,11 @@ $(function () {
   $( "#final" ).focusout(calculoInicial2);
   
   function calculoInicial2(){
+        if($( "#final").val() < 0 || $( "#desconto").val() < 0 || $( "#desconto").val() > 100 || $( "#inicial").val() < 0 ){
+          alert("Valores Inválidos");
+          
+    }
+    else{
    if($( "#inicial").val().length == 0 && $( "#desconto").val().length > 0 && $( "#final").val().length > 0 ){
         var resultado = $( "#final" ).val() / ( 1- ($( "#desconto" ).val()/100));
         $( "#inicial").val(Math.round(resultado).toFixed(2));  
@@ -53,6 +58,7 @@ $(function () {
            $( "#desconto" ).val(Math.round(resultado).toFixed(1));
         }
     }
+  }
   }
   
   function calculoInicial(){
