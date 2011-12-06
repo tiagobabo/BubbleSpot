@@ -104,7 +104,10 @@ function update_lojas(shopping_id) {
     if(shopping_id != -1)
     {
         $('#loja').empty();
+        
+        var a = window.location.pathname;
         $.get("lojas_by_shopping?shopping_id=" + shopping_id, function(data) {
+            
         
         var array = data.split(',');
 
