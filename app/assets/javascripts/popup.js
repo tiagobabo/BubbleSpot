@@ -3,18 +3,22 @@
     $( "#dialog-modal3" ).dialog({
         autoOpen: false,
 	  		modal: true,
+        width: 350,
+        resizable: false,
         beforeClose: function(event, ui) { $("#cover").hide(); }
 		  });
       
     $( "#dialog-modal2" ).dialog({
         autoOpen: false,
 	  		modal: true,
+        resizable: false,
         beforeClose: function(event, ui) { $("#cover").hide(); }
 		  });
       
     $( "#dialog-modal" ).dialog({
         autoOpen: false,
 	  		modal: true,
+        resizable: false,
         beforeClose: function(event, ui) { $("#cover").hide(); }
 		  });
     
