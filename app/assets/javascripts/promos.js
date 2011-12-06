@@ -32,9 +32,9 @@ $(function () {
   
   });
   
-  $( "#inicial" ).change(calculoInicial);
-  $( "#desconto" ).change(calculoInicial);
-  $( "#final" ).change(calculoInicial2);
+  $( "#inicial" ).focusout(calculoInicial);
+  $( "#desconto" ).focusout(calculoInicial);
+  $( "#final" ).focusout(calculoInicial2);
   
   function calculoInicial2(){
    if($( "#inicial").val().length == 0 && $( "#desconto").val().length > 0 && $( "#final").val().length > 0 ){
@@ -47,8 +47,7 @@ $(function () {
      
         if(resultado < 0){
             alert("Valores Inválidos");
-            $( "#final" ).val("");
-            $( "#desconto" ).val("");
+
         }
         else{
            $( "#desconto" ).val(Math.round(resultado).toFixed(1));
@@ -60,9 +59,7 @@ $(function () {
    
     if($( "#final").val() < 0 || $( "#desconto").val() < 0 || $( "#desconto").val() > 100 || $( "#inicial").val() < 0 ){
           alert("Valores Inválidos");
-          $( "#inicial" ).val("");
-          $( "#final" ).val("");
-          $( "#desconto" ).val("");
+          
     }
     else{
       if($( "#inicial").val().length == 0 && $( "#desconto").val().length > 0 && $( "#final").val().length > 0 ){
@@ -74,8 +71,6 @@ $(function () {
        
         if(resultado < 0){
             alert("Valores Inválidos");
-            $( "#final" ).val("");
-            $( "#desconto" ).val("");
         }
         else{
             $( "#final" ).val(Math.round(resultado).toFixed(2));
@@ -88,9 +83,7 @@ $(function () {
      
         if(resultado < 0){
             alert("Valores Inválidos");
-            $( "#final" ).val("");
-            $( "#desconto" ).val("");
-        }
+          }
         else{
             $( "#desconto" ).val(Math.round(resultado).toFixed(1));
         }
