@@ -53,7 +53,7 @@ class SearchController < ApplicationController
      if params[:query].present?
       
       if params[:pesquisa] == "0"
-        search = params[:query].downcase + "%"
+        search = "%" + params[:query].downcase + "%"
         @lojas = Loja.where("lower(nome) like ?", search)        
       elsif params[:pesquisa] == "1"
         search = "%" + params[:query].downcase + "%"

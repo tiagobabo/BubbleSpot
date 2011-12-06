@@ -2,7 +2,20 @@ class EventosController < ApplicationController
   # GET /eventos.json
 
   before_filter :require_login
-  skip_before_filter :require_login, :only => [:index, :show]
+  skip_before_filter :require_login, :only => [:all, :index, :show]
+
+
+def all
+  @eventos = Evento.all
+  @eventos.each do |evento|
+    @shopping = Shopping.find(evento[:shopping_id])
+    evento[:shopping_nome] = @shopping.nome 
+  end
+  respond_to do |format|
+    format.html #all.html.erb
+    format.json { render :json => @eventos }
+  end
+end
 
 # GET /shoppings/1/eventos
   def index

@@ -21,9 +21,14 @@ BubbleSpot::Application.routes.draw do
   
   get "shoppings/:id/lojas" => "lojas#index", :as => "lojas_shopping_index"
   
-  get "lojas" => "lojas#all", :as => "lojas_all"
+
   get "promos" => "promos#all", :as => "promos_all"
   get "shoppings/:shopping_id/promos" => "promos#allByShopping"
+
+  get "lojas" => "lojas#all", :as => "lojas_all"
+  get "promos" => "promos#all", :as => "promos_all"
+  get "filmes" => "filmes#all", :as => "filmes_all"
+  get "eventos" => "eventos#all", :as => "eventos_all"
  
   
   get "shoppings/:id/filmes" => "filmes#index", :as => "filmes_shopping_index"

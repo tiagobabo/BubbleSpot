@@ -13,6 +13,7 @@ def all
     loja[:shopping_nome] = @shopping.nome 
   end
   respond_to do |format|
+    format.html # all.html.erb
     format.json { render :json => @lojas }
   end
 end
