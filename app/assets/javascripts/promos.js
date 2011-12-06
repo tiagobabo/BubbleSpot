@@ -91,45 +91,8 @@ $(function () {
       }
 
   }
-  }
-  
-  $("#shopping option[value=-1]").attr("selected","selected") ;
-  $('#loja').attr('disabled', 'disabled');
+}
 
 });
 
-function update_lojas(shopping_id) {
-  
-    var js_var = "<%= @lojas %>";
-    if(shopping_id != -1)
-    {
-        $('#loja').empty();
-        
-        var a = window.location.pathname;
-        $.get("lojas_by_shopping?shopping_id=" + shopping_id, function(data) {
-            
-        
-        var array = data.split(',');
 
-        for (i=0;i<array.length;i+=2)
-        {
-          $('#loja').append(
-            $('<option></option>').val(array[i]).html(array[i+1])
-          );
-        }
-       
-        });
-
-      $('#loja').removeAttr("disabled");
-
-    }
-  else
-  {
-    $('#loja').attr('disabled', 'disabled');
-    $('#loja').empty();
-    $('#loja').append(
-            $('<option></option>').html("-1").html("Todas")
-          );
-  }
-  
-}  
