@@ -30,6 +30,7 @@ end
       @promos_aux = loja.promos
       @promos_aux.each do |promo|
         promo[:loja_nome] = loja.nome
+        promo[:shopping_nome] = @shopping.nome
       end
       @promos += @promos_aux
     end
