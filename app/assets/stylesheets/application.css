@@ -26,4 +26,13 @@
 	}
   
 .navigation {
-height: 20px;}
+margin-top: -31px;
+height:25px;
+background-color: #EEEEEE;
+width: 100%;
+position: fixed;
+padding-top: 5px;
+left: 0;
+padding-left:190px;
+z-index: 10000;
+}
