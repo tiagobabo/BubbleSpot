@@ -1,9 +1,14 @@
-<section>
-  
-  <div class="row">
+
+<div class="row">
+  <section>
     <div class ="twelve columns">
+       <div class = "navigation">
+       <%= tabs_tag do |tab| %>
+       <%= tab.home      "Home", root_path %>
+       <%= tab.shopping      @shopping.nome, @shopping %>
+       <% end %> 
+    </div>
        <div class="underline"><h1><%= @shopping.nome %></h1></div> 
-      
     </div>
   </div>  
 <div class="row">

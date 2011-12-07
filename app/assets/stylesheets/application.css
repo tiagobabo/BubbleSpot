@@ -7,3 +7,23 @@
  *= require_tree . 
 */
 
+.navigation ul {
+
+  border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+  margin: 0;
+  padding: 0; 
+  list-style-type: none;
+
+}
+
+.navigation ul li { display: inline; }
+
+.navigation ul li:before {
+	content: "\00BB \0020";
+	}
+  
+.navigation {
+height: 20px;}
