@@ -1,10 +1,13 @@
 <% if @lojas != nil && @lojas.count > 0 %>
 <section>
       
-<% shopping_actual = "" %>      
+<% shopping_actual = "" %> 
 <% @lojas.each do |loja| %>
 
       <% if loja.shopping_nome != shopping_actual %>
+      
+       <% reset_cycle("rows") %>
+      
       <div class="row">
       <div class="twelve columns">
       <div class="underline"><h3>Lojas do <%= loja.shopping_nome%></h3></div>
@@ -13,7 +16,7 @@
       <% shopping_actual = loja.shopping_nome %>  
       <% end %>
             
-<%= cycle("</div><div class='row'>","","").html_safe %>
+<%= cycle("</div><div class='row'>","","",:name => "rows").html_safe %>
 <div class="four columns">
   <%= link_to image_tag(loja.imagem), shopping_loja_path(@shopping, loja) %>
   <p></p>
