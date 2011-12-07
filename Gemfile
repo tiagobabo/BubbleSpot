@@ -11,7 +11,7 @@ end
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'therubyracer'
+  gem 'therubyracer-heroku'
 end 
 
 gem "zurb-foundation"
