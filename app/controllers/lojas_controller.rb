@@ -9,7 +9,7 @@ class LojasController < ApplicationController
   set_tab :loja
 
 def all
-  @lojas = Loja.all
+  @lojas = Loja.order("shopping_id")
   @lojas.each do |loja|
     @shopping = Shopping.find(loja[:shopping_id])
     loja[:shopping_nome] = @shopping.nome 

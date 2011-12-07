@@ -4,6 +4,7 @@
       <div class="twelve columns"> 
         <div class="underline"><h1>Resultados</h1></div>   
       </div>
+    </div>
       
 <% shopping_actual = "" %>      
 <% @lojas.each do |loja| %>
@@ -13,7 +14,7 @@
       <div class="twelve columns">
       <div class="underline"><h3>Lojas do <%= loja.shopping_nome%></h3></div>
       </div>
-      </div>
+      
       <% shopping_actual = loja.shopping_nome %>  
       <% end %>
             
