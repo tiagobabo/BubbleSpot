@@ -7,7 +7,7 @@ class LojasController < ApplicationController
   skip_before_filter :require_login, :only => [:all, :index, :show]
 
 def all
-  @lojas = Loja.all(:group => "shopping_id")
+  @lojas = Loja.all
   @lojas.each do |loja|
     @shopping = Shopping.find(loja[:shopping_id])
     loja[:shopping_nome] = @shopping.nome 
