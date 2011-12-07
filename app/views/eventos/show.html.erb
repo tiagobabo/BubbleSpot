@@ -7,6 +7,33 @@
     </div>
   </div>  
 
+<div class="row">
+  
+  <div class="six columns">
+  
+  <p> 
+    <div class="underline"><h5>DATA</h5></div> 
+    <h4><%= @evento.dataf.strftime("%d-%m-%Y %H:%M")%></h4>
+  </p> 
+  
+  <p>
+     <div class="underline"><h5>DETALHES</h5></div> 
+    <h4><%= @evento.detalhes %></h4>
+  </p>  
+    
+</div>
+  <div class="six columns">
+    
+  <p></p> 
+  <%= image_tag(@evento.imagem)%>
+  <p> </p> 
+  
+  <div>
+  <% if current_admin %><%= link_to 'Editar', edit_evento_path(@shopping, @evento), :class => "nice small radius blue button" %><% end %>
+  </div>
+
+</div>
+</div>
 
 </section>
 
