@@ -1,7 +1,10 @@
 #!/bin/bash
 
+RAILS_ENV=production bundle exec rake assets:precompile
 git add -A
 git commit -m "$1"
 git push origin master
 git push heroku master
 heroku rake db:migrate
+rake assets:clean
+

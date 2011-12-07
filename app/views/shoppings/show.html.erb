@@ -35,7 +35,7 @@
   <p>
     <div class="underline"><h5>DESCRIÇÃO</h5></div> 
     
-    <h4><%= @shopping.descricao %></h4>
+    <h4><%= @shopping.descricao.gsub(/(?:\n\r?|\r\n?)/, '<br>').html_safe %></h4>
   </p>  
   
   <p>

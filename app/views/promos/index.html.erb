@@ -1,9 +1,7 @@
-
-<% if @promos != nil && @promos.count > 0 %>
-  <section>
+<section>
 		 <div class="row">
       <div class="twelve columns"> 
-        <div class = "navigation">
+        <div class = "navigation">       
         <%= tabs_tag do |tab| %>
         <%= tab.home      "Home", root_path %>
         <%= tab.shopping      @shopping.nome, @shopping %>
@@ -11,11 +9,17 @@
         <%= tab.loja      @loja.nome, shopping_loja_path(@shopping, @loja) %>
         <%= tab.promos      "Promoções da " + @loja.nome, shopping_loja_promos_path(@shopping, @loja) %>
         <% end %>
-        </div>
+</div>
+</div>
+</div>
+</section>
+<% if @promos != nil && @promos.count > 0 %>
+  <section>
+		 <div class="row">
+      <div class="twelve columns">            
         <div class="underline"><h1>Promoções da loja <%= @loja.nome %></h1></div>   
         <p></p>
-          </div>
-    
+      </div> 
 <% @promos.each do |promo| %>
 
 <%= cycle("</div><div class='row'>","","").html_safe %>
