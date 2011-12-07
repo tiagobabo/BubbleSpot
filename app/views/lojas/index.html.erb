@@ -1,14 +1,21 @@
-<% if @lojas != nil && @lojas.count > 0 %>
-  <section>
+<section>
 		 <div class="row">
-      <div class="eleven columns">
+      <div class="twelve columns">
       <div class = "navigation">
       <%= tabs_tag do |tab| %>
       <%= tab.home      "Home", root_path %>
       <%= tab.shopping      @shopping.nome, @shopping %>
       <%= tab.lojas      "Lojas do " + @shopping.nome, lojas_shopping_index_url(@shopping) %>
       <% end %>
-    </div>
+</div>
+</div>
+</div>
+</section>
+
+<% if @lojas != nil && @lojas.count > 0 %>
+  <section>
+		 <div class="row">
+      <div class="eleven columns">
         <div class="underline"><h1>Lojas do <%= @shopping.nome %></h1></div>   
         <p></p>
           </div>
@@ -48,7 +55,5 @@
 		 </div>
 
 </section>
-
-
 <%end %>
 

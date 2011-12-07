@@ -16,6 +16,9 @@
   margin: 0;
   padding: 0; 
   list-style-type: none;
+  max-width: 980px;
+min-width: 727px;
+margin: 0 auto;
 
 }
 
@@ -26,13 +29,14 @@
 	}
   
 .navigation {
+
+width: 100%; 
+
 margin-top: -31px;
 height:25px;
 background-color: #EEEEEE;
-width: 100%;
 position: fixed;
 padding-top: 5px;
 left: 0;
-padding-left:190px;
 z-index: 10000;
 }
