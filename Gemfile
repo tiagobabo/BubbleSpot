@@ -7,11 +7,11 @@ gem 'rails', '3.1.1'
 
 group :production do
   gem 'pg'
+  gem 'therubyracer-heroku'
 end
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'therubyracer-heroku'
 end 
 
 gem "zurb-foundation"
