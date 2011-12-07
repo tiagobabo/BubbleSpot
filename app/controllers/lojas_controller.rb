@@ -6,6 +6,8 @@ class LojasController < ApplicationController
   before_filter :require_login
   skip_before_filter :require_login, :only => [:all, :index, :show]
 
+  set_tab :loja
+
 def all
   @lojas = Loja.all
   @lojas.each do |loja|
@@ -20,6 +22,7 @@ end
 
 # GET /shoppings/1/lojas
   def index
+    set_tab :lojas
     # For URL like /shoppings/1/lojas
     # Get the shopping with id=1
     @shopping = Shopping.find(params[:id])

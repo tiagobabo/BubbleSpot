@@ -5,6 +5,7 @@ class PromosController < ApplicationController
   before_filter :require_login
   skip_before_filter :require_login, :only => [:all, :allByShopping, :index, :show]
   
+  set_tab :promo
   
   def all
   @promos = Promo.all
@@ -45,6 +46,7 @@ end
   
   # GET /lojas/1/promos
   def index
+    set_tab :promos
     # For URL like /lojas/1/promos
     # Get the loja with id=1 
     @shopping = Shopping.find(params[:shopping_id])

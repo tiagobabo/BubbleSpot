@@ -6,6 +6,8 @@ class ShoppingsController < ApplicationController
   
   before_filter :require_login
   skip_before_filter :require_login, :only => [:index, :show]
+  
+  set_tab :shopping
 
   
   def index
