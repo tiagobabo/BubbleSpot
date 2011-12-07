@@ -10,60 +10,26 @@
       <%= tab.loja      @loja.nome, @loja %>
       <% end %>
     </div>
-    <div class="underline"><h1><%= @loja.nome %></h1></div> 
-      
+
+       
     </div>
   </div>  
-<div class="row">
-  
-  <div class="six columns">
-    
-  <p>
-     <div class="underline"><h5>Shopping</h5></div> 
-     <h4><%= @loja.shopping_nome %></h4>
-  </p>  
-  
-  <p>
-     <div class="underline"><h5>Piso</h5></div> 
-     <h4><%= @loja.piso %></h4>
-  </p>  
-  
-  <p>
-     <div class="underline"><h5>Número</h5></div> 
-     <h4><%= @loja.numero %></h4>
-  </p>  
-  
-  <p>
-     <div class="underline"><h5>Telefone</h5></div> 
-     <h4><%= @loja.telefone %></h4>
-  </p>  
-  
-  <p>
-     <div class="underline"><h5>Detalhes</h5></div> 
-     <h4><%= @loja.detalhes.gsub(/(?:\n\r?|\r\n?)/, '<br>').html_safe %></h4>
-  </p>
-  
-  <p>
-     <div class="underline"><h5>Áreas de Negócio</h5></div> 
-     <h4><%= @loja.tags %></h4>
-  </p>
-  
 
   
-</div>
+  <div class="row">
+    <div class ="nine columns">
+</br>
+<p></p>
+        <div class="underline"><h1><%= @loja.nome %></h1></div> 
 
-  <div class="six columns">
-  
-  <p></p> 
-  <%= image_tag(@loja.imagem)%>
-  
+    </div>
+    <div class ="three columns">
+<p></p>
+<%= image_tag(@loja.imagem)%>
+    </div>
+    </div>
 
-  </div>
-</section>
-
-
-<section>
-    <div class="row">
+  <div class="row">
       <div class="twelve columns">
     <% if @new_promos != nil && @new_promos.count > 0 %>
       <p>
@@ -102,26 +68,78 @@
     <div class="four columns">
     <center>
     <%= link_to image_tag(last_promo.imagem), shopping_loja_promo_path(@shopping, @loja, last_promo) %>
-    <p>Termina a <%= last_promo.dataf%></p>
+    <p>Termina a <%= last_promo.dataf.strftime("%d-%m-%Y %H:%M")%></p>
     </center>
    <p></p>
     </div>
     <% end %>
     <% end %>
-    </p> 
-    <p>
       
-      
-      <div>
-
-     <%= link_to 'Todas as Promoções', shopping_loja_promos_path(@shopping, @loja), :class => "nice small radius blue button" %>
-
-  <% if current_admin %><%= link_to 'Editar', edit_loja_path(@shopping, @loja), :class => "nice small radius blue button" %><% end %> 
-  </div>
+    </div>  
 </div>
-</p>
+</section>
+
+
+<section>
+  <div class="row">
+  
+  <div class="six columns">
+    
+  <p>
+     <div class="underline"><h5>Shopping</h5></div> 
+     <h4><%= @loja.shopping_nome %></h4>
+  </p>  
+  
+  <p>
+     <div class="underline"><h5>Piso</h5></div> 
+     <h4><%= @loja.piso %></h4>
+  </p>  
+  
+  <p>
+     <div class="underline"><h5>Número</h5></div> 
+     <h4><%= @loja.numero %></h4>
+  </p>  
+  
+
+
   
 </div>
+
+  <div class="six columns">
+  
+
+    <p>
+     <div class="underline"><h5>Telefone</h5></div> 
+     <h4><%= @loja.telefone %></h4>
+  </p>  
+  
+  <p>
+     <div class="underline"><h5>Detalhes</h5></div> 
+     <h4><%= @loja.detalhes %></h4>
+  </p>
+  
+  <p>
+     <div class="underline"><h5>Áreas de Negócio</h5></div> 
+     <h4><%= @loja.tags %></h4>
+  </p>
+  
+  
+
+
+  </div>
+  </div>
+  <div class="row">
+  <div class="twelve columns">
+  <%= link_to 'Todas as Promoções', shopping_loja_promos_path(@shopping, @loja), :class => "nice small radius blue button" %>
+
+  <% if current_admin %>
+    <%= link_to 'Editar', edit_loja_path(@shopping, @loja), :class => "nice small radius blue button" %>
+    <%= link_to 'Apagar', shopping_loja_path(@shopping, @loja), :confirm => 'Tem a certeza?', :method => :delete, :class => "nice small radius blue button" %>
+  <% end %> 
+  </div>
+  </div>
+
+  
 </section>
 
 

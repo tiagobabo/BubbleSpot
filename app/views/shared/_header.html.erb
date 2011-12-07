@@ -1,7 +1,7 @@
 <div class="topbar">
   <div class="fill">
         <div class="container">          
-          <%= link_to "BubbleSpot", root_url, :class => "brand" %>
+          <%= link_to image_tag("logo.png"), root_url, :class => "brand" %>
           <ul class="nav">
            
             <li class="<%= controller.controller_path == 'shoppings' ? 'active' : '' %>"> <%= link_to "Shoppings", shoppings_url %></li>

@@ -56,8 +56,13 @@
   <div>
     
   <%= link_to 'Lojas', lojas_shopping_index_url(@shopping), :class => "nice small radius blue button" %>
+  <%= link_to 'Eventos', eventos_shopping_index_url(@shopping), :class => "nice small radius blue button" %>
+  <%= link_to 'Filmes', filmes_shopping_index_url(@shopping), :class => "nice small radius blue button" %>
   
-  <% if current_admin %><%= link_to 'Editar', edit_shopping_path(@shopping), :class => "nice small radius blue button" %><% end %> 
+  <% if current_admin %>
+    <%= link_to 'Editar', edit_shopping_path(@shopping), :class => "nice small radius blue button" %>
+    
+  <% end %> 
   </div>
   
 
