@@ -18,7 +18,7 @@
   
   <p>
      <div class="underline"><h5>DETALHES</h5></div> 
-    <h4><%= @evento.detalhes %></h4>
+    <h4><%= @evento.detalhes.gsub(/(?:\n\r?|\r\n?)/, '<br>').html_safe %></h4>
   </p>  
     
 </div>

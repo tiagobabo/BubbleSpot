@@ -55,8 +55,7 @@
   
   
 </div>
-
-<div class="six columns">
+  <div class="six columns">
     
   <p></p> 
   <%= image_tag(@promo.imagem)%>
@@ -71,7 +70,9 @@
     <div id="minutes"><%= @promo.dataf.min %></div>
     <div id="defaultCountdown"></div>
   </p> <br></br>
+  
   <% if current_admin %><%= link_to 'Editar', edit_shopping_loja_promo_path(@shopping, @loja, @promo), :class => "nice small radius blue button" %><% end %> 
-</div>
+  </div>
+
 </div>
 </section>
