@@ -11,6 +11,7 @@ class ShoppingsController < ApplicationController
 
   
   def index
+    set_tab :home
     @shoppings = Shopping.all
 
     respond_to do |format|
