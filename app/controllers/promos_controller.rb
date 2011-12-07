@@ -55,6 +55,7 @@ end
     
     @promos.each do |promo|
       promo[:loja_nome] = @loja.nome
+      promo[:shopping_nome] = @shopping.nome
     end
     
     respond_to do |format|
@@ -71,6 +72,7 @@ end
     # For URL like /lojas/1/promos/2
     # Find an promo in lojas 1 that has id=2
     @promo = @loja.promos.find(params[:id])
+
   end
 
   # GET /lojas/1/promos/new
