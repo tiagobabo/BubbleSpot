@@ -8,7 +8,22 @@
     Nome
     <%= f.text_field :nome, :class => "large input-text" %>
   </div>
-  
+    <% if @evento.data != nil %>
+    <div id="hour"><%= @evento.data.hour %></div>
+    <div id="minutes"><%= @evento.data.min %></div>
+    <%end%>
+  <div class="field">
+    Data
+    <%= f.text_field :data, :class => "large input-text", :id=>"datepicker"  %>
+  </div>
+  <div class="field">
+    Detalhes
+    <%= f.text_area :detalhes, :rows => 6, :class => "large input-text" %>
+  </div>
+  <div class="field">
+    Link para a imagem:
+    <%= f.text_field :imagem, :class => "large input-text" %>
+  </div>
   
   
   <div class="actions">

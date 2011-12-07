@@ -90,7 +90,7 @@ class EventosController < ApplicationController
   # PUT /shoppings/1/eventos/2
   def update
     @shopping = Shopping.find(params[:shopping_id])
-    @evento = evento.find(params[:id])
+    @evento = @shopping.eventos.find(params[:id])
     
     
     respond_to do |format|
@@ -106,7 +106,7 @@ class EventosController < ApplicationController
   # DELETE /shoppings/1/eventos/2
   def destroy
     @shopping = Shopping.find(params[:shopping_id])
-    @evento = evento.find(params[:id])
+    @evento = @shopping.eventos.find(params[:id])
     @evento.destroy
 
     respond_to do |format|

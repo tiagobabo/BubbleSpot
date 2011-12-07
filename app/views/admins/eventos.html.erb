@@ -11,6 +11,8 @@
     <table>
    <tr>
      <th>Nome</th>
+     <th>Data</th>
+     <th>Detalhes</th>
      <th></th>
      <th></th>
      <th></th>
@@ -20,6 +22,8 @@
  <% @eventos.each do |evento| %>
    <tr>
      <td><%= evento.nome %></td>
+     <td><%= evento.data.strftime("%d-%m-%Y %H:%M")%></td>
+     <td><%= truncate evento.detalhes, :length => 50 %></td>
      <td><%= link_to 'Mostrar', shopping_evento_path(@shopping, evento) %></td>
      <td><%= link_to 'Editar', edit_evento_path(@shopping, evento) %></td>
      <td><%= link_to 'Apagar', shopping_evento_path(@shopping, evento), :confirm => 'Tem a certeza?', :method => :delete %></td>
