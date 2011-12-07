@@ -24,20 +24,20 @@
   <p>
      <div class="underline"><h5>DETALHES</h5></div> 
     <h4><%= @promo.detalhes.gsub(/(?:\n\r?|\r\n?)/, '<br>').html_safe %></h4>
-  </p>  
+      
   
   <% if @promo.precoi != nil && @promo.precof != nil %>
   <p>
     <div class="underline"><h5>PREÇO INICIAL</h5></div> 
     
     <h4><%= @promo.precoi %> €</h4>
-  </p>  
+    <p/>  
   
   <p>
     <div class="underline"><h5>PREÇO FINAL</h5></div> 
     
     <h4><%= @promo.precof %> €</h4>
-  </p>  
+  
  <% end %>
 
  <% if @promo.desconto != nil %>
@@ -45,13 +45,13 @@
     <div class="underline"><h5>DESCONTO</h5></div> 
     
     <h4><%= @promo.desconto %> %</h4>
-  </p>  
+   
   <% end %>  
   
   <p> 
     <div class="underline"><h5>DATA FIM</h5></div> 
     <h4><%= @promo.dataf.strftime("%d-%m-%Y %H:%M")%></h4>
-  </p> 
+   
   
   
 </div>
@@ -70,8 +70,6 @@
     <div id="minutes"><%= @promo.dataf.min %></div>
     <div id="defaultCountdown"></div>
     <br/><br/><br/>
-    
-
   <div>
   <% if current_admin %>
     <%= link_to 'Editar', edit_shopping_loja_promo_path(@shopping, @loja, @promo), :class => "nice small radius blue button" %>
