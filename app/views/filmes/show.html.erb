@@ -35,7 +35,10 @@
   <p> </p> 
   
   <div>
-  <% if current_admin %><%= link_to 'Editar', edit_filme_path(@shopping, @filme), :class => "nice small radius blue button" %><% end %>
+  <% if current_admin %>
+    <%= link_to 'Editar', edit_filme_path(@shopping, @filme), :class => "nice small radius blue button" %>
+    <%= link_to 'Apagar', shopping_filme_path(@shopping, @filme), :confirm => 'Tem a certeza?', :method => :delete, :class => "nice small radius blue button" %>
+  <% end %>
   </div>
 
 </div>
