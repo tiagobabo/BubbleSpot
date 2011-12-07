@@ -23,7 +23,7 @@
   
   <p>
      <div class="underline"><h5>DETALHES</h5></div> 
-    <h4><%= @promo.detalhes %></h4>
+    <h4><%= @promo.detalhes.gsub(/(?:\n\r?|\r\n?)/, '<br>').html_safe %></h4>
   </p>  
   
   <% if @promo.precoi != nil && @promo.precof != nil %>

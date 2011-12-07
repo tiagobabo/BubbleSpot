@@ -40,7 +40,7 @@
   
   <p>
      <div class="underline"><h5>Detalhes</h5></div> 
-     <h4><%= @loja.detalhes %></h4>
+     <h4><%= @loja.detalhes.gsub(/(?:\n\r?|\r\n?)/, '<br>').html_safe %></h4>
   </p>
   
   <p>
