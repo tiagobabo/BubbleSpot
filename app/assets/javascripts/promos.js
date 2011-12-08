@@ -25,80 +25,102 @@ $(function () {
     dateFormat: 'dd-mm-yy'
   });
   
-  $( "#normalizar" ).submit(function() {
-    $( "#inicial").val(Math.round($( "#inicial").val()).toFixed(2));
-    $( "#final").val(Math.round($( "#final").val()).toFixed(2));
-    $( "#desconto").val(Math.round($( "#desconto").val()).toFixed(1));
+   $( "#inicial_error" ).hide();
+   $( "#final_error" ).hide();
+   $( "#desconto_error" ).hide();
   
+
+ $( "#final" ).blur(function() {
+  
+    normalizar();
+  
+    if($( "#inicial" ).val().length == 0 && $( "#desconto" ).val() > 0 ){
+         calculoInicial();
+      }
+      else if($( "#inicial" ).val() > 0 ){
+         calculoDesconto();
+      }
+    
   });
   
-  $( "#inicial" ).focusout(calculoInicial);
-  $( "#desconto" ).focusout(calculoInicial);
-  $( "#final" ).focusout(calculoInicial2);
-  
-  function calculoInicial2(){
-        if($( "#final").val() < 0 || $( "#desconto").val() < 0 || $( "#desconto").val() > 100 || $( "#inicial").val() < 0 ){
-          alert("Valores Inválidos");
-          
-    }
-    else{
-   if($( "#inicial").val().length == 0 && $( "#desconto").val().length > 0 && $( "#final").val().length > 0 ){
-        var resultado = $( "#final" ).val() / ( 1- ($( "#desconto" ).val()/100));
-        $( "#inicial").val(Math.round(resultado).toFixed(2));  
-      }
-      else if( $( "#inicial").val().length > 0 && $( "#final").val().length > 0){
 
-         var resultado = ((1-($( "#final" ).val()/$( "#inicial" ).val()))*100);
-     
-        if(resultado < 0){
-            alert("Valores Inválidos");
+  $( "#inicial" ).blur(function() {
 
-        }
-        else{
-           $( "#desconto" ).val(Math.round(resultado).toFixed(1));
-        }
-    }
-  }
-  }
-  
-  function calculoInicial(){
+    normalizar();
    
-    if($( "#final").val() < 0 || $( "#desconto").val() < 0 || $( "#desconto").val() > 100 || $( "#inicial").val() < 0 ){
-          alert("Valores Inválidos");
+
+     if($( "#final" ).val() > 0){
+       calculoDesconto();
+    }
+    else if($( "#desconto" ).val() > 0){
+       calculoFinal();
+    }
+    
+  });
+  
+
+  $( "#desconto" ).blur(function() {
+    
+    normalizar(); 
+
+     if($( "#final" ).val() > 0 && $( "#inicial" ).val() > 0){
+       calculoFinal();
+    }
+    else if($( "#final" ).val().length == 0 && $( "#inicial" ).val() > 0){
+       calculoFinal();
+    }
+    else if($( "#inicial" ).val().length == 0 && $( "#final" ).val() > 0){
+       calculoInicial();
+    }
+   
+  });
+  
+});
+
+
+function calculoDesconto(){
+  var resultado = ((1-($( "#final" ).val()/$( "#inicial" ).val()))*100);
+  $( "#desconto" ).val(resultado.toFixed(1));
+};
+
+function calculoInicial(){
+  var resultado = $( "#final" ).val() / ( 1- ($( "#desconto" ).val()/100));
+  $( "#inicial").val(resultado.toFixed(2));  
+};
+
+function calculoFinal(){
+  var resultado = ($( "#inicial" ).val()-($( "#inicial" ).val()*$( "#desconto" ).val()/100));
+  $( "#final" ).val(resultado.toFixed(2));
+};
+
+function normalizar(){
+
+    var ini = parseInt($( "#inicial" ).val());
+    var fin = parseInt($( "#final" ).val());
+
+    if( $( "#final" ).val() < 0 || ini < fin){
+
+       $( "#final_error" ).show();
           
+      }
+    else 
+      { $( "#final_error" ).hide();
+    }
+
+    if($( "#inicial" ).val() < 0 ){
+      $( "#inicial_error" ).show();
     }
     else{
-      if($( "#inicial").val().length == 0 && $( "#desconto").val().length > 0 && $( "#final").val().length > 0 ){
-        var resultado = $( "#final" ).val() / ( 1- ($( "#desconto" ).val()/100));
-        $( "#inicial").val(Math.round(resultado).toFixed(2));  
-      }
-      else if( $( "#inicial").val().length > 0 && $( "#desconto").val().length > 0){
-        var resultado = ($( "#inicial" ).val()-($( "#inicial" ).val()*$( "#desconto" ).val()/100));
-       
-        if(resultado < 0){
-            alert("Valores Inválidos");
-        }
-        else{
-            $( "#final" ).val(Math.round(resultado).toFixed(2));
-        }
+      $( "#inicial_error" ).hide();
+    }
 
-      }
-
-      else if( $( "#inicial").val().length > 0 && $( "#final").val().length > 0){
-        var resultado = ((1-($( "#final" ).val()/$( "#inicial" ).val()))*100);
-     
-        if(resultado < 0){
-            alert("Valores Inválidos");
-          }
-        else{
-            $( "#desconto" ).val(Math.round(resultado).toFixed(1));
-        }
-
-      }
-
-  }
+    if($( "#desconto" ).val() < 0 || $( "#desconto" ).val() > 100){
+        $( "#desconto_error" ).show();
+    }
+    else {
+        $( "#desconto_error" ).hide();
+    }
+    
 }
-
-});
 
 
