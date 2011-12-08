@@ -101,24 +101,45 @@ function normalizar(){
     if( $( "#final" ).val() < 0 || ini < fin){
 
        $( "#final_error" ).show();
-          
+      $( "#botao" ).hide();
+
       }
     else 
-      { $( "#final_error" ).hide();
+      { 
+      
+        $( "#final_error" ).hide();
+        
     }
 
     if($( "#inicial" ).val() < 0 ){
       $( "#inicial_error" ).show();
+      $( "#botao" ).hide();
     }
-    else{
+    else {
       $( "#inicial_error" ).hide();
+      
     }
 
     if($( "#desconto" ).val() < 0 || $( "#desconto" ).val() > 100){
         $( "#desconto_error" ).show();
+        $( "#botao" ).hide();
     }
     else {
         $( "#desconto_error" ).hide();
+    }
+
+     if(($( "#desconto" ).val() >= 0 && $( "#desconto" ).val() < 101) ){
+      
+      if($( "#inicial" ).val().length > 0 && $( "#final" ).val().length > 0){
+        if(ini > 0 && $( "#desconto" ).val() >= 0 && $( "#desconto" ).val() < 101 && fin > 0){
+          $( "#botao" ).show();
+        }
+      }
+      else{
+       $( "#botao" ).show();
+      }
+     
+      
     }
     
 }
