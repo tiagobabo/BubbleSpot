@@ -131,11 +131,11 @@ function normalizar(){
      if(($( "#desconto" ).val() >= 0 && $( "#desconto" ).val() < 101) ){
       
       if($( "#inicial" ).val().length > 0 && $( "#final" ).val().length > 0){
-        if(ini > 0 && $( "#desconto" ).val() >= 0 && $( "#desconto" ).val() < 101 && fin > 0){
+        if(ini > 0 && $( "#desconto" ).val() >= 0 && $( "#desconto" ).val() < 101 && fin >= 0){
           $( "#botao" ).show();
         }
       }
-      else{
+      else if($( "#inicial" ).val().length == 0 && $( "#final" ).val().length == 0){
        $( "#botao" ).show();
       }
      
