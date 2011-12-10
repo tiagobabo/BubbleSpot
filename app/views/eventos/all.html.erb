@@ -1,2 +1,43 @@
+<% if @eventos != nil && @eventos.count > 0 %>
+  <section>
+    <% shopping_actual = "" %> 
+    <% @eventos.each do |evento| %>
+    
+    <% if evento.shopping_nome != shopping_actual %>
+      
+    <% reset_cycle("rows") %>
+		 <div class="row">
+      <div class="twelve columns"> 
+        <div class="underline"><h3>Eventos do <%= @shopping.nome %></h3></div>   
 
-<p>MOSTRAR TODOS OS EVENTOS AGRUPANDO POR SHOPPING</p>
+          </div>
+    
+       <% shopping_actual = evento.shopping_nome %>  
+      <% end %>
+
+<%= cycle("</div><div class='row'>","","").html_safe %>
+<div class="four columns">
+   <center>
+  <%= link_to image_tag(evento.imagem), shopping_evento_path(@shopping, evento) %>
+    <p><%= evento.nome%></p>
+  </center>
+  <p></p>
+</div>
+<% end %>
+
+</div>
+
+</section>
+<%else %>
+<section>
+		 <div class="row">
+      <div class="twelve columns"> 
+        <div class="underline"><h2>Não existem eventos..</h2></div> 
+      </div>
+		 </div>
+
+</section>
+
+
+<%end %>
+

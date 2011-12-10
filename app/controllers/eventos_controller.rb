@@ -6,7 +6,7 @@ class EventosController < ApplicationController
 
 
   def all
-    @eventos = Evento.all
+    @eventos = Evento.order("shopping_id,data ASC ")
     @eventos.each do |evento|
       @shopping = Shopping.find(evento[:shopping_id])
       evento[:shopping_nome] = @shopping.nome 
@@ -24,7 +24,8 @@ class EventosController < ApplicationController
     @shopping = Shopping.find(params[:id])
 
     # Access all eventos for that shopping
-    @eventos = @shopping.eventos.paginate(:per_page => 10, :page => params[:page])
+
+    @eventos = @shopping.eventos.order("data ASC").paginate(:per_page => 10, :page => params[:page])
     
     @eventos.each do |evento|
      evento[:shopping_nome] = @shopping.nome

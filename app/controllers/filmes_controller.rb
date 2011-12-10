@@ -4,7 +4,7 @@ class FilmesController < ApplicationController
   skip_before_filter :require_login, :only => [:all, :index, :show]
 
 def all
-  @filmes = Filme.all
+  @filmes = Filme.order("shopping_id")
   @filmes.each do |filme|
     @shopping = Shopping.find(filme[:shopping_id])
     filme[:shopping_nome] = @shopping.nome 
