@@ -5,12 +5,12 @@
 <%= form_for([@shopping, @loja]) do |f| %>
 
   <div class="field">
-    Nome
+    Nome*
     <%= f.text_field :nome, :class => "large input-text" %>
   </div>
   
   <div class="field">
-    Piso
+    Piso*
     <%= f.text_field :piso, :class => "large input-text" %>
   </div>
   
@@ -25,19 +25,20 @@
   </div>
   
   <div class="field">
-    Detalhes
+    Detalhes*
     <%= f.text_area :detalhes, :rows => 6, :class => "large input-text" %>
   </div>
   
   <div class="field">
-    Link para a Imagem
+    Link para a Imagem*
     <%= f.text_field :imagem, :class => "large input-text" %>
   </div>
   
      <div class="field">
-    Áreas de Negócio
+    Áreas de Negócio*
     <%= f.text_field :tags, :class => "large input-text"%>
-    <small>Inserir áreas separadas por espaço </small><p></p>
+    <small>Inserir áreas separadas por espaço </small><p>
+    *Campos Obrigatórios
   </div>
   
   <div class="actions">

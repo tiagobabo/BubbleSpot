@@ -6,28 +6,29 @@
 
 
   <div class="field">
-    Nome
+    Nome*
     <%= f.text_field :nome, :class => "large input-text" %>
   </div>
   <div class="field">
-    Telefone
+    Telefone*
     <%= f.text_field :telefone, :class => "large input-text" %>
   </div>
   <div class="field">
-    Morada
+    Morada*
     <%= f.text_field :localizacao, :class => "large input-text" %>
   </div>
   <div class="field">
-    E-mail
+    E-mail*
     <%= f.text_field :email, :class => "large input-text" %>
   </div>
   <div class="field">
-    Descrição
+    Descrição*
     <%= f.text_area :descricao, :rows => 6, :class => "large input-text" %>
   </div>
   <div class="field">
-    Link para a imagem:
+    Link para a imagem*
     <%= f.text_field :imagem, :class => "large input-text" %>
+    *Campos Obrigatórios
   </div>
   <div class="actions">
     <%= f.submit "Confirmar", :class => "nice small radius blue button" %>

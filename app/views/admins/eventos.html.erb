@@ -22,7 +22,7 @@
  <% @eventos.each do |evento| %>
    <tr>
      <td><%= evento.nome %></td>
-     <td><%= evento.data.strftime("%d-%m-%Y %H:%M")%></td>
+     <td><%= evento.data%></td>
      <td><%= truncate evento.detalhes, :length => 50 %></td>
      <td><%= link_to 'Mostrar', shopping_evento_path(@shopping, evento) %></td>
      <td><%= link_to 'Editar', edit_evento_path(@shopping, evento) %></td>

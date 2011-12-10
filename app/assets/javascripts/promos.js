@@ -28,7 +28,8 @@ $(function () {
    $( "#inicial_error" ).hide();
    $( "#final_error" ).hide();
    $( "#desconto_error" ).hide();
-  
+   
+    
 
  $( "#final" ).blur(function() {
   
@@ -98,6 +99,8 @@ function normalizar(){
     var ini = parseInt($( "#inicial" ).val());
     var fin = parseInt($( "#final" ).val());
 
+
+
     if( $( "#final" ).val() < 0 || ini < fin){
 
        $( "#final_error" ).show();
@@ -137,11 +140,11 @@ function normalizar(){
       }
       else if($( "#inicial" ).val().length == 0 && $( "#final" ).val().length == 0){
        $( "#botao" ).show();
-      }
-     
-      
+      }    
     }
     
+  
 }
+
 
 

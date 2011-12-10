@@ -6,11 +6,11 @@
 <%= form_for([@shopping, @loja, @promo]) do |f| %>
 
     <div class="field">
-    Produto
+    Produto*
     <%= f.text_field :produto, :class => "large input-text" %>
   </div>
   <div class="field">
-    Detalhes
+    Detalhes*
     <%= f.text_area :detalhes, :rows => 6, :class => "large input-text" %>
   </div>
   <div class="field">
@@ -34,12 +34,13 @@
     <%end%>
     
     <div class="field">
-    Data Fim
+    Data Fim*
     <%= f.text_field :dataf, :class => "large input-text", :id=>"datepicker" %>
   </div> 
   <div class="field">
-    Link para a imagem:
+    Link para a imagem*
     <%= f.text_field :imagem, :class => "large input-text" %>
+   *Campos Obrigatórios
   </div>
   <div class="actions">
     <%= f.submit "Confirmar", :class => "nice small radius blue button", :id=>"botao" %>
