@@ -6,24 +6,27 @@
 <%= form_for([@shopping, @loja, @promo]) do |f| %>
 
     <div class="field">
-    Produto
+    Produto*
     <%= f.text_field :produto, :class => "large input-text" %>
   </div>
   <div class="field">
-    Detalhes
+    Detalhes*
     <%= f.text_area :detalhes, :rows => 6, :class => "large input-text" %>
   </div>
   <div class="field">
     Preço Inicial
     <%= f.text_field :precoi, :class => "large input-text", :id=>"inicial" %>
+    <div id="inicial_error"> <small class="error">O preço inicial não pode ser negativo.</small></div>
   </div>
   <div class="field">
     Preço Final
     <%= f.text_field :precof, :class => "large input-text", :id=>"final" %>
+     <div id="final_error"> <small class="error">O preço final não pode ser negativo nem superior ao preço inicial.</small></div>
   </div>
   <div class="field">
     Desconto
     <%= f.text_field :desconto, :class => "large input-text", :id=>"desconto" %>
+     <div id="desconto_error"> <small class="error">O desconto tem de ser entre 0 e 100.</small></div>
   </div>
   <% if @promo.dataf != nil %>
     <div id="hour"><%= @promo.dataf.hour %></div>
@@ -31,15 +34,16 @@
     <%end%>
     
     <div class="field">
-    Data Fim
+    Data Fim*
     <%= f.text_field :dataf, :class => "large input-text", :id=>"datepicker" %>
   </div> 
   <div class="field">
-    Link para a imagem:
+    Link para a imagem*
     <%= f.text_field :imagem, :class => "large input-text" %>
+   *Campos Obrigatórios
   </div>
   <div class="actions">
-    <%= f.submit "Confirmar", :class => "nice small radius blue button", :id=>"normalizar" %>
+    <%= f.submit "Confirmar", :class => "nice small radius blue button", :id=>"botao" %>
   </div>
 <% end %>
 

@@ -48,6 +48,7 @@ end
       redirect_to log_in_url, :notice => "Tem de fazer login!"
     else
       @shoppings = Shopping.all
+      @user = current_admin
 
       respond_to do |format|
         format.html # index.html.erb

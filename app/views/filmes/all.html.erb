@@ -1,2 +1,44 @@
 
-<p>MOSTRAR TODOS OS FILMES AGRUPANDO POR SHOPPING</p>
+<% if @filmes != nil && @filmes.count > 0 %>
+  <section>
+    <% shopping_actual = "" %> 
+    <% @filmes.each do |filme| %>
+    
+     <% if filme.shopping_nome != shopping_actual %>
+      
+       <% reset_cycle("rows") %>
+      
+		 <div class="row">
+      <div class="twelve columns"> 
+        <div class="underline"><h3>Filmes do <%= @shopping.nome %></h3></div>   
+      </div>
+    <% shopping_actual = filme.shopping_nome %>  
+      <% end %>
+    
+
+<%= cycle("</div><div class='row'>","","").html_safe %>
+<div class="four columns">
+  
+  <%= link_to image_tag(filme.imagem), shopping_filme_path(@shopping, filme) %>
+
+  <p></p>
+</div>
+<% end %>
+
+</div>
+
+</section>
+<%else %>
+
+		 <div class="row">
+      <div class="twelve columns"> 
+                   <div class="underline"><h1>Resultados</h1></div> 
+        <div class="underline"><h2>Não foram encontrados filmes..</h2></div> 
+      </div>
+		 </div>
+
+</section>
+
+
+<%end %>
+

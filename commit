@@ -1,5 +1,6 @@
 #!/bin/bash
 
+rake assets:clean
 RAILS_ENV=production bundle exec rake assets:precompile
 git add -A
 git commit -m "$1"

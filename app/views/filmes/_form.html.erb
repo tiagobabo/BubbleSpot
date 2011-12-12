@@ -5,24 +5,25 @@
 <%= form_for([@shopping, @filme]) do |f| %>
 
   <div class="field">
-    Nome
+    Nome*
     <%= f.text_field :nome, :class => "large input-text" %>
   </div>
   <div class="field">
-    Detalhes
+    Detalhes*
     <%= f.text_area :detalhes, :rows => 6, :class => "large input-text" %>
   </div>
   <div class="field">
-    Horários
+    Horários*
     <%= f.text_field :horarios, :class => "large input-text" %>
   </div>
   <div class="field">
-    Link para o trailer
+    Link para o trailer*
     <%= f.text_field :trailer, :class => "large input-text" %>
   </div>
   <div class="field">
-     Link para a imagem: 
+     Link para a imagem* 
     <%= f.text_field :imagem, :class => "large input-text" %>
+    *Campos Obrigatórios
   </div>
   
   

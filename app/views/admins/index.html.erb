@@ -6,13 +6,18 @@
 		 	</div>
 		 </div>
    
-    <div class="row">
+
+
+<% if @user.tipo == nil %>
+Aqui: <% @user.tipo %>
+<div class="row">
 <div class="four columns">
   <%= link_to image_tag("shoppings.jpg"), admins_shoppings_url %>
   <p></p>
 </div>
   
 </div>
+<% end %>
 </section>
 
 
