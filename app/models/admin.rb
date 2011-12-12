@@ -2,7 +2,7 @@
 
 class Admin < ActiveRecord::Base
   
-  attr_accessible :email, :password, :password_confirmation
+  attr_accessible :email, :password, :password_confirmation, :tipo, :idref
   
   attr_accessor :password
   before_save :encrypt_password

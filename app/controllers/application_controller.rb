@@ -15,8 +15,8 @@ class ApplicationController < ActionController::Base
   
   def require_login
     unless current_admin
-      flash[:error] = "Precisa de fazer login!" 
-      redirect_to log_in_url # Prevents the current action from running
+      redirect_to log_in_url, :alert => "Tem de fazer login!"
+      
     end
   end
   

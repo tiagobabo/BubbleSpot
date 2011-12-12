@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111212142633) do
+ActiveRecord::Schema.define(:version => 20111212152745) do
 
   create_table "admins", :force => true do |t|
     t.string   "email"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20111212142633) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "tipo"
+    t.integer  "idref"
   end
 
   create_table "eventos", :force => true do |t|
@@ -74,6 +75,7 @@ ActiveRecord::Schema.define(:version => 20111212142633) do
     t.string   "produto"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "tags"
   end
 
   add_index "promos", ["loja_id"], :name => "index_promos_on_loja_id"
