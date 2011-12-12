@@ -1,4 +1,11 @@
 $(function () {
+
+    $(".edit_promo").keypress(function(e) {
+    if (e.which == 13) {
+    return false;
+    }
+    });
+
 	var austDay = new Date();
   $('#year').hide();
   $('#month').hide();
