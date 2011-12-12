@@ -1,5 +1,6 @@
 class LojasController < ApplicationController
  
+require 'net/http'
 
 # GET /lojas.json
 
