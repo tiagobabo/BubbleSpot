@@ -16,6 +16,11 @@
     <h4><%= @evento.data.strftime("%d-%m-%Y %H:%M")%></h4>
   </p> 
   
+  <p> 
+    <div class="underline"><h5>LOCAL</h5></div> 
+    <h4><%= @evento.local %></h4>
+  </p> 
+  
   <p>
      <div class="underline"><h5>DETALHES</h5></div> 
     <h4><%= @evento.detalhes.gsub(/(?:\n\r?|\r\n?)/, '<br>').html_safe %></h4>

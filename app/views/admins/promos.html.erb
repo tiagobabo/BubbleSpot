@@ -16,6 +16,7 @@
      <th>Preço Final</th>
      <th>Desconto</th>
      <th>Data Fim</th>
+     <th>Áreas de Negócio</th>
      <th></th>
      <th></th>
      <th></th>
@@ -29,6 +30,7 @@
      <td><%= promo.precof %></td>
      <td><%= promo.desconto %></td>
      <td><%= promo.dataf.strftime("%d-%m-%Y %H:%M")%></td>
+     <td><%= promo.tags %></td>
      <td><%= link_to 'Mostrar', shopping_loja_promo_path(@shopping, @loja, promo) %></td>
      <td><%= link_to 'Editar', edit_shopping_loja_promo_path(@shopping, @loja, promo) %></td>
      <td><%= link_to 'Apagar', shopping_loja_promo_path(@shopping, @loja, promo), :confirm => 'Tem a certeza?', :method => :delete %></td>

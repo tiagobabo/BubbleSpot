@@ -13,6 +13,7 @@
      <th>Nome</th>
      <th>Detalhes</th>
      <th>Horários</th>
+     <th>Sala</th>
      <th></th>
      <th></th>
      <th></th>
@@ -24,6 +25,7 @@
      <td><%= filme.nome %></td>
      <td><%= truncate filme.detalhes, :length => 50 %></td>
      <td><%= truncate filme.horarios, :length => 50 %></td>
+     <td><%= filme.sala %></td>
      <td><%= link_to 'Mostrar', shopping_filme_path(@shopping, filme) %></td>
      <td><%= link_to 'Editar', edit_filme_path(@shopping, filme) %></td>
      <td><%= link_to 'Apagar', shopping_filme_path(@shopping, filme), :confirm => 'Tem a certeza?', :method => :delete %></td>
