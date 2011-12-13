@@ -1,2 +1,39 @@
+<% if @promos != nil && @promos.count > 0 %>
+<section>
+      
+<% shopping_actual = "" %> 
+<% @promos.each do |promo| %>
 
-<p>MOSTRAR TODAS AS PROMOS AGRUPANDO POR SHOPPING</p>
+      <% if promo.shopping_nome != shopping_actual %>
+      
+       <% reset_cycle("rows") %>
+      
+      <div class="row">
+      <div class="twelve columns">
+      <div class="underline"><h3>Promoções do <%= promo.shopping_nome%></h3></div>
+      </div>
+      
+      <% shopping_actual = promo.shopping_nome %>  
+      <% end %>
+            
+<%= cycle("</div><div class='row'>","","",:name => "rows").html_safe %>
+<div class="four columns">
+  <%= link_to image_tag(promo.imagem), shopping_loja_promo_path(promo.shopping_id, promo.loja_id, promo) %>
+  <p></p>
+</div>
+<% end %>
+</div>
+</section>
+
+<%else %>
+
+		 <div class="row">
+      <div class="twelve columns"> 
+           <div class="underline"><h1>Resultados</h1></div> 
+        <div class="underline"><h2>Não foram encontradas promoções..</h2></div> 
+      </div>
+		 </div>
+</section>
+
+
+<%end %>
