@@ -103,10 +103,16 @@ function calculoFinal(){
 
 function normalizar(){
 
-    var ini = parseInt($( "#inicial" ).val());
-    var fin = parseInt($( "#final" ).val());
+    var ini = parseFloat($( "#inicial" ).val());
+    var fin = parseFloat($( "#final" ).val());
 
-
+    if($( "#desconto" ).val() < 0 || $( "#desconto" ).val() > 100){
+        $( "#desconto_error" ).show();
+        $( "#botao" ).hide();
+    }
+    else {
+        $( "#desconto_error" ).hide();
+    }
 
     if( $( "#final" ).val() < 0 || ini < fin){
 
@@ -130,13 +136,7 @@ function normalizar(){
       
     }
 
-    if($( "#desconto" ).val() < 0 || $( "#desconto" ).val() > 100){
-        $( "#desconto_error" ).show();
-        $( "#botao" ).hide();
-    }
-    else {
-        $( "#desconto_error" ).hide();
-    }
+
 
      if(($( "#desconto" ).val() >= 0 && $( "#desconto" ).val() < 101) ){
       
