@@ -40,7 +40,7 @@ $(function () {
 
  $( "#final" ).blur(function() {
   
-    normalizar();
+    
   
     if($( "#inicial" ).val().length == 0 && $( "#desconto" ).val() > 0 ){
          calculoInicial();
@@ -48,13 +48,13 @@ $(function () {
       else if($( "#inicial" ).val() > 0 ){
          calculoDesconto();
       }
-    
+    normalizar();
   });
   
 
   $( "#inicial" ).blur(function() {
 
-    normalizar();
+   
    
 
      if($( "#final" ).val() > 0){
@@ -63,13 +63,13 @@ $(function () {
     else if($( "#desconto" ).val() > 0){
        calculoFinal();
     }
-    
+     normalizar();
   });
   
 
   $( "#desconto" ).blur(function() {
     
-    normalizar(); 
+    
 
      if($( "#final" ).val() > 0 && $( "#inicial" ).val() > 0){
        calculoFinal();
@@ -80,7 +80,7 @@ $(function () {
     else if($( "#inicial" ).val().length == 0 && $( "#final" ).val() > 0){
        calculoInicial();
     }
-   
+   normalizar(); 
   });
   
 });
