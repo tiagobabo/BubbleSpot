@@ -6,7 +6,7 @@ class EventosController < ApplicationController
 
 
   def all
-    @eventos = Evento.order("shopping_id,data ASC ")
+    @eventos = Evento.order("data, shopping_id")
     @eventos.each do |evento|
       @shopping = Shopping.find(evento[:shopping_id])
       evento[:shopping_nome] = @shopping.nome 
