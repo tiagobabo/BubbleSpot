@@ -2,6 +2,8 @@ class FilmesController < ApplicationController
   
   before_filter :except => [:all, :index, :show] do |controller| require_login(1, params[:shopping_id]) end
 
+  set_tab :filme
+
 def all
   @filmes = Filme.order("shopping_id")
   @filmes.each do |filme|

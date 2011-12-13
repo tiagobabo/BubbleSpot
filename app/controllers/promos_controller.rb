@@ -14,8 +14,11 @@ class PromosController < ApplicationController
     
     @shopping = Shopping.find(@loja.shopping_id)
     promo[:shopping_nome] = @shopping.nome
-    
+    promo[:shopping_id] = @shopping.id
+   
   end
+  @promos = @promos.sort_by(&:shopping_id)
+
   respond_to do |format|
     format.html # all.html.erb
     format.json { render :json => @promos }

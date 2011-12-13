@@ -3,6 +3,7 @@ class EventosController < ApplicationController
 
   before_filter :except => [:all, :index, :show] do |controller| require_login(1, params[:shopping_id]) end
 
+  set_tab :evento
 
   def all
     @eventos = Evento.order("data, shopping_id")
