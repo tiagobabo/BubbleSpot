@@ -1,3 +1,17 @@
+<section>
+     <div class="row">
+      <div class="twelve columns">
+      <div class = "navigation">
+      <%= tabs_tag do |tab| %>
+      <%= tab.home      "Home", root_path %>
+      <%= tab.shopping      @shopping.nome, @shopping %>
+      <%= tab.filme           "Filmes do " + @shopping.nome, filmes_shopping_index_url(@shopping) %>
+      <% end %>
+</div>
+</div>
+</div>
+</section>
+
 <% if @filmes != nil && @filmes.count > 0 %>
   <section>
 		 <div class="row">

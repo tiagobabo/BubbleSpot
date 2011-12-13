@@ -3,6 +3,8 @@ class FilmesController < ApplicationController
   before_filter :require_login
   skip_before_filter :require_login, :only => [:all, :index, :show]
 
+  set_tab :filme
+
 def all
   @filmes = Filme.order("shopping_id")
   @filmes.each do |filme|

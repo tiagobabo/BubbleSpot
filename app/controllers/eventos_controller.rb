@@ -4,6 +4,7 @@ class EventosController < ApplicationController
   before_filter :require_login
   skip_before_filter :require_login, :only => [:all, :index, :show]
 
+  set_tab :evento
 
   def all
     @eventos = Evento.order("data, shopping_id")
