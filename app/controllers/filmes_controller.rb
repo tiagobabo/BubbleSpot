@@ -1,3 +1,5 @@
+ # -*- coding: utf-8 -*-
+
 class FilmesController < ApplicationController
   
   before_filter :except => [:all, :index, :show] do |controller| require_login(1, params[:shopping_id]) end

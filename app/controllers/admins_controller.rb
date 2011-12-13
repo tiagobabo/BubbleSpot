@@ -1,3 +1,5 @@
+ # -*- coding: utf-8 -*-
+
 class AdminsController < ApplicationController
   
   #before_filter :require_login
