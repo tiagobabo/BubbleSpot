@@ -1,7 +1,6 @@
 class FilmesController < ApplicationController
   
-  before_filter :require_login
-  skip_before_filter :require_login, :only => [:all, :index, :show]
+  before_filter :except => [:all, :index, :show] do |controller| require_login(1, params[:shopping_id]) end
 
 def all
   @filmes = Filme.order("shopping_id")

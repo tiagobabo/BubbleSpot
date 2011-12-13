@@ -12,6 +12,13 @@ class SessionsController < ApplicationController
     admin = Admin.authenticate(params[:email], params[:password])
     if admin
       session[:admin_id] = admin.id
+      if admin.tipo == 0
+        session[:tipo] = "Administrador"
+      elsif admin.tipo == 1
+        session[:tipo] = "Gestor de Shopping"
+      elsif admin.tipo == 2
+        session[:tipo] = "Gestor de Loja"
+      end
       redirect_to admins_index_url
     else
       flash.now.alert = "E-mail ou password inválido!"
@@ -21,6 +28,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:admin_id] = nil
+    session[:tipo] = nil
     redirect_to log_in_url, :notice => "Logged out!"
   end
 

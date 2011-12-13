@@ -1,8 +1,7 @@
 class EventosController < ApplicationController
   # GET /eventos.json
 
-  before_filter :require_login
-  skip_before_filter :require_login, :only => [:all, :index, :show]
+  before_filter :except => [:all, :index, :show] do |controller| require_login(1, params[:shopping_id]) end
 
 
   def all

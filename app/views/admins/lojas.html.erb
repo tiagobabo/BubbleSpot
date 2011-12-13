@@ -31,7 +31,7 @@
      <td><%= truncate loja.detalhes, :length => 50 %></td>
      <td><%= loja.tags %></td>
      <td><%= link_to 'Mostrar', shopping_loja_path(@shopping, loja) %></td>
-     <td><%= link_to 'Editar', edit_loja_path(@shopping, loja) %></td>
+     <td><%= link_to 'Editar', edit_loja_url(@shopping, loja) %></td>
      <td><%= link_to 'Apagar', shopping_loja_path(@shopping, loja), :confirm => 'Tem a certeza?', :method => :delete %></td>
     <td><%= link_to 'Gerir Promoções', admins_promos_path(@shopping, loja) %> </td>
 

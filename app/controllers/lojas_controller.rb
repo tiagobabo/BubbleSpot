@@ -1,11 +1,9 @@
 class LojasController < ApplicationController
  
-require 'net/http'
-
 # GET /lojas.json
 
-  before_filter :require_login
-  skip_before_filter :require_login, :only => [:all, :index, :show]
+  before_filter :only => [:create, :new, :destroy] do |controller| require_login(1, params[:shopping_id]) end
+  before_filter :only => [:edit] do |controller| require_login(2, params[:id]) end
 
   set_tab :loja
 

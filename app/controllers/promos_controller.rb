@@ -2,8 +2,7 @@
 
 class PromosController < ApplicationController
   
-  before_filter :require_login
-  skip_before_filter :require_login, :only => [:all, :allByShopping, :index, :show]
+  before_filter :except => [:all, :index, :show, :allByShopping] do |controller| require_login(2, params[:loja_id]) end
   
   set_tab :promo
   

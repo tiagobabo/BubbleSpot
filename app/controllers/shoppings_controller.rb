@@ -4,12 +4,11 @@ class ShoppingsController < ApplicationController
   # GET /shoppings
   # GET /shoppings.json
   
-  before_filter :require_login
-  skip_before_filter :require_login, :only => [:index, :show]
+  before_filter :only => [:create, :new, :destroy] do |controller| require_login(0) end
+  before_filter :only => [:edit] do |controller| require_login(1, params[:id]) end
   
   set_tab :shopping
 
-  
   def index
     set_tab :home
     @shoppings = Shopping.all

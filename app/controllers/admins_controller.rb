@@ -5,62 +5,85 @@ class AdminsController < ApplicationController
   #visto que no index já temos a verificação
   #e para já dá jeito que seja possível fazer sign_up
   
-  before_filter :require_login
+  before_filter :require_login_geral
 
   def shoppings
-    @shoppings = Shopping.all
+    if @current_admin.tipo == 0
+      @shoppings = Shopping.all
+    elsif @current_admin.tipo == 1
+      @shoppings = [Shopping.find(@current_admin.idref)]
+    else
+       redirect_to admins_index_url, :alert => "Não tem permissões para gerir shoppings!"
+    end
   end
   
    def lojas
       @shopping = Shopping.find(params[:id])
       @lojas = @shopping.lojas.all
+      if @current_admin.tipo == 1 and current_admin.idref != @shopping.id
+        redirect_to admins_index_url, :alert => "Não tem permissões para gerir as lojas desse shopping!"
+      elsif @current_admin.tipo == 2 
+        loja = Loja.find(@current_admin.idref)
+        @lojas = [loja]
+        if @shopping.id != loja.shopping_id
+          redirect_to admins_index_url, :alert => "Não tem permissões para gerir as lojas desse shopping!"
+        end
+      end
   end
   
   def promos
       @shopping = Shopping.find(params[:shopping_id])
-      @loja = @shopping.lojas.find(params[:lojas_id])
-      @promos = @loja.promos.all   
+      @loja = @shopping.lojas.find(params[:loja_id])
+      @promos = @loja.promos.all
+      if @current_admin.tipo == 1 and current_admin.idref != @shopping.id
+        redirect_to admins_index_url, :alert => "Não tem permissões para gerir as promoções dessa loja!"
+      elsif @current_admin.tipo == 2 
+        loja = Loja.find(@current_admin.idref)
+        if @shopping.id != loja.shopping_id
+         redirect_to admins_index_url, :alert => "Não tem permissões para gerir as promoções dessa loja!"
+        end
+      end   
   end
   
   def filmes    
       @shopping = Shopping.find(params[:id])
       @filmes = @shopping.filmes.all
+      if @current_admin.tipo == 1 and current_admin.idref != @shopping.id
+        redirect_to admins_index_url, :alert => "Não tem permissões para gerir os filmes desse shopping!"
+      elsif @current_admin.tipo == 2
+        redirect_to admins_index_url, :alert => "Não tem permissões para gerir os filmes desse shopping!"
+      end
   end
   
   def eventos
       @shopping = Shopping.find(params[:id])
       @eventos = @shopping.eventos.all
+      if @current_admin.tipo == 1 and current_admin.idref != @shopping.id
+        redirect_to admins_index_url, :alert => "Não tem permissões para gerir os eventos desse shopping!"
+      elsif @current_admin.tipo == 2
+        redirect_to admins_index_url, :alert => "Não tem permissões para gerir os eventos desse shopping!"
+      end
   end
   
  def new
-    @admin = Admin.new
+    if @current_admin.tipo == 0
+      @admin = Admin.new
+    else
+      redirect_to admins_index_url, :alert => "Não tem permissões para adicionar utilizadores!"
+    end
   end
 
   def create
-    @admin = Admin.new(params[:admin])
-    if @admin.save
-      redirect_to log_in_url, :notice => "Signed up!"
+    if @current_admin.tipo == 0
+      @admin = Admin.new(params[:admin])
+      if @admin.save
+        redirect_to admins_index_url, :notice => "Registo efetuado!"
+      else
+        render "new"
+      end
     else
-      render "new"
+      redirect_to log_in_url, :alert => "Não tem permissões para adicionar utilizadores!" 
     end
   end
   
-  def index
-    if current_admin == nil
-      redirect_to log_in_url, :notice => "Tem de fazer login!"
-    elsif @current_admin.tipo == nil
-      @shoppings = Shopping.all
-      respond_to do |format|
-        format.html # index.html.erb
-        format.json { render :json => @shoppings }
-      end
-    elsif @current_admin.tipo == 1
-      redirect_to admins_lojas_path(@current_admin.idref)
-    elsif @current_admin.tipo == 2 
-      loja = Loja.find(@current_admin.idref)
-      redirect_to admins_promos_path(loja.shopping_id, loja)
-    end
-
-  end
-
 end
