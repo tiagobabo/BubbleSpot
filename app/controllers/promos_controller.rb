@@ -60,6 +60,7 @@ end
     @promos.each do |promo|
       promo[:loja_nome] = @loja.nome
       promo[:shopping_nome] = @shopping.nome
+      promo[:shopping_id] = @shopping.id
     end
     
     respond_to do |format|
