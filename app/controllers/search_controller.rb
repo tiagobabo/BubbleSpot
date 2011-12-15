@@ -60,7 +60,7 @@ class SearchController < ApplicationController
         @lojas = Loja.where("lower(tags) like ?", search).order("nome") 
       end
       
-      @lojas = Loja.order("shopping_id")
+      @lojas = @lojas.order("shopping_id")
       @lojas.each do |loja|
         @shopping = Shopping.find(loja[:shopping_id])
         loja[:shopping_nome] = @shopping.nome 
