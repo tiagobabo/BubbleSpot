@@ -57,26 +57,26 @@ class EventosController < ApplicationController
     # Access all eventos for that shopping
 
 
-    if params[:p] == "1" or params[:p] == nil
-      @p = 1
+    if params[:w] == "1" or params[:w] == nil
+      @w = 1
       @eventos_semana = @shopping.eventos.order("data").where(:data => Time.now.beginning_of_day..Time.now.end_of_week)
        @eventos_semana.each do |evento_semana|
        evento_semana[:shopping_nome] = @shopping.nome
       end
-    elsif params[:p] == "2"    
-      @p = 2
+    elsif params[:w] == "2"    
+      @w = 2
       @eventos_semana = @shopping.eventos.order("data").where(:data => Time.now.next_week..Time.now.next_week.end_of_week)
        @eventos_semana.each do |evento_semana|
        evento_semana[:shopping_nome] = @shopping.nome
       end
-    elsif params[:p] == "3"  
-          @p = 3
+    elsif params[:w] == "3"  
+          @w = 3
       @eventos_semana = @shopping.eventos.order("data").where(:data => Time.now.beginning_of_day..Time.now.end_of_month)
       @eventos_semana.each do |evento_semana|
       evento_semana[:shopping_nome] = @shopping.nome
       end
-    elsif params[:p] == "4"  
-          @p = 4
+    elsif params[:w] == "4"  
+          @w = 4
       @eventos_semana = @shopping.eventos.order("data").where( "data >= date('now', 'start of day')")
       @eventos_semana.each do |evento_semana|
      evento_semana[:shopping_nome] = @shopping.nome
