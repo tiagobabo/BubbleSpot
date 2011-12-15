@@ -20,7 +20,28 @@
             <li><%= link_to "Log in", log_in_path %></li>
             <% end %>      
           </ul>   
-        </div>        
-    </div>
+        </div> 
+</div>
 </div>
 
+<div class = "hide-on-desktops">
+<section>
+<div class ="row">
+<ul class="nav-bar">
+  <li><%= link_to image_tag("logo.png"), root_url, :class => "brand" %></li>
+  <li class="has-flyout"><a href="#">Menu</a>
+    <div class="flyout">
+       <ul>
+            <li class="<%= controller.controller_path == 'shoppings' ? 'active' : '' %>"> <%= link_to "Shoppings", shoppings_url %></li>
+            <li class="<%= controller.controller_path == 'lojas' ? 'active' : '' %>"> <%= link_to "Lojas", lojas_all_url %></li>
+            <li class="<%= controller.controller_path == 'promos' ? 'active' : '' %>"> <%= link_to "Promoções", promos_all_url %></li>
+            <li class="<%= controller.controller_path == 'filmes' ? 'active' : '' %>"> <%= link_to "Filmes", filmes_all_url %></li>
+            <li class="<%= controller.controller_path == 'eventos' ? 'active' : '' %>"> <%= link_to "Eventos", eventos_all_url %></li>
+            <li class="<%= controller.controller_path == 'search' ? 'active' : '' %>"> <%= link_to "Pesquisa", search_index_url %></li>          
+          </ul>          
+    </div>
+  </li>
+</ul>
+</div>
+</section>
+</div>
