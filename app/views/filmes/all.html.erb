@@ -16,7 +16,7 @@
       <% end %>
     
 
-<%= cycle("</div><div class='row'>","","").html_safe %>
+<%= cycle("</div><div class='row'>","","",:name => "rows").html_safe %>
 <div class="four columns">
   
   <%= link_to image_tag(filme.imagem), shopping_filme_path(@shopping, filme) %>
