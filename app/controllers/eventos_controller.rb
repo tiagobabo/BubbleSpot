@@ -8,7 +8,7 @@ class EventosController < ApplicationController
   set_tab :evento
 
   def all
-    if params[:p] == "1"
+    if params[:p] == "1" or params[:p] == nil
       @p = 1
       @eventos_semana = Evento.where(:data => Time.now..Time.now.end_of_week)
       @eventos_semana.each do |evento_semana|

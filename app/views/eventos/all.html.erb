@@ -1,20 +1,50 @@
-
+<section>
+<div class="row">
+    <div class="twelve columns"> 
+     <% if @p == 1 || @p == nil%>
+         <center>
+     <%= link_to 'Esta semana', eventos_all_url(:p => "1"), :class => "nice small radius white button" %>
+     <%= link_to 'Próxima semana', eventos_all_url(:p => "2"), :class => "nice small radius blue button" %>
+     <%= link_to 'Este mês', eventos_all_url(:p => "3"), :class => "nice small radius blue button" %>
+     <%= link_to 'Todos os eventos', eventos_all_url(:p => "4"), :class => "nice small radius blue button" %>
+     </center>
+     <p>
+    
+    <% elsif @p == 2%>
+        <center>
+     <%= link_to 'Esta semana', eventos_all_url(:p => "1"), :class => "nice small radius blue button" %>
+     <%= link_to 'Próxima semana', eventos_all_url(:p => "2"), :class => "nice small radius white button" %>
+     <%= link_to 'Este mês', eventos_all_url(:p => "3"), :class => "nice small radius blue button" %>
+     <%= link_to 'Todos os eventos', eventos_all_url(:p => "4"), :class => "nice small radius blue button" %>
+     </center>
+     <p>
+    
+    <% elsif @p == 3%>
+        <center>
+     <%= link_to 'Esta semana', eventos_all_url(:p => "1"), :class => "nice small radius blue button" %>
+     <%= link_to 'Próxima semana', eventos_all_url(:p => "2"), :class => "nice small radius blue button" %>
+     <%= link_to 'Este mês', eventos_all_url(:p => "3"), :class => "nice small radius white button" %>
+     <%= link_to 'Todos os eventos', eventos_all_url(:p => "4"), :class => "nice small radius blue button" %>
+     </center>
+     <p>
+    
+    <% elsif @p == 4%>
+        <center>
+     <%= link_to 'Esta semana', eventos_all_url(:p => "1"), :class => "nice small radius blue button" %>
+     <%= link_to 'Próxima semana', eventos_all_url(:p => "2"), :class => "nice small radius blue button" %>
+     <%= link_to 'Este mês', eventos_all_url(:p => "3"), :class => "nice small radius blue button" %>
+     <%= link_to 'Todos os eventos', eventos_all_url(:p => "4"), :class => "nice small radius white button" %>
+     </center>
+     <p>
+    
+    <% end %>
+     </div>
+  </div>
+</section>
 <% if @eventos_semana != nil && @eventos_semana.count > 0 %>
   <section>
     <% shopping_actual = "" %> 
-    <div class="row">
-    <div class="twelve columns"> 
-    <% if @p == 1%>
-    <div class="underline"><h3>Esta semana</h3></div> 
-    <% elsif @p == 2%>
-    <div class="underline"><h3>Próxima semana</h3></div> 
-    <% elsif @p == 3%>
-    <div class="underline"><h3>Este mês</h3></div> 
-    <% elsif @p == 3%>
-    <div class="underline"><h3>Todos os eventos</h3></div> 
-    <% end %>
-    </div> 
-    </div> 
+    
     <% @eventos_semana.each do |evento_semana| %>
     
      <% if evento_semana.shopping_nome != shopping_actual %>
@@ -30,10 +60,10 @@
     
       <%= cycle("</div><div class='row'>","","","",:name => "rows").html_safe %>
       <div class="three columns">
-         
-        <%= link_to image_tag(evento.imagem, :height => "200px"), shopping_evento_path(evento.shopping_id, evento) %>
-          <p><%= evento.nome%></p>
-        
+         <center>
+        <%= link_to image_tag(evento_semana.imagem, :height => "200px"), shopping_evento_path(evento_semana.shopping_id, evento_semana) %>
+          <p><%= evento_semana.nome%></p>
+        </center>
         <p></p>
       </div>
     <% end %>
@@ -44,7 +74,7 @@
 <%else%>
 <section>
 <div class="row">
-<div class="underline"><h2>Não há eventos...</h2></div> 
+<div class="underline"><h4>Não há eventos neste período...</h4></div> 
 </div>
 </section>
 <%end %>
