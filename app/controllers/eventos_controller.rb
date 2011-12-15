@@ -59,31 +59,31 @@ class EventosController < ApplicationController
 
     if params[:w] == "1" or params[:w] == nil
       @w = 1
-      @eventos_semana = @shopping.eventos.order("data").where(:data => Time.now.beginning_of_day..Time.now.end_of_week)
+      @eventos_semana = Shopping.find(params[:id]).eventos.order("data").where(:data => Time.now.beginning_of_day..Time.now.end_of_week)
        @eventos_semana.each do |evento_semana|
        evento_semana[:shopping_nome] = @shopping.nome
       end
     elsif params[:w] == "2"    
       @w = 2
-      @eventos_semana = @shopping.eventos.order("data").where(:data => Time.now.next_week..Time.now.next_week.end_of_week)
+      @eventos_semana = Shopping.find(params[:id]).eventos.order("data").where(:data => Time.now.next_week..Time.now.next_week.end_of_week)
        @eventos_semana.each do |evento_semana|
        evento_semana[:shopping_nome] = @shopping.nome
       end
     elsif params[:w] == "3"  
           @w = 3
-      @eventos_semana = @shopping.eventos.order("data").where(:data => Time.now.beginning_of_day..Time.now.end_of_month)
+      @eventos_semana = Shopping.find(params[:id]).eventos.order("data").where(:data => Time.now.beginning_of_day..Time.now.end_of_month)
       @eventos_semana.each do |evento_semana|
       evento_semana[:shopping_nome] = @shopping.nome
       end
     elsif params[:w] == "4"  
           @w = 4
-      @eventos_semana = @shopping.eventos.order("data").where( "data >= date('now', 'start of day')")
+      @eventos_semana = Shopping.find(params[:id]).eventos.order("data").where( "data >= date('now', 'start of day')")
       @eventos_semana.each do |evento_semana|
      evento_semana[:shopping_nome] = @shopping.nome
       end
     end
 
-    @eventos = @shopping.eventos.order("data")
+    @eventos = Shopping.find(params[:id]).eventos.order("data").where( "data >= date('now', 'start of day')")
     
     @eventos.each do |evento|
      evento[:shopping_nome] = @shopping.nome
