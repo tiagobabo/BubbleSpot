@@ -8,15 +8,44 @@ class EventosController < ApplicationController
   set_tab :evento
 
   def all
-    @eventos = Evento.order("data, shopping_id")
-    @eventos.each do |evento|
-      @shopping = Shopping.find(evento[:shopping_id])
-      evento[:shopping_nome] = @shopping.nome 
+    if params[:p] == "1"
+      @p = 1
+      @eventos_semana = Evento.where(:data => Time.now..Time.now.end_of_week)
+      @eventos_semana.each do |evento_semana|
+        @shopping = Shopping.find(evento_semana[:shopping_id])
+        evento_semana[:shopping_nome] = @shopping.nome 
+      end
+    elsif params[:p] == "2"    
+      @p = 2
+      @eventos_semana = Evento.where(:data => Time.now.next_week..Time.now.next_week.end_of_week)
+      @eventos_semana.each do |evento_semana|
+        @shopping = Shopping.find(evento_semana[:shopping_id])
+        evento_semana[:shopping_nome] = @shopping.nome  
+      end
+    elsif params[:p] == "3"  
+          @p = 3
+      @eventos_semana = Evento.where(:data => Time.now..Time.now.end_of_month)
+      @eventos_semana.each do |evento_semana|
+        @shopping = Shopping.find(evento_semana[:shopping_id])
+        evento_semana[:shopping_nome] = @shopping.nome  
+      end
+    elsif params[:p] == "4"  
+          @p = 4
+      @eventos_semana = Evento.where("data >= date('now')")
+      @eventos_semana.each do |evento_semana|
+        @shopping = Shopping.find(evento_semana[:shopping_id])
+        evento_semana[:shopping_nome] = @shopping.nome  
+      end
     end
-    respond_to do |format|
-      format.html #all.html.erb
-      format.json { render :json => @eventos }
-    end
+      @eventos = Evento.all
+      @eventos.each do |evento|
+        @shopping = Shopping.find(evento[:shopping_id])
+        evento[:shopping_nome] = @shopping.nome 
+      end
+      respond_to do |format|
+        format.html #all.html.erb
+        format.json { render :json => @eventos }
+      end
   end
 
 # GET /shoppings/1/eventos

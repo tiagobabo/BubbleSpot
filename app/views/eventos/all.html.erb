@@ -1,47 +1,35 @@
-<% if @eventos != nil && @eventos.count > 0 %>
+
+<% if @eventos_semana != nil && @eventos_semana.count > 0 %>
   <section>
+    <% shopping_actual = "" %> 
+    <div class="row">
+    <div class="twelve columns"> 
+    <% if @p == 1%>
+    <div class="underline"><h3>Esta semana</h3></div> 
+    <% elsif @p == 2%>
+    <div class="underline"><h3>Próxima semana</h3></div> 
+    <% elsif @p == 3%>
+    <div class="underline"><h3>Este mês</h3></div> 
+    <% elsif @p == 3%>
+    <div class="underline"><h3>Todos os eventos</h3></div> 
+    <% end %>
+    </div> 
+    </div> 
+    <% @eventos_semana.each do |evento_semana| %>
     
-    <% shopping_actual = "" %>
-    <% final_semana_atual = Date.today.end_of_week %> 
-    <% a = 0 %>
-   
-    <% @eventos.each do |evento| %>
-   
-      <%=evento.data%>
-       <% if evento.data > final_semana_atual %>
-        xxx
-        <% shopping_actual = nil %>
-        <% a = 0 %>
-        <% final_semana_atual = evento.data.end_of_week %>  
+     <% if evento_semana.shopping_nome != shopping_actual %>
       
-      data <%= evento.data %>
-      data 2 <%= final_semana_atual %>
-
-      <% elsif evento.data <= final_semana_atual && a == 0 %>
-        yyy
-        <% a = 1 %>
-        <% reset_cycle("rows") %>
-        <div class="row">
-        <div class="twelve columns"> 
-        <div class="underline"><h3>Até <%= final_semana_atual %></h3></div>   
-        </div>
-    
-     <% end %>
+       <% reset_cycle("rows") %>
       
-      <% if evento.shopping_nome != shopping_actual %>
-        atual<%= shopping_actual %>
-        novo<%= evento.shopping_nome %>
-        <% reset_cycle("rows") %>
-    		<div class="row">
-        <div class="twelve columns"> 
-        <div class="underline"><h3>Eventos do <%= evento.shopping_nome %></h3></div>   
-        </div>
-        <% shopping_actual = evento.shopping_nome %>  
-        
+     <div class="row">
+      <div class="twelve columns"> 
+        <div class="underline"><h4><%= evento_semana.shopping_nome %></h4></div>   
+      </div>
+    <% shopping_actual = evento_semana.shopping_nome %>  
       <% end %>
-
-      <%= cycle("</div><div class='row'>","","",:name => "rows").html_safe %>
-      <div class="four columns">
+    
+      <%= cycle("</div><div class='row'>","","","",:name => "rows").html_safe %>
+      <div class="three columns">
          
         <%= link_to image_tag(evento.imagem, :height => "200px"), shopping_evento_path(evento.shopping_id, evento) %>
           <p><%= evento.nome%></p>
@@ -53,16 +41,11 @@
 </div>
 
 </section>
-<%else %>
+<%else%>
 <section>
-		 <div class="row">
-      <div class="twelve columns"> 
-        <div class="underline"><h2>Não existem eventos..</h2></div> 
-      </div>
-		 </div>
-
+<div class="row">
+<div class="underline"><h2>Não há eventos...</h2></div> 
+</div>
 </section>
-
-
 <%end %>
 
