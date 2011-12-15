@@ -12,15 +12,52 @@
 </div>
 </section>
 
-<% if @eventos != nil && @eventos.count > 0 %>
+<% if @eventos_semana != nil && @eventos_semana.count > 0 %>
   <section>
 		 <div class="row">
       <div class="twelve columns"> 
         <div class="underline"><h1>Eventos do <%= @shopping.nome %></h1></div>   
         <p></p>
+             <% if @p == 1 || @p == nil%>
+         <center>
+     <%= link_to 'Esta semana', eventos_shopping_index_url(@shopping, :p => "1"), :class => "nice small radius white button" %>
+     <%= link_to 'Próxima semana', eventos_shopping_index_url(@shopping, :p => "2"), :class => "nice small radius blue button" %>
+     <%= link_to 'Este mês', eventos_shopping_index_url(@shopping, :p => "3"), :class => "nice small radius blue button" %>
+     <%= link_to 'Todos os eventos', eventos_shopping_index_url(@shopping, :p => "4"), :class => "nice small radius blue button" %>
+     </center>
+     <p>
+    
+    <% elsif @p == 2%>
+        <center>
+     <%= link_to 'Esta semana', eventos_shopping_index_url(@shopping, :p => "1"), :class => "nice small radius blue button" %>
+     <%= link_to 'Próxima semana', eventos_shopping_index_url(@shopping,:p => "2"), :class => "nice small radius white button" %>
+     <%= link_to 'Este mês', eventos_shopping_index_url(@shopping,:p => "3"), :class => "nice small radius blue button" %>
+     <%= link_to 'Todos os eventos', eventos_shopping_index_url(@shopping,:p => "4"), :class => "nice small radius blue button" %>
+     </center>
+     <p>
+    
+    <% elsif @p == 3%>
+        <center>
+     <%= link_to 'Esta semana', eventos_shopping_index_url(@shopping,:p => "1"), :class => "nice small radius blue button" %>
+     <%= link_to 'Próxima semana', eventos_shopping_index_url(@shopping,:p => "2"), :class => "nice small radius blue button" %>
+     <%= link_to 'Este mês', eventos_shopping_index_url(@shopping,:p => "3"), :class => "nice small radius white button" %>
+     <%= link_to 'Todos os eventos', eventos_shopping_index_url(@shopping,:p => "4"), :class => "nice small radius blue button" %>
+     </center>
+     <p>
+    
+    <% elsif @p == 4%>
+        <center>
+     <%= link_to 'Esta semana', eventos_shopping_index_url(@shopping,:p => "1"), :class => "nice small radius blue button" %>
+     <%= link_to 'Próxima semana', eventos_shopping_index_url(@shopping,:p => "2"), :class => "nice small radius blue button" %>
+     <%= link_to 'Este mês', eventos_shopping_index_url(@shopping,:p => "3"), :class => "nice small radius blue button" %>
+     <%= link_to 'Todos os eventos', eventos_shopping_index_url(@shopping,:p => "4"), :class => "nice small radius white button" %>
+     </center>
+     <p>
+    
+    <% end %>
           </div>
     
-<% @eventos.each do |evento| %>
+<% @eventos_semana.each do |evento| %>
 
 <%= cycle("</div><div class='row'>","","","").html_safe %>
 <div class="three columns">
@@ -33,17 +70,13 @@
 <% end %>
 
 </div>
-<div class="row">
-<div class="twelve columns">
-<%= will_paginate @evento, :prev_label => "←Anterior", :next_label => "Próximo→"%>
-</div>
-</div>
+
 </section>
 <%else %>
 <section>
 		 <div class="row">
       <div class="twelve columns"> 
-        <div class="underline"><h2>Não existem eventos..</h2></div> 
+        <div class="underline"><h4>Não há eventos neste período...</h4></div> 
       </div>
 		 </div>
 
