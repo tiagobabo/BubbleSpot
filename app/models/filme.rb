@@ -6,4 +6,6 @@ class Filme < ActiveRecord::Base
   validates_format_of :imagem, :with => %r{\.(png|jpg|jpeg|bmp)$}i, :message => "O formato da imagem não é válido"
   
 
+validates_format_of :trailer, :with => %r(^.*((youtu.be\/)|(v\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*), :message => "O formato do video não é válido"
 end
+
