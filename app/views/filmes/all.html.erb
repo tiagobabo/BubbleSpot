@@ -10,7 +10,7 @@
       
 		 <div class="row">
       <div class="twelve columns"> 
-        <div class="underline"><h3>Filmes do <%= @shopping.nome %></h3></div>   
+        <div class="underline"><h3>Filmes do <%= filme.shopping_nome %></h3></div>   
       </div>
     <% shopping_actual = filme.shopping_nome %>  
       <% end %>
@@ -19,7 +19,7 @@
 <%= cycle("</div><div class='row'>","","",:name => "rows").html_safe %>
 <div class="four columns">
   <center>
-  <%= link_to image_tag(filme.imagem), shopping_filme_path(@shopping, filme) %>
+  <%= link_to image_tag(filme.imagem), shopping_filme_path(filme.shopping_id, filme) %>
   <p><%= filme.nome%></p>
   </center>
   <p></p>
