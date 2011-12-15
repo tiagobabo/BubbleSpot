@@ -1,0 +1,58 @@
+ <div class = "navigation">
+       <%= tabs_tag do |tab| %>
+       <%= tab.home      "Home", root_path %>
+       <% end %> 
+    </div>
+<section>
+<div class="row">
+      <div class="twelve columns">
+    <% if @new_promos != nil && @new_promos.count > 0 %>
+      <p>
+         <div class="underline"><h1>Novas Promoções</h1></div> 
+      <p>
+        <% @new_promos.each do |promo| %>
+
+        <%= cycle("</div><div class='row'>","","").html_safe %>
+        <div class="four columns">
+        <center>
+        <%= link_to image_tag(promo.imagem), shopping_loja_promo_path(promo.shopping_id, promo.loja_id, promo) %>
+        <p><%= promo.produto%></br>
+        <%= promo.desconto %>&#37;  de desconto
+        </center>
+       <p>
+        </div>
+        <% end %>
+        <% end %>
+    <p>
+    </div>
+    </div>
+     <div class="row">
+      <div class="twelve columns">
+        <% if @last_promos != nil && @last_promos.count > 0 %>
+     <div class="underline"><h5>Promoções a Acabar</h5></div> 
+
+      
+    
+   <p>
+    <% @last_promos.each do |last_promo| %>
+
+    <%= cycle("</div><div class='row'>","","").html_safe %>
+    <div class="four columns">
+    <center>
+    <%= link_to image_tag(last_promo.imagem), shopping_loja_promo_path(promo.shopping_id, promo.loja_id, last_promo) %>
+    <p>Termina a <%= last_promo.dataf.strftime("%d-%m-%Y %H:%M")%>
+    </center>
+   <p>
+    </div>
+    <% end %>
+    <% end %>
+      
+    </div>  
+
+    <h4>O BubbleSpot é uma base de dados centralizada com informações úteis relativas a centros comerciais. </h4>
+
+   
+</div>
+</section>
+
+ <div class="hide-on-phones"><div id = "qrcode">Descarregue a <br/>versão Android:</br><%= link_to image_tag("code.png", :size => "200x200"),"http://gnomo.fe.up.pt/~ei08085/BubbleSpot.apk", :alt=> "Descarregue a versão Android!" %></div></div>

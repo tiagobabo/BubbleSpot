@@ -6,6 +6,27 @@ class ApplicationController < ActionController::Base
   helper_method :require_login
   helper_method :require_login_geral
   
+
+  public
+
+  def home 
+
+    @new_promos =  Promo.order("created_at DESC").limit(3)
+    @last_promos =  Promo.order("dataf ASC").limit(3)
+    for i in (0..@new_promos.length-1)
+        
+        @new_promos[i][:shopping_id] = Loja.find(@new_promos[i][:loja_id]).shopping_id
+        @last_promos[i][:shopping_id] = Loja.find(@last_promos[i][:loja_id]).shopping_id   
+        
+    end
+
+    @last_promos -= @new_promos
+
+    @shoppings = Shopping.all
+
+  end
+
+
   private
 
   def current_admin

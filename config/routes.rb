@@ -42,7 +42,9 @@ BubbleSpot::Application.routes.draw do
   get "admin/shoppings/:shopping_id/eventos/new" => "eventos#new", :as => "new_evento"
   get "admin/shoppings/:shopping_id/eventos/edit/:id" => "eventos#edit", :as => "edit_evento"
 
-  root :to => "shoppings#index" 
+  get "contactos" => "application#contactos", :as => "contactos"
+
+  root :to => "application#home" 
   
   resources :admins
   resources :sessions
