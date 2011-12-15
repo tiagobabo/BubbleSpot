@@ -10,28 +10,28 @@ class EventosController < ApplicationController
   def all
     if params[:p] == "1" or params[:p] == nil
       @p = 1
-      @eventos_semana = Evento.where(:data => Time.now..Time.now.end_of_week)
+      @eventos_semana = Evento.order("shopping_id, data").where(:data => Time.now.beginning_of_day..Time.now.end_of_week)
       @eventos_semana.each do |evento_semana|
         @shopping = Shopping.find(evento_semana[:shopping_id])
         evento_semana[:shopping_nome] = @shopping.nome 
       end
     elsif params[:p] == "2"    
       @p = 2
-      @eventos_semana = Evento.where(:data => Time.now.next_week..Time.now.next_week.end_of_week)
+      @eventos_semana = Evento.order("shopping_id, data").where(:data => Time.now.next_week..Time.now.next_week.end_of_week)
       @eventos_semana.each do |evento_semana|
         @shopping = Shopping.find(evento_semana[:shopping_id])
         evento_semana[:shopping_nome] = @shopping.nome  
       end
     elsif params[:p] == "3"  
           @p = 3
-      @eventos_semana = Evento.where(:data => Time.now..Time.now.end_of_month)
+      @eventos_semana = Evento.order("shopping_id, data").where(:data => Time.now.beginning_of_day..Time.now.end_of_month)
       @eventos_semana.each do |evento_semana|
         @shopping = Shopping.find(evento_semana[:shopping_id])
         evento_semana[:shopping_nome] = @shopping.nome  
       end
     elsif params[:p] == "4"  
           @p = 4
-      @eventos_semana = Evento.where("data >= date('now')")
+      @eventos_semana = Evento.order("shopping_id, data").where( "data >= date('now', 'start of day')")
       @eventos_semana.each do |evento_semana|
         @shopping = Shopping.find(evento_semana[:shopping_id])
         evento_semana[:shopping_nome] = @shopping.nome  
@@ -56,7 +56,34 @@ class EventosController < ApplicationController
 
     # Access all eventos for that shopping
 
-    @eventos = @shopping.eventos.order("data ASC").paginate(:per_page => 10, :page => params[:page])
+
+    if params[:w] == "1" or params[:w] == nil
+      @w = 1
+      @eventos_semana = @shopping.eventos.order("data").where(:data => Time.now.beginning_of_day..Time.now.end_of_week)
+       @eventos_semana.each do |evento_semana|
+       evento_semana[:shopping_nome] = @shopping.nome
+      end
+    elsif params[:w] == "2"    
+      @w = 2
+      @eventos_semana = @shopping.eventos.order("data").where(:data => Time.now.next_week..Time.now.next_week.end_of_week)
+       @eventos_semana.each do |evento_semana|
+       evento_semana[:shopping_nome] = @shopping.nome
+      end
+    elsif params[:w] == "3"  
+          @w = 3
+      @eventos_semana = @shopping.eventos.order("data").where(:data => Time.now.beginning_of_day..Time.now.end_of_month)
+      @eventos_semana.each do |evento_semana|
+      evento_semana[:shopping_nome] = @shopping.nome
+      end
+    elsif params[:w] == "4"  
+          @w = 4
+      @eventos_semana = @shopping.eventos.order("data").where( "data >= date('now', 'start of day')")
+      @eventos_semana.each do |evento_semana|
+     evento_semana[:shopping_nome] = @shopping.nome
+      end
+    end
+
+    @eventos = @shopping.eventos.order("data")
     
     @eventos.each do |evento|
      evento[:shopping_nome] = @shopping.nome
