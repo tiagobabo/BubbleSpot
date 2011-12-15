@@ -25,7 +25,7 @@
 <%= cycle("</div><div class='row'>","","").html_safe %>
 <div class="four columns">
    <center>
-  <%= link_to image_tag(promo.imagem), shopping_loja_promo_path(@shopping, @loja, promo) %>
+  <%= link_to image_tag(promo.imagem, :height => "200px"), shopping_loja_promo_path(@shopping, @loja, promo) %>
     <p><%= promo.produto%></p>
   </center>
   <p></p>

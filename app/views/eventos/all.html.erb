@@ -43,7 +43,7 @@
       <%= cycle("</div><div class='row'>","","",:name => "rows").html_safe %>
       <div class="four columns">
          
-        <%= link_to image_tag(evento.imagem), shopping_evento_path(evento.shopping_id, evento) %>
+        <%= link_to image_tag(evento.imagem, :height => "200px"), shopping_evento_path(evento.shopping_id, evento) %>
           <p><%= evento.nome%></p>
         
         <p></p>
