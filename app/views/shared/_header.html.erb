@@ -30,8 +30,9 @@
 <section>
 <div class ="row">
 <ul class="nav-bar">
-  <li><%= link_to image_tag("logo.png"), root_url, :class => "brand" %></li>
-  <li class="has-flyout"><a href="#">Menu</a>
+  <li></li>
+  <li class="has-flyout">
+    <%= link_to image_tag("logo.png"), root_url, :class => "brand" %> </br> <a href="#">Menu</a>
     <div class="flyout">
        <ul>
             <li class="<%= controller.controller_path == 'shoppings' ? 'active' : '' %>"> <%= link_to "Shoppings", shoppings_url %></li>
