@@ -39,27 +39,38 @@
     <h4><%= @filme.sala %></h4>
   </p> 
   
-  <p> 
-    <div class="underline"><h5>TRAILER</h5></div> 
-    <h4><%= @filme.trailer %></h4>
-  </p> 
+
   
   
 </div>
   <div class="six columns">
-    
+    <%= image_tag(@filme.imagem)%>
   <p></p> 
-  <%= image_tag(@filme.imagem)%>
+ 
   <p> </p> 
   
   <div>
+  
+  </div>
+</div>
+<div class="row">
+   <div class="twelve columns">
+   <center>
+<%= youtube_embed(@filme.trailer).html_safe %> 
+   </center>
+   </div>
+
+</div>
+<div class="row">
+   <div class="twelve columns">
   <% if current_admin %>
     <%= link_to 'Editar', edit_filme_path(@shopping, @filme), :class => "nice small radius blue button" %>
     <%= link_to 'Apagar', shopping_filme_path(@shopping, @filme), :confirm => 'Tem a certeza?', :method => :delete, :class => "nice small radius blue button" %>
   <% end %>
-  </div>
+   </div>
 
 </div>
+
 </div>
 
 </section>
