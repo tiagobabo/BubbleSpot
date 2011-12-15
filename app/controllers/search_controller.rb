@@ -7,7 +7,7 @@ class SearchController < ApplicationController
   
   def index
     @shops = [['Todos', -1]]
-    @shoppings = Shopping.all
+    @shoppings = Shopping.order("nome")
     @shoppings.each do |shopping|
       @shops += [[shopping.nome, shopping.id]]
     end
@@ -24,11 +24,11 @@ class SearchController < ApplicationController
     if params[:query].present?
       
       if params[:pesquisa] == "0"
-        search = params[:query].downcase + "%"
-        @shoppings = Shopping.where("lower(nome) like ?", search)        
+        search = "%" + params[:query].downcase + "%"
+        @shoppings = Shopping.where("lower(nome) like ?", search).order("nome")        
       elsif params[:pesquisa] == "1"
         search = "%" + params[:query].downcase + "%"
-        @shoppings = Shopping.where("lower(localizacao) like ?", search)
+        @shoppings = Shopping.where("lower(localizacao) like ?", search).order("nome") 
     
       end
   
@@ -54,10 +54,10 @@ class SearchController < ApplicationController
       
       if params[:pesquisa] == "0"
         search = "%" + params[:query].downcase + "%"
-        @lojas = Loja.where("lower(nome) like ?", search)        
+        @lojas = Loja.where("lower(nome) like ?", search).order("nome")         
       elsif params[:pesquisa] == "1"
         search = "%" + params[:query].downcase + "%"
-        @lojas = Loja.where("lower(tags) like ?", search)
+        @lojas = Loja.where("lower(tags) like ?", search).order("nome") 
       end
       
       @lojas = Loja.order("shopping_id")
@@ -83,7 +83,7 @@ class SearchController < ApplicationController
         @shopping = Shopping.find(params[:shopping])
         @loja = @shopping.lojas.find(params[:loja])
         @promos = []
-        @promos_aux = @loja.promos.where("lower(produto) like ? or lower(detalhes) like ?", search, search) 
+        @promos_aux = @loja.promos.where("lower(produto) like ? or lower(detalhes) like ?", search, search).order("produto")  
         @promos_aux.each do |promo|
             promo[:loja_nome] = @loja.nome
             promo[:shopping_id] = @shopping.id
@@ -97,7 +97,7 @@ class SearchController < ApplicationController
         @promos = []
         @promos_aux = []
         @lojas.each do |loja|
-          @promos_aux = loja.promos.where("lower(produto) like ? or lower(detalhes) like ?", search, search) 
+          @promos_aux = loja.promos.where("lower(produto) like ? or lower(detalhes) like ?", search, search).order("produto")  
           @promos_aux.each do |promo|
             promo[:loja_nome] = loja.nome
             promo[:shopping_id] = @shopping.id
@@ -114,7 +114,7 @@ class SearchController < ApplicationController
           @lojas = shopping.lojas
           @promos_aux = []
           @lojas.each do |loja|
-            @promos_aux = loja.promos.where("lower(produto) like ? or lower(detalhes) like ?", search, search) 
+            @promos_aux = loja.promos.where("lower(produto) like ? or lower(detalhes) like ?", search, search).order("produto")  
             @promos_aux.each do |promo|
               promo[:loja_nome] = loja.nome
               promo[:shopping_nome] = shopping.nome

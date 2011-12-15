@@ -10,7 +10,7 @@ class LojasController < ApplicationController
   set_tab :loja
 
 def all
-  @lojas = Loja.order("shopping_id")
+  @lojas = Loja.order("shopping_id, nome")
   @lojas.each do |loja|
     @shopping = Shopping.find(loja[:shopping_id])
     loja[:shopping_nome] = @shopping.nome 
@@ -29,7 +29,7 @@ end
     @shopping = Shopping.find(params[:id])
 
     # Access all lojas for that shopping
-    @lojas = @shopping.lojas.paginate(:per_page => 10, :page => params[:page])
+    @lojas = @shopping.lojas.order("nome").paginate(:per_page => 10, :page => params[:page])
     
     @lojas.each do |loja|
      loja[:shopping_nome] = @shopping.nome

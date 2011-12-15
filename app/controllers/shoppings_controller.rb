@@ -11,7 +11,7 @@ class ShoppingsController < ApplicationController
 
   def index
     set_tab :home
-    @shoppings = Shopping.all
+    @shoppings = Shopping.order("nome")
 
     respond_to do |format|
       format.html # index.html.erb

@@ -7,7 +7,7 @@ class FilmesController < ApplicationController
   set_tab :filme
 
 def all
-  @filmes = Filme.order("shopping_id")
+  @filmes = Filme.order("shopping_id,nome")
   @filmes.each do |filme|
     @shopping = Shopping.find(filme[:shopping_id])
     filme[:shopping_nome] = @shopping.nome 
@@ -25,7 +25,7 @@ end
     @shopping = Shopping.find(params[:id])
 
     # Access all filmes for that shopping
-    @filmes = @shopping.filmes.paginate(:per_page => 10, :page => params[:page])
+    @filmes = @shopping.filmes.order("nome").paginate(:per_page => 10, :page => params[:page])
     
     @filmes.each do |filme|
      filme[:shopping_nome] = @shopping.nome
