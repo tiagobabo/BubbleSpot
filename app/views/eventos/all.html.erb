@@ -10,7 +10,7 @@
     <div class="underline"><h3>Próxima semana</h3></div> 
     <% elsif @p == 3%>
     <div class="underline"><h3>Este mês</h3></div> 
-    <% elsif @p == 3%>
+    <% elsif @p == 4%>
     <div class="underline"><h3>Todos os eventos</h3></div> 
     <% end %>
     </div> 
@@ -31,8 +31,8 @@
       <%= cycle("</div><div class='row'>","","","",:name => "rows").html_safe %>
       <div class="three columns">
          
-        <%= link_to image_tag(evento.imagem, :height => "200px"), shopping_evento_path(evento.shopping_id, evento) %>
-          <p><%= evento.nome%></p>
+        <%= link_to image_tag(evento_semana.imagem, :height => "200px"), shopping_evento_path(evento_semana.shopping_id, evento_semana) %>
+          <p><%= evento_semana.nome%></p>
         
         <p></p>
       </div>
