@@ -49,23 +49,14 @@
 		});
 
         
-$('.flyout').hide();
-
-$('.nav-bar li a, .nav-bar li a:after').each(function() {
-    $(this).data('clicks', 0);
-  });
+  $('.flyout').hide();
 
 
-  $('.nav-bar li a, .nav-bar li a:after').bind('touchend click', function(e){
-    //e.stopPropagation();
-    //e.preventDefault();
+  $('.nav-bar li a, .nav-bar li a:after').bind('click', function(e){
     var f = $(this).siblings('.flyout');
-    $(this).data('clicks', ($(this).data('clicks') + 1));
     if (!f.is(':visible') && f.length > 0) {
       f.show();
     }
     else f.hide();
   });
- 
- 
 	});
