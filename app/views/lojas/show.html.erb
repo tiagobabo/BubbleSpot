@@ -25,7 +25,7 @@
     </div>
     <div class ="three columns">
 <p></p>
-<%= image_tag(@loja.imagem)%>
+<%= image_tag(@loja.imagem, :height => "100px")%>
     </div>
     </div>
 
@@ -42,7 +42,7 @@
         <%= cycle("</div><div class='row'>","","").html_safe %>
         <div class="four columns">
         <center>
-        <%= link_to image_tag(promo.imagem), shopping_loja_promo_path(@shopping, @loja, promo) %>
+        <%= link_to image_tag(promo.imagem, :height => "200px"), shopping_loja_promo_path(@shopping, @loja, promo) %>
         <p><%= promo.produto%></p>
         </center>
        <p></p>
@@ -67,7 +67,7 @@
     <%= cycle("</div><div class='row'>","","").html_safe %>
     <div class="four columns">
     <center>
-    <%= link_to image_tag(last_promo.imagem), shopping_loja_promo_path(@shopping, @loja, last_promo) %>
+    <%= link_to image_tag(last_promo.imagem, :height => "200px"), shopping_loja_promo_path(@shopping, @loja, last_promo) %>
     <p>Termina a <%= last_promo.dataf.strftime("%d-%m-%Y %H:%M")%></p>
     </center>
    <p></p>

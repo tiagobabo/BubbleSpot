@@ -24,7 +24,7 @@
             
 <%= cycle("</div><div class='row'>","","",:name => "rows").html_safe %>
 <div class="four columns">
-  <%= link_to image_tag(loja.imagem), shopping_loja_path(loja[:shopping_id], loja) %>
+  <%= link_to image_tag(loja.imagem, :height => "200px"), shopping_loja_path(loja[:shopping_id], loja) %>
   <p></p>
 </div>
 <% end %>

@@ -29,6 +29,7 @@
       <% end %>
     
 
+<<<<<<< HEAD
 <%= cycle("</div><div class='row'>","","",:name => "rows").html_safe %>
 <div class="four columns">
   <center>
@@ -38,6 +39,17 @@
   <p></p>
 </div>
 <% end %>
+=======
+      <%= cycle("</div><div class='row'>","","",:name => "rows").html_safe %>
+      <div class="four columns">
+         
+        <%= link_to image_tag(evento.imagem, :height => "200px"), shopping_evento_path(evento.shopping_id, evento) %>
+          <p><%= evento.nome%></p>
+        
+        <p></p>
+      </div>
+    <% end %>
+>>>>>>> 8a887fff46cbd03a4ec3aec3b54422b9735fdd41
 
 </div>
 

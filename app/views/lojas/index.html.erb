@@ -28,11 +28,11 @@
    
 <% @lojas.each do |loja| %>
 
-<%= cycle("</div><div class='row'>","","").html_safe %>
-<div class="four columns">
+<%= cycle("</div><div class='row'>","","","","").html_safe %>
+<div class="two columns">
     <ul id="filter_me">
             <center>
-            <li><%= link_to image_tag(loja.imagem), shopping_loja_path(@shopping, loja) %>
+            <li><%= link_to image_tag(loja.imagem, :height => "100px"), shopping_loja_path(@shopping, loja) %>
               <p> <%= loja.nome%></p></li>
     <ul>
   <p></p>
