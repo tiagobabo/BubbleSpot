@@ -54,4 +54,9 @@
 </div>
 </section>
 
- <div class="hide-on-phones"><div id = "qrcode">Descarregue a <br/>versão Android:</br><%= link_to image_tag("code.png", :size => "200x200"),"http://gnomo.fe.up.pt/~ei08085/BubbleSpot.apk", :alt=> "Descarregue a versão Android!" %></div></div>
+ <div class="hide-on-phones"><div class = "qrcode" id = "qrcode"><%= link_to image_tag("code.png", :size => "200x200") ,"http://gnomo.fe.up.pt/~ei08085/BubbleSpot.apk", :alt=> "Descarregue a versão Android!" %><p>
+
+   <%= link_to("(fechar)", "#") %>
+
+ </div></div>
+  <div class="hide-on-phones"><div class="android" id = "qrcode"><%= link_to image_tag("android.png"), "#"%></div></div>

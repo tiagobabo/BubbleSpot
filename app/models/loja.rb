@@ -10,6 +10,6 @@ class Loja < ActiveRecord::Base
   validates_numericality_of :telefone, :only_integer => true, :count => 9, :message => "O telefone só pode ter dígitos."
   validates :telefone, :length => {:is => 9, :message => "O telefone tem de ter 9 dígitos"} 
 
-  validates_format_of :imagem, :with => %r{\.(png|jpg|jpeg|bmp)$}i, :message => "O formato da imagem não é válido"
+  validates_format_of :imagem, :with => %r{\.(png|jpg|jpeg|bmp|gif)$}i, :message => "O formato da imagem não é válido"
   
 end
