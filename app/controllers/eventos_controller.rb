@@ -83,7 +83,7 @@ class EventosController < ApplicationController
       end
     end
 
-    @eventos = @shopping.eventos.order("data").where( "data >= date('now', 'start of day')")
+    @eventos = @shopping.eventos.order("data")
     
     @eventos.each do |evento|
      evento[:shopping_nome] = @shopping.nome
