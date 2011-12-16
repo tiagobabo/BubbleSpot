@@ -212,7 +212,7 @@ def lojas_by_shopping3
   end
   @promos = @promos.sort_by(&:shopping_id)
 
-  result = @promos.collect{|x| "#{x.id},#{x.produto},#{x.imagem},#{x.shopping_id},#{x.shopping_nome}"}
+  result = @promos.collect{|x| "#{x.id},#{x.produto},#{x.imagem},#{x.shopping_id},#{x.shopping_nome},#{x.desconto}"}
   render :text => "#{result.join(",")}" 
     
   end
