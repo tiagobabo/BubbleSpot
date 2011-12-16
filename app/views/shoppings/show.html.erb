@@ -7,22 +7,21 @@
        <%= tab.home      "Home", root_path %>
        <%= tab.shopping      @shopping.nome, @shopping %>
        <% end %> 
-    </div>
+       </div>
        <div class="underline"><h1><%= @shopping.nome %></h1></div> 
        <div class="row">
-    <div class = "twelve columns">
-   
-      <center>
+   <div class="six columns">
+     <center>
   <%= link_to 'Lojas', lojas_shopping_index_url(@shopping), :class => "nice small radius blue button" %>
   <%= link_to 'Eventos', eventos_shopping_index_url(@shopping), :class => "nice small radius blue button" %>
   <%= link_to 'Filmes', filmes_shopping_index_url(@shopping), :class => "nice small radius blue button" %>
   <%= link_to 'Promoções', promos_shopping_index_url(@shopping), :class => "nice small radius blue button" %>
   <%= link_to 'Planta', @shopping.link_mapa, :class => "nice small radius blue button" %>
-    </center>
+  </center>
+   </div>
  </div>
   </div>
     </div>
-  </div>  
 <div class="row">
   
   <div class="six columns">
