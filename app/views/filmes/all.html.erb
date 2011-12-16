@@ -4,6 +4,12 @@
        <%= tab.filme      "Filmes", filmes_all_path %>
        <% end %> 
     </div>
+<section>
+     <div class="row">
+      <div class="twelve columns"> 
+        <div class="underline"><h1>Filmes</h1></div>   
+      </div>
+      </section>
 
 <% if @filmes != nil && @filmes.count > 0 %>
   <section>
@@ -16,7 +22,7 @@
       
 		 <div class="row">
       <div class="twelve columns"> 
-        <div class="underline"><h3>Filmes do <%= filme.shopping_nome %></h3></div>   
+        <div class="underline"><h3><%= filme.shopping_nome %></h3></div>   
       </div>
     <% shopping_actual = filme.shopping_nome %>  
       <% end %>

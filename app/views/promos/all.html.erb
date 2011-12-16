@@ -5,6 +5,13 @@
        <% end %> 
     </div>
 
+<section>
+     <div class="row">
+      <div class="twelve columns"> 
+        <div class="underline"><h1>Promoções</h1></div>   
+      </div>
+      </section>
+
 <% if @promos != nil && @promos.count > 0 %>
 <section>
       
@@ -17,7 +24,7 @@
       
       <div class="row">
       <div class="twelve columns">
-      <div class="underline"><h3>Promoções do <%= promo.shopping_nome%></h3></div>
+      <div class="underline"><h3><%= promo.shopping_nome%></h3></div>
       </div>
       
       <% shopping_actual = promo.shopping_nome %>  

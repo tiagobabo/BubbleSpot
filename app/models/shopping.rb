@@ -15,5 +15,5 @@ class Shopping < ActiveRecord::Base
   geocoded_by :localizacao
   after_validation :geocode
   
-  validates_format_of :imagem, :link_mapa, :with => %r{\.(png|jpg|jpeg|bmp)$}i, :message => "O formato da imagem não é válido"
+  validates_format_of :imagem, :with => %r{\.(png|jpg|jpeg|bmp|gif)$}i, :message => "O formato da imagem não é válido"
 end

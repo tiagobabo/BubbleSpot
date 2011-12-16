@@ -4,10 +4,12 @@
        <%= tab.evento      "Eventos", eventos_all_path %>
        <% end %> 
     </div>
+
+   
 <section>
 <div class="row">
     <div class="twelve columns"> 
-    <p>
+    <div class="underline"><h1>Eventos</h1></div> 
      <% if @p == 1 || @p == nil%>
          <center>
      <%= link_to 'Esta semana', eventos_all_url(:p => "1"), :class => "nice small radius white button" %>
@@ -60,7 +62,7 @@
       
      <div class="row">
       <div class="twelve columns"> 
-        <div class="underline"><h4><%= evento_semana.shopping_nome %></h4></div>   
+        <div class="underline"><h3><%= evento_semana.shopping_nome %></h3></div>   
       </div>
     <% shopping_actual = evento_semana.shopping_nome %>  
       <% end %>
