@@ -26,6 +26,7 @@ BubbleSpot::Application.routes.draw do
   get "search/lojas_by_shopping2/" => "search#lojas_by_shopping2", :as => "lojas_by_shopping2"  
   get "search/lojas_by_shopping3/" => "search#lojas_by_shopping3", :as => "lojas_by_shopping3"  
   get "search/filmes/" => "search#filmes", :as => "search_filmes"  
+  get "search/promos2/" => "search#promos2", :as => "search_promos2"
   get "search" => "search#index", :as => "search"  
   get "shoppings/:id/lojas" => "lojas#index", :as => "lojas_shopping_index"
 

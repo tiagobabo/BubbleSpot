@@ -8,6 +8,9 @@ function update_filmes(query) {
 
         $('#filmes').empty();
 
+        if(array.length > 1)
+        {
+
         var shopping_atual = "";
         var conteudo = "";
 
@@ -39,6 +42,7 @@ function update_filmes(query) {
     conteudo += '</div></div>';
 
     $('#filmes').html(conteudo); 
+  }
       
 });
 

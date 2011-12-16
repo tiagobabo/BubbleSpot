@@ -14,7 +14,13 @@
 
 <% if @promos != nil && @promos.count > 0 %>
 <section>
-      
+<div class="row display">
+<div class="four columns offset-by-eight">
+Filtro:
+<input type="text" class="filter" name="liveFilter" onKeyup ="update_promos(this.value)" />   <p></div>
+<p>
+</div>
+<div id="promos">      
 <% shopping_actual = "" %> 
 <% @promos.each do |promo| %>
 
@@ -40,6 +46,7 @@
   <p></p>
 </div>
 <% end %>
+</div>
 </div>
 </section>
 
