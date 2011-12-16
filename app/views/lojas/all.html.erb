@@ -13,13 +13,21 @@
 
 <% if @lojas != nil && @lojas.count > 0 %>
 <section>
+
+<div class="row display">
+<div class="four columns offset-by-eight">
+Filtro:
+<input type="text" class="filter" name="liveFilter" onKeyup ="update_lojas3(this.value)" />   <p></div>
+<p>
+</div>
       
+<div id ="lojas">         
 <% shopping_actual = "" %> 
 <% @lojas.each do |loja| %>
 
       <% if loja.shopping_nome != shopping_actual %>
       
-       <% reset_cycle("rows") %>
+      <% reset_cycle("rows") %>
       
       <div class="row">
       <div class="twelve columns">
@@ -38,6 +46,7 @@
   <p></p>
 </div>
 <% end %>
+</div>
 </div>
 </section>
 

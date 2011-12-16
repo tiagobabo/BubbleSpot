@@ -168,5 +168,19 @@ class SearchController < ApplicationController
     render :text => "#{result.join(",")}" 
     
   end
+
+def lojas_by_shopping3
+  @lojas = Loja.order("shopping_id, nome")
+  search = "%" + params[:query].downcase + "%"
+  @lojas = @lojas.where("lower(nome) like ?", search).order("nome") 
+  @lojas.each do |loja|
+    @shopping = Shopping.find(loja[:shopping_id])
+    loja[:shopping_nome] = @shopping.nome 
+  end
+
+  result = @lojas.collect{|x| "#{x.id},#{x.nome},#{x.imagem},#{x.shopping_id},#{x.shopping_nome}"}
+  render :text => "#{result.join(",")}" 
     
+  end
+
 end
