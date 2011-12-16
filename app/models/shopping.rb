@@ -6,7 +6,7 @@ class Shopping < ActiveRecord::Base
   has_many :filmes, :dependent => :destroy
   has_many :eventos, :dependent => :destroy
   
-  validates_presence_of :nome, :telefone, :localizacao, :email, :descricao, :imagem, :message => "O campo tem de ser preenchido"
+  validates_presence_of :nome, :telefone, :localizacao, :email, :descricao, :imagem, :link_mapa, :message => "O campo tem de ser preenchido"
   validates_uniqueness_of :nome, :message => "Já existe um shopping com esse nome"
   validates_numericality_of :telefone, :only_integer => true, :count => 9, :message => "O telefone só pode ter dígitos."
   validates :telefone, :length => {:is => 9, :message => "O telefone tem de ter 9 dígitos"} 
@@ -15,5 +15,5 @@ class Shopping < ActiveRecord::Base
   geocoded_by :localizacao
   after_validation :geocode
   
-  validates_format_of :imagem, :with => %r{\.(png|jpg|jpeg|bmp|gif)$}i, :message => "O formato da imagem não é válido"
+  validates_format_of :imagem, :link_mapa, :with => %r{\.(png|jpg|jpeg|bmp|gif)$}i, :message => "O formato da imagem não é válido"
 end

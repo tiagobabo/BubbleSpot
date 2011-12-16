@@ -5,12 +5,24 @@
        <div class = "navigation">
        <%= tabs_tag do |tab| %>
        <%= tab.home      "Home", root_path %>
+       <%= tab.shoppings      "Shoppings", shoppings_path %>
        <%= tab.shopping      @shopping.nome, @shopping %>
        <% end %> 
-    </div>
+       </div>
        <div class="underline"><h1><%= @shopping.nome %></h1></div> 
+       <div class="row">
+   <div class="six columns">
+     <center>
+  <%= link_to 'Lojas', lojas_shopping_index_url(@shopping), :class => "nice small radius blue button" %>
+  <%= link_to 'Eventos', eventos_shopping_index_url(@shopping), :class => "nice small radius blue button" %>
+  <%= link_to 'Filmes', filmes_shopping_index_url(@shopping), :class => "nice small radius blue button" %>
+  <%= link_to 'Promoções', promos_shopping_index_url(@shopping), :class => "nice small radius blue button" %>
+  <%= link_to 'Planta', @shopping.link_mapa, :class => "nice small radius blue button" %>
+  </center>
+   </div>
+ </div>
+  </div>
     </div>
-  </div>  
 <div class="row">
   
   <div class="six columns">
@@ -53,18 +65,9 @@
   
   <p></p> 
   <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&maptype=satellite&sensor=false&zoom=16&markers=#{@shopping.latitude}%2C#{@shopping.longitude}" %>
-  <div>
-    
-  <%= link_to 'Lojas', lojas_shopping_index_url(@shopping), :class => "nice small radius blue button" %>
-  <%= link_to 'Eventos', eventos_shopping_index_url(@shopping), :class => "nice small radius blue button" %>
-  <%= link_to 'Filmes', filmes_shopping_index_url(@shopping), :class => "nice small radius blue button" %>
-  <%= link_to 'Promoções', promos_shopping_index_url(@shopping), :class => "nice small radius blue button" %>
+
   
-  <% if current_admin %>
-    <%= link_to 'Editar', edit_shopping_path(@shopping), :class => "nice small radius blue button" %>
-    
-  <% end %> 
-  </div>
+  
   
 
 </div>

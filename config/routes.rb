@@ -8,13 +8,17 @@ BubbleSpot::Application.routes.draw do
   get "admin/shoppings" => "admins#shoppings", :as => "admins_shoppings"
   get "admin/shoppings/new" => "shoppings#new", :as => "new_shopping"
   get "admin/shoppings/edit/:id" => "shoppings#edit", :as => "edit_shopping"
-  get "admin/news" => "shoppings#new"
+  
+  get "admin/utilizadores/edit/:admin" => "admins#edit",  :as => "edit_admin"
+  delete "admin/utilizadores/destroy/:admin" => "admins#destroy",  :as => "destroy_admin"
+
   get "admin/shoppings/:id/lojas" => "admins#lojas", :as => "admins_lojas"
   get "admin/shoppings/:shopping_id/lojas/new" => "lojas#new", :as => "new_loja"
   get "admin/shoppings/:shopping_id/lojas/:id/edit" => "lojas#edit", :as => "edit_loja"
   get "admin/shoppings/:shopping_id/lojas/:loja_id/promos/:id/edit" => "promos#edit", :as => "edit_promo"
   get "admin/shoppings/:shopping_id/lojas/:loja_id/promos" => "admins#promos", :as => "admins_promos"
-  
+  get "admin/utilizadores" => "admins#users", :as => "admins_users"
+
   get "search/shoppings/" => "search#shoppings", :as => "search_shoppings"  
   get "search/lojas/" => "search#lojas", :as => "search_lojas"
   get "search/promos/" => "search#promos", :as => "search_promos"  

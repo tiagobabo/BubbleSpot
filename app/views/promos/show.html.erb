@@ -7,6 +7,7 @@
       <div class = "navigation">
       <%= tabs_tag do |tab| %>
       <%= tab.home      "Home", root_path %>
+      <%= tab.shopping      "Shoppings", shoppings_path %>
       <%= tab.shopping      @shopping.nome, @shopping %>
       <%= tab.lojas      "Lojas do " + @shopping.nome, lojas_shopping_index_url(@shopping) %>
       <%= tab.loja      @loja.nome, shopping_loja_path(@shopping, @loja) %>
@@ -74,10 +75,7 @@
     <div id="defaultCountdown"></div>
     <br/><br/><br/>
   <div>
-  <% if current_admin %>
-    <%= link_to 'Editar', edit_promo_url(@shopping, @loja, @promo), :class => "nice small radius blue button" %>
-    <%= link_to 'Apagar', shopping_loja_promo_path(@shopping, @loja, @promo), :confirm => 'Tem a certeza?', :method => :delete, :class => "nice small radius blue button" %>
-  <% end %> 
+ 
   </div>
 
 </div>

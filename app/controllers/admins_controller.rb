@@ -8,8 +8,30 @@ class AdminsController < ApplicationController
   #e para já dá jeito que seja possível fazer sign_up
   
   before_filter :require_login_geral
+  set_tab :gestao
+
+  def users
+
+    @utilizadores = Admin.all
+    
+    @utilizadores.each do |user|
+      if user[:tipo] == 0
+        user[:tipo2] = "Admiministrador Global"
+        user[:idref2] = "Todos"
+      elsif user[:tipo] == 1
+        @shopping = Shopping.find(user.idref)
+        user[:tipo2] = "Admiministrador Shopping"
+        user[:idref2] = @shopping.nome
+      elsif user[:tipo] == 2
+        @loja = Loja.find(user.idref)
+        user[:tipo2] = "Admiministrador Loja"
+        user[:idref2] = @loja.nome
+      end
+    end
+  end
 
   def shoppings
+    set_tab :shopping
     if @current_admin.tipo == 0
       @shoppings = Shopping.all
     elsif @current_admin.tipo == 1
@@ -68,10 +90,23 @@ class AdminsController < ApplicationController
   end
   
  def new
+ @shops = [[]]
+    @shoppings = Shopping.order("nome")
+    @shoppings.each do |shopping|
+      @shops += [[shopping.nome, shopping.id]]
+    end
     if @current_admin.tipo == 0
       @admin = Admin.new
     else
       redirect_to admins_index_url, :alert => "Não tem permissões para adicionar utilizadores!"
+    end
+  end
+
+   def edit
+    if @current_admin.tipo == 0
+      @admin = Admin.find(params[:admin])
+    else
+      redirect_to admins_index_url, :alert => "Não tem permissões para editar utilizadores!"
     end
   end
 
@@ -85,6 +120,22 @@ class AdminsController < ApplicationController
       end
     else
       redirect_to log_in_url, :alert => "Não tem permissões para adicionar utilizadores!" 
+    end
+  end
+
+  def destroy
+
+    if @current_admin.tipo != 0
+      redirect_to admins_index_url, :alert => "Não tem permissões para apagar utilizadores!"
+    else
+       
+          @admin = Admin.find(params[:admin])
+    @admin.destroy
+
+    respond_to do |format|
+      format.html { redirect_to admins_users_url , :notice => 'O utilizador foi eliminada com sucesso.' }
+      format.xml  { head :ok }
+    end
     end
   end
   

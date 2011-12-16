@@ -1,7 +1,7 @@
  # -*- coding: utf-8 -*-
 
 class SessionsController < ApplicationController
-  set_tab :gestao
+  set_tab :log_in
   def new
       
 
