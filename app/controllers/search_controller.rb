@@ -85,7 +85,7 @@ class SearchController < ApplicationController
         @shopping = Shopping.find(params[:shopping])
         @loja = @shopping.lojas.find(params[:loja])
         @promos = []
-        @promos_aux = @loja.promos.where("lower(produto) like ? or lower(detalhes) like ?", search, search).order("produto")  
+        @promos_aux = @loja.promos.where("lower(produto) like ? or lower(detalhes) like ? or lower(tags) like ?", search, search, search).order("produto")  
         @promos_aux.each do |promo|
             promo[:loja_nome] = @loja.nome
             promo[:shopping_id] = @shopping.id
@@ -99,7 +99,7 @@ class SearchController < ApplicationController
         @promos = []
         @promos_aux = []
         @lojas.each do |loja|
-          @promos_aux = loja.promos.where("lower(produto) like ? or lower(detalhes) like ?", search, search).order("produto")  
+          @promos_aux = loja.promos.where("lower(produto) like ? or lower(detalhes) like ? or lower(tags) like ?", search, search, search).order("produto")  
           @promos_aux.each do |promo|
             promo[:loja_nome] = loja.nome
             promo[:shopping_id] = @shopping.id
@@ -116,7 +116,7 @@ class SearchController < ApplicationController
           @lojas = shopping.lojas
           @promos_aux = []
           @lojas.each do |loja|
-            @promos_aux = loja.promos.where("lower(produto) like ? or lower(detalhes) like ?", search, search).order("produto")  
+            @promos_aux = loja.promos.where("lower(produto) like ? or lower(detalhes) like ? or lower(tags) like ?", search, search, search).order("produto")  
             @promos_aux.each do |promo|
               promo[:loja_nome] = loja.nome
               promo[:shopping_nome] = shopping.nome
@@ -155,6 +155,17 @@ class SearchController < ApplicationController
     options = [-1,'Todas']
     options += @lojas.collect{|x| "#{x.id},#{x.nome}"}
     render :text => "#{options.join(",")}" 
+    
+  end
+
+  def lojas_by_shopping2
+    @shopping = Shopping.find(params[:shopping_id])
+    search = "%" + params[:query].downcase + "%"
+    @lojas = @shopping.lojas
+    @lojas = @lojas.where("lower(nome) like ?", search).order("nome")
+
+    result = @lojas.collect{|x| "#{x.id},#{x.nome},#{x.imagem},#{x.shopping_id}"}
+    render :text => "#{result.join(",")}" 
     
   end
     

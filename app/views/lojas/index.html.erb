@@ -22,23 +22,26 @@
           <div class="one"> 
           </div>
           <div class="row display">
-<div class="four columns offset-by-eight">  <input type="text" class="filter" name="liveFilter" />   <p></p></div>
-        <p></p>
+<div class="four columns offset-by-eight">
+Filtro:
+<input type="text" class="filter" name="liveFilter" onKeyup ="update_lojas2(<%= @shopping.id %>, this.value)" />   <p></div>
+        <p>
 </div>
    
+<div id="lojas">   
+<div id="lojas2"> 
 <% @lojas.each do |loja| %>
 
-<%= cycle("</div><div class='row'>","","","","").html_safe %>
+<%= cycle("</div><div class='row'>","","","","","").html_safe %>
 <div class="two columns">
-    <ul id="filter_me">
-            <center>
-            <li><%= link_to image_tag(loja.imagem, :height => "100px"), shopping_loja_path(@shopping, loja) %>
-              <p> <%= loja.nome%></p></li>
-               </center>
-    <ul>
+    <center>
+    <%= link_to image_tag(loja.imagem, :height => "100px"), shopping_loja_path(@shopping, loja) %>
+    <p> <%= loja.nome%></p>
+    </center>
   <p></p>
 </div>
 <% end %>
+</div>
 
 </div>
 <div class="row">
