@@ -169,7 +169,7 @@ function update_promos(query) {
 
         var cont = 3;
 
-        for (i=0;i<array.length;i+=6)
+        for (i=0;i<array.length;i+=7)
         {
             
             if(array[i+4] != shopping_atual)
@@ -189,7 +189,7 @@ function update_promos(query) {
               cont = 0;
             }
 
-            conteudo += '<div class="four columns"><center><a href="/shoppings/'+ array[i+3] +'/promos/'+array[i] +'">' + '<img height="200px" src="'+ array[i+2] + '" /></a><p>'+  array[i+1] +'</br>'+array[i+5] + '&#37;  de desconto</center><p></p></div>';
+            conteudo += '<div class="four columns"><center><a href="/shoppings/'+ array[i+3] +'/lojas/'+ array[i+6] +'/promos/'+array[i] +'">' + '<img height="200px" src="'+ array[i+2] + '" /></a><p>'+  array[i+1] +'</br>'+array[i+5] + '&#37;  de desconto</center><p></p></div>';
             cont++;
         }
 
