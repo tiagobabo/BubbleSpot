@@ -4,6 +4,8 @@ class SearchController < ApplicationController
 
   TERMOS = [['Nome',0], ['Localização',1]]
   TERMOS_LOJAS = [['Nome',0], ['Áreas de negócio',1]]
+
+  set_tab :pesquisa
   
   def index
     @shops = [['Todos', -1]]

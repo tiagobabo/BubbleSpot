@@ -1,4 +1,12 @@
 <section>
+ <div class = "navigation">
+       <%= tabs_tag do |tab| %>
+       <%= tab.home      "Home", root_path %>
+       <%= tab.gestao      "Log In", log_in_path %>
+       <% end %> 
+    </div>
+</section>
+<section>
 		 <div class="row">
       <div class="twelve columns"> 
         <div class="underline"><h1>Log in</h1></div> 

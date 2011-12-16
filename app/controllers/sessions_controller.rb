@@ -1,14 +1,17 @@
  # -*- coding: utf-8 -*-
 
 class SessionsController < ApplicationController
-  
+  set_tab :gestao
   def new
+      
+
     if session[:admin_id] != nil
       redirect_to admins_index_url
     end
   end
 
   def create
+
     admin = Admin.authenticate(params[:email], params[:password])
     if admin
       session[:admin_id] = admin.id

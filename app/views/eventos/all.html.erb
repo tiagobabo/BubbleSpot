@@ -1,6 +1,13 @@
+ <div class = "navigation">
+       <%= tabs_tag do |tab| %>
+       <%= tab.home      "Home", root_path %>
+       <%= tab.evento      "Eventos", eventos_all_path %>
+       <% end %> 
+    </div>
 <section>
 <div class="row">
     <div class="twelve columns"> 
+    <p>
      <% if @p == 1 || @p == nil%>
          <center>
      <%= link_to 'Esta semana', eventos_all_url(:p => "1"), :class => "nice small radius white button" %>

@@ -10,7 +10,7 @@ class ShoppingsController < ApplicationController
   set_tab :shopping
 
   def index
-    set_tab :home
+    
     @shoppings = Shopping.order("nome")
 
     respond_to do |format|

@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :require_login
   helper_method :require_login_geral
   
+set_tab :home
 
   public
 

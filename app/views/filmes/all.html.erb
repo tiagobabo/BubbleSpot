@@ -1,3 +1,9 @@
+ <div class = "navigation">
+       <%= tabs_tag do |tab| %>
+       <%= tab.home      "Home", root_path %>
+       <%= tab.filme      "Filmes", filmes_all_path %>
+       <% end %> 
+    </div>
 
 <% if @filmes != nil && @filmes.count > 0 %>
   <section>
