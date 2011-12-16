@@ -50,8 +50,16 @@
      </div>
   </div>
 </section>
+
 <% if @eventos_semana != nil && @eventos_semana.count > 0 %>
   <section>
+  <div class="row display">
+<div class="four columns offset-by-eight">
+Filtro:
+<input type="text" class="filter" name="liveFilter" onKeyup ="update_eventos(this.value, <%= @p %>)" />   <p></div>
+<p>
+</div>
+<div id="eventos">
     <% shopping_actual = "" %> 
     
     <% @eventos_semana.each do |evento_semana| %>
@@ -78,7 +86,7 @@
     <% end %>
 
 </div>
-
+</div>
 </section>
 <%else%>
 <section>

@@ -217,4 +217,41 @@ def lojas_by_shopping3
     
   end
 
+  def eventos
+    search = "%" + params[:query].downcase + "%"
+    if params[:p] == "1" or params[:p] == nil
+      @p = 1
+      @eventos_semana = Evento.where("lower(nome) like ?", search).order("shopping_id, data").where(:data => Time.now.beginning_of_day..Time.now.end_of_week)
+      @eventos_semana.each do |evento_semana|
+        @shopping = Shopping.find(evento_semana[:shopping_id])
+        evento_semana[:shopping_nome] = @shopping.nome 
+      end
+    elsif params[:p] == "2"    
+      @p = 2
+      @eventos_semana = Evento.where("lower(nome) like ?", search).order("shopping_id, data").where(:data => Time.now.next_week..Time.now.next_week.end_of_week)
+      @eventos_semana.each do |evento_semana|
+        @shopping = Shopping.find(evento_semana[:shopping_id])
+        evento_semana[:shopping_nome] = @shopping.nome  
+      end
+    elsif params[:p] == "3"  
+          @p = 3
+      @eventos_semana = Evento.where("lower(nome) like ?", search).order("shopping_id, data").where(:data => Time.now.beginning_of_day..Time.now.end_of_month)
+      @eventos_semana.each do |evento_semana|
+        @shopping = Shopping.find(evento_semana[:shopping_id])
+        evento_semana[:shopping_nome] = @shopping.nome  
+      end
+    elsif params[:p] == "4"  
+          @p = 4
+      @eventos_semana = Evento.where("lower(nome) like ?", search).order("shopping_id, data").where( "data >= date('now', 'start of day')")
+      @eventos_semana.each do |evento_semana|
+        @shopping = Shopping.find(evento_semana[:shopping_id])
+        evento_semana[:shopping_nome] = @shopping.nome  
+      end
+    end
+
+  result = @eventos_semana.collect{|x| "#{x.id},#{x.nome},#{x.imagem},#{x.shopping_id},#{x.shopping_nome}"}
+  render :text => "#{result.join(",")}" 
+
+  end
+
 end
