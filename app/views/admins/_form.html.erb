@@ -1,0 +1,36 @@
+<section>
+
+    <div class="row">
+<div class="twelve columns">
+ <%= form_for @admin do |f| %>
+
+    E-mail
+    <%= f.text_field :email, :class => "medium input-text" %>
+    
+    Password
+    <%= f.password_field :password, :class => "medium input-text" %>
+  
+    Password
+    <%= f.password_field :password_confirmation, :class => "medium input-text" %>
+
+<%= select_tag(:pesquisa, options_for_select(@shops)) %>
+
+
+    Tipo
+    <%= f.text_field :tipo, :class => "medium input-text" %>
+
+    ID Referência
+    <%= f.text_field :idref, :class => "medium input-text" %>
+    
+   <p></p>
+  <%= f.submit "Registar", :class => "nice small radius blue button"%>
+<% end %>
+</div>
+</div>
+</section>
+
+
+
+
+
+

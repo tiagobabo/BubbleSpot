@@ -1,11 +1,3 @@
-
-	<div class = "navigation">
-	<%= tabs_tag do |tab| %>
-	<%= tab.home      "Home", root_path %>
-	<%= tab.gestao      "Gestão", admins_index_path %>
-	<% end %> 
-	</div>
-
 <section>
 		 <div class="row">
       <div class="twelve columns"> 
@@ -21,7 +13,13 @@
   <%= link_to image_tag("shoppings.jpg"), admins_shoppings_url %>
   <p></p>
 </div>
-  
+
+
+<div class="four columns">
+  <%= link_to image_tag("shoppings.jpg"), admins_users_url %>
+  <p></p>
+</div>
+
 </div>
 
 </section>

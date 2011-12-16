@@ -1,0 +1,51 @@
+ <section>  
+  <div class ="row">
+    <div class = "twelve columns">
+    <div class="underline"><h1>Gestão de utilizadores </h1></div> 
+    </div>
+  </div>
+   
+<% if @utilizadores != nil && @utilizadores.count > 0 %>
+   <div class ="row">
+    <div class = "twelve columns">
+    <table>
+   <tr>
+     <th>Email</th>
+     <th>Tipo</th>
+     <th>ID Referência</th>
+     <th></th>
+     <th></th>
+   
+
+   </tr>
+ 
+ <% @utilizadores.each do |utilizador| %>
+
+   <tr>
+     <td><%= utilizador.email %></td>
+     <td><%= utilizador.tipo2 %></td>
+     <td><%= utilizador.idref2 %></td>
+    
+     <td><%= link_to 'Editar', edit_admin_url(utilizador) %></td>
+     <% if session[:admin_id] != utilizador.id %>
+     <td><%= link_to 'Apagar', destroy_admin_url(utilizador), :confirm => 'Tem a certeza?', :method => :delete %></td>
+     <% end %>
+
+ 
+
+   </tr>
+   <% end %>
+   </table>
+  
+    </div>
+  </div>
+
+
+<%end %>
+
+    <div class="row">
+      <div class="twelve columns"> 
+            <%= link_to 'Adicionar utilizador', new_admin_path(@utilizador), :class => "nice small radius blue button"  %>
+		 	</div>
+    </div>
+  </section>

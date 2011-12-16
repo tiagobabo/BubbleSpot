@@ -4,6 +4,7 @@
         <div class = "navigation">       
         <%= tabs_tag do |tab| %>
         <%= tab.home      "Home", root_path %>
+        <%= tab.shoppings      "Shoppings", shoppings_path %>
         <%= tab.shopping      @shopping.nome, @shopping %>
         <%= tab.promo      "Promoções do " + @shopping.nome, promos_shopping_index_url(@shopping) %>
       
