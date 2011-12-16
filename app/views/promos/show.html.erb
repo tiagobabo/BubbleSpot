@@ -74,10 +74,7 @@
     <div id="defaultCountdown"></div>
     <br/><br/><br/>
   <div>
-  <% if current_admin %>
-    <%= link_to 'Editar', edit_promo_url(@shopping, @loja, @promo), :class => "nice small radius blue button" %>
-    <%= link_to 'Apagar', shopping_loja_promo_path(@shopping, @loja, @promo), :confirm => 'Tem a certeza?', :method => :delete, :class => "nice small radius blue button" %>
-  <% end %> 
+ 
   </div>
 
 </div>
