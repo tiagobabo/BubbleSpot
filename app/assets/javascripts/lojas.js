@@ -62,7 +62,7 @@ function update_lojas3(query) {
               shopping_atual = array[i+4];
               conteudo += '<div class="row">'
               conteudo += '<div class="twelve columns">'
-              conteudo += '<div class="underline"><h3>'+array[i+1]+'</h3></div>'
+              conteudo += '<div class="underline"><h3>'+array[i+4]+'</h3></div>'
               conteudo += '</div>'
             }
 

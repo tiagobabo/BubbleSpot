@@ -183,4 +183,18 @@ def lojas_by_shopping3
     
   end
 
+  def filmes
+  @filmes = Filme.order("shopping_id, nome")
+  search = "%" + params[:query].downcase + "%"
+  @filmes = @filmes.where("lower(nome) like ?", search).order("nome") 
+  @filmes.each do |filme|
+    @shopping = Shopping.find(filme[:shopping_id])
+    filme[:shopping_nome] = @shopping.nome 
+  end
+
+  result = @filmes.collect{|x| "#{x.id},#{x.nome},#{x.imagem},#{x.shopping_id},#{x.shopping_nome}"}
+  render :text => "#{result.join(",")}" 
+    
+  end
+
 end

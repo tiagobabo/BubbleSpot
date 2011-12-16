@@ -13,6 +13,13 @@
 
 <% if @filmes != nil && @filmes.count > 0 %>
   <section>
+  <div class="row display">
+<div class="four columns offset-by-eight">
+Filtro:
+<input type="text" class="filter" name="liveFilter" onKeyup ="update_filmes(this.value)" />   <p></div>
+<p>
+</div>
+  <div id="filmes">
     <% shopping_actual = "" %> 
     <% @filmes.each do |filme| %>
     
@@ -37,7 +44,7 @@
   <p></p>
 </div>
 <% end %>
-
+</div>
 </div>
 
 </section>
