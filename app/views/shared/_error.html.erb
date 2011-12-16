@@ -1,0 +1,9 @@
+<section>
+		 <div class="row">
+      <div class="twelve columns"> 
+        <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+        <% end %>   
+		 	</div>
+    </div>
+</section>

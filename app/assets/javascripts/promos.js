@@ -150,6 +150,7 @@ function normalizar(){
       }    
     }
     
+     
   
 }
 

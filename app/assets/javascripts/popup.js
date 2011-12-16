@@ -59,4 +59,19 @@
     }
     else f.hide();
   });
+
+
+   $(".qrcode").hide();  
+
+   $(".android").bind('click', function(e) {
+     $(".android").hide();
+     $(".qrcode").show('blind',{ direction: "vertical"}, 1000);
+   });
+
+   $(".qrcode").bind('click', function(e) {
+    $(".qrcode").hide();
+    $(".android").show();
+  });
+
+
 	});
