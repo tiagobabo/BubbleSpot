@@ -77,13 +77,13 @@ class EventosController < ApplicationController
       end
     elsif params[:w] == "4"  
           @w = 4
-      @eventos_semana = @shopping.eventos.order("data").where( "data >= date("now", "start of day")")
+      @eventos_semana = @shopping.eventos.order("data").where( "data >= date('now', 'start of day')")
       @eventos_semana.each do |evento_semana|
      evento_semana[:shopping_nome] = @shopping.nome
       end
     end
 
-    @eventos = @shopping.eventos.order("data").where( "data >= date("now", "start of day")")
+    @eventos = @shopping.eventos.order("data").where( "data >= date('now', 'start of day')")
     
     @eventos.each do |evento|
      evento[:shopping_nome] = @shopping.nome
