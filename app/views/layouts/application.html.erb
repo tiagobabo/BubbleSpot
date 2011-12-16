@@ -15,30 +15,8 @@
 <body>
 
 <div id="conteudo">
-<!--<% if current_admin %>
-<div align="right" id="admin_nav">
-    Logged in como <%= current_admin.email %>.
-    <%= link_to "Log out", log_out_path %>
-  </div>
-<% end %>
-<div align="right" id="search_nav">
-    <%= link_to "Área de Administração", admins_index_path %>
-  </div>-->
-
 <%= render "shared/header" %>
 <div class="clearheader"></div>
-<section>
-		 <div class="row">
-      <div class="twelve columns"> 
-        <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-        <% end %>   
-		 	</div>
-    </div>
-  </section>
-
-
-
 
 <%= yield %>
 <div class="clearfooter"></div>
