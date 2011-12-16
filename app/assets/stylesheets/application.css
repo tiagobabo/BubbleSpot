@@ -7,6 +7,12 @@
  *= require_tree . 
 */
 
+
+#qrcode {
+	
+	background-color: white;
+}
+
 .navigation ul {
 
   border: 0;
