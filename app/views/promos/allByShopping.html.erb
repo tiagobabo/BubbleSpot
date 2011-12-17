@@ -16,7 +16,13 @@
 
 <% if @promos != nil && @promos.count > 0 %>
 <section>
-      
+ <div class="row display">
+<div class="four columns offset-by-eight">
+Filtro:
+<input type="text" class="filter" name="liveFilter" onKeyup ="update_promos2(this.value, <%= @shopping.id%>)" />   <p></div>
+<p>
+</div>
+<div id="promos">        
 <% loja_actual = "" %> 
 <% @promos.each do |promo| %>
 
@@ -26,7 +32,7 @@
       
       <div class="row">
       <div class="twelve columns">
-      <div class="underline"><h3>Promoções da <%= promo.loja_nome %></h3></div>
+      <div class="underline"><h3><%= promo.loja_nome %></h3></div>
       </div>
       
       <% loja_actual = promo.loja_id %>  
@@ -42,6 +48,7 @@
   <p></p>
 </div>
 <% end %>
+</div>
 </div>
 </section>
 

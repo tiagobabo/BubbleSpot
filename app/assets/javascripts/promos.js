@@ -239,4 +239,55 @@ function update_promos3(query, shopping_id, loja_id) {
 }
 
 
+function update_promos2(query, shopping) {
+  
+    
+    $.get("/search/allshoppingpromos?query=" + query+"&shopping_id="+shopping, function(data) {    
+        
+        var array = data.split(',');
+
+
+        $('#promos').empty();
+
+        if(array.length > 1)
+        {
+
+        var loja_atual = "";
+        var conteudo = "";
+
+        var cont = 3;
+
+        for (i=0;i<array.length;i+=7)
+        {
+            
+            if(array[i+4] != loja_atual)
+            {
+              
+              cont = 3;
+              loja_atual = array[i+4];
+              conteudo += '<div class="row">'
+              conteudo += '<div class="twelve columns">'
+              conteudo += '<div class="underline"><h3>'+array[i+4]+'</h3></div>'
+              conteudo += '</div>'
+            }
+
+            if(cont == 3)
+            {
+              conteudo += '</div><div class="row">';
+              cont = 0;
+            }
+
+            conteudo += '<div class="four columns"><center><a href="/shoppings/'+ array[i+3] +'/lojas/'+ array[i+6] +'/promos/'+array[i] +'">' + '<img height="200px" src="'+ array[i+2] + '" /></a><p>'+  array[i+1] +'</br>'+array[i+5] + '&#37;  de desconto</center><p></p></div>';
+            cont++;
+        }
+
+      conteudo += '</div></div>';
+
+      $('#promos').html(conteudo); 
+      }
+});
+
+}
+
+
 
