@@ -2,7 +2,7 @@
 
 one:
   nome: MyString
-  shopping: 
+  shopping_id: 1
   data: 2011-11-30 16:49:35
   detalhes: MyString
   imagem: MyString
@@ -10,7 +10,7 @@ one:
 
 two:
   nome: MyString
-  shopping: 
+  shopping_id: 1
   data: 2011-11-30 16:49:35
   detalhes: MyString
   imagem: MyString
