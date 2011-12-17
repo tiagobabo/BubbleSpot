@@ -8,6 +8,18 @@ class AdminTest < ActiveSupport::TestCase
 		assert admin.save
 	end
 
+	test "admin_invalido_email" do
+		admin = Admin.new(:password => "123456", 
+		:password_confirmation => "123456", :idref => "1", :tipo => "1")
+		assert !admin.save
+	end
+
+	test "admin_invalido_password" do
+		admin = Admin.new(:email => "teste@teste.pt", 
+		:password_confirmation => "123456", :idref => "1", :tipo => "1")
+		assert !admin.save
+	end
+
 	test "admin_invalido" do
 		admin = Admin.new
 		assert admin.invalid?

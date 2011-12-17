@@ -10,6 +10,54 @@ class ShoppingTest < ActiveSupport::TestCase
 		assert shopping.save
 	end
 
+	test "shopping_invalido_nome" do
+		shopping = Shopping.new(:telefone => 123456789, 
+		:localizacao => "teste", :descricao => "teste", :imagem => "teste.png", :link_mapa => "teste.png", 
+		:email => "teste@teste.com")
+		assert !shopping.save
+	end
+
+	test "shopping_invalido_telefone" do
+		shopping = Shopping.new(:nome => "Teste", 
+		:localizacao => "teste", :descricao => "teste", :imagem => "teste.png", :link_mapa => "teste.png", 
+		:email => "teste@teste.com")
+		assert !shopping.save
+	end
+
+	test "shopping_invalido_localizacao" do
+		shopping = Shopping.new(:nome => "Teste", :telefone => 123456789, 
+		:descricao => "teste", :imagem => "teste.png", :link_mapa => "teste.png", 
+		:email => "teste@teste.com")
+		assert !shopping.save
+	end
+
+	test "shopping_invalido_descricao" do
+		shopping = Shopping.new(:nome => "Teste", :telefone => 123456789, 
+		:localizacao => "teste", :imagem => "teste.png", :link_mapa => "teste.png", 
+		:email => "teste@teste.com")
+		assert !shopping.save
+	end
+
+	test "shopping_invalido_imagem" do
+		shopping = Shopping.new(:nome => "Teste", :telefone => 123456789, 
+		:localizacao => "teste", :descricao => "teste", :link_mapa => "teste.png", 
+		:email => "teste@teste.com")
+		assert !shopping.save
+	end
+
+	test "shopping_invalido_link_mapa" do
+		shopping = Shopping.new(:nome => "Teste", :telefone => 123456789, 
+		:localizacao => "teste", :descricao => "teste", :imagem => "teste.png", 
+		:email => "teste@teste.com")
+		assert !shopping.save
+	end
+
+	test "shopping_invalido_email" do
+		shopping = Shopping.new(:nome => "Teste", :telefone => 123456789, 
+		:localizacao => "teste", :descricao => "teste", :imagem => "teste.png", :link_mapa => "teste.png")
+		assert !shopping.save
+	end
+
 	test "shopping_invalido" do
 		shopping = Shopping.new
 		assert shopping.invalid?
