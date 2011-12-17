@@ -201,5 +201,42 @@ function update_promos(query) {
 
 }
 
+function update_promos3(query, shopping_id, loja_id) {
+  
+  
+    $.get("/search/getLojasPromos?query=" + query + "&shopping=" + shopping_id + "&loja=" + loja_id, function(data) {    
+        
+
+        var array = data.split(',');
+
+
+        $('#promos').empty();
+        if(array.length > 1)
+        {
+
+            var conteudo = "";
+              
+        conteudo += '<div id="promos2">';
+
+        var cont = 3;
+        for (i=0;i<array.length;i+=7)
+            {
+                
+                if(cont == 3)
+                {
+                  conteudo += '</div><div class="row">';
+                  cont = 0;
+                }
+                conteudo += '<div class="four columns"><center><a href="/shoppings/'+ array[i+3] +'/lojas/'+ array[i+6] +'/promos/'+array[i] +'">' + '<img height="200px" src="'+ array[i+2] + '" /></a><p>'+  array[i+1] +'</br>'+array[i+5] + '&#37;  de desconto</center><p></p></div>';
+                cont++;
+            }
+        
+        conteudo += '</div></div>';
+        $('#promos').html(conteudo); 
+      }
+});
+
+}
+
 
 
