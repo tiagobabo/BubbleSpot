@@ -6,8 +6,10 @@ one:
   localizacao: MyString
   email: MyString
   descricao: MyString
-  coordenadas: MyString
   imagem: MyString
+  latitude: 1.0
+  longitude: 1.0
+  link_mapa: MyString
 
 two:
   nome: MyString
@@ -15,5 +17,7 @@ two:
   localizacao: MyString
   email: MyString
   descricao: MyString
-  coordenadas: MyString
+  latitude: 1.0
+  longitude: 1.0
   imagem: MyString
+  link_mapa: MyString

@@ -1,0 +1,36 @@
+require "lib/tasks/migrate_fixtures"
+require "config/environment.rb'
+
+
+namespace :db do
+  namespace :fixtures do
+    desc "Run migrations on your test fixtures."
+    task :migrate do
+      migrator = MigrateFixtures.new
+      Rake::Task["db:fixtures:load_to_test_db"].invoke
+      ActiveRecord::Base.establish_connection(ActiveRecord::Base.configurations['test'])
+      initial_tables = ActiveRecord::Base.connection.tables
+      #migrate fixtures
+      Rake::Task["db:migrate"].invoke
+      #write them back out to the filesystem
+      migrator.dump_database_to_fixtures("#{RAILS_ROOT}/test/fixtures")
+      resulting_tables = ActiveRecord::Base.connection.tables
+      deleted_tables = initial_tables - resulting_tables
+      #clean up any defunct fixtures
+      migrator.delete_fixtures("#{RAILS_ROOT}/test/fixtures", deleted_tables)
+    end
+    
+    desc "Load test fixtures to the test db."
+    task :load_to_test_db do
+      migrator = MigrateFixtures.new
+      #drop test db
+      Rake::Task["db:test:purge"].invoke
+      #create db at the same version as our fixtures
+      ActiveRecord::Base.establish_connection(ActiveRecord::Base.configurations['test'])
+      ActiveRecord::Migrator.migrate("db/migrate/", migrator.get_current_fixture_version("#{RAILS_ROOT}/test/fixtures/schema_info.yml"))
+      RAILS_ENV = "test"
+      #load fixture
+      Rake::Task["db:fixtures:load"].invoke
+    end
+  end
+end

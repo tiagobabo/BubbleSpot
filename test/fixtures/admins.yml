@@ -4,8 +4,12 @@ one:
   email: MyString
   password_hash: MyString
   password_salt: MyString
+  tipo: 1
+  idref: 1
 
 two:
   email: MyString
   password_hash: MyString
   password_salt: MyString
+  tipo: 1
+  idref: 1

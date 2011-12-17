@@ -9,6 +9,7 @@ one:
   loja: 
   dataf: 2011-11-25 15:11:52
   produto: MyString
+  tags: MyString
 
 two:
   detalhes: MyText
@@ -19,3 +20,4 @@ two:
   loja: 
   dataf: 2011-11-25 15:11:52
   produto: MyString
+  tags: MyString

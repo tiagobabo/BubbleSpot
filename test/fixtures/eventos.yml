@@ -6,6 +6,7 @@ one:
   data: 2011-11-30 16:49:35
   detalhes: MyString
   imagem: MyString
+  local: MyString
 
 two:
   nome: MyString
@@ -13,3 +14,4 @@ two:
   data: 2011-11-30 16:49:35
   detalhes: MyString
   imagem: MyString
+  local: MyString
