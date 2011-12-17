@@ -242,7 +242,7 @@ def lojas_by_shopping3
       end
     elsif params[:p] == "4"  
           @p = 4
-      @eventos_semana = Evento.where("lower(nome) like ?", search).order("shopping_id, data").where( 'data >= date("now", "start of day")')
+      @eventos_semana = Evento.where("lower(nome) like ?", search).order("shopping_id, data").where( "data >= date('now')")
       @eventos_semana.each do |evento_semana|
         @shopping = Shopping.find(evento_semana[:shopping_id])
         evento_semana[:shopping_nome] = @shopping.nome  
