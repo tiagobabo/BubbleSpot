@@ -254,4 +254,25 @@ def lojas_by_shopping3
 
   end
 
+  def allshoppingpromos
+    search = "%" + params[:query].downcase + "%"
+    @promos = []
+    @shopping = Shopping.find(params[:shopping_id])
+    @lojas = @shopping.lojas
+    @lojas.each do |loja|
+      @promos_aux = loja.promos.where("lower(produto) like ? or lower(detalhes) like ? or lower(tags) like ?", search, search, search).order("produto")
+      @promos_aux.each do |promo|
+        promo[:loja_nome] = loja.nome
+        promo[:shopping_nome] = @shopping.nome
+        promo[:shopping_id] = @shopping.id
+      end
+      @promos += @promos_aux
+    end
+      
+  result = @promos.collect{|x| "#{x.id},#{x.produto},#{x.imagem},#{x.shopping_id},#{x.loja_nome},#{x.desconto},#{x.loja_id}"}
+  render :text => "#{result.join(",")}" 
+
+  end
+
+
 end
