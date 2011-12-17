@@ -27,7 +27,7 @@ function update_lojas2(shopping_id, query) {
               		conteudo += '</div><div class="row">';
               		cont = 0;
               	}
-              	conteudo += '<div class="two columns"><center><a href="/shoppings/'+ array[i+3] +'/lojas/'+array[i] +'">' + '<img height="100px" src="'+ array[i+2] + '" /></a><p>'+  array[i+1] +'</p></center><p></p></div>';
+              	conteudo += '<div class="two columns"><center><a href="/shoppings/'+ array[i+3] +'/lojas/'+array[i] +'">' + '<img height="100px" src="'+ array[i+2] + '" /></a></center><p></p></div>';
               	cont++;
             }
     		
@@ -75,7 +75,7 @@ function update_lojas3(query) {
               cont = 0;
             }
 
-            conteudo += '<div class="two columns"><center><a href="/shoppings/'+ array[i+3] +'/lojas/'+array[i] +'">' + '<img height="100px" src="'+ array[i+2] + '" /></a><p>'+  array[i+1] +'</p></center><p></p></div>';
+            conteudo += '<div class="two columns"><center><a href="/shoppings/'+ array[i+3] +'/lojas/'+array[i] +'">' + '<img height="100px" src="'+ array[i+2] + '" /></a></center><p></p></div>';
             cont++;
         }
     conteudo += '</div></div>';
