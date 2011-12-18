@@ -56,10 +56,10 @@ class SearchController < ApplicationController
       
       if params[:pesquisa] == "0"
         search = "%" + params[:query].downcase + "%"
-        @lojas = Loja.where("lower(nome) like ?", search).order("nome")         
+        @lojas = Loja.where("lower(nome) like ? or lower(tags) like ?", search, search).order("nome")         
       elsif params[:pesquisa] == "1"
         search = "%" + params[:query].downcase + "%"
-        @lojas = Loja.where("lower(tags) like ?", search).order("nome") 
+        @lojas = Loja.where("lower(tags) like ? or lower(tags) like ?", search, search).order("nome") 
       end
       
       @lojas = @lojas.order("shopping_id")
@@ -162,7 +162,7 @@ class SearchController < ApplicationController
     @shopping = Shopping.find(params[:shopping_id])
     search = "%" + params[:query].downcase + "%"
     @lojas = @shopping.lojas
-    @lojas = @lojas.where("lower(nome) like ?", search).order("nome")
+    @lojas = @lojas.where("lower(nome) like ? or lower(tags) like ?", search, search).order("nome")
 
     result = @lojas.collect{|x| "#{x.id},#{x.nome},#{x.imagem},#{x.shopping_id}"}
     render :text => "#{result.join(",")}" 
@@ -172,7 +172,7 @@ class SearchController < ApplicationController
 def lojas_by_shopping3
   @lojas = Loja.order("shopping_id, nome")
   search = "%" + params[:query].downcase + "%"
-  @lojas = @lojas.where("lower(nome) like ?", search).order("nome") 
+  @lojas = @lojas.where("lower(nome) like ? or lower(tags) like ?", search, search).order("nome") 
   @lojas.each do |loja|
     @shopping = Shopping.find(loja[:shopping_id])
     loja[:shopping_nome] = @shopping.nome 
