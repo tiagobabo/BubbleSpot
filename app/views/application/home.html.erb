@@ -6,31 +6,32 @@
     </div>
     </div>
 <section>
-<div class="row">
-      <div class="twelve columns">
     <% if @new_promos != nil && @new_promos.count > 0 %>
-         <div class="underline"><h1>Novas promoções</h1></div> 
-      <p>
+    <div class="row">
+      <div class="twelve columns">
+         <div class="underline"><h2>Novas promoções</h2></div> 
+         </div>
+      </br>
         <% @new_promos.each do |promo| %>
 
         <%= cycle("</div><div class='row'>","","").html_safe %>
         <div class="four columns">
         <center>
         <%= link_to image_tag(promo.imagem, :height => "200px"), shopping_loja_promo_path(promo.shopping_id, promo.loja_id, promo) %>
-        <p><h6><%= promo.produto%></br>
-        <%= promo.desconto %>&#37;  de desconto</h6>
+        <h6><%= promo.produto%></h6>
+        <h6><%= promo.desconto %>&#37;  de desconto</h6>
         </center>
-       <p>
+       </br>
         </div>
         <% end %>
+          </div>
         <% end %>
-    <p>
-    </div>
-    </div>
-     <div class="row">
+    </br>
+    <% if @last_promos != nil && @last_promos.count > 0 %>
+        <div class="row">
       <div class="twelve columns">
-        <% if @last_promos != nil && @last_promos.count > 0 %>
-     <div class="underline"><h1>Promoções a acabar</h1><p>
+     <div class="underline"><h2>Promoções a acabar</h2></div>
+     </div>
     <% temp=1 %>
     <% @last_promos.each do |last_promo| %>
 
@@ -38,24 +39,21 @@
     <div class="four columns">
     <center>
     <%= link_to image_tag(last_promo.imagem, :height => "200px"), shopping_loja_promo_path(last_promo.shopping_id, last_promo.loja_id, last_promo) %>
-    <p><h6><%= last_promo.produto%></br>
-        <%= last_promo.desconto %>&#37;  de desconto</br>
-   </h6><h5><div id="year<%= temp %>"><%= last_promo.dataf.year %></div>
+    <h6><%= last_promo.produto%></h6>
+    <h6><%= last_promo.desconto %>&#37;  de desconto</h6>
+    <div id="year<%= temp %>"><%= last_promo.dataf.year %></div>
     <div id="month<%= temp %>"><%= last_promo.dataf.month %></div>
     <div id="day<%= temp %>"><%= last_promo.dataf.day %></div>
     <div id="hour<%= temp %>"><%= last_promo.dataf.hour %></div>
     <div id="minutes<%= temp %>"><%= last_promo.dataf.min %></div>
-    </h5>
     <div id ="teste"><div id="defaultCountdown<%= temp %>" class ="countdown_show6"></div></div>
     </center>
    <p>
     </div>
     <% temp+=1 %>
     <% end %>
-
-    <% end %>
-      
-    </div>  
+      </div>
+    <% end %>  
 
    </br>
    </br>
@@ -75,8 +73,6 @@
       </article>
     </section>
 
-   
-</div>
 </section>
 
  <div class="hide-on-phones"><div class = "qrcode" id = "qrcode"><%= link_to image_tag("code.png", :size => "200x200") ,"http://gnomo.fe.up.pt/~ei08085/BubbleSpot.apk", :alt=> "Descarregue a versão Android!" %><p>

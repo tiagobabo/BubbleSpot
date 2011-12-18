@@ -22,8 +22,8 @@ class ShoppingsController < ApplicationController
   # GET /shoppings/1
   # GET /shoppings/1.json
   def show
-     @promos = []
-      @shopping = Shopping.find(params[:id])
+    @promos = []
+    @shopping = Shopping.find(params[:id])
     @lojas = @shopping.lojas
     @lojas.each do |loja|
       @promos_aux = loja.promos.order("produto")

@@ -1,6 +1,6 @@
-
+<section>
 <div class="row">
-  <section>
+
     <div class ="twelve columns">
     <div class="show-on-desktops">
        <div class = "navigation">
@@ -24,61 +24,64 @@
    </div>
  </div>
   </div>
-    </div>
+  </div>
 
+    <% if @new_promos != nil && @new_promos.count > 0 %>
     <div class="row">
       <div class="twelve columns">
-    <% if @new_promos != nil && @new_promos.count > 0 %>
-      <p>
-         <div class="underline"><h4>NOVAS PROMOÇÕES</h4></div> 
-
-      </p>  
-      <p>
+      </br>
+         <div class="underline"><h4>NOVAS PROMOÇÕES</h4></div>
+      </br>
+      </div>
         <% @new_promos.each do |promo| %>
 
-        <%= cycle("</div><div class='row'>","","").html_safe %>
+        <%= cycle("</div><div class='row'>","","",:name=>"first").html_safe %>
         <div class="four columns">
         <center>
         <%= link_to image_tag(promo.imagem, :height => "200px"), shopping_loja_promo_path(@shopping, promo.loja_id, promo) %>
-        <p><%= promo.produto%></br>
-        <%= promo.desconto %>&#37;  de desconto
+        <h6><p><%= promo.produto%></br>
+        <%= promo.desconto %>&#37;  de desconto</h6>
         </center>
-       <p></p>
+        </br>
         </div>
+       
         <% end %>
-        <% end %>
-      </p> 
-  
-    <p>
-    </div>
-    </div>
+            </div>
+        <% end %> 
+    </br>
 
-<div class="row">
+
+   <% if @last_promos != nil && @last_promos.count > 0 %>
+   <div class="row">
       <div class="twelve columns">
-        <% if @last_promos != nil && @last_promos.count > 0 %>
-     <div class="underline"><h4>PROMOÇÕES A ACABAR </h4>
-
-     </p>  
-    
-   <p>
+     <div class="underline"><h4>PROMOÇÕES A ACABAR </h4></div> 
+   </br>
+    <% temp=1 %>
+    </div>
     <% @last_promos.each do |last_promo| %>
 
-    <%= cycle("</div><div class='row'>","","").html_safe %>
+    <%= cycle("</div><div class='row'>","","",:name=>"last").html_safe %>
     <div class="four columns">
     <center>
-    <%= link_to image_tag(last_promo.imagem, :height => "200px"), shopping_loja_promo_path(@shopping, @loja, last_promo) %><p><%= last_promo.produto%></br>
-        <%= last_promo.desconto %>&#37;  de desconto</br>
-    Termina a <%= last_promo.dataf.strftime("%d-%m-%Y %H:%M")%>
-    </center>
-   <p></p>
+        <%= link_to image_tag(last_promo.imagem, :height => "200px"), shopping_loja_promo_path(@shopping, last_promo.loja_id, last_promo) %>
+        <h6><p><%= last_promo.produto%></br>
+        <%= last_promo.desconto %>&#37;  de desconto</h6>
+        <div id="year<%= temp %>"><%= last_promo.dataf.year %></div>
+    <div id="month<%= temp %>"><%= last_promo.dataf.month %></div>
+    <div id="day<%= temp %>"><%= last_promo.dataf.day %></div>
+    <div id="hour<%= temp %>"><%= last_promo.dataf.hour %></div>
+    <div id="minutes<%= temp %>"><%= last_promo.dataf.min %></div>
+    </h5>
+    <div id ="teste"><div id="defaultCountdown<%= temp %>" class ="countdown_show6"></div></div>
+        </center>
+    <p>
     </div>
+    <% temp+=1 %>
     <% end %>
+    </div> 
     <% end %>
       
-    </div>  
-
-</div>
-
+ 
 
 <div class="row">
   
@@ -122,10 +125,6 @@
   
   <p></p> 
   <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&maptype=satellite&sensor=false&zoom=16&markers=#{@shopping.latitude}%2C#{@shopping.longitude}" %>
-
-  
-  
-  
 
 </div>
 </div>
