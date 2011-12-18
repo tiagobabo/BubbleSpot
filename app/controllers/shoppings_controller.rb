@@ -35,7 +35,8 @@ class ShoppingsController < ApplicationController
       @promos += @promos_aux
     end
      @new_promos =   @promos.sort_by(&:created_at)[0..2]
-    
+     @last_promos =  @promos.sort{|a,b| b.created_at <=> a.created_at}[0..2]
+     @last_promos -= @new_promos
     
     respond_to do |format|
       format.html # show.html.erb

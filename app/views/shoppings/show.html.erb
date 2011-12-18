@@ -28,7 +28,7 @@
       <div class="twelve columns">
     <% if @new_promos != nil && @new_promos.count > 0 %>
       <p>
-         <div class="underline"><h5>Novas Promoções</h5></div> 
+         <div class="underline"><h4>NOVAS PROMOÇÕES</h4></div> 
 
       </p>  
       <p>
@@ -50,6 +50,33 @@
     <p>
     </div>
     </div>
+
+<div class="row">
+      <div class="twelve columns">
+        <% if @last_promos != nil && @last_promos.count > 0 %>
+     <div class="underline"><h4>PROMOÇÕES A ACABAR </h4></div> 
+
+     </p>  
+    
+   <p>
+    <% @last_promos.each do |last_promo| %>
+
+    <%= cycle("</div><div class='row'>","","").html_safe %>
+    <div class="four columns">
+    <center>
+    <%= link_to image_tag(last_promo.imagem, :height => "200px"), shopping_loja_promo_path(@shopping, @loja, last_promo) %><p><%= last_promo.produto%></br>
+        <%= last_promo.desconto %>&#37;  de desconto</br>
+    Termina a <%= last_promo.dataf.strftime("%d-%m-%Y %H:%M")%>
+    </center>
+   <p></p>
+    </div>
+    <% end %>
+    <% end %>
+      
+    </div>  
+
+</div>
+
 
 <div class="row">
   
