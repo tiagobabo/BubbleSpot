@@ -1,11 +1,14 @@
 $(function () {
 
 
-    if( $("#desconto2").is(':checked'))
+   if( $("#desconto2").is(':checked'))
     {
       $( "#precoi" ).hide();
-    $( "#precof" ).hide();
+      $( "#precof" ).hide();
     }
+
+    $( "#precoi" ).show();
+    $( "#precof" ).show();
 
     $(".edit_promo").keypress(function(e) {
     if (e.which == 13) {
