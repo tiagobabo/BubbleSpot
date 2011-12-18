@@ -40,7 +40,7 @@
     <center>
     <%= link_to image_tag(last_promo.imagem, :height => "200px"), shopping_loja_promo_path(last_promo.shopping_id, last_promo.loja_id, last_promo) %><p><%= last_promo.produto%></br>
         <%= last_promo.desconto %>&#37;  de desconto
-    Termina a <%= last_promo.dataf.strftime("%d-%m-%Y %H:%M")%>
+    <p>Termina a <%= last_promo.dataf.strftime("%d-%m-%Y %H:%M")%>
     </center>
    <p>
     </div>
