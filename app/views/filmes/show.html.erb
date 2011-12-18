@@ -1,6 +1,7 @@
 <section>
     <div class="row">
     <div class ="twelve columns">
+    <div class="show-on-desktops">
       <div class = "navigation">
       <%= tabs_tag do |tab| %>
       <%= tab.home      "Home", root_path %>
@@ -9,6 +10,7 @@
       <%= tab.filmes      "Filmes do " + @shopping.nome, filmes_shopping_index_url(@shopping) %>
       <%= tab.filme      @filme.nome, @filme %>
       <% end %>
+    </div>
     </div>
 
        

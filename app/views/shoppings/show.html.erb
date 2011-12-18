@@ -2,12 +2,14 @@
 <div class="row">
   <section>
     <div class ="twelve columns">
+    <div class="show-on-desktops">
        <div class = "navigation">
        <%= tabs_tag do |tab| %>
        <%= tab.home      "Home", root_path %>
        <%= tab.shoppings      "Shoppings", shoppings_path %>
        <%= tab.shopping      @shopping.nome, @shopping %>
        <% end %> 
+       </div>
        </div>
        <div class="underline"><h1><%= @shopping.nome %></h1></div> 
        <div class="row">
