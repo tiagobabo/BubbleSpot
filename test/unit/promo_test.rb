@@ -6,57 +6,81 @@ class PromoTest < ActiveSupport::TestCase
 
   test "promo_valida" do
 		promo = Promo.new(:detalhes => "Teste", 
-		:loja_id => 1, :precoi => 10.0, :precof => 5.0, :desconto => 50.0, 
+		:loja_id => lojas(:one).id, :precoi => 10.0, :precof => 5.0, :desconto => 50.0, 
 		:imagem => "teste.png", :dataf => "2011-11-25 15:11:52", :produto => "Teste", :tags => "teste")
+		assert promo.valid?
 		assert promo.save
+	end
+
+	test "promo_invalida_loja" do
+		promo = Promo.new(:detalhes => "Teste", 
+		:precoi => 10.0, :precof => 5.0, :desconto => 50.0, 
+		:imagem => "teste.png", :dataf => "2011-11-25 15:11:52", :produto => "Teste", :tags => "teste")
+		assert promo.invalid?
+		assert !promo.save
+	end
+
+	test "promo_invalida_loja_inexistente" do
+		promo = Promo.new(:detalhes => "Teste", 
+		:loja_id => 50, :precoi => 10.0, :precof => 5.0, :desconto => 50.0, 
+		:imagem => "teste.png", :dataf => "2011-11-25 15:11:52", :produto => "Teste", :tags => "teste")
+		assert promo.invalid?
+		assert !promo.save
 	end
 
 	test "promo_invalida_valores" do
 		promo = Promo.new(:detalhes => "Teste", 
-		:loja_id => 1, :precoi => 10.0, :precof => 5.0, :desconto => 30.0, 
+		:loja_id => lojas(:one).id, :precoi => 10.0, :precof => 5.0, :desconto => 30.0, 
 		:imagem => "teste.png", :dataf => "2011-11-25 15:11:52", :produto => "Teste", :tags => "teste")
+		assert promo.invalid?
 		assert !promo.save
 	end
 
 	test "promo_invalida_detalhes" do
 		promo = Promo.new(
-		:loja_id => 1, :precoi => 10.0, :precof => 5.0, :desconto => 30.0, 
+		:loja_id => lojas(:one).id, :precoi => 10.0, :precof => 5.0, :desconto => 30.0, 
 		:imagem => "teste.png", :dataf => "2011-11-25 15:11:52", :produto => "Teste", :tags => "teste")
+		assert promo.invalid?
 		assert !promo.save
 	end
 
 	test "promo_invalida_desconto" do
 		promo = Promo.new(:detalhes => "Teste", 
-		:loja_id => 1, :precoi => 10.0, :precof => 5.0, 
+		:loja_id => lojas(:one).id, :precoi => 10.0, :precof => 5.0, 
 		:imagem => "teste.png", :dataf => "2011-11-25 15:11:52", :produto => "Teste", :tags => "teste")
+		assert promo.invalid?
 		assert !promo.save
 	end
 
 	test "promo_invalida_imagem" do
 		promo = Promo.new(:detalhes => "Teste", 
-		:loja_id => 1, :precoi => 10.0, :precof => 5.0, :desconto => 30.0, 
+		:loja_id => lojas(:one).id, :precoi => 10.0, :precof => 5.0, :desconto => 30.0, 
 		:dataf => "2011-11-25 15:11:52", :produto => "Teste", :tags => "teste")
+		assert promo.invalid?
 		assert !promo.save
 	end
 
 	test "promo_invalida_dataf" do
 		promo = Promo.new(:detalhes => "Teste", 
-		:loja_id => 1, :precoi => 10.0, :precof => 5.0, :desconto => 30.0, 
+		:loja_id => lojas(:one).id, :precoi => 10.0, :precof => 5.0, :desconto => 30.0, 
 		:imagem => "teste.png", :produto => "Teste", :tags => "teste")
+		assert promo.invalid?
 		assert !promo.save
 	end
 
 	test "promo_invalida_produto" do
 		promo = Promo.new(:detalhes => "Teste", 
-		:loja_id => 1, :precoi => 10.0, :precof => 5.0, :desconto => 30.0, 
+		:loja_id => lojas(:one).id, :precoi => 10.0, :precof => 5.0, :desconto => 30.0, 
 		:imagem => "teste.png", :dataf => "2011-11-25 15:11:52",  :tags => "teste")
+		assert promo.invalid?
 		assert !promo.save
 	end
 
 	test "imagem_invalida" do
 		promo = Promo.new(:detalhes => "Teste", 
-		:loja_id => 1, :precoi => 10.0, :precof => 5.0, :desconto => 50.0, 
+		:loja_id => lojas(:one).id, :precoi => 10.0, :precof => 5.0, :desconto => 50.0, 
 		:imagem => "teste.pdf", :dataf => "2011-11-25 15:11:52", :produto => "Teste", :tags => "teste")
+		assert promo.invalid?
 		assert !promo.save
 	end
 

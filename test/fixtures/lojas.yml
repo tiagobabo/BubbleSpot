@@ -7,7 +7,7 @@ one:
   telefone: MyString
   detalhes: MyString
   imagem: MyString
-  shopping: 
+  shopping_id: 1 
   tags: MyString
 
 two:
@@ -17,5 +17,5 @@ two:
   telefone: MyString
   detalhes: MyString
   imagem: MyString
-  shopping:
+  shopping_id: 1
   tags: MyString 

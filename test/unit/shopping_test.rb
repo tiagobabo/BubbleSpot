@@ -7,6 +7,7 @@ class ShoppingTest < ActiveSupport::TestCase
 		shopping = Shopping.new(:nome => "Teste", :telefone => 123456789, 
 		:localizacao => "teste", :descricao => "teste", :imagem => "teste.png", :link_mapa => "teste.png", 
 		:email => "teste@teste.com")
+		assert shopping.valid?
 		assert shopping.save
 	end
 
