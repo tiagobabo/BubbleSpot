@@ -11,7 +11,7 @@
       <%= tab.shopping      @shopping.nome, @shopping %>
       <%= tab.lojas      "Lojas do " + @shopping.nome, lojas_shopping_index_url(@shopping) %>
       <%= tab.loja      @loja.nome, shopping_loja_path(@shopping, @loja) %>
-      <%= tab.promos      "Promoções da " + @loja.nome, shopping_loja_promos_path(@shopping, @loja) %>
+      <%= tab.promos      "Promoções " + @loja.nome, shopping_loja_promos_path(@shopping, @loja) %>
       <%= tab.promo      @promo.produto, @promo %>
       <% end %>
     </div>
