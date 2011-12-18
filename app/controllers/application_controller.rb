@@ -21,7 +21,7 @@ set_tab :home
         
     end
 
-    @last_promos -= @new_promos
+    @new_promos -= @last_promos
 
     @shoppings = Shopping.all
 

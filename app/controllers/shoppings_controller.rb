@@ -36,7 +36,7 @@ class ShoppingsController < ApplicationController
     end
      @new_promos =   @promos.sort_by(&:created_at)[0..2]
      @last_promos =  @promos.sort_by(&:dataf)[0..2]
-     @last_promos -= @new_promos
+     @new_promos -= @last_promos
     
     respond_to do |format|
       format.html # show.html.erb

@@ -30,12 +30,8 @@
      <div class="row">
       <div class="twelve columns">
         <% if @last_promos != nil && @last_promos.count > 0 %>
-     <div class="underline"><h1>Promoções a acabar</h1></div> 
-
-      
-
-   <p>
-   <% temp=1 %>
+     <div class="underline"><h1>Promoções a acabar</h1><p>
+    <% temp=1 %>
     <% @last_promos.each do |last_promo| %>
 
     <%= cycle("</div><div class='row'>","","").html_safe %>
@@ -56,6 +52,7 @@
     </div>
     <% temp+=1 %>
     <% end %>
+
     <% end %>
       
     </div>  
