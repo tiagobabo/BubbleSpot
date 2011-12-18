@@ -3,8 +3,8 @@
    Translated by Marcelo Pellicano de Oliveira (pellicano@gmail.com) Feb 2008. */
 (function($) {
 	$.countdown.regional['pt-BR'] = {
-		labels: ['Anos', 'Meses', 'Semanas', 'Dias', 'Horas', 'Minutos', 'Segundos'],
-		labels1: ['Anos', 'Meses', 'Semanas', 'Dias', 'Horas', 'Minutos', 'Segundos'],
+		labels: ['Anos', 'Meses', 'Sem.', 'Dias', 'Horas', 'Min.', 'Seg.'],
+		labels1: ['Anos', 'Meses', 'Sem.', 'Dias', 'Horas', 'Min.', 'Seg.'],
 		compactLabels: ['a', 'm', 's', 'd'],
 		whichLabels: null,
 		timeSeparator: ':', isRTL: false};
