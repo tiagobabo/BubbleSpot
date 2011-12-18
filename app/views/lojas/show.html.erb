@@ -51,10 +51,10 @@
         </div>
         <% end %>
             </div>
+            </br>  
         <% end %>
-      </br> 
   
-    </br>     
+       
         <% if @last_promos != nil && @last_promos.count > 0 %>
         <div class="row">
       <div class="twelve columns">
@@ -88,12 +88,12 @@
 
   <div class="row">
   
-  <div class="six columns">
       <div class="twelve columns">
-  <%= link_to 'Todas as Promoções', shopping_loja_promos_path(@shopping, @loja), :class => "nice small radius blue button" %> <p>
-
-  
+  <center><%= link_to 'Todas as Promoções', shopping_loja_promos_path(@shopping, @loja), :class => "nice small radius blue button" %></center> </br>
+      </div>
   </div>
+  <div class="row">
+  <div class="six columns">   
  
   <p>
      <div class="underline"><h5>SHOPPING</h5></div> 
