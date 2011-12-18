@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111218123113) do
+ActiveRecord::Schema.define(:version => 20111218123635) do
 
   create_table "admins", :force => true do |t|
     t.string    "email"
@@ -23,59 +23,59 @@ ActiveRecord::Schema.define(:version => 20111218123113) do
   end
 
   create_table "eventos", :force => true do |t|
-    t.string    "nome"
-    t.integer   "shopping_id"
-    t.timestamp "data"
-    t.string    "detalhes"
-    t.string    "imagem"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.string    "local"
+    t.string   "nome"
+    t.integer  "shopping_id"
+    t.datetime "data"
+    t.text     "detalhes"
+    t.text     "imagem"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "local"
   end
 
   add_index "eventos", ["shopping_id"], :name => "index_eventos_on_shopping_id"
 
   create_table "filmes", :force => true do |t|
-    t.string    "nome"
-    t.integer   "shopping_id"
-    t.string    "detalhes"
-    t.string    "horarios"
-    t.string    "imagem"
-    t.string    "trailer"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.integer   "sala"
+    t.string   "nome"
+    t.integer  "shopping_id"
+    t.text     "detalhes"
+    t.text     "horarios"
+    t.text     "imagem"
+    t.string   "trailer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "sala"
   end
 
   add_index "filmes", ["shopping_id"], :name => "index_filmes_on_shopping_id"
 
   create_table "lojas", :force => true do |t|
-    t.string    "nome"
-    t.integer   "piso"
-    t.integer   "numero"
-    t.string    "telefone"
-    t.string    "detalhes"
-    t.string    "imagem"
-    t.integer   "shopping_id"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.string    "tags"
+    t.string   "nome"
+    t.integer  "piso"
+    t.integer  "numero"
+    t.string   "telefone"
+    t.text     "detalhes"
+    t.text     "imagem"
+    t.integer  "shopping_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "tags"
   end
 
   add_index "lojas", ["shopping_id"], :name => "index_lojas_on_shopping_id"
 
   create_table "promos", :force => true do |t|
-    t.text      "detalhes"
-    t.decimal   "precoi"
-    t.decimal   "precof"
-    t.decimal   "desconto"
-    t.string    "imagem"
-    t.integer   "loja_id"
-    t.timestamp "dataf"
-    t.string    "produto"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.string    "tags"
+    t.text     "detalhes"
+    t.decimal  "precoi"
+    t.decimal  "precof"
+    t.decimal  "desconto"
+    t.text     "imagem"
+    t.integer  "loja_id"
+    t.datetime "dataf"
+    t.string   "produto"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "tags"
   end
 
   add_index "promos", ["loja_id"], :name => "index_promos_on_loja_id"
@@ -83,15 +83,15 @@ ActiveRecord::Schema.define(:version => 20111218123113) do
   create_table "shoppings", :force => true do |t|
     t.string   "nome"
     t.string   "telefone"
-    t.string   "localizacao"
+    t.text     "localizacao"
     t.string   "email"
     t.text     "descricao"
-    t.string   "imagem"
+    t.text     "imagem"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "link_mapa"
+    t.text     "link_mapa"
   end
 
 end
