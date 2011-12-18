@@ -38,13 +38,23 @@
 }
 .countdown_show6 .countdown_section {
 	width: 16.25%;
+	font-size: 8pt;
+	display: inline-block;
+
 }
 .countdown_show7 .countdown_section {
 	width: 14%;
+	font-size: 8pt;
+}
+
+#teste {
+width: 100%;
+text-align: center;
+
 }
 .countdown_section {
 	display: block;
-	float: left;
+	float: center;
 	font-size: 75%;
 	text-align: center;
 }

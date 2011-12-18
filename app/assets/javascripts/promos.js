@@ -23,9 +23,25 @@ $(function () {
   $('#day').hide();
   $('#hour').hide();
   $('#minutes').hide();
+
+  var i;
+  for (i = 1; i < 4; i++)
+  {
+    $('#year'+i).hide();
+    $('#month'+i).hide();
+    $('#day'+i).hide();
+    $('#hour'+i).hide();
+    $('#minutes'+i).hide();
+  }
   
 	austDay = new Date($('#year').html(), $('#month').html() - 1 , $('#day').html(), $('#hour').html(), $('#minutes').html());
 	$('#defaultCountdown').countdown({until: austDay});
+  austDay = new Date($('#year2').html(), $('#month2').html() - 1 , $('#day2').html(), $('#hour2').html(), $('#minutes2').html());
+  $('#defaultCountdown2').countdown({until: austDay});
+  austDay = new Date($('#year3').html(), $('#month3').html() - 1 , $('#day3').html(), $('#hour3').html(), $('#minutes3').html());
+  $('#defaultCountdown3').countdown({until: austDay});
+  austDay = new Date($('#year1').html(), $('#month1').html() - 1 , $('#day1').html(), $('#hour1').html(), $('#minutes1').html());
+  $('#defaultCountdown1').countdown({until: austDay});
 
 
 

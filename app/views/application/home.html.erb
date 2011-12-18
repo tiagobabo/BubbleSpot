@@ -33,6 +33,7 @@
       
 
    <p>
+   <% temp=1 %>
     <% @last_promos.each do |last_promo| %>
 
     <%= cycle("</div><div class='row'>","","").html_safe %>
@@ -41,10 +42,17 @@
     <%= link_to image_tag(last_promo.imagem, :height => "200px"), shopping_loja_promo_path(last_promo.shopping_id, last_promo.loja_id, last_promo) %>
     <p><h6><%= last_promo.produto%></br>
         <%= last_promo.desconto %>&#37;  de desconto</br>
-   </h6><h5><%= last_promo.dataf.strftime("%d-%m-%Y %H:%M")%></h5>
+   </h6><h5><div id="year<%= temp %>"><%= last_promo.dataf.year %></div>
+    <div id="month<%= temp %>"><%= last_promo.dataf.month %></div>
+    <div id="day<%= temp %>"><%= last_promo.dataf.day %></div>
+    <div id="hour<%= temp %>"><%= last_promo.dataf.hour %></div>
+    <div id="minutes<%= temp %>"><%= last_promo.dataf.min %></div>
+    </h5>
+    <div id ="teste"><div id="defaultCountdown<%= temp %>" class ="countdown_show6"></div></div>
     </center>
    <p>
     </div>
+    <% temp+=1 %>
     <% end %>
     <% end %>
       
