@@ -98,6 +98,12 @@ end
     # For URL like /lojas/1/promos
     # Populate an promo associate with loja 1 with form data
     # loja will be associated with the promo
+
+    if params[:desconto] == "1"
+      params[:promo][:precoi] = nil
+      params[:promo][:precof] = nil
+    end
+
     @promo = @loja.promos.build(params[:promo])
     
     respond_to do |format|
@@ -125,6 +131,11 @@ end
     @shopping = Shopping.find(params[:shopping_id])
     @loja = @shopping.lojas.find(params[:loja_id])
     @promo = Promo.find(params[:id])
+
+    if params[:desconto] == "1"
+      params[:promo][:precoi] = nil
+      params[:promo][:precof] = nil
+    end
     
     respond_to do |format|
     if @promo.update_attributes(params[:promo])

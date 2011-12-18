@@ -13,18 +13,26 @@
     Detalhes*
     <%= f.text_area :detalhes, :rows => 6, :class => "large input-text" %>
   </div>
-  <div class="field">
+  
+   <% if @loja[:precoi] == nil %>
+   <input type="checkbox" id = "desconto2" name="desconto" value="1" checked="checked" onclick ="sodesconto(this.checked)"/> (Só Desconto)
+   <% else %>
+   <input type="checkbox" "desconto2" name="desconto" value="1" onclick ="sodesconto(this.checked)"/> (Só Desconto)
+   <% end %>
+
+
+  <div class="field" id ="precoi">
     Preço Inicial
     <%= f.text_field :precoi, :class => "large input-text", :id=>"inicial" %>
     <div id="inicial_error"> <small class="error">O preço inicial não pode ser negativo.</small></div>
   </div>
-  <div class="field">
+  <div class="field" id ="precof">
     Preço Final
     <%= f.text_field :precof, :class => "large input-text", :id=>"final" %>
      <div id="final_error"> <small class="error">O preço final não pode ser negativo nem superior ao preço inicial.</small></div>
   </div>
   <div class="field">
-    Desconto
+    Desconto*
     <%= f.text_field :desconto, :class => "large input-text", :id=>"desconto" %>
      <div id="desconto_error"> <small class="error">O desconto tem de ser entre 0 e 100.</small></div>
   </div>
