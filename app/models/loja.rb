@@ -3,6 +3,7 @@
 class Loja < ActiveRecord::Base
   belongs_to :shopping
   has_many :promos, :dependent => :destroy
+  validates_presence_of :shopping
   
   validates_presence_of :nome, :piso, :telefone, :detalhes, :tags, :imagem, :message => "O campo tem de ser preenchido"
   validates_numericality_of :telefone, :only_integer => true, :count => 9, :message => "O telefone só pode ter dígitos."
