@@ -23,6 +23,34 @@
  </div>
   </div>
     </div>
+
+    <div class="row">
+      <div class="twelve columns">
+    <% if @new_promos != nil && @new_promos.count > 0 %>
+      <p>
+         <div class="underline"><h5>Novas Promoções</h5></div> 
+
+      </p>  
+      <p>
+        <% @new_promos.each do |promo| %>
+
+        <%= cycle("</div><div class='row'>","","").html_safe %>
+        <div class="four columns">
+        <center>
+        <%= link_to image_tag(promo.imagem, :height => "200px"), shopping_loja_promo_path(@shopping, promo.loja_id, promo) %>
+        <p><%= promo.produto%></br>
+        <%= promo.desconto %>&#37;  de desconto
+        </center>
+       <p></p>
+        </div>
+        <% end %>
+        <% end %>
+      </p> 
+  
+    <p>
+    </div>
+    </div>
+
 <div class="row">
   
   <div class="six columns">

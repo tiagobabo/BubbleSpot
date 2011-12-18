@@ -22,7 +22,20 @@ class ShoppingsController < ApplicationController
   # GET /shoppings/1
   # GET /shoppings/1.json
   def show
-    @shopping = Shopping.find(params[:id])
+     @promos = []
+      @shopping = Shopping.find(params[:id])
+    @lojas = @shopping.lojas
+    @lojas.each do |loja|
+      @promos_aux = loja.promos.order("produto")
+      @promos_aux.each do |promo|
+        promo[:loja_nome] = loja.nome
+        promo[:shopping_nome] = @shopping.nome
+        promo[:shopping_id] = @shopping.id
+      end
+      @promos += @promos_aux
+    end
+     @new_promos =   @promos.sort_by(&:created_at)[0..2]
+    
     
     respond_to do |format|
       format.html # show.html.erb
