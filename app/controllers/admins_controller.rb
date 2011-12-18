@@ -11,7 +11,7 @@ class AdminsController < ApplicationController
   set_tab :gestao
 
   def users
-
+if @current_admin.tipo == 0
     @utilizadores = Admin.all
     
     @utilizadores.each do |user|
@@ -24,9 +24,13 @@ class AdminsController < ApplicationController
         user[:idref2] = @shopping.nome
       elsif user[:tipo] == 2
         @loja = Loja.find(user.idref)
+        @shopping = Shopping.find(@loja.shopping_id)
         user[:tipo2] = "Admiministrador Loja"
-        user[:idref2] = @loja.nome
+        user[:idref2] = @shopping.nome + "/" + @loja.nome 
       end
+    end
+     else
+       redirect_to admins_index_url, :alert => "Não tem permissões para gerir utilizadores!"
     end
   end
 
