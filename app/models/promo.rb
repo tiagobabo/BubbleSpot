@@ -9,7 +9,7 @@ class Promo < ActiveRecord::Base
 
   def precoi_precof_desconto
 
-  	if (!precoi.nil? and !precof.nil?)
+  	if (!precoi.nil? and !precof.nil? and !desconto.nil?)
   	    if (desconto/100.0)*precoi != precof
   		    errors.add(:desconto, "O desconto não coincide com os valores apresentados.")
         end

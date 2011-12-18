@@ -1,0 +1,29 @@
+<W>2011-12-18 14:42:44.005 Initializing settings from /home/tiago/.murmurd/murmur.ini (basepath /home/tiago/.murmurd)
+<W>2011-12-18 14:42:44.006 OpenSSL: OpenSSL 1.0.0e 6 Sep 2011
+<W>2011-12-18 14:42:44.016 SSL: Adding recommended CA UTN-USERFirst-Client Authentication and Email
+<W>2011-12-18 14:42:44.018 ServerDB: Openend SQLite database /home/tiago/BubbleSpot/murmur.sqlite
+<W>2011-12-18 14:42:44.019 Generating new tables...
+<W>2011-12-18 14:42:44.243 Murmur 1.2.3 (1.2.3-2ubuntu2) running on X11: Ubuntu 11.10: Booting servers
+<W>2011-12-18 14:42:44.390 1 => Server: TCP Listen on [::]:64738 failed: The bound address is already in use
+<W>2011-12-18 14:42:44.448 1 => Stopped
+<W>2011-12-18 14:50:22.693 Initializing settings from /home/tiago/.murmurd/murmur.ini (basepath /home/tiago/.murmurd)
+<W>2011-12-18 14:50:22.694 OpenSSL: OpenSSL 1.0.0e 6 Sep 2011
+<W>2011-12-18 14:50:22.718 SSL: Adding recommended CA UTN-USERFirst-Client Authentication and Email
+<W>2011-12-18 14:50:22.720 ServerDB: Openend SQLite database /home/tiago/BubbleSpot/murmur.sqlite
+<W>2011-12-18 14:50:22.796 Murmur 1.2.3 (1.2.3-2ubuntu2) running on X11: Ubuntu 11.10: Booting servers
+<W>2011-12-18 14:50:22.955 1 => Server: TCP Listen on [::]:64738 failed: The bound address is already in use
+<W>2011-12-18 14:50:23.014 1 => Stopped
+<W>2011-12-18 14:54:14.301 Initializing settings from /home/tiago/.murmurd/murmur.ini (basepath /home/tiago/.murmurd)
+<W>2011-12-18 14:54:14.301 OpenSSL: OpenSSL 1.0.0e 6 Sep 2011
+<W>2011-12-18 14:54:14.324 SSL: Adding recommended CA UTN-USERFirst-Client Authentication and Email
+<W>2011-12-18 14:54:14.326 ServerDB: Openend SQLite database /home/tiago/BubbleSpot/murmur.sqlite
+<W>2011-12-18 14:54:14.436 Murmur 1.2.3 (1.2.3-2ubuntu2) running on X11: Ubuntu 11.10: Booting servers
+<W>2011-12-18 14:54:14.571 1 => Server: TCP Listen on [::]:64738 failed: The bound address is already in use
+<W>2011-12-18 14:54:14.646 1 => Stopped
+<W>2011-12-18 14:54:55.046 Initializing settings from /home/tiago/.murmurd/murmur.ini (basepath /home/tiago/.murmurd)
+<W>2011-12-18 14:54:55.055 OpenSSL: OpenSSL 1.0.0e 6 Sep 2011
+<W>2011-12-18 14:54:55.071 SSL: Adding recommended CA UTN-USERFirst-Client Authentication and Email
+<W>2011-12-18 14:54:55.080 ServerDB: Openend SQLite database /home/tiago/BubbleSpot/murmur.sqlite
+<W>2011-12-18 14:54:55.164 Murmur 1.2.3 (1.2.3-2ubuntu2) running on X11: Ubuntu 11.10: Booting servers
+<W>2011-12-18 14:54:55.335 1 => Server: TCP Listen on [::]:64738 failed: The bound address is already in use
+<W>2011-12-18 14:54:55.402 1 => Stopped
