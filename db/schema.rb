@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111216145217) do
+ActiveRecord::Schema.define(:version => 20111218123113) do
 
   create_table "admins", :force => true do |t|
     t.string    "email"
@@ -81,17 +81,17 @@ ActiveRecord::Schema.define(:version => 20111216145217) do
   add_index "promos", ["loja_id"], :name => "index_promos_on_loja_id"
 
   create_table "shoppings", :force => true do |t|
-    t.string    "nome"
-    t.string    "telefone"
-    t.string    "localizacao"
-    t.string    "email"
-    t.string    "descricao"
-    t.string    "imagem"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.float     "latitude"
-    t.float     "longitude"
-    t.string    "link_mapa"
+    t.string   "nome"
+    t.string   "telefone"
+    t.string   "localizacao"
+    t.string   "email"
+    t.text     "descricao"
+    t.string   "imagem"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "link_mapa"
   end
 
 end
