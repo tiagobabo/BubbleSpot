@@ -37,7 +37,7 @@ if @current_admin.tipo == 0
   def shoppings
     set_tab :shopping
     if @current_admin.tipo == 0
-      @shoppings = Shopping.all
+      @shoppings = Shopping.order("nome")
     elsif @current_admin.tipo == 1
       @shoppings = [Shopping.find(@current_admin.idref)]
     else
