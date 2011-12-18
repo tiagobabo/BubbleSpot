@@ -9,17 +9,21 @@
 
 
 <div class="row">
-<div class="four columns">
-  <%= link_to image_tag("shoppings.jpg"), admins_shoppings_url %>
+   <div class="twelve columns"> 
+   <center>
+<div class="six columns">
+  <%= link_to image_tag("shoppings.jpg", :height => "450px"), admins_shoppings_url %>
   <p></p>
 </div>
 
 <% if @current_admin.tipo == 0 %>
-<div class="four columns">
-  <%= link_to image_tag("utilizadores.jpg"), admins_users_url %>
+<div class="six columns">
+  <%= link_to image_tag("utilizadores.jpg", :height => "450px"), admins_users_url %>
   <p></p>
 </div>
 <% end %>
+</div>
+</center>
 </div>
 
 </section>
