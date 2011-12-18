@@ -1,5 +1,16 @@
 $(function () {
 
+
+   if( $("#desconto2").prop("checked", true))
+    {
+      $( "#precoi" ).hide();
+      $( "#precof" ).hide();
+    }
+    
+
+
+    
+
     $(".edit_promo").keypress(function(e) {
     if (e.which == 13) {
     return false;
@@ -287,6 +298,19 @@ function update_promos2(query, shopping) {
       }
 });
 
+}
+
+function sodesconto(test) {
+  if(test)
+  {
+    $( "#precoi" ).hide();
+    $( "#precof" ).hide();
+  }
+  else
+  {
+    $( "#precoi" ).show();
+    $( "#precof" ).show();
+  }
 }
 
 

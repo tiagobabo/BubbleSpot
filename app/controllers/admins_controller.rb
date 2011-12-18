@@ -12,7 +12,7 @@ class AdminsController < ApplicationController
 
   def users
 if @current_admin.tipo == 0
-    @utilizadores = Admin.all
+    @utilizadores = Admin.order("email")
     
     @utilizadores.each do |user|
       if user[:tipo] == 0
@@ -47,7 +47,7 @@ if @current_admin.tipo == 0
   
    def lojas
       @shopping = Shopping.find(params[:id])
-      @lojas = @shopping.lojas.all
+      @lojas = @shopping.lojas.order("nome")
       if @current_admin.tipo == 1 and current_admin.idref != @shopping.id
         redirect_to admins_index_url, :alert => "Não tem permissões para gerir as lojas desse shopping!"
       elsif @current_admin.tipo == 2 
@@ -62,7 +62,7 @@ if @current_admin.tipo == 0
   def promos
       @shopping = Shopping.find(params[:shopping_id])
       @loja = @shopping.lojas.find(params[:loja_id])
-      @promos = @loja.promos.all
+      @promos = @loja.promos.order("produto")
       if @current_admin.tipo == 1 and current_admin.idref != @shopping.id
         redirect_to admins_index_url, :alert => "Não tem permissões para gerir as promoções dessa loja!"
       elsif @current_admin.tipo == 2 
@@ -75,7 +75,7 @@ if @current_admin.tipo == 0
   
   def filmes    
       @shopping = Shopping.find(params[:id])
-      @filmes = @shopping.filmes.all
+      @filmes = @shopping.filmes.order("nome")
       if @current_admin.tipo == 1 and current_admin.idref != @shopping.id
         redirect_to admins_index_url, :alert => "Não tem permissões para gerir os filmes desse shopping!"
       elsif @current_admin.tipo == 2
@@ -85,7 +85,7 @@ if @current_admin.tipo == 0
   
   def eventos
       @shopping = Shopping.find(params[:id])
-      @eventos = @shopping.eventos.all
+      @eventos = @shopping.eventos.order("nome")
       if @current_admin.tipo == 1 and current_admin.idref != @shopping.id
         redirect_to admins_index_url, :alert => "Não tem permissões para gerir os eventos desse shopping!"
       elsif @current_admin.tipo == 2
@@ -117,7 +117,6 @@ if @current_admin.tipo == 0
    def edit
     if @current_admin.tipo == 0
       @admin = Admin.find(params[:admin])
-
       if @admin.tipo == 1 
 
          @pos_shop = @admin.idref 
