@@ -35,9 +35,10 @@
      <div class="row">
       <div class="twelve columns">
       </br>
-         <div class="underline"><h4>NOVAS PROMOÇÕES</h4></div>   
+         <div class="underline"><h4>NOVAS PROMOÇÕES</h4></div>  
+         </br>
         </div>
-      </br>
+      
         <% @new_promos.each do |promo| %>
 
         <%= cycle("</div><div class='row'>","","").html_safe %>
@@ -59,16 +60,19 @@
         <div class="row">
       <div class="twelve columns">
      <div class="underline"><h4>PROMOÇÕES A ACABAR</h4></div>
+     </br>
      </div>
     
-   </br>
+   
+   
    <% temp=1 %>
     <% @last_promos.each do |last_promo| %>
 
     <%= cycle("</div><div class='row'>","","").html_safe %>
     <div class="four columns">
     <center>
-    <%= link_to image_tag(last_promo.imagem, :height => "200px"), shopping_loja_promo_path(@shopping, @loja, last_promo) %><h6><%= last_promo.produto%></h6>
+    <%= link_to image_tag(last_promo.imagem, :height => "200px"), shopping_loja_promo_path(@shopping, @loja, last_promo) %>
+    <h6><%= last_promo.produto%></h6>
         <h6><%= last_promo.desconto %>&#37;  de desconto</h6>
         <div id="year<%= temp %>"><%= last_promo.dataf.year %></div>
     <div id="month<%= temp %>"><%= last_promo.dataf.month %></div>

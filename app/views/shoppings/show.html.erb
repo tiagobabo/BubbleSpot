@@ -51,14 +51,14 @@
         <% end %> 
     
 
-
+    </br>
    <% if @last_promos != nil && @last_promos.count > 0 %>
    <div class="row">
       <div class="twelve columns">
      <div class="underline"><h4>PROMOÇÕES A ACABAR </h4></div> 
    </br>
-    <% temp=1 %>
     </div>
+    <% temp=1 %>
     <% @last_promos.each do |last_promo| %>
 
     <%= cycle("</div><div class='row'>","","",:name=>"last").html_safe %>
