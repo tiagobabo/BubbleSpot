@@ -8,6 +8,7 @@ one:
   detalhes: MyString
   imagem: MyString
   shopping: 
+  tags: MyString
 
 two:
   nome: MyString
@@ -16,4 +17,5 @@ two:
   telefone: MyString
   detalhes: MyString
   imagem: MyString
-  shopping: 
+  shopping:
+  tags: MyString 

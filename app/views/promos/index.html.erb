@@ -16,12 +16,23 @@
 </section>
 
 <% if @promos != nil && @promos.count > 0 %>
+
+
   <section>
 		 <div class="row">
       <div class="twelve columns">            
         <div class="underline"><h1>Promoções da loja <%= @loja.nome %></h1></div>   
-        <p></p>
+        <p>
+
+<div class="row display">
+<div class="four columns offset-by-eight">
+Filtro:
+<input type="text" class="filter" name="liveFilter" onKeyup ="update_promos3(this.value, <%= @shopping.id %>, <%= @loja.id %> )" />   <p>
       </div> 
+
+  <p> 
+<div id="promos">   
+<div id="promos2"> 
 <% @promos.each do |promo| %>
 
 <%= cycle("</div><div class='row'>","","").html_safe %>
@@ -34,7 +45,7 @@
   <p></p>
 </div>
 <% end %>
-
+</div>
 </section>
 <%else %>
 <section>
