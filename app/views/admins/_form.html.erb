@@ -13,14 +13,22 @@
     Password
     <%= f.password_field :password_confirmation, :class => "medium input-text" %>
 
-<%= select_tag(:pesquisa, options_for_select(@shops)) %>
-
-
     Tipo
-    <%= f.text_field :tipo, :class => "medium input-text" %>
+   
+     <%= select_tag :tipo, options_for_select(@tipos, @admin.tipo), :onchange => 'update_shoppings(this.value); update_lojas_admin(this.value, tipo.value)'  %>
 
-    ID Referência
-    <%= f.text_field :idref, :class => "medium input-text" %>
+
+   <div id = "shopping"> Shopping:
+    
+    <%= select_tag :shop, options_for_select(@shops, @pos_shop), :onchange => 'update_lojas_admin(this.value, tipo.value)'  %>
+    </div>
+    <div id = "loja"> 
+    Loja: 
+        
+     <%= select_tag(:loj , options_for_select(@loj, @pos_loja)) %>
+
+    </div>
+
     
    <p></p>
   <%= f.submit "Registar", :class => "nice small radius blue button"%>

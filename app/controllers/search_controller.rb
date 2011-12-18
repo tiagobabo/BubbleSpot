@@ -183,6 +183,15 @@ def lojas_by_shopping3
     
   end
 
+def lojas_by_shopping4
+    @shopping = Shopping.find(params[:shopping_id])
+    @lojas = @shopping.lojas
+    options = []
+    options += @lojas.collect{|x| "#{x.id},#{x.nome}"}
+    render :text => "#{options.join(",")}" 
+    
+  end
+
   def filmes
   @filmes = Filme.order("shopping_id, nome")
   search = "%" + params[:query].downcase + "%"

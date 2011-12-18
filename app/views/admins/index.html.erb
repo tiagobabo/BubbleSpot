@@ -14,12 +14,12 @@
   <p></p>
 </div>
 
-
+<% if @current_admin.tipo == 0 %>
 <div class="four columns">
   <%= link_to image_tag("shoppings.jpg"), admins_users_url %>
   <p></p>
 </div>
-
+<% end %>
 </div>
 
 </section>

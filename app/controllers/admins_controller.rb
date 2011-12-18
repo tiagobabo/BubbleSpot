@@ -90,13 +90,21 @@ class AdminsController < ApplicationController
   end
   
  def new
- @shops = [[]]
+
+  @shops = []
     @shoppings = Shopping.order("nome")
     @shoppings.each do |shopping|
       @shops += [[shopping.nome, shopping.id]]
-    end
+       end
+    @loj = []
+        @lojas = Loja.all
+        @lojas.each do |loja|
+          @loj += [[loja.nome, loja.id]]
+        end
+   
     if @current_admin.tipo == 0
       @admin = Admin.new
+      @tipos = [['Administrador Global',0],['Administrador Shopping',1],['Administrador Loja',2]]
     else
       redirect_to admins_index_url, :alert => "Não tem permissões para adicionar utilizadores!"
     end
@@ -105,6 +113,48 @@ class AdminsController < ApplicationController
    def edit
     if @current_admin.tipo == 0
       @admin = Admin.find(params[:admin])
+
+      if @admin.tipo == 1 
+
+         @pos_shop = @admin.idref 
+         @shops = []
+         @loj = [[" ", -1]]
+      elsif @admin.tipo == 0
+        @loj = [[" ", -1]]
+        @shops = [[" ", -1]]
+      else
+         @shops = []
+          @loj = []
+      end 
+
+
+    
+    @shoppings = Shopping.order("nome")
+    @shoppings.each do |shopping|
+      @shops += [[shopping.nome, shopping.id]]
+       end
+  
+        @lojas = Loja.all
+        @lojas.each do |loja|
+          @loj += [[loja.nome, loja.id]]
+          if @admin.tipo == 2
+            if loja.id == @admin.idref
+              @pos_shop = loja.shopping_id
+            end
+          end 
+        end
+    @tipos = [['Administrador Global',0],['Administrador Shopping',1],['Administrador Loja',2]]
+
+    
+
+      if params[:tipo] == "1"
+        params[:admin][:idref] = params[:shop]
+        
+      elsif params[:tipo] == "2"
+        params[:admin][:idref] = params[:loj]
+
+      end
+
     else
       redirect_to admins_index_url, :alert => "Não tem permissões para editar utilizadores!"
     end
@@ -112,6 +162,15 @@ class AdminsController < ApplicationController
 
   def create
     if @current_admin.tipo == 0
+      if params[:tipo] == "1"
+        params[:admin][:idref] = params[:shop]
+        
+      elsif params[:tipo] == "2"
+        params[:admin][:idref] = params[:loj]
+
+      end
+       params[:admin][:tipo] = params[:tipo]
+  
       @admin = Admin.new(params[:admin])
       if @admin.save
         redirect_to admins_index_url, :notice => "Registo efetuado!"
@@ -120,6 +179,63 @@ class AdminsController < ApplicationController
       end
     else
       redirect_to log_in_url, :alert => "Não tem permissões para adicionar utilizadores!" 
+    end
+  end
+
+
+  def update
+    
+    @admin = Admin.find(params[:admin_id])
+
+    if params[:tipo] == "1"
+        params[:admin][:idref] = params[:shop]
+        
+      elsif params[:tipo] == "2"
+        params[:admin][:idref] = params[:loj]
+
+      end
+       params[:admin][:tipo] = params[:tipo]
+
+
+    respond_to do |format|
+      if @admin.update_attributes(params[:admin])
+        format.html {  redirect_to admins_users_url , :notice => 'O utilizador foi editado com sucesso.' }
+      else
+
+if @admin.tipo == 1 
+
+         @pos_shop = @admin.idref 
+         @shops = []
+         @loj = [[" ", -1]]
+      elsif @admin.tipo == 0
+        @loj = [[" ", -1]]
+        @shops = [[" ", -1]]
+      else
+         @shops = []
+          @loj = []
+      end 
+
+
+    
+    @shoppings = Shopping.order("nome")
+    @shoppings.each do |shopping|
+      @shops += [[shopping.nome, shopping.id]]
+       end
+  
+        @lojas = Loja.all
+        @lojas.each do |loja|
+          @loj += [[loja.nome, loja.id]]
+          if @admin.tipo == 2
+            if loja.id == @admin.idref
+              @pos_shop = loja.shopping_id
+            end
+          end 
+        end
+        @tipos = [['Administrador Global',0],['Administrador Shopping',1],['Administrador Loja',2]]
+
+
+        format.html { render :action => "edit" }
+      end
     end
   end
 

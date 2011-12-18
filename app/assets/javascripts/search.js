@@ -92,3 +92,4 @@ function update_lojas(shopping_id) {
   }
   
 }  
+
