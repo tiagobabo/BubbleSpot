@@ -11,6 +11,7 @@ class AdminsController < ApplicationController
   set_tab :gestao
 
   def users
+      set_tab :users
 if @current_admin.tipo == 0
     @utilizadores = Admin.order("email")
     
@@ -97,7 +98,7 @@ if @current_admin.tipo == 0
   end
   
  def new
-
+set_tab :new_user
   @shops = []
     @shoppings = Shopping.order("nome")
     @shoppings.each do |shopping|
@@ -118,6 +119,7 @@ if @current_admin.tipo == 0
   end
 
    def edit
+    set_tab :edit_user
     if @current_admin.tipo == 0
       @admin = Admin.find(params[:admin])
       if @admin.tipo == 1 

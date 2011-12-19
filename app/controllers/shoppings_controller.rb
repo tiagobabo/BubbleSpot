@@ -47,7 +47,7 @@ class ShoppingsController < ApplicationController
   # GET /shoppings/new
   # GET /shoppings/new.json
   def new  
-    
+     set_tab :shopping_new
       @shopping = Shopping.new
 
       respond_to do |format|
@@ -59,6 +59,7 @@ class ShoppingsController < ApplicationController
 
   # GET /shoppings/1/edit
   def edit
+     set_tab :shopping_edit
       @shopping = Shopping.find(params[:id])
   end
 
