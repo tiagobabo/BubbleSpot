@@ -1,6 +1,6 @@
 $(function () {
 
-
+  $("#bla").hide();
    if( $("#desconto2:checked").val() !== undefined)
     {
       $( "#precoi" ).hide();
@@ -333,10 +333,14 @@ function updatetablepromos(value, promos) {
       }
 
       if(j == i)
+      {
         $( "#promos" ).hide();
+        $("#bla").show();
+      }
     }
     else
     {
+      $("#bla").hide();
       var i = 0;
       $( "#promos" ).show();
       for(i = 0; i < promos; i++)
