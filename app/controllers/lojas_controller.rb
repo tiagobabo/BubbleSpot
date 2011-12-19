@@ -49,8 +49,8 @@ end
     # Find an loja in shoppings 1 that has id=2
     @loja = @shopping.lojas.find(params[:id])
     @loja[:shopping_nome] = @shopping.nome
-    @new_promos =  @loja.promos.order("created_at DESC").limit(3)
-    @last_promos =  @loja.promos.order("dataf ASC").limit(3)
+    @new_promos =  @loja.promos.ativas.order("created_at DESC").limit(3)
+    @last_promos =  @loja.promos.ativas.order("dataf ASC").limit(3)
     @new_promos -= @last_promos
     respond_to do |format|
       format.html # index.html.erb

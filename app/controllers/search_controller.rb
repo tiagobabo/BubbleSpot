@@ -85,7 +85,7 @@ class SearchController < ApplicationController
         @shopping = Shopping.find(params[:shopping])
         @loja = @shopping.lojas.find(params[:loja])
         @promos = []
-        @promos_aux = @loja.promos.where("lower(produto) like ? or lower(detalhes) like ? or lower(tags) like ?", search, search, search).order("produto")  
+        @promos_aux = @loja.promos.ativas.where("lower(produto) like ? or lower(detalhes) like ? or lower(tags) like ?", search, search, search).order("produto")  
         @promos_aux.each do |promo|
             promo[:loja_nome] = @loja.nome
             promo[:shopping_id] = @shopping.id
@@ -99,7 +99,7 @@ class SearchController < ApplicationController
         @promos = []
         @promos_aux = []
         @lojas.each do |loja|
-          @promos_aux = loja.promos.where("lower(produto) like ? or lower(detalhes) like ? or lower(tags) like ?", search, search, search).order("produto")  
+          @promos_aux = loja.promos.ativas.where("lower(produto) like ? or lower(detalhes) like ? or lower(tags) like ?", search, search, search).order("produto")  
           @promos_aux.each do |promo|
             promo[:loja_nome] = loja.nome
             promo[:shopping_id] = @shopping.id
@@ -116,7 +116,7 @@ class SearchController < ApplicationController
           @lojas = shopping.lojas
           @promos_aux = []
           @lojas.each do |loja|
-            @promos_aux = loja.promos.where("lower(produto) like ? or lower(detalhes) like ? or lower(tags) like ?", search, search, search).order("produto")  
+            @promos_aux = loja.promos.ativas.where("lower(produto) like ? or lower(detalhes) like ? or lower(tags) like ?", search, search, search).order("produto")  
             @promos_aux.each do |promo|
               promo[:loja_nome] = loja.nome
               promo[:shopping_nome] = shopping.nome
@@ -208,7 +208,7 @@ def lojas_by_shopping4
 
   def promos2
     search = "%" + params[:query].downcase + "%"
-  @promos = Promo.where("lower(produto) like ? or lower(detalhes) like ? or lower(tags) like ?", search, search, search).order("produto")
+  @promos = Promo.ativas.where("lower(produto) like ? or lower(detalhes) like ? or lower(tags) like ?", search, search, search).order("produto")
   @promos
   @promos.each do |promo|
     @loja = Loja.find(promo[:loja_id])
@@ -231,7 +231,7 @@ def lojas_by_shopping4
         @shopping = Shopping.find(params[:shopping])
         @loja = @shopping.lojas.find(params[:loja])
         @promos = []
-        @promos_aux = @loja.promos.where("lower(produto) like ? or lower(detalhes) like ? or lower(tags) like ?", search, search, search).order("produto")  
+        @promos_aux = @loja.promos.ativas.where("lower(produto) like ? or lower(detalhes) like ? or lower(tags) like ?", search, search, search).order("produto")  
         @promos_aux.each do |promo|
             promo[:loja_nome] = @loja.nome
             promo[:shopping_id] = @shopping.id
@@ -287,7 +287,7 @@ def lojas_by_shopping4
     @shopping = Shopping.find(params[:shopping_id])
     @lojas = @shopping.lojas
     @lojas.each do |loja|
-      @promos_aux = loja.promos.where("lower(produto) like ? or lower(detalhes) like ? or lower(tags) like ?", search, search, search).order("produto")
+      @promos_aux = loja.promos.ativas.where("lower(produto) like ? or lower(detalhes) like ? or lower(tags) like ?", search, search, search).order("produto")
       @promos_aux.each do |promo|
         promo[:loja_nome] = loja.nome
         promo[:shopping_nome] = @shopping.nome

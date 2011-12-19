@@ -12,8 +12,8 @@ set_tab :home
 
   def home 
 
-    @new_promos =  Promo.order("created_at DESC").limit(3)
-    @last_promos =  Promo.order("dataf ASC").limit(3)
+    @new_promos =  Promo.ativas.order("created_at DESC").limit(3)
+    @last_promos =  Promo.ativas.order("dataf ASC").limit(3)
     for i in (0..@new_promos.length-1)
         
         @new_promos[i][:shopping_id] = Loja.find(@new_promos[i][:loja_id]).shopping_id

@@ -41,7 +41,7 @@
       
         <% @new_promos.each do |promo| %>
 
-        <%= cycle("</div><div class='row'>","","").html_safe %>
+        <%= cycle("</div><div class='row'>","","",:name => "first").html_safe %>
         <div class="four columns">
         <center>
         <%= link_to image_tag(promo.imagem, :height => "200px"), shopping_loja_promo_path(@shopping, @loja, promo) %>
@@ -68,7 +68,7 @@
    <% temp=1 %>
     <% @last_promos.each do |last_promo| %>
 
-    <%= cycle("</div><div class='row'>","","").html_safe %>
+    <%= cycle("</div><div class='row'>","","",:name => "last").html_safe %>
     <div class="four columns">
     <center>
     <%= link_to image_tag(last_promo.imagem, :height => "200px"), shopping_loja_promo_path(@shopping, @loja, last_promo) %>

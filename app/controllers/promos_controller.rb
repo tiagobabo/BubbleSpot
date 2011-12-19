@@ -7,7 +7,7 @@ class PromosController < ApplicationController
   set_tab :promo
   
   def all
-  @promos = Promo.order("produto")
+  @promos = Promo.ativas.order("produto")
   @promos.each do |promo|
     @loja = Loja.find(promo[:loja_id])
     promo[:loja_nome] = @loja.nome
@@ -31,7 +31,7 @@ end
     @shopping = Shopping.find(params[:shopping_id])
     @lojas = @shopping.lojas
     @lojas.each do |loja|
-      @promos_aux = loja.promos.order("produto")
+      @promos_aux = loja.promos.ativas.order("produto")
       @promos_aux.each do |promo|
         promo[:loja_nome] = loja.nome
         promo[:shopping_nome] = @shopping.nome
@@ -56,7 +56,7 @@ end
     @loja = @shopping.lojas.find(params[:loja_id])
 
     # Access all promos for that loja
-    @promos = @loja.promos.order("produto")
+    @promos = @loja.promos.ativas.order("produto")
     
     @promos.each do |promo|
       promo[:loja_nome] = @loja.nome

@@ -26,7 +26,7 @@ class ShoppingsController < ApplicationController
     @shopping = Shopping.find(params[:id])
     @lojas = @shopping.lojas
     @lojas.each do |loja|
-      @promos_aux = loja.promos.order("produto")
+      @promos_aux = loja.promos.ativas.order("produto")
       @promos_aux.each do |promo|
         promo[:loja_nome] = loja.nome
         promo[:shopping_nome] = @shopping.nome
