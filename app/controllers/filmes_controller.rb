@@ -54,6 +54,7 @@ end
 
   # GET /shoppings/1/filmes/new
   def new
+    set_tab :filme_new
     @shopping = Shopping.find(params[:shopping_id])
 
     # Associate an filme object with shopping 1
@@ -81,6 +82,7 @@ end
 
   # GET /shoppings/1/filmes/2/edit
   def edit
+    set_tab :filme_edit
     @shopping = Shopping.find(params[:shopping_id])
 
     # For URL like /shoppings/1/filmes/2/edit
