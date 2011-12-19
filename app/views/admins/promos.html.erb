@@ -20,40 +20,42 @@
   <div class="row">
       <div class="twelve columns"> 
            <%= link_to 'Adicionar Promoção', new_shopping_loja_promo_path(@shopping, @loja), :class => "nice small radius blue button" %>
-           <p>
+           </br>
+           </br>
+           Mostrar só inativas:
+           <input type="checkbox" name="promosinativas" value="1" 
+           onclick ="updatetablepromos(this.checked, <%= @promos.length %>)"/>
+           </br>
 
       </div>
     </div>
  
   <div class ="row">
     <div class = "twelve columns">
-    <table>
+    <table id ="promos">
       <tr>
      <th>Produto</th>
-     <th>Detalhes</th>
      <th>Preço Inicial</th>
      <th>Preço Final</th>
      <th>Desconto</th>
      <th>Data Fim</th>
      <th>Ativa</th>
-     <th>Áreas de Negócio</th>
      <th></th>
      <th></th>
      <th></th>
    </tr>
- 
+ <% i = 0%>
  <% @promos.each do |promo| %>
-<tr>
+  <tr id ="teste<%= i%>">
      <td><%= promo.produto %></td>
-     <td><%= truncate promo.detalhes, :length => 50 %></td>
      <td><%= promo.precoi %></td>
      <td><%= promo.precof %></td>
      <td><%= promo.desconto %></td>
      <td><%= promo.dataf.strftime("%d-%m-%Y %H:%M")%></td>
      <% if promo.ativa == 1 %>
-     <td><input type="checkbox" disabled="disabled" name="ativa" checked></td>
+     <td><input class ="check<%= i %>" type="checkbox" disabled="disabled" name="ativa" checked/></td>
      <% else %>
-     <td><input type="checkbox" disabled="disabled" name="ativa"></td>
+     <td><input class ="check<%= i %>" type="checkbox" disabled="disabled" name="ativa"/></td>
      <% end %>
      <td><%= link_to 'Mostrar', shopping_loja_promo_path(@shopping, @loja, promo) %></td>
      <td><%= link_to 'Editar', edit_promo_url(@shopping, @loja, promo) %></td>
@@ -61,6 +63,7 @@
      
   
    </tr>
+<% i += 1%>
    <% end %>
  </table>
     </div>

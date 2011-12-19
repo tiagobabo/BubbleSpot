@@ -312,6 +312,45 @@ function update_promos2(query, shopping) {
 
 }
 
+
+function updatetablepromos(value, promos) {
+
+    if(value)
+    {
+      var i = 0;
+      var j = 0;
+      for(i = 0; i < promos; i++)
+      {
+        if( $(".check"+i+":checked").val() !== undefined)
+        {
+          $( "#teste"+i ).hide();
+          j++;
+        }
+        else
+        {
+          $( "#teste"+i ).show();
+        }
+      }
+
+      if(j == i)
+        $( "#promos" ).hide();
+    }
+    else
+    {
+      var i = 0;
+      $( "#promos" ).show();
+      for(i = 0; i < promos; i++)
+      {
+          $( "#teste"+i ).show();
+      }
+      
+    }
+  
+  
+    
+
+}
+
 function sodesconto(test) {
   if(test)
   {
