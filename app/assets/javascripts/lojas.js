@@ -1,5 +1,6 @@
 $(function () {
   $('#filter_me').hide();
+  $(document).snowfall();
 });
 
 function update_lojas2(shopping_id, query) {
