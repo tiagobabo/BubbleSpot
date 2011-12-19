@@ -59,7 +59,7 @@ set_tab :home
         redirect_to admins_index_url, :alert => "Não tem permissões de gestão!"
       end
     elsif id == 2
-      unless (@current_admin.tipo == 2 and @current_admin.idref.to_s == idref.to_s) or (@current_admin.tipo == 1 and @current_admin.idref.to_s == Loja.find(idref).shopping_id) or (@current_admin.tipo == 0)
+      unless (@current_admin.tipo == 2 and @current_admin.idref.to_s == idref.to_s) or (@current_admin.tipo == 1 and @current_admin.idref.to_s == Loja.find(idref).shopping_id.to_s) or (@current_admin.tipo == 0)
         redirect_to admins_index_url, :alert => "Não tem permissões de gestão!"
       end
     end
