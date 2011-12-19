@@ -133,12 +133,14 @@ class SearchController < ApplicationController
       else
         @shops = [['Todos', -1]]
         @shoppings = Shopping.all
+        @shopping = @shopping.sort_by(&:nome)
         @shoppings.each do |shopping|
           @shops += [[shopping.nome, shopping.id]]
         end
 
         @loj = [['Todas', -1]]
         @lojas = Loja.all
+        @lojas = @lojas.sort_by(&:nome)
         @lojas.each do |loja|
           @loj += [[loja.nome, loja.id]]
         end
@@ -156,6 +158,7 @@ class SearchController < ApplicationController
   def lojas_by_shopping
     @shopping = Shopping.find(params[:shopping_id])
     @lojas = @shopping.lojas
+    @lojas = @lojas.sort_by(&:nome)
     options = [-1,'Todas']
     options += @lojas.collect{|x| "#{x.id},#{x.nome}"}
     render :text => "#{options.join(",")}" 
@@ -168,6 +171,7 @@ class SearchController < ApplicationController
     @lojas = @shopping.lojas
     @lojas = @lojas.where("lower(nome) like ? or lower(tags) like ?", search, search).order("nome")
 
+    @lojas = @lojas.sort_by(&:nome)
     result = @lojas.collect{|x| "#{x.id},#{x.nome},#{x.imagem},#{x.shopping_id}"}
     render :text => "#{result.join(",")}" 
     
@@ -181,6 +185,7 @@ def lojas_by_shopping3
     @shopping = Shopping.find(loja[:shopping_id])
     loja[:shopping_nome] = @shopping.nome 
   end
+  @lojas = @lojas.sort_by(&:shopping_nome)
 
   result = @lojas.collect{|x| "#{x.id},#{x.nome},#{x.imagem},#{x.shopping_id},#{x.shopping_nome}"}
   render :text => "#{result.join(",")}" 
@@ -189,7 +194,9 @@ def lojas_by_shopping3
 
 def lojas_by_shopping4
     @shopping = Shopping.find(params[:shopping_id])
+
     @lojas = @shopping.lojas
+    @lojas = @lojas.sort_by(&:nome)
     options = []
     options += @lojas.collect{|x| "#{x.id},#{x.nome}"}
     render :text => "#{options.join(",")}" 
@@ -204,6 +211,7 @@ def lojas_by_shopping4
     @shopping = Shopping.find(filme[:shopping_id])
     filme[:shopping_nome] = @shopping.nome 
   end
+  @filmes = @filmes.sort_by(&:shopping_nome)
 
   result = @filmes.collect{|x| "#{x.id},#{x.nome},#{x.imagem},#{x.shopping_id},#{x.shopping_nome}"}
   render :text => "#{result.join(",")}" 
@@ -223,7 +231,7 @@ def lojas_by_shopping4
     promo[:shopping_id] = @shopping.id
    
   end
-  @promos = @promos.sort_by(&:shopping_id)
+  @promos = @promos.sort_by(&:shopping_nome)
 
   result = @promos.collect{|x| "#{x.id},#{x.produto},#{x.imagem},#{x.shopping_id},#{x.shopping_nome},#{x.desconto},#{x.loja_id}"}
   render :text => "#{result.join(",")}" 
@@ -242,7 +250,8 @@ def lojas_by_shopping4
             promo[:shopping_nome] = @shopping.nome
         end
         @promos += @promos_aux
-        
+        @promos = @promos.sort_by(&:shopping_nome)
+
         result = @promos.collect{|x| "#{x.id},#{x.produto},#{x.imagem},#{x.shopping_id},#{x.shopping_nome},#{x.desconto},#{x.loja_id}"}
         render :text => "#{result.join(",")}" 
   end
@@ -257,6 +266,7 @@ def lojas_by_shopping4
         @shopping = Shopping.find(evento_semana[:shopping_id])
         evento_semana[:shopping_nome] = @shopping.nome 
       end
+      @eventos_semana = @eventos_semana.sort_by(&:shopping_nome)
     elsif params[:p] == "2"    
       @p = 2
       @eventos_semana = Evento.where("lower(nome) like ?", search).order("shopping_id, data").where(:data => Time.now.next_week..Time.now.next_week.end_of_week)
@@ -264,6 +274,7 @@ def lojas_by_shopping4
         @shopping = Shopping.find(evento_semana[:shopping_id])
         evento_semana[:shopping_nome] = @shopping.nome  
       end
+      @eventos_semana = @eventos_semana.sort_by(&:shopping_nome)
     elsif params[:p] == "3"  
           @p = 3
       @eventos_semana = Evento.where("lower(nome) like ?", search).order("shopping_id, data").where(:data => Time.now.beginning_of_day..Time.now.end_of_month)
@@ -271,6 +282,7 @@ def lojas_by_shopping4
         @shopping = Shopping.find(evento_semana[:shopping_id])
         evento_semana[:shopping_nome] = @shopping.nome  
       end
+      @eventos_semana = @eventos_semana.sort_by(&:shopping_nome)
     elsif params[:p] == "4"  
           @p = 4
       @eventos_semana = Evento.where("lower(nome) like ?", search).order("shopping_id, data").where( "data >= date('now')")
@@ -278,6 +290,7 @@ def lojas_by_shopping4
         @shopping = Shopping.find(evento_semana[:shopping_id])
         evento_semana[:shopping_nome] = @shopping.nome  
       end
+      @eventos_semana = @eventos_semana.sort_by(&:shopping_nome)
     end
 
   result = @eventos_semana.collect{|x| "#{x.id},#{x.nome},#{x.imagem},#{x.shopping_id},#{x.shopping_nome}"}
@@ -298,6 +311,7 @@ def lojas_by_shopping4
         promo[:shopping_id] = @shopping.id
       end
       @promos += @promos_aux
+      @promos = @promos.sort_by(&:shopping_nome)
     end
       
   result = @promos.collect{|x| "#{x.id},#{x.produto},#{x.imagem},#{x.shopping_id},#{x.loja_nome},#{x.desconto},#{x.loja_id}"}
