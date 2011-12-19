@@ -40,6 +40,9 @@ if @current_admin.tipo == 0
       @shoppings = Shopping.order("nome")
     elsif @current_admin.tipo == 1
       @shoppings = [Shopping.find(@current_admin.idref)]
+    elsif @current_admin.tipo == 2
+      @loja = Loja.find(@current_admin.idref)
+      redirect_to admins_lojas_path(@loja.shopping_id)
     else
        redirect_to admins_index_url, :alert => "Não tem permissões para gerir shoppings!"
     end
@@ -48,7 +51,7 @@ if @current_admin.tipo == 0
    def lojas
       @shopping = Shopping.find(params[:id])
       @lojas = @shopping.lojas.order("nome")
-      if @current_admin.tipo == 1 and current_admin.idref != @shopping.id
+      if @current_admin.tipo == 1 and @current_admin.idref != @shopping.id
         redirect_to admins_index_url, :alert => "Não tem permissões para gerir as lojas desse shopping!"
       elsif @current_admin.tipo == 2 
         loja = Loja.find(@current_admin.idref)
