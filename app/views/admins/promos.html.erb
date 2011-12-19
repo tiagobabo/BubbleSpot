@@ -1,11 +1,29 @@
+<div class="hide-on-phones">
+ <div class = "navigation">
+       <%= tabs_tag do |tab| %>
+       <%= tab.home      "Home", root_path %>
+       <%= tab.gestao      "Gestão", admins_index_path  %>
+       <%= tab.shopping      "Shoppings", admins_shoppings_url  %>
+        <%= tab.lojas      "Lojas do " + @shopping.nome,  admins_lojas_path(@shopping)  %>
+       <%= tab.promos      "Promoções " + @loja.nome,  admins_promos_path(@shopping, @loja)   %>
+      <% end %> 
+    </div>
+    </div>
 <%= render "shared/error" %>
 <section>  
   <div class ="row">
     <div class = "twelve columns">
-      <div class="underline"><h1>Promoções da loja <%= @loja.nome%> </h1></div> 
+      <div class="underline"><h1>Promoções <%= @loja.nome%> </h1></div> 
     </div>
   </div>
   
+  <div class="row">
+      <div class="twelve columns"> 
+           <%= link_to 'Adicionar Promoção', new_shopping_loja_promo_path(@shopping, @loja), :class => "nice small radius blue button" %>
+           <p>
+
+      </div>
+    </div>
  
   <div class ="row">
     <div class = "twelve columns">
@@ -42,10 +60,5 @@
  </table>
     </div>
   </div>
-    <div class="row">
-      <div class="twelve columns"> 
-           <%= link_to 'Adicionar Promoção', new_shopping_loja_promo_path(@shopping, @loja), :class => "nice small radius blue button" %>
-
-		 	</div>
-    </div>
+    
 </section>

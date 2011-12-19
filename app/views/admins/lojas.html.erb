@@ -1,3 +1,13 @@
+<div class="hide-on-phones">
+ <div class = "navigation">
+       <%= tabs_tag do |tab| %>
+       <%= tab.home      "Home", root_path %>
+       <%= tab.gestao      "Gestão", admins_index_path  %>
+       <%= tab.shopping      "Shoppings", admins_shoppings_url  %>
+       <%= tab.lojas      "Lojas do " + @shopping.nome,  admins_lojas_path(@shopping)  %>
+      <% end %> 
+    </div>
+    </div>
 <%= render "shared/error" %>
  <section>  
   <div class ="row">
@@ -5,7 +15,14 @@
     <div class="underline"><h1>Gestão de Lojas do <%= @shopping.nome %></h1></div> 
     </div>
   </div>
-   
+       <div class="row">
+      <div class="twelve columns"> 
+      <% if @current_admin.tipo != 2 %>
+            <%= link_to 'Adicionar Loja', new_loja_path(@shopping), :class => "nice small radius blue button"  %>
+            <p> 
+      <% end %>
+      </div>
+    </div>
 <% if @lojas != nil && @lojas.count > 0 %>
    <div class ="row">
     <div class = "twelve columns">
@@ -50,11 +67,5 @@
 
 <%end %>
 
-    <div class="row">
-      <div class="twelve columns"> 
-      <% if @current_admin.tipo != 2 %>
-            <%= link_to 'Adicionar Loja', new_loja_path(@shopping), :class => "nice small radius blue button"  %>
-      <% end %>
-		 	</div>
-    </div>
+
   </section>

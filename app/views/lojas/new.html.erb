@@ -1,4 +1,14 @@
-
+<div class="hide-on-phones">
+ <div class = "navigation">
+       <%= tabs_tag do |tab| %>
+       <%= tab.home      "Home", root_path %>
+       <%= tab.gestao      "Gestão", admins_index_path  %>
+       <%= tab.shopping      "Shoppings", admins_shoppings_url  %>
+       <%= tab.lojas      "Lojas do " + @shopping.nome,  admins_lojas_path(@shopping)  %>
+       <%= tab.loja_new      "Nova Loja ",  new_loja_path(@shopping)  %>
+      <% end %> 
+    </div>
+    </div>
 <section>
 		<div class="row">
 	<div class="twelve columns"> 

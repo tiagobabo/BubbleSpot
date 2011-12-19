@@ -83,6 +83,7 @@ end
 
   # GET /lojas/1/promos/new
   def new
+    set_tab :promo_new
     @shopping = Shopping.find(params[:shopping_id])
     @loja = @shopping.lojas.find(params[:loja_id])
 
@@ -118,6 +119,7 @@ end
 
   # GET /lojas/1/promos/2/edit
   def edit
+    set_tab :promo_edit
     @shopping = Shopping.find(params[:shopping_id])
     @loja = @shopping.lojas.find(params[:loja_id])
 
