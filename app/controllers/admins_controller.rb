@@ -11,6 +11,7 @@ class AdminsController < ApplicationController
   set_tab :gestao
 
   def users
+      set_tab :users
 if @current_admin.tipo == 0
     @utilizadores = Admin.order("email")
     
@@ -49,6 +50,7 @@ if @current_admin.tipo == 0
   end
   
    def lojas
+    set_tab :lojas
       @shopping = Shopping.find(params[:id])
       @lojas = @shopping.lojas.order("nome")
       if @current_admin.tipo == 1 and @current_admin.idref != @shopping.id
@@ -63,6 +65,7 @@ if @current_admin.tipo == 0
   end
   
   def promos
+    set_tab :promos
       @shopping = Shopping.find(params[:shopping_id])
       @loja = @shopping.lojas.find(params[:loja_id])
       @promos = @loja.promos.order("produto")
@@ -76,7 +79,8 @@ if @current_admin.tipo == 0
       end   
   end
   
-  def filmes    
+  def filmes   
+  set_tab :filmes 
       @shopping = Shopping.find(params[:id])
       @filmes = @shopping.filmes.order("nome")
       if @current_admin.tipo == 1 and current_admin.idref != @shopping.id
@@ -87,6 +91,7 @@ if @current_admin.tipo == 0
   end
   
   def eventos
+    set_tab :eventos
       @shopping = Shopping.find(params[:id])
       @eventos = @shopping.eventos.order("nome")
       if @current_admin.tipo == 1 and current_admin.idref != @shopping.id
@@ -97,7 +102,7 @@ if @current_admin.tipo == 0
   end
   
  def new
-
+set_tab :new_user
   @shops = []
     @shoppings = Shopping.order("nome")
     @shoppings.each do |shopping|
@@ -118,6 +123,7 @@ if @current_admin.tipo == 0
   end
 
    def edit
+    set_tab :edit_user
     if @current_admin.tipo == 0
       @admin = Admin.find(params[:admin])
       if @admin.tipo == 1 

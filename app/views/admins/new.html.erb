@@ -1,3 +1,13 @@
+<div class="hide-on-phones">
+ <div class = "navigation">
+       <%= tabs_tag do |tab| %>
+       <%= tab.home      "Home", root_path %>
+       <%= tab.gestao      "Gestão", admins_index_path  %>
+       <%= tab.users      "Utilizadores", admins_users_url  %>
+       <%= tab.new_user      "Novo Registo", new_admin_path(@utilizador)  %>
+       <% end %> 
+    </div>
+    </div>
 <%= render "shared/error" %>
 <section>
    <div class="row">
