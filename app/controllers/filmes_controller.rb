@@ -12,6 +12,7 @@ def all
     @shopping = Shopping.find(filme[:shopping_id])
     filme[:shopping_nome] = @shopping.nome 
   end
+  @filmes = @filmes.sort_by(&:shopping_nome)
   respond_to do |format|
     format.html #all.html.erb
     format.json { render :json => @filmes }

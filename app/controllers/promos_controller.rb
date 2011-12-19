@@ -17,7 +17,7 @@ class PromosController < ApplicationController
     promo[:shopping_id] = @shopping.id
    
   end
-  @promos = @promos.sort_by(&:shopping_id)
+  @promos = @promos.sort_by(&:shopping_nome)
 
   respond_to do |format|
     format.html # all.html.erb
@@ -39,6 +39,7 @@ end
       end
       @promos += @promos_aux
     end
+      @promos = @promos.sort_by(&:shopping_nome)
       
     respond_to do |format|
       format.html # index.html.erb
