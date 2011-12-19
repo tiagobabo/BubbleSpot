@@ -20,7 +20,9 @@
      <th></th>
      <th></th>
      <th></th>
+     <% if @current_admin.tipo != 2 %>
      <th></th>
+     <% end %>
    </tr>
  
  <% @lojas.each do |loja| %>
@@ -33,7 +35,9 @@
      <td><%= loja.tags %></td>
      <td><%= link_to 'Mostrar', shopping_loja_path(@shopping, loja) %></td>
      <td><%= link_to 'Editar', edit_loja_url(@shopping, loja) %></td>
+           <% if @current_admin.tipo != 2 %>
      <td><%= link_to 'Apagar', shopping_loja_path(@shopping, loja), :confirm => 'Tem a certeza?', :method => :delete %></td>
+      <% end %>
     <td><%= link_to 'Gerir Promoções', admins_promos_path(@shopping, loja) %> </td>
 
    </tr>
