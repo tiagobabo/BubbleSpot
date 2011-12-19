@@ -15,7 +15,14 @@
     </div>
   </div>
   
- 
+     <div class="row">
+      <div class="twelve columns"> 
+      <% if @current_admin.tipo == 0 %>
+            <%= link_to 'Adicionar Shopping', new_shopping_path, :class => "nice small radius blue button"  %>
+            <p>
+            <% end %>
+      </div>
+    </div>
   <div class ="row">
     <div class = "twelve columns">
     <table>
@@ -53,12 +60,6 @@
  </table>
     </div>
   </div>
-    <div class="row">
-      <div class="twelve columns"> 
-      <% if @current_admin.tipo == 0 %>
-            <%= link_to 'Adicionar Shopping', new_shopping_path, :class => "nice small radius blue button"  %>
-            <% end %>
-		 	</div>
-    </div>
+
 </section>
 

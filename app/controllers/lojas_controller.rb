@@ -60,6 +60,7 @@ end
 
   # GET /shoppings/1/lojas/new
   def new
+    set_tab :loja_new
     @shopping = Shopping.find(params[:shopping_id])
 
     # Associate an loja object with shopping 1
@@ -87,6 +88,7 @@ end
 
   # GET /shoppings/1/lojas/2/edit
   def edit
+    set_tab :loja_edit
     @shopping = Shopping.find(params[:shopping_id])
 
     # For URL like /shoppings/1/lojas/2/edit

@@ -1,3 +1,16 @@
+<div class="hide-on-phones">
+ <div class = "navigation">
+       <%= tabs_tag do |tab| %>
+       <%= tab.home      "Home", root_path %>
+       <%= tab.gestao      "Gestão", admins_index_path  %>
+       <%= tab.shopping      "Shoppings", admins_shoppings_url  %>
+       <%= tab.lojas      "Lojas do " + @shopping.nome,  admins_lojas_path(@shopping)  %>
+       <%= tab.promos      "Promoções " + @loja.nome,  admins_promos_path(@shopping, @loja)   %>
+       <%= tab.promo_new      "Nova Promoção ",  new_shopping_loja_promo_path(@shopping, @loja)   %>
+      <% end %> 
+    </div>
+    </div>
+
 <section>
 		 <div class="row">
       <div class="twelve columns"> 

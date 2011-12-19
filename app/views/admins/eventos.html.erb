@@ -17,6 +17,12 @@
     <div class="underline"><h1>Gestão de eventos do <%= @shopping.nome %></h1></div> 
     </div>
   </div>
+  <div class="row">
+      <div class="twelve columns"> 
+            <%= link_to 'Adicionar evento', new_evento_path(@shopping), :class => "nice small radius blue button"  %>
+            <p>
+      </div>
+    </div>
    
 <% if @eventos != nil && @eventos.count > 0 %>
    <div class ="row">
@@ -54,9 +60,5 @@
 
 <%end %>
 
-    <div class="row">
-      <div class="twelve columns"> 
-            <%= link_to 'Adicionar evento', new_evento_path(@shopping), :class => "nice small radius blue button"  %>
-		 	</div>
-    </div>
+    
   </section>

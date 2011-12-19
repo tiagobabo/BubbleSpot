@@ -15,6 +15,13 @@
     </div>
   </div>
    
+<div class="row">
+      <div class="twelve columns"> 
+            <%= link_to 'Adicionar utilizador', new_admin_path(@utilizador), :class => "nice small radius blue button"  %>
+            <p>
+      </div>
+    </div>
+
 <% if @utilizadores != nil && @utilizadores.count > 0 %>
    <div class ="row">
     <div class = "twelve columns">
@@ -53,9 +60,5 @@
 
 <%end %>
 
-    <div class="row">
-      <div class="twelve columns"> 
-            <%= link_to 'Adicionar utilizador', new_admin_path(@utilizador), :class => "nice small radius blue button"  %>
-		 	</div>
-    </div>
+    
   </section>
