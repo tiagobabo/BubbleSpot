@@ -16,11 +16,11 @@ class SessionsController < ApplicationController
     if admin
       session[:admin_id] = admin.id
       if admin.tipo == 0
-        session[:tipo] = "Administrador"
+        session[:tipo] = "Admin"
       elsif admin.tipo == 1
-        session[:tipo] = "Gestor de Shopping"
+        session[:tipo] = "G. de Shopping"
       elsif admin.tipo == 2
-        session[:tipo] = "Gestor de Loja"
+        session[:tipo] = "G. de Loja"
       end
       redirect_to admins_index_url
     else

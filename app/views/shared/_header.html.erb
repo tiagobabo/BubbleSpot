@@ -16,9 +16,7 @@
           <ul class="nav secondary-nav hide-on-phones">
             <% if current_admin %>
             <li><%= link_to "Log out", log_out_path %></li>
-            <% mail = truncate (current_admin.email, :length => 28) %>
-            <li><%= link_to mail + "  ("+ session[:tipo] + ")", admins_index_path %></li>
-           
+            <li><%= link_to current_admin.email + "  ("+ session[:tipo] + ")", admins_index_path %></li>
             <% else %>
             <li><%= link_to "Log in", log_in_path %></li>
             <% end %>      
