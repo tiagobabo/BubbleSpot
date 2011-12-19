@@ -22,14 +22,18 @@
            <%= link_to 'Adicionar Promoção', new_shopping_loja_promo_path(@shopping, @loja), :class => "nice small radius blue button" %>
            </br>
            </br>
-           Mostrar só inativas:
-           <input type="checkbox" name="promosinativas" value="1" 
-           onclick ="updatetablepromos(this.checked, <%= @promos.length %>)"/>
-           </br>
-
       </div>
     </div>
  
+<% if @promos.length > 0 %> 
+<div class="row">
+      <div class="twelve columns"> 
+ Mostrar só inativas:
+           <input type="checkbox" name="promosinativas" value="1" 
+           onclick ="updatetablepromos(this.checked, <%= @promos.length %>)"/>
+           </br>
+ </div>
+    </div>
   <div class ="row">
     <div class = "twelve columns">
     <table id ="promos">
@@ -68,5 +72,11 @@
  </table>
     </div>
   </div>
-    
+  <% else %>
+<div class="row">
+<div class ="twelve columns">
+  <div class="underline"><h4>Não há promoções...</h4></div>
+  </div>
+  </div>
+   <%end%> 
 </section>

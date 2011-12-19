@@ -23,6 +23,8 @@
             <% end %>
       </div>
     </div>
+
+<% if @shoppings.length > 0 %>    
   <div class ="row">
     <div class = "twelve columns">
     <table>
@@ -60,6 +62,12 @@
  </table>
     </div>
   </div>
-
+<% else %>
+  <div class="row">
+<div class ="twelve columns">
+  <div class="underline"><h4>Não há shoppings...</h4></div>
+  </div>
+  </div>
+<% end %>
 </section>
 
