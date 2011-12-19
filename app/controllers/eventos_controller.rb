@@ -112,6 +112,7 @@ class EventosController < ApplicationController
 
   # GET /shoppings/1/eventos/new
   def new
+    set_tab :evento_new
     @shopping = Shopping.find(params[:shopping_id])
 
     # Associate an evento object with shopping 1
@@ -139,6 +140,7 @@ class EventosController < ApplicationController
 
   # GET /shoppings/1/eventos/2/edit
   def edit
+    set_tab :evento_edit
     @shopping = Shopping.find(params[:shopping_id])
 
     # For URL like /shoppings/1/eventos/2/edit
