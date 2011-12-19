@@ -17,6 +17,7 @@
      <th>Preço Final</th>
      <th>Desconto</th>
      <th>Data Fim</th>
+     <th>Ativa</th>
      <th>Áreas de Negócio</th>
      <th></th>
      <th></th>
@@ -31,7 +32,11 @@
      <td><%= promo.precof %></td>
      <td><%= promo.desconto %></td>
      <td><%= promo.dataf.strftime("%d-%m-%Y %H:%M")%></td>
-     <td><%= promo.tags %></td>
+     <% if promo.ativa == 1 %>
+     <td><input type="checkbox" disabled="disabled" name="ativa" checked></td>
+     <% else %>
+     <td><input type="checkbox" disabled="disabled" name="ativa"></td>
+     <% end %>
      <td><%= link_to 'Mostrar', shopping_loja_promo_path(@shopping, @loja, promo) %></td>
      <td><%= link_to 'Editar', edit_promo_url(@shopping, @loja, promo) %></td>
      <td><%= link_to 'Apagar', shopping_loja_promo_path(@shopping, @loja, promo), :confirm => 'Tem a certeza?', :method => :delete %></td>

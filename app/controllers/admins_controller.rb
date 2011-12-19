@@ -69,6 +69,17 @@ if @current_admin.tipo == 0
       @shopping = Shopping.find(params[:shopping_id])
       @loja = @shopping.lojas.find(params[:loja_id])
       @promos = @loja.promos.order("produto")
+      @promos_ativas = @loja.promos.ativas.order("produto")
+      @promos_inativas = @promos-@promos_ativas
+
+      @promos_ativas.each do |promo|
+        promo[:ativa] = 1
+      end
+      @promos_inativas.each do |promo|
+        promo[:ativa] = 0
+      end
+      @promos = @promos_ativas + @promos_inativas
+
       if @current_admin.tipo == 1 and current_admin.idref != @shopping.id
         redirect_to admins_index_url, :alert => "Não tem permissões para gerir as promoções dessa loja!"
       elsif @current_admin.tipo == 2 
