@@ -15,6 +15,7 @@ class EventosController < ApplicationController
         @shopping = Shopping.find(evento_semana[:shopping_id])
         evento_semana[:shopping_nome] = @shopping.nome 
       end
+      @eventos_semana = @eventos_semana.sort_by(&:shopping_nome)
     elsif params[:p] == "2"    
       @p = 2
       @eventos_semana = Evento.order("shopping_id, data").where(:data => Time.now.next_week..Time.now.next_week.end_of_week)
@@ -22,6 +23,7 @@ class EventosController < ApplicationController
         @shopping = Shopping.find(evento_semana[:shopping_id])
         evento_semana[:shopping_nome] = @shopping.nome  
       end
+      @eventos_semana = @eventos_semana.sort_by(&:shopping_nome)
     elsif params[:p] == "3"  
           @p = 3
       @eventos_semana = Evento.order("shopping_id, data").where(:data => Time.now.beginning_of_day..Time.now.end_of_month)
@@ -29,6 +31,7 @@ class EventosController < ApplicationController
         @shopping = Shopping.find(evento_semana[:shopping_id])
         evento_semana[:shopping_nome] = @shopping.nome  
       end
+      @eventos_semana = @eventos_semana.sort_by(&:shopping_nome)
     elsif params[:p] == "4"  
           @p = 4
       @eventos_semana = Evento.order("shopping_id, data").where( "data >= date('now')")
@@ -36,12 +39,14 @@ class EventosController < ApplicationController
         @shopping = Shopping.find(evento_semana[:shopping_id])
         evento_semana[:shopping_nome] = @shopping.nome  
       end
+      @eventos_semana = @eventos_semana.sort_by(&:shopping_nome)
     end
       @eventos = Evento.all
       @eventos.each do |evento|
         @shopping = Shopping.find(evento[:shopping_id])
         evento[:shopping_nome] = @shopping.nome 
       end
+      @eventos = @eventos.sort_by(&:shopping_nome)
       respond_to do |format|
         format.html #all.html.erb
         format.json { render :json => @eventos }

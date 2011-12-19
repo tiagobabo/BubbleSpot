@@ -67,6 +67,7 @@ class SearchController < ApplicationController
         @shopping = Shopping.find(loja[:shopping_id])
         loja[:shopping_nome] = @shopping.nome 
       end
+      @lojas = @lojas.sort_by(&:shopping_nome)
     respond_to do |format|
         format.html # lojas.html.erb
         format.json { render :json => @lojas }
@@ -92,6 +93,7 @@ class SearchController < ApplicationController
             promo[:shopping_nome] = @shopping.nome
         end
         @promos += @promos_aux
+        @promos = @promos.sort_by(&:shopping_nome)
       elsif params[:shopping].present? && params[:shopping] != "-1"
         search = "%" + params[:query].downcase + "%"
         @shopping = Shopping.find(params[:shopping])
@@ -106,6 +108,7 @@ class SearchController < ApplicationController
             promo[:shopping_nome] = @shopping.nome
           end
           @promos += @promos_aux
+          @promos = @promos.sort_by(&:shopping_nome)
         end
         
      elsif params[:query].present?
@@ -123,6 +126,7 @@ class SearchController < ApplicationController
               promo[:shopping_id] = shopping.id
             end
             @promos += @promos_aux
+            @promos = @promos.sort_by(&:shopping_nome)
           end
         end
       end
